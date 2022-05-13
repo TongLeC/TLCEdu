@@ -1,7 +1,7 @@
 <template>
   <div class="nav-footer">
     <div class="nav-footer-top">
-      <a class="nav-footer-brand" href="#">
+      <a class="nav-footer-brand" href="/">
         <img class="logo-img" src="../assets/tonglec-logo.jpg" alt="" />
       </a>
       <p class="nav-footer-p">同于自性，颐养天真。有教无类，乐学致远。</p>
@@ -28,16 +28,33 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 330px) {
+  .nav-footer {
+    height: 170px!important;
+  }
+}
+@media screen and (max-width: 470px) {
+  .nav-footer-brand {
+    display: none!important;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .nav-footer-p {
+    line-height: 2.1rem!important;
+  }
+}
+
 .nav-footer {
   position: relative;
-  height: 260px;
+  height: 16.3rem;
   width: 100%;
   background-color: #ebe9e9;
   border-top: 4px solid #a61b29;
+  margin-top: 20px;
   .nav-footer-top {
     width: 100%;
     display: flex;
-    margin: 30px 0 5px;
+    margin: 1.9rem 0 5px;
     .nav-footer-brand {
       position: relative;
       top: 0;
@@ -48,30 +65,30 @@ export default {
       flex: 0.8;
       .logo-img {
         object-fit: cover;
-        height: 60px;
+        height: 3.8rem;
       }
     }
     .nav-footer-p {
-      font-size: 36px;
-      line-height: 165px;
-      flex: 1;
+      font-size: 2.2rem;
+      line-height: 10.3rem;
+      // flex: 1;
     }
     .nav-footer-erweima {
       flex: 0.8;
       .erweima-img {
         object-fit: cover;
-        height: 165px;
+        height: 10.3rem;
       }
     }
   }
   .nav-footer-bottom {
     width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
   }
   .footer-fish {
     object-fit: cover;
-    height: 220px;
+    height: 14rem;
     opacity: 0.5;
     position: absolute;
     top: 20px;
