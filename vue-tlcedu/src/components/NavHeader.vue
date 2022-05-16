@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">
-            <img class="logo-img" src="../assets/tonglec-logo.jpg" alt="" />
+            <img class="logo-img" src="../assets/logo2.png" alt="" />
           </a>
         </div>
 

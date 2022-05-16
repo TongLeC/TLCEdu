@@ -51,6 +51,7 @@ const router = createRouter({
             component: CreatedArticle,
         },
         {
+            // path: '/languageLearningDetail/:id',
             path: '/languageLearningDetail',
             name: 'languageLearningDetail',
             component: LanguageLearningDetail,

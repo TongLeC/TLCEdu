@@ -2,11 +2,11 @@
   <div class="nav-footer">
     <div class="nav-footer-top">
       <a class="nav-footer-brand" href="/">
-        <img class="logo-img" src="../assets/tonglec-logo.jpg" alt="" />
+        <img class="logo-img" src="../assets/logo2.png" alt="" />
       </a>
       <p class="nav-footer-p">同于自性，颐养天真。有教无类，乐学致远。</p>
       <div class="nav-footer-erweima">
-        <img class="erweima-img" src="../assets/tongle-erweima.png" alt="" />
+        <img class="erweima-img" src="../assets/erweima-image.png" alt="" />
       </div>
     </div>
     <div class="nav-footer-bottom">

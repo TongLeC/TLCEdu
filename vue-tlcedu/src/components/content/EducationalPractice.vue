@@ -1,39 +1,57 @@
 <template>
-  <div class="created-article">
-    <div class="article-left">
-      <img src="../../assets/practice-img.png" alt="" />
+  <div class="educational-practice">
+    <div class="educational-practice-top">
+      <div class="practice-top-left">
+        <img src="../../assets/practice-img.png" alt="" />
+      </div>
+      <div class="practice-top-right">
+        <h3 class="practice-top-title">同乐讲座</h3>
+        <ul>
+          <li class="practice-list">
+            <a class="practice-list-detail" href="">
+              <img src="../../assets/video-two1.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="article-right">
-      <ul>
-        <li class="article-list">
-          <a class="article-list-detail" href="#"
-            >你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊啊啊啊你好啊啊啊</a
-          >
-        </li>
-        <li class="article-list">
-          <a class="article-list-detail" href="#"
-            >你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊啊啊啊你好啊啊啊</a
-          >
-        </li>
-      </ul>
+    <div class="educational-practice-bottom">
+      <div class="practice-bottom-right">
+        <img src="../../assets/img-bottom.png" alt="" />
+      </div>
+      <div class="practice-bottom-left">
+        <h3 class="practice-top-title">教育践谈</h3>
+        <ul class="practice-bottom-left-ul">
+          <li class="practice-list">
+            <a class="practice-list-detail" href="#">你好啊啊啊你好</a>
+          </li>
+          <li class="practice-list">
+            <a class="practice-list-detail" href="#">你好啊啊啊你好</a>
+          </li>
+          <li class="practice-list">
+            <a class="practice-list-detail" href="#">你好啊啊啊你好</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EducationalPractice',
-  data () {
-    return {
-    }
+  name: "EducationalPractice",
+  data() {
+    return {};
   },
-  methods: {}
-}
+  methods: {
+    
+  },
+};
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 880px) {
-  .article-left {
+@media screen and (max-width: 1100px) {
+  .practice-top-left {
     position: relative;
     img {
       position: absolute;
@@ -41,58 +59,101 @@ export default {
       left: 0;
     }
   }
-  .article-right {
+  .practice-top-right,
+  .practice-bottom-left {
     width: 90% !important;
     margin-right: 10px !important;
   }
-}
-@media (min-width: 880px) and (max-width: 1100px) {
-  .article-left {
-    img {
-      object-fit: cover;
-      width: 25rem !important;
-    }
-  }
-}
-@media (min-width: 1100px) and (max-width: 1500px) {
-  .article-left {
-    img {
-      object-fit: cover;
-      width: 30rem !important;
-    }
+  .practice-bottom-left {
+    margin-left: 2rem !important;
   }
 }
 
-.created-article {
-  display: flex;
-  position: relative;
-  .article-left {
-    img {
-      float: left;
-      object-fit: cover;
-      width: 38rem;
-      opacity: 0.55;
-      transform: rotateY(180deg);
+.educational-practice {
+  .educational-practice-top {
+    display: flex;
+    position: relative;
+    .practice-top-left {
+      img {
+        float: left;
+        object-fit: cover;
+        width: 30rem;
+        opacity: 0.55;
+        transform: rotateY(180deg);
+      }
+    }
+    .practice-top-right {
+      width: 57%;
+      background: white;
+      box-shadow: 0 0 12px #d1d1d1;
+      z-index: 999;
+      margin: 3rem 30px 1.5rem 2rem;
+      ul {
+        display: flex;
+        .practice-list {
+          margin: 10px 28px 20px 0;
+          border: 1px solid #a61b29;
+          width: 30%;
+          .practice-list-detail {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            img {
+              width: 100%;
+              // height: 100%;
+              // object-fit: cover;
+            }
+          }
+        }
+      }
+      .practice-top-title {
+        font-size: 1.9rem;
+        color: #a61b29;
+        margin: 2rem 0 1.3rem 0;
+      }
     }
   }
-  .article-right {
-    width: 57%;
-    background: white;
-    box-shadow: 0 0 12px #d1d1d1;
-    z-index: 999;
-    margin: 3rem 30px 1.5rem 2rem;
-    min-height: 500px;
-    .article-list {
-      padding: 8px 30px 10px 10px;
-      margin: 25px 0;
-      border-left: 4px solid #a61b29;
-      .article-list-detail {
-        font-size: 1.4rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        display: block;
-        width: 100%;
+  .educational-practice-bottom {
+    position: relative;
+    .practice-bottom-left {
+      width: 57%;
+      background: white;
+      box-shadow: 0 0 12px #d1d1d1;
+      margin: 4rem 0 2rem 8rem;
+      padding: 0.7rem 0 2rem 0;
+      position: relative;
+      z-index: 100;
+      .practice-bottom-left-ul {
+        display: flex;
+        .practice-list {
+          margin: 10px 28px 20px 0;
+          border: 1px solid #a61b29;
+          width: 30%;
+          .practice-list-detail {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            img {
+              width: 100%;
+              // height: 100%;
+            }
+          }
+        }
+      }
+      .practice-top-title {
+        font-size: 1.9rem;
+        color: #a61b29;
+        margin: 2rem 0 1.3rem 0;
+      }
+    }
+    .practice-bottom-right {
+      img {
+        transform: rotateY(180deg);
+        position: absolute;
+        right: 0;
+        object-fit: cover;
+        width: 24rem;
+        opacity: 0.55;
       }
     }
   }

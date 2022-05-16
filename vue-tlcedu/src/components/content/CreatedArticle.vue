@@ -5,15 +5,14 @@
     </div>
     <div class="article-right">
       <ul>
-        <li class="article-list">
-          <a class="article-list-detail" href="#"
-            >你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊啊啊啊你好啊啊啊</a
-          >
-        </li>
-        <li class="article-list">
-          <a class="article-list-detail" href="#"
-            >你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊啊啊啊你好啊啊啊</a
-          >
+        <li
+          class="article-list"
+          v-for="(item, index) in createdArticleJson.CreatedArticle"
+          :key="index"
+        >
+          <a class="article-list-detail" :href="item.articleLink">
+            {{ item.articleTitle }}
+          </a>
         </li>
       </ul>
     </div>
@@ -21,10 +20,14 @@
 </template>
 
 <script>
+import createdArticleJson from "../../../public/json/CreatedArticle.json";
+
 export default {
   name: "CreatedArticle",
   data() {
-    return {};
+    return {
+      createdArticleJson,
+    };
   },
   methods: {},
 };
@@ -92,6 +95,7 @@ export default {
         white-space: nowrap;
         display: block;
         width: 100%;
+        text-align: left;
       }
     }
   }

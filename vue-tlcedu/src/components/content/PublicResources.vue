@@ -5,27 +5,36 @@
     </div>
     <div class="public-left">
       <div class="resources-one">
-        <h3 class="resources-title">你好呀得到</h3>
+        <h3 class="resources-title">
+          {{ publicResourcesJson.PublicResourcesOne.title }}
+        </h3>
         <ul style="padding: 0">
-          <li class="resources-list">
-            <a href="#" class="resources-list-detail">
-              你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊
-            </a>
-          </li>
-          <li class="resources-list">
-            <a href="#" class="resources-list-detail">
-              你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊
+          <li
+            class="resources-list"
+            v-for="(item, index) in publicResourcesJson.PublicResourcesOne
+              .detailLink"
+            :key="index"
+          >
+            <a :href="item.linkAddress" class="resources-list-detail">
+              {{ item.linkTitle }}
             </a>
           </li>
         </ul>
       </div>
       <div class="resources-one" style="margin-left: 5rem">
-        <h3 class="resources-title">你好呀得到</h3>
+        <h3 class="resources-title">
+          {{ publicResourcesJson.PublicResourcesTwo.title }}
+        </h3>
         <ul style="padding: 0">
-          <li class="resources-list">
-            <a href="#" class="resources-list-detail"
-              >你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊</a
-            >
+          <li
+            class="resources-list"
+            v-for="(item, index) in publicResourcesJson.PublicResourcesTwo
+              .detailLink"
+            :key="index"
+          >
+            <a :href="item.linkAddress" class="resources-list-detail">
+              {{ item.linkTitle }}
+            </a>
           </li>
         </ul>
       </div>
@@ -34,10 +43,17 @@
 </template>
 
 <script>
+import publicResourcesJson from "../../../public/json/PublicResources.json";
+
 export default {
   name: "PublicResources",
   data() {
-    return {};
+    return {
+      publicResourcesJson,
+    };
+  },
+  mounted() {
+    console.log(publicResourcesJson);
   },
   methods: {},
 };

@@ -2,12 +2,19 @@
   <div class="language-learning">
     <div class="language-left">
       <img src="../../assets/img-language.png" alt="" />
-      <!-- <div>{{ languageLearning }}</div> -->
     </div>
     <div class="language-right">
       <ul>
-        <li class="language-list" v-for="(item, index) in languageLearning.languageLearning" :key="index">
-          <router-link class="language-list-detail" to="/languageLearningDetail">{{ item.title }}</router-link>
+        <li
+          class="language-list"
+          v-for="(item, index) in languageLearningJson.languageLearning"
+          :key="index"
+        >
+          <router-link
+            class="language-list-detail"
+            :to="{ path: '/languageLearningDetail', query: { id: item.id } }"
+            >{{ item.title }}</router-link
+          >
         </li>
       </ul>
     </div>
@@ -15,17 +22,14 @@
 </template>
 
 <script>
-import languageLearning from "../../../public/json/LanguageLearning.json";
+import languageLearningJson from "../../../public/json/LanguageLearning.json";
 
 export default {
   name: "LanguageLearning",
   data() {
     return {
-      languageLearning,
+      languageLearningJson,
     };
-  },
-  mounted() {
-    console.log(languageLearning);
   },
   methods: {},
 };

@@ -6,27 +6,14 @@
     <div class="theory-left">
       <ul class="theory-left-ul">
         <li class="theory-list">
-          <router-link to="/EducationalTheoryDetail" class="theory-list-router">
-            <h3 class="theory-title">你好啊啊啊</h3>
-            <h3 class="theory-brief">
-              你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊
-            </h3>
-          </router-link>
-        </li>
-        <li class="theory-list">
-          <router-link to="/EducationalTheoryDetail" class="theory-list-router">
-            <h3 class="theory-title">你好啊啊啊</h3>
-            <h3 class="theory-brief">
-              你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊
-            </h3>
-          </router-link>
-        </li>
-        <li class="theory-list">
-          <router-link to="/EducationalTheoryDetail" class="theory-list-router">
-            <h3 class="theory-title">你好啊啊啊</h3>
-            <h3 class="theory-brief">
-              你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊你好啊啊啊
-            </h3>
+          <router-link
+            :to="{path: '/EducationalTheoryDetail', query: { id: item.id } }"
+            class="theory-list-router"
+            v-for="(item, index) in educationalTheoryJson.educationalTheory"
+            :key="index"
+          >
+            <h3 class="theory-title">{{ item.title }}</h3>
+            <h3 class="theory-brief">{{ item.brief }}</h3>
           </router-link>
         </li>
       </ul>
@@ -35,10 +22,14 @@
 </template>
 
 <script>
+import educationalTheoryJson from "../../../public/json/EducationalTheory.json";
+
 export default {
   name: "EducationalTheory",
   data() {
-    return {};
+    return {
+      educationalTheoryJson,
+    };
   },
   methods: {},
 };
@@ -47,7 +38,7 @@ export default {
 <style scoped lang='scss'>
 @media screen and (max-width: 500px) {
   .theory-title {
-    width: 18rem!important;
+    width: 18rem !important;
   }
   .theory-brief {
     display: none;
@@ -55,7 +46,7 @@ export default {
 }
 @media (min-width: 500px) and (max-width: 1280px) {
   .theory-title {
-    width: 18rem!important;
+    width: 18rem !important;
   }
 }
 
