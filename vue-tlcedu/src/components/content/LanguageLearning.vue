@@ -2,38 +2,12 @@
   <div class="language-learning">
     <div class="language-left">
       <img src="../../assets/img-language.png" alt="" />
+      <!-- <div>{{ languageLearning }}</div> -->
     </div>
     <div class="language-right">
       <ul>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="/languageLearningDetail">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
-        </li>
-        <li class="language-list">
-          <router-link class="language-list-detail" to="#">111</router-link>
+        <li class="language-list" v-for="(item, index) in languageLearning.languageLearning" :key="index">
+          <router-link class="language-list-detail" to="/languageLearningDetail">{{ item.title }}</router-link>
         </li>
       </ul>
     </div>
@@ -41,10 +15,17 @@
 </template>
 
 <script>
+import languageLearning from "../../../public/json/LanguageLearning.json";
+
 export default {
   name: "LanguageLearning",
   data() {
-    return {};
+    return {
+      languageLearning,
+    };
+  },
+  mounted() {
+    console.log(languageLearning);
   },
   methods: {},
 };
@@ -55,7 +36,7 @@ export default {
   .language-left {
     img {
       object-fit: cover;
-      width: 30rem!important;
+      width: 30rem !important;
     }
   }
 }
@@ -99,6 +80,9 @@ export default {
         width: 100%;
         text-align: center;
         line-height: 3.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
