@@ -7,9 +7,13 @@
       <div class="practice-top-right">
         <h3 class="practice-top-title">同乐讲座</h3>
         <ul>
-          <li class="practice-list">
-            <a class="practice-list-detail" href="">
-              <img src="../../assets/video-two1.png" alt="">
+          <li
+            class="practice-list"
+            v-for="(item, index) in educationalPracticeJson.educationalPracticeOne"
+            :key="index"
+          >
+            <a class="practice-list-detail" :href="item.videoUrl">
+              <img :src="item.videoImg" :alt="item.videoDetail" />
             </a>
           </li>
         </ul>
@@ -22,14 +26,13 @@
       <div class="practice-bottom-left">
         <h3 class="practice-top-title">教育践谈</h3>
         <ul class="practice-bottom-left-ul">
-          <li class="practice-list">
-            <a class="practice-list-detail" href="#">你好啊啊啊你好</a>
-          </li>
-          <li class="practice-list">
-            <a class="practice-list-detail" href="#">你好啊啊啊你好</a>
-          </li>
-          <li class="practice-list">
-            <a class="practice-list-detail" href="#">你好啊啊啊你好</a>
+          <li 
+            class="practice-list" 
+            v-for="(item, index) in educationalPracticeJson.educationalPracticeTwo"
+            :key="index">
+            <a class="practice-list-detail" :href="item.videoUrl">
+              <img :src="item.videoImg" :alt="item.videoDetail" />
+            </a>
           </li>
         </ul>
       </div>
@@ -38,18 +41,46 @@
 </template>
 
 <script>
+import educationalPracticeJson from "../../../public/json/EducationalPractice.json";
+
 export default {
   name: "EducationalPractice",
   data() {
-    return {};
+    return {
+      educationalPracticeJson,
+    };
   },
-  methods: {
-    
+  mounted() {
+    console.log(this.educationalPracticeJson.educationalPracticeOne.length)
   },
+  methods: {},
 };
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 360px) {
+  .practice-list {
+    flex: 0 0 90% !important;
+  }
+  ul {
+    padding-left: 1.5rem !important;
+  }
+}
+@media (min-width: 360px) and (max-width: 530px) {
+  .practice-list {
+    flex: 0 0 40% !important;
+  }
+}
+@media (min-width: 530px) and (max-width: 760px) {
+  .practice-list {
+    flex: 0 0 27% !important;
+  }
+}
+@media (min-width: 760px) and (max-width: 980px) {
+  .practice-list {
+    flex: 0 0 29% !important;
+  }
+}
 @media screen and (max-width: 1100px) {
   .practice-top-left {
     position: relative;
@@ -66,6 +97,16 @@ export default {
   }
   .practice-bottom-left {
     margin-left: 2rem !important;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1200px) {
+  .practice-list {
+    flex: 0 0 28% !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1550px) {
+  .practice-list {
+    flex: 0 0 29% !important;
   }
 }
 
@@ -90,18 +131,21 @@ export default {
       margin: 3rem 30px 1.5rem 2rem;
       ul {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 350px;
+        overflow-y: auto;
         .practice-list {
           margin: 10px 28px 20px 0;
           border: 1px solid #a61b29;
-          width: 30%;
+          flex: 0 0 30%;
           .practice-list-detail {
             display: block;
             width: 100%;
             object-fit: cover;
             img {
               width: 100%;
-              // height: 100%;
-              // object-fit: cover;
             }
           }
         }
@@ -125,17 +169,21 @@ export default {
       z-index: 100;
       .practice-bottom-left-ul {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 350px;
+        overflow-y: auto;
         .practice-list {
           margin: 10px 28px 20px 0;
           border: 1px solid #a61b29;
-          width: 30%;
+          flex: 0 0 30%;
           .practice-list-detail {
             display: block;
             width: 100%;
             object-fit: cover;
             img {
               width: 100%;
-              // height: 100%;
             }
           }
         }

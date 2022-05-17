@@ -1,0 +1,29 @@
+{
+    "homeSloganOne": {
+        "sloganTitle": "",
+        "sloganDetail": ""
+    },
+    "homeSloganTwo": {
+        "sloganTitle": "",
+        "sloganDetail": ""
+    },
+    "rotationMap": [
+        {
+            "mapUrl": "/img/video1.3a918dca.png",
+            "mapDetail": "123"
+        },
+        {
+            "mapUrl": "/img/video2.cbf67360.png",
+            "mapDetail": "gfhfgh"
+        },
+        {
+            "mapUrl": "/img/video3.95d456e5.png",
+            "mapDetail": "4545"
+        }
+        ,
+        {
+            "mapUrl": "/img/video4.b25b309d.png",
+            "mapDetail": "fhfnb"
+        }
+    ]
+}
