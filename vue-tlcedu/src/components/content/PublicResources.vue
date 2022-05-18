@@ -1,7 +1,7 @@
 <template>
   <div class="public-resources">
     <div class="public-right">
-      <img src="../../assets/public-img.png" alt="" />
+      <img src="../../../public/images/public-img.png" alt="" />
     </div>
     <div class="public-left">
       <div class="resources-one">

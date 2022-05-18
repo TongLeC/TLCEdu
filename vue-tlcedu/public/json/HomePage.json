@@ -1,29 +1,116 @@
 {
-    "homeSloganOne": {
-        "sloganTitle": "",
-        "sloganDetail": ""
-    },
-    "homeSloganTwo": {
-        "sloganTitle": "",
-        "sloganDetail": ""
-    },
     "rotationMap": [
         {
-            "mapUrl": "/img/video1.3a918dca.png",
+            "mapUrl": "../../../public/images/video1.png",
             "mapDetail": "123"
         },
         {
-            "mapUrl": "/img/video2.cbf67360.png",
+            "mapUrl": "../../../public/images/video2.png",
             "mapDetail": "gfhfgh"
         },
         {
-            "mapUrl": "/img/video3.95d456e5.png",
+            "mapUrl": "../../../public/images/video3.png",
             "mapDetail": "4545"
-        }
-        ,
+        },
         {
-            "mapUrl": "/img/video4.b25b309d.png",
+            "mapUrl": "../../../public/images/video4.png",
             "mapDetail": "fhfnb"
+        }
+    ],
+    "homeSloganLearning": {
+        "sloganTitle": "同乐语言学习法",
+        "sloganDetail": [
+            "子初学,倚听觉;",
+            "先语言,字缓作;",
+            "诵经典,明圣说;",
+            "广听书,知识阔;",
+            "整体练,感知多;",
+            "文史哲,根基拓;",
+            "音形变,意带活;",
+            "三五载,成果硕。"
+        ],
+        "slogan": [
+            "十数载理论探索",
+            "多年第一线教学实践",
+            "最领先，高效的语言学习方法"
+        ]
+    },
+    "homeSloganTheory": {
+        "sloganTitle": "同乐整体教育理论",
+        "sloganDetail": [
+            "同于自性",
+            "颐养天真",
+            "有教无类",
+            "乐学致远"
+        ],
+        "slogan": [
+            "口号",
+            "多年第一线教学实践"
+        ]
+    },
+    "homeVideo": [
+        {
+            "videoImg": "../../../public/images/video1.png",
+            "videoUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "videoDetail": "同乐家长会---2021年9月25日"
+        },
+        {
+            "videoImg": "../../../public/images/video2.png",
+            "videoUrl": "https://www.youtube.com/watch?v=bH0G_bIif84&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=2",
+            "videoDetail": "同乐二年级家长会_2020.11.01"
+        },
+        {
+            "videoImg": "../../../public/images/video3.png",
+            "videoUrl": "https://www.youtube.com/watch?v=hFkw5OJAGOo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=3",
+            "videoDetail": "2019年8月17日，同乐理念与教学分享（网上讲座）"
+        }
+    ],
+    "homeFind": [
+        {
+            "findImg": "",
+            "findUrl": ""
+        },
+        {
+            "findImg": "",
+            "findUrl": ""
+        },
+        {
+            "findImg": "",
+            "findUrl": ""
+        }
+    ],
+    "homeFree": [
+        {
+            "videoImg": "../../../public/images/video1.png",
+            "videoUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "videoDetail": "同乐家长会---2021年9月25日"
+        },
+        {
+            "videoImg": "../../../public/images/video2.png",
+            "videoUrl": "https://www.youtube.com/watch?v=bH0G_bIif84&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=2",
+            "videoDetail": "同乐二年级家长会_2020.11.01"
+        },
+        {
+            "videoImg": "../../../public/images/video3.png",
+            "videoUrl": "https://www.youtube.com/watch?v=hFkw5OJAGOo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=3",
+            "videoDetail": "2019年8月17日，同乐理念与教学分享（网上讲座）"
+        }
+    ],
+    "homeArticle": [
+        {
+            "articleTitle": "东北大学",
+            "articleImg": "../../../public/images/video2.png",
+            "articleUrl": "http://www.neu.edu.cn/"
+        },
+        {
+            "articleTitle": "北京故宫博物院",
+            "articleImg": "../../../public/images/video2.png",
+            "articleUrl": "https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2/8663390"
+        },
+        {
+            "articleTitle": "新疆农业大学",
+            "articleImg": "../../../public/images/video2.png",
+            "articleUrl": "http://www.neu.edu.cn/"
         }
     ]
 }

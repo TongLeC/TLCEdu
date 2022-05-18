@@ -1,7 +1,7 @@
 <template>
   <div class="created-article">
     <div class="article-left">
-      <img src="../../assets/article-img.png" alt="" />
+      <img src="../../../public/images/article-img.png" alt="" />
     </div>
     <div class="article-right">
       <ul>

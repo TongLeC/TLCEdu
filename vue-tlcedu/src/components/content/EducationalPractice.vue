@@ -2,7 +2,7 @@
   <div class="educational-practice">
     <div class="educational-practice-top">
       <div class="practice-top-left">
-        <img src="../../assets/practice-img.png" alt="" />
+        <img src="../../../public/images/practice-img.png" alt="" />
       </div>
       <div class="practice-top-right">
         <h3 class="practice-top-title">同乐讲座</h3>
@@ -21,7 +21,7 @@
     </div>
     <div class="educational-practice-bottom">
       <div class="practice-bottom-right">
-        <img src="../../assets/img-bottom.png" alt="" />
+        <img src="../../../public/images/img-bottom.png" alt="" />
       </div>
       <div class="practice-bottom-left">
         <h3 class="practice-top-title">教育践谈</h3>
@@ -51,7 +51,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.educationalPracticeJson.educationalPracticeOne.length)
+    
   },
   methods: {},
 };

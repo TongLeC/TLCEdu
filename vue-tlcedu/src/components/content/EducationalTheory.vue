@@ -1,7 +1,7 @@
 <template>
   <div class="educational-theory">
     <div class="theory-right">
-      <img src="../../assets/img-theory.png" alt="" />
+      <img src="../../../public/images/img-theory.png" alt="" />
     </div>
     <div class="theory-left">
       <ul class="theory-left-ul">

@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">
-            <img class="logo-img" src="../assets/logo2.png" alt="" />
+            <img class="logo-img" src="../../public/images/logo3.png" alt="" />
           </a>
         </div>
 

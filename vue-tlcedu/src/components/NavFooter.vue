@@ -2,18 +2,18 @@
   <div class="nav-footer">
     <div class="nav-footer-top">
       <a class="nav-footer-brand" href="/">
-        <img class="logo-img" src="../assets/logo2.png" alt="" />
+        <img class="logo-img" src="../../public/images/logo3.png" alt="" />
       </a>
       <p class="nav-footer-p">同于自性，颐养天真。有教无类，乐学致远。</p>
       <div class="nav-footer-erweima">
-        <img class="erweima-img" src="../assets/erweima-image.png" alt="" />
+        <img class="erweima-img" src="../../public/images/erweima-image.png" alt="" />
       </div>
     </div>
     <div class="nav-footer-bottom">
       版权所有©同乐文化科技有限公司 | Email: registrar@tonglec.org |
       欢迎关注同乐公众号
     </div>
-    <img class="footer-fish" src="../assets/footer-fish.png" alt="" />
+    <img class="footer-fish" src="../../public/images/footer-fish.png" alt="" />
   </div>
 </template>
 

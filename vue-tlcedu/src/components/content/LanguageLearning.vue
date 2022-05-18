@@ -1,7 +1,7 @@
 <template>
   <div class="language-learning">
     <div class="language-left">
-      <img src="../../assets/img-language.png" alt="" />
+      <img src="../../../public/images/img-language.png" alt="" />
     </div>
     <div class="language-right">
       <ul>
