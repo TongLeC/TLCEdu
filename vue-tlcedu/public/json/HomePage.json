@@ -1,19 +1,19 @@
 {
     "rotationMap": [
         {
-            "mapUrl": "../../../public/images/video1.png",
+            "mapUrl": "/images/video1.png",
             "mapDetail": "123"
         },
         {
-            "mapUrl": "../../../public/images/video2.png",
+            "mapUrl": "/images/video2.png",
             "mapDetail": "gfhfgh"
         },
         {
-            "mapUrl": "../../../public/images/video3.png",
+            "mapUrl": "/images/video3.png",
             "mapDetail": "4545"
         },
         {
-            "mapUrl": "../../../public/images/video4.png",
+            "mapUrl": "/images/video4.png",
             "mapDetail": "fhfnb"
         }
     ],
@@ -50,66 +50,66 @@
     },
     "homeVideo": [
         {
-            "videoImg": "../../../public/images/video1.png",
-            "videoUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "videoUrl": "https://www.youtube.com/embed/YHqn6yaGIxk",
             "videoDetail": "同乐家长会---2021年9月25日"
         },
         {
-            "videoImg": "../../../public/images/video2.png",
-            "videoUrl": "https://www.youtube.com/watch?v=bH0G_bIif84&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=2",
+            "videoUrl": "https://www.youtube.com/embed/vWN8LdVp5DI",
             "videoDetail": "同乐二年级家长会_2020.11.01"
         },
         {
-            "videoImg": "../../../public/images/video3.png",
-            "videoUrl": "https://www.youtube.com/watch?v=hFkw5OJAGOo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=3",
+            "videoUrl": "https://www.youtube.com/embed/KJHbUoiEtnU",
             "videoDetail": "2019年8月17日，同乐理念与教学分享（网上讲座）"
         }
     ],
     "homeFind": [
         {
-            "findImg": "",
-            "findUrl": ""
+            "findImg": "/images/video1.png",
+            "findUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "findDetail": "同乐家长会---2021年9月25日"
         },
         {
-            "findImg": "",
-            "findUrl": ""
+            "findImg": "/images/video3.png",
+            "findUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "findDetail": "同乐家长会---2021年9月25日"
         },
         {
-            "findImg": "",
-            "findUrl": ""
+            "findImg": "/images/video5.png",
+            "findUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "findDetail": "同乐家长会---2021年9月25日"
         }
     ],
     "homeFree": [
         {
-            "videoImg": "../../../public/images/video1.png",
-            "videoUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
-            "videoDetail": "同乐家长会---2021年9月25日"
+            "freeImg": "/images/video1.png",
+            "freeUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "freeDetail": "同乐家长会---2021年9月25日"
         },
         {
-            "videoImg": "../../../public/images/video2.png",
-            "videoUrl": "https://www.youtube.com/watch?v=bH0G_bIif84&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=2",
-            "videoDetail": "同乐二年级家长会_2020.11.01"
+            "freeImg": "/images/video2.png",
+            "freeUrl": "https://www.youtube.com/watch?v=bH0G_bIif84&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=2",
+            "freeDetail": "同乐二年级家长会_2020.11.01"
         },
         {
-            "videoImg": "../../../public/images/video3.png",
-            "videoUrl": "https://www.youtube.com/watch?v=hFkw5OJAGOo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=3",
-            "videoDetail": "2019年8月17日，同乐理念与教学分享（网上讲座）"
+            "freeImg": "/images/video3.png",
+            "freeUrl": "https://www.youtube.com/watch?v=hFkw5OJAGOo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=3",
+            "freeDetail": "2019年8月17日，同乐理念与教学分享（网上讲座）"
         }
     ],
     "homeArticle": [
         {
             "articleTitle": "东北大学",
-            "articleImg": "../../../public/images/video2.png",
+            "articleImg": "/images/video2.png",
             "articleUrl": "http://www.neu.edu.cn/"
         },
         {
             "articleTitle": "北京故宫博物院",
-            "articleImg": "../../../public/images/video2.png",
+            "articleImg": "/images/video7.png",
             "articleUrl": "https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2/8663390"
         },
         {
             "articleTitle": "新疆农业大学",
-            "articleImg": "../../../public/images/video2.png",
+            "articleImg": "/images/video6.png",
             "articleUrl": "http://www.neu.edu.cn/"
         }
     ]

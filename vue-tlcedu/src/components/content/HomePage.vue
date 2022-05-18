@@ -12,26 +12,11 @@
         :slidesPerView="swiper_options.slidesPerView"
         class="swiper"
       >
-        <swiper-slide>
-          <img
-            class="my_swiper_imgs"
-            src="../../../public/images/video1.png"
-            alt=""
-          />
-        </swiper-slide>
-        <swiper-slide>
-          <img
-            class="my_swiper_imgs"
-            src="../../../public/images/video2.png"
-            alt=""
-          />
-        </swiper-slide>
-        <swiper-slide>
-          <img
-            class="my_swiper_imgs"
-            src="../../../public/images/video3.png"
-            alt=""
-          />
+        <swiper-slide
+          v-for="(item, index) in homePageJson.rotationMap"
+          :key="index"
+        >
+          <img class="my_swiper_imgs" :src="item.mapUrl" alt="" />
         </swiper-slide>
       </swiper>
     </div>
@@ -77,19 +62,22 @@
     </div>
     <div class="home-video">
       <div class="home-video-box">
-        <h3 class="home-top-title">同乐视频 <a href="/educationalPractice">更多</a></h3>
+        <h3 class="home-top-title">
+          同乐视频 <a href="/educationalPractice">更多</a>
+        </h3>
         <ul>
           <li
             class="home-list"
             v-for="(item, index) in homePageJson.homeVideo"
             :key="index"
           >
-            <a class="home-list-detail" :href="item.videoUrl">
-              <img
-                src="../../../public/images/video3.png"
-                :alt="item.videoDetail"
-              />
-            </a>
+            <iframe
+              :src="item.videoUrl"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </li>
         </ul>
       </div>
@@ -97,15 +85,70 @@
     <div class="home-public">
       <div class="home-public-title">
         不忘初心·方得始终
-        <i class="glyphicon glyphicon-heart" style="color: red"></i> 
+        <i class="glyphicon glyphicon-heart" style="color: red"></i>
         公益分享
       </div>
       <div class="home-find">
-        
+        <div class="home-bottom-right">
+          <img src="../../../public/images/img-bottom.png" alt="" />
+        </div>
+        <div class="home-bottom-left">
+          <h3 class="home-top-title">
+            同乐书籍 <a href="/publicResources">更多</a>
+          </h3>
+          <ul class="home-bottom-left-ul">
+            <li
+              class="home-list"
+              v-for="(item, index) in homePageJson.homeFind"
+              :key="index"
+            >
+              <a class="home-list-detail" :href="item.findUrl">
+                <img :src="item.findImg" :alt="item.findDetail" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="home-free"></div>
+      <div class="home-free">
+        <div class="home-top-left">
+          <img src="../../../public/images/practice-img.png" alt="" />
+        </div>
+        <div class="home-top-right">
+          <h3 class="home-top-title">
+            公益资源 <a href="/publicResources">更多</a>
+          </h3>
+          <ul>
+            <li
+              class="home-list"
+              v-for="(item, index) in homePageJson.homeFree"
+              :key="index"
+            >
+              <a class="home-list-detail" :href="item.freeUrl">
+                <img :src="item.freeImg" :alt="item.freeDetail" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="home-article"></div>
+    <div class="home-article">
+      <div class="home-article-box">
+        <h3 class="home-top-title">
+          原创文章 <a href="/createdArticle">更多</a>
+        </h3>
+        <ul>
+          <li
+            class="home-list"
+            v-for="(item, index) in homePageJson.homeArticle"
+            :key="index"
+          >
+            <a class="home-list-detail" :href="item.articleUrl">
+              <img :src="item.articleImg" :alt="item.articleTitle" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -182,6 +225,17 @@ export default {
     flex: 0 0 90% !important;
   }
 }
+@media screen and (max-width: 860px) {
+  .home-top-left {
+    img {
+      position: absolute;
+      left: 0;
+    }
+  }
+  .home-top-right {
+    margin-left: 10rem !important;
+  }
+}
 @media (min-width: 760px) and (max-width: 900px) {
   .home-list {
     flex: 0 0 42% !important;
@@ -191,6 +245,16 @@ export default {
   .home-list {
     flex: 0 0 27% !important;
   }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-left: 1.4rem;
 }
 
 .home-page {
@@ -242,13 +306,138 @@ export default {
       margin: 0 auto;
       padding: 1rem;
       ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-height: 350px;
-        overflow-y: auto;
-        padding-left: 1.54rem;
+        .home-list {
+          margin: 10px 28px 20px 0;
+          flex: 0 0 30%;
+          iframe {
+            width: 100%;
+            // height: 115px;
+          }
+        }
+      }
+      .home-top-title {
+        font-size: 1.9rem;
+        color: #a61b29;
+        margin: 1.2rem 0 1.3rem 0;
+        a {
+          font-size: 1.2rem;
+          color: #9c9c9c;
+        }
+      }
+    }
+  }
+  .home-public {
+    width: 100%;
+    background: white;
+    padding: 4rem 0;
+    .home-public-title {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #24753b;
+    }
+    .home-find {
+      position: relative;
+      .home-bottom-left {
+        width: 57%;
+        background: white;
+        box-shadow: 0 0 12px #d1d1d1;
+        margin: 4rem 0 2rem 10rem;
+        padding: 0.7rem 0 2rem 0;
+        position: relative;
+        z-index: 100;
+        .home-bottom-left-ul {
+          .home-list {
+            margin: 10px 28px 20px 0;
+            border: 1px solid #a61b29;
+            flex: 0 0 30%;
+            .home-list-detail {
+              display: block;
+              width: 100%;
+              object-fit: cover;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .home-top-title {
+          font-size: 1.9rem;
+          color: #a61b29;
+          margin: 2rem 0 1.3rem 0;
+          a {
+            font-size: 1.2rem;
+            color: #9c9c9c;
+          }
+        }
+      }
+      .home-bottom-right {
+        img {
+          transform: rotateY(180deg);
+          position: absolute;
+          right: 0;
+          object-fit: cover;
+          width: 24rem;
+          opacity: 0.55;
+        }
+      }
+    }
+    .home-free {
+      display: flex;
+      position: relative;
+      .home-top-left {
+        img {
+          object-fit: cover;
+          width: 30rem;
+          opacity: 0.55;
+          transform: rotateY(180deg);
+        }
+      }
+      .home-top-right {
+        width: 57%;
+        background: white;
+        box-shadow: 0 0 12px #d1d1d1;
+        z-index: 999;
+        margin: 3rem 30px 1.5rem 2rem;
+        ul {
+          .home-list {
+            margin: 10px 28px 20px 0;
+            border: 1px solid #a61b29;
+            flex: 0 0 30%;
+            .home-list-detail {
+              display: block;
+              width: 100%;
+              object-fit: cover;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .home-top-title {
+          font-size: 1.9rem;
+          color: #a61b29;
+          margin: 2rem 0 1.3rem 0;
+          a {
+            font-size: 1.2rem;
+            color: #9c9c9c;
+          }
+        }
+      }
+    }
+  }
+  .home-article {
+    width: 100%;
+    height: 45rem;
+    background: url("../../../public/images/home-banner2.png") no-repeat;
+    padding-top: 5rem;
+    .home-article-box {
+      width: 57%;
+      background: white;
+      box-shadow: 0 0 12px #d1d1d1;
+      z-index: 999;
+      margin: 0 auto;
+      padding: 1rem;
+      ul {
         .home-list {
           margin: 10px 28px 20px 0;
           border: 1px solid #a61b29;
@@ -272,16 +461,6 @@ export default {
           color: #9c9c9c;
         }
       }
-    }
-  }
-  .home-public {
-    width: 100%;
-    background: white;
-    padding: 4rem 0;
-    .home-public-title {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #24753B;
     }
   }
 }

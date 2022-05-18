@@ -1,135 +1,109 @@
 {
     "educationalPracticeOne": [
         {
-            "videoImg": "../../../public/images/video1.png",
-            "videoUrl": "https://www.youtube.com/watch?v=nRJwuNb5X6Q&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=1",
+            "videoUrl": "https://www.youtube.com/embed/nRJwuNb5X6Q",
             "videoDetail": "同乐家长会---2021年9月25日"
         },
         {
-            "videoImg": "../../../public/images/video2.png",
-            "videoUrl": "https://www.youtube.com/watch?v=bH0G_bIif84&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=2",
+            "videoUrl": "https://www.youtube.com/embed/bH0G_bIif84",
             "videoDetail": "同乐二年级家长会_2020.11.01"
         },
         {
-            "videoImg": "../../../public/images/video3.png",
-            "videoUrl": "https://www.youtube.com/watch?v=hFkw5OJAGOo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=3",
+            "videoUrl": "https://www.youtube.com/embed/hFkw5OJAGOo",
             "videoDetail": "2019年8月17日，同乐理念与教学分享（网上讲座）"
         },
         {
-            "videoImg": "../../../public/images/video4.png",
-            "videoUrl": "https://www.youtube.com/watch?v=QGTaGPEW0Q8&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=4",
+            "videoUrl": "https://www.youtube.com/embed/QGTaGPEW0Q8",
             "videoDetail": "同乐中文--海外中文学习之听评书"
         },
         {
-            "videoImg": "../../../public/images/video5.png",
-            "videoUrl": "https://www.youtube.com/watch?v=-DFJgyXmIQo&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=5",
+            "videoUrl": "https://www.youtube.com/embed/-DFJgyXmIQo",
             "videoDetail": "同乐中文--海外中文学习之经典诵读"
         },
         {
-            "videoImg": "../../../public/images/video6.png",
-            "videoUrl": "https://www.youtube.com/watch?v=cV2c7VdtCNk&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=6",
+            "videoUrl": "https://www.youtube.com/embed/cV2c7VdtCNk",
             "videoDetail": "同乐中文--美国公立教育节奏与中文学习"
         },
         {
-            "videoImg": "../../../public/images/video7.png",
-            "videoUrl": "https://www.youtube.com/watch?v=AXU6K74mh5w&list=PLZlDloJgXIraz3ZaVCVeAiQEX9ZYsM5Y5&index=7",
+            "videoUrl": "https://www.youtube.com/embed/AXU6K74mh5w",
             "videoDetail": "2017 同乐中文讲座"
         }
     ],
     "educationalPracticeTwo": [
         {
-            "videoImg": "../../../public/images/video-two1.png",
-            "videoUrl": "https://www.youtube.com/watch?v=WP9Vlz-FL24&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=1",
+            "videoUrl": "https://www.youtube.com/embed/WP9Vlz-FL24",
             "videoDetail": "海外中文学习的捷径"
         },
         {
-            "videoImg": "../../../public/images/video-two2.png",
-            "videoUrl": "https://www.youtube.com/watch?v=OoILZdXJCso&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=3",
+            "videoUrl": "https://www.youtube.com/embed/OoILZdXJCso",
             "videoDetail": "2018-09-22为什么要听评书？如何听评书？"
         },
         {
-            "videoImg": "../../../public/images/video-two3.png",
-            "videoUrl": "https://www.youtube.com/watch?v=1ENws3ZSm9E&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=4",
+            "videoUrl": "https://www.youtube.com/embed/1ENws3ZSm9E",
             "videoDetail": "2018-09-29如果孩子读经典不指读怎么办？"
         },
         {
-            "videoImg": "../../../public/images/video-two4.png",
-            "videoUrl": "https://www.youtube.com/watch?v=PKmXmHt_EkA&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=5",
+            "videoUrl": "https://www.youtube.com/embed/PKmXmHt_EkA",
             "videoDetail": "2018-10-06如果复习好文化短语、听完评书任务了，下一步有什么建议？"
         },
         {
-            "videoImg": "../../../public/images/video-two5.png",
-            "videoUrl": "https://www.youtube.com/watch?v=je3ppNWzJko&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=6",
+            "videoUrl": "https://www.youtube.com/embed/je3ppNWzJko",
             "videoDetail": "2018-10-13读经典的目的是什么？"
         },
         {
-            "videoImg": "../../../public/images/video-two6.png",
-            "videoUrl": "https://www.youtube.com/watch?v=QJ14vQU-b0U&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=7",
+            "videoUrl": "https://www.youtube.com/embed/QJ14vQU-b0U",
             "videoDetail": "2018-10-20为什么要听《儿童百科故事》？"
         },
         {
-            "videoImg": "../../../public/images/video-two7.png",
-            "videoUrl": "https://www.youtube.com/watch?v=YHqn6yaGIxk&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=8",
+            "videoUrl": "https://www.youtube.com/embed/YHqn6yaGIxk",
             "videoDetail": "2018-10-20 同乐中文Grade1-3_跟家长的沟通"
         },
         {
-            "videoImg": "../../../public/images/video-two8.png",
-            "videoUrl": "https://www.youtube.com/watch?v=vWN8LdVp5DI&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=9",
+            "videoUrl": "https://www.youtube.com/embed/vWN8LdVp5DI",
             "videoDetail": "2018-10-27 读经需不需讲解？"
         },
         {
-            "videoImg": "../../../public/images/video-two9.png",
-            "videoUrl": "https://www.youtube.com/watch?v=KJHbUoiEtnU&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=10",
+            "videoUrl": "https://www.youtube.com/embed/KJHbUoiEtnU",
             "videoDetail": "2018-11-03经典给孩子带来什么？"
         },
         {
-            "videoImg": "../../../public/images/video-two10.png",
-            "videoUrl": "https://www.youtube.com/watch?v=41OFcn78k4w&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=11",
+            "videoUrl": "https://www.youtube.com/embed/41OFcn78k4w",
             "videoDetail": "2018-11-10 我的孩子插班，怎么跟上其他同学？到了课快结束的时候，孩子累了不想读经，怎么办？"
         },
         {
-            "videoImg": "../../../public/images/video-two11.png",
-            "videoUrl": "https://www.youtube.com/watch?v=XwfgyxZHAec&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=12",
+            "videoUrl": "https://www.youtube.com/embed/XwfgyxZHAec",
             "videoDetail": "2018-11-17 孩子读经典的趣事"
         },
         {
-            "videoImg": "../../../public/images/video-two12.png",
-            "videoUrl": "https://www.youtube.com/watch?v=vxCvi_Nnh7M&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=13",
+            "videoUrl": "https://www.youtube.com/embed/vxCvi_Nnh7M",
             "videoDetail": "2018-12-01 读书破万卷，下笔如有神。"
         },
         {
-            "videoImg": "../../../public/images/video-two13.png",
-            "videoUrl": "https://www.youtube.com/watch?v=UtIkm-HcXwQ&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=14",
+            "videoUrl": "https://www.youtube.com/embed/UtIkm-HcXwQ",
             "videoDetail": "2018-12-8 让孩子充分吸收语言文化信息"
         },
         {
-            "videoImg": "../../../public/images/video-two14.png",
-            "videoUrl": "https://www.youtube.com/watch?v=MjiVm3EArCk&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=15",
+            "videoUrl": "https://www.youtube.com/embed/MjiVm3EArCk",
             "videoDetail": "2018-12-15 被抓回来考试的孩子"
         },
         {
-            "videoImg": "../../../public/images/video-two15.png",
-            "videoUrl": "https://www.youtube.com/watch?v=ORARvVd5us0&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=16",
+            "videoUrl": "https://www.youtube.com/embed/ORARvVd5us0",
             "videoDetail": "2018-12-22 假期外出，正是听评书的大好时光。"
         },
         {
-            "videoImg": "../../../public/images/video-two16.png",
-            "videoUrl": "https://www.youtube.com/watch?v=bCnX6TIHfak&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=17",
+            "videoUrl": "https://www.youtube.com/embed/bCnX6TIHfak",
             "videoDetail": "2019-1-5 评书题材的多样性 - 天下皆知美之为美"
         },
         {
-            "videoImg": "../../../public/images/video-two17.png",
-            "videoUrl": "https://www.youtube.com/watch?v=HOhupKafKD4&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=18",
+            "videoUrl": "https://www.youtube.com/embed/HOhupKafKD4",
             "videoDetail": "2019-1-12 幼儿班课程成功的关键是“认真+轻松”"
         },
         {
-            "videoImg": "../../../public/images/video-two18.png",
-            "videoUrl": "https://www.youtube.com/watch?v=DQZvSxxvVI8&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=19",
+            "videoUrl": "https://www.youtube.com/embed/DQZvSxxvVI8",
             "videoDetail": "2019-1-19 如何培养孩子学习中文与经典的兴趣"
         },
         {
-            "videoImg": "../../../public/images/video-two19.png",
-            "videoUrl": "https://www.youtube.com/watch?v=fpk0uF4s-sg&list=PLZlDloJgXIraXYhaz8k-t8isdWMwVyzPD&index=20",
+            "videoUrl": "https://www.youtube.com/embed/fpk0uF4s-sg",
             "videoDetail": "2019-1-26 如何带孩子读经典? 行不言之教。"
         }
     ]

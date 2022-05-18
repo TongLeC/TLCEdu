@@ -59,7 +59,7 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Language <span class="caret"></span
+                >语言 <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
                 <li><a href="#">English</a></li>
