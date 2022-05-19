@@ -24,13 +24,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li class="display-li"><a href="/">首页</a></li>
-            <li class="display-li"><a href="/languageLearning">语言学习法</a></li>
-            <li class="display-li"><a href="/educationalTheory">整体教育理论</a></li>
-            <li class="display-li"><a href="www.tonglec.com">同乐课程</a></li>
-            <li class="display-li"><a href="/educationalPractice">教育践谈</a></li>
-            <li class="display-li"><a href="/publicResources">公益资源</a></li>
-            <li class="display-li"><a href="/createdArticle">原创文章</a></li>
+            <li class="display-li"><a href="/">{{ $t("msg.homePage") }}</a></li>
+            <li class="display-li"><a href="/languageLearning">{{ $t("msg.languageLearning") }}</a></li>
+            <li class="display-li"><a href="/educationalTheory">{{ $t("msg.holisticEducationTheory") }}</a></li>
+            <li class="display-li"><a href="www.tonglec.com">{{ $t("msg.tongleCourse") }}</a></li>
+            <li class="display-li"><a href="/educationalPractice">{{ $t("msg.educationalPractice") }}</a></li>
+            <li class="display-li"><a href="/publicResources">{{ $t("msg.publicWelfareResources") }}</a></li>
+            <li class="display-li"><a href="/createdArticle">{{ $t("msg.originalArticle") }}</a></li>
             <li class="dropdown display-dropdown" style="display: none;">
               <a
                 href="#"
@@ -59,12 +59,12 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >语言 <span class="caret"></span
+                >{{ $t("msg.language") }} <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="#">English</a></li>
-                <li><a href="#">简体中文</a></li>
-                <li><a href="#">繁体中文</a></li>
+                <li><a @click="switchEnglish()">{{ $t("msg.english") }}</a></li>
+                <li><a @click="switchSimplified()">{{ $t("msg.simplifiedChinese") }}</a></li>
+                <li><a @click="switchTraditional()">{{ $t("msg.traditionalChinese") }}</a></li>
               </ul>
             </li>
           </ul>
@@ -79,6 +79,23 @@
 <script>
 export default {
   name: "NavHeader",
+  mounted() {
+    
+  },
+  methods: {
+    switchEnglish() {
+      this.$i18n.locale = "en"
+      localStorage.setItem('language', this.$i18n.locale)
+    },
+    switchSimplified() {
+      this.$i18n.locale = "zh"
+      localStorage.setItem('language', this.$i18n.locale)
+    },
+    switchTraditional() {
+      this.$i18n.locale = "zhFan"
+      localStorage.setItem('language', this.$i18n.locale)
+    }
+  }
 };
 </script>
 

@@ -7,15 +7,11 @@ import EducationalPractice from './components/content/EducationalPractice'
 import PublicResources from './components/content/PublicResources'
 import CreatedArticle from './components/content/CreatedArticle'
 import LanguageLearningDetail from './components/content/LanguageLearningDetail'
-import EducationalTheoryDetail from './components/content/EducationalTheoryDetail'
 
 const routerHistory = createWebHistory()
 
 const router = createRouter({
     history: routerHistory,
-    /*
-     *   在这里和vue2一样写路由配置
-    */
     routes: [
         {
             path: '/',
@@ -51,23 +47,11 @@ const router = createRouter({
             component: CreatedArticle,
         },
         {
-            // path: '/languageLearningDetail/:id',
             path: '/languageLearningDetail',
             name: 'languageLearningDetail',
             component: LanguageLearningDetail,
-        },
-        {
-            path: '/educationalTheoryDetail',
-            name: 'educationalTheoryDetail',
-            component: EducationalTheoryDetail,
         }
     ]
 })
 
 export default router
-
-// export default new Router({
-//   routes: [
-//     { path: '/', name: 'home', component: HomePage }
-//   ]
-// })

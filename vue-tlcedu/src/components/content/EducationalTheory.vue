@@ -1,20 +1,20 @@
 <template>
   <div class="educational-theory">
     <div class="theory-right">
-      <img src="../../../public/images/img-theory.png" alt="" />
+      <img src="../../../public/images/theory-child.png" alt="" />
     </div>
     <div class="theory-left">
       <ul class="theory-left-ul">
         <li class="theory-list">
-          <router-link
-            :to="{path: '/EducationalTheoryDetail', query: { id: item.id } }"
+          <div
             class="theory-list-router"
             v-for="(item, index) in educationalTheoryJson.educationalTheory"
             :key="index"
+            @click="getItem(item)"
           >
             <h3 class="theory-title">{{ item.title }}</h3>
             <h3 class="theory-brief">{{ item.brief }}</h3>
-          </router-link>
+          </div>
         </li>
       </ul>
     </div>
@@ -31,7 +31,17 @@ export default {
       educationalTheoryJson,
     };
   },
-  methods: {},
+  methods: {
+    getItem(item) {
+      this.$router.push({
+        path: "/languageLearningDetail",
+        query: {
+          id: item.id
+        }
+      });
+      localStorage.setItem('item', JSON.stringify(item))
+    },
+  },
 };
 </script>
 
@@ -66,6 +76,7 @@ export default {
         .theory-list-router {
           width: 100%;
           display: flex;
+          cursor: pointer;
           .theory-title,
           .theory-brief {
             font-size: 1.4rem;
@@ -96,7 +107,6 @@ export default {
       right: 0;
       object-fit: cover;
       width: 38rem;
-      opacity: 0.55;
     }
   }
 }

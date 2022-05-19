@@ -1,16 +1,16 @@
 <template>
   <div class="language-learning-detail">
-    <h3 class="detail-title">{{ this.languageDetail.title }}</h3>
+    <h3 class="detail-title">{{ this.detail.title }}</h3>
     <div class="detail-content-box">
       <p
         class="detail-content"
-        v-for="(item, index) in this.languageDetail.detail"
+        v-for="(item, index) in this.detail.detail"
         :key="index"
       >
         {{ item }}
       </p>
     </div>
-    <img class="detail-img" :src="this.languageDetail.imgUrl" alt="" />
+    <img class="detail-img" :src="this.detail.imgUrl" alt="" />
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
   data() {
     return {
       id: this.$route.query.id,
+      detail: {},
       languageArr: languageLearningJson.languageLearning,
       languageDetail: [],
     };
@@ -32,6 +33,7 @@ export default {
         this.languageDetail = item;
       }
     });
+    this.detail = JSON.parse(localStorage.getItem('item'))
   },
   methods: {},
 };

@@ -2,10 +2,10 @@
   <div class="educational-practice">
     <div class="educational-practice-top">
       <div class="practice-top-left">
-        <img src="../../../public/images/practice-img.png" alt="" />
+        <img src="../../../public/images/practice1.png" alt="" />
       </div>
       <div class="practice-top-right">
-        <h3 class="practice-top-title">同乐讲座</h3>
+        <h3 class="practice-top-title">{{ $t("msg.tongleLecture") }}</h3>
         <ul>
           <li
             class="practice-list"
@@ -27,10 +27,10 @@
     </div>
     <div class="educational-practice-bottom">
       <div class="practice-bottom-right">
-        <img src="../../../public/images/img-bottom.png" alt="" />
+        <img src="../../../public/images/practice2.png" alt="" />
       </div>
       <div class="practice-bottom-left">
-        <h3 class="practice-top-title">教育践谈</h3>
+        <h3 class="practice-top-title">{{ $t("msg.educationalPractice") }}</h3>
         <ul class="practice-bottom-left-ul">
           <li
             class="practice-list"
@@ -138,9 +138,7 @@ ul {
       img {
         float: left;
         object-fit: cover;
-        width: 30rem;
-        opacity: 0.55;
-        transform: rotateY(180deg);
+        width: 33rem;
       }
     }
     .practice-top-right {
@@ -155,7 +153,6 @@ ul {
           flex: 0 0 30%;
           iframe {
             width: 100%;
-            // height: 115px;
           }
         }
       }
@@ -182,7 +179,6 @@ ul {
           flex: 0 0 30%;
           iframe {
             width: 100%;
-            // height: 115px;
           }
         }
       }
@@ -194,12 +190,10 @@ ul {
     }
     .practice-bottom-right {
       img {
-        transform: rotateY(180deg);
         position: absolute;
         right: 0;
         object-fit: cover;
         width: 24rem;
-        opacity: 0.55;
       }
     }
   }

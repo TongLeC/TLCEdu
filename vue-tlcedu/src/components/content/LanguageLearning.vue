@@ -1,7 +1,7 @@
 <template>
   <div class="language-learning">
     <div class="language-left">
-      <img src="../../../public/images/img-language.png" alt="" />
+      <img src="../../../public/images/learning-child.png" alt="" />
     </div>
     <div class="language-right">
       <ul>
@@ -10,13 +10,14 @@
           v-for="(item, index) in languageLearningJson.languageLearning"
           :key="index"
         >
-          <router-link
-            class="language-list-detail"
-            :to="{ path: '/languageLearningDetail', query: { id: item.id } }"
-            >{{ item.title }}</router-link
-          >
+          <div class="language-list-detail" @click="getItem(item)">
+            {{ item.title }}
+          </div>
         </li>
       </ul>
+    </div>
+    <div class="language-banner">
+      <img src="../../../public/images/learning-bird.png" alt="" />
     </div>
   </div>
 </template>
@@ -31,7 +32,17 @@ export default {
       languageLearningJson,
     };
   },
-  methods: {},
+  methods: {
+    getItem(item) {
+      this.$router.push({
+        path: "/languageLearningDetail",
+        query: {
+          id: item.id,
+        },
+      });
+      localStorage.setItem("item", JSON.stringify(item));
+    },
+  },
 };
 </script>
 
@@ -41,6 +52,11 @@ export default {
     img {
       object-fit: cover;
       width: 30rem !important;
+    }
+  }
+  .language-banner {
+    img {
+      display: none;
     }
   }
 }
@@ -61,8 +77,8 @@ export default {
     img {
       float: left;
       object-fit: cover;
-      width: 38rem;
-      opacity: 0.55;
+      width: 32rem;
+      transform: rotateY(180deg);
     }
   }
   .language-right {
@@ -87,7 +103,19 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        cursor: pointer;
       }
+    }
+  }
+  .language-banner {
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      object-fit: cover;
+      width: 25rem;
+      transform: rotateY(180deg);
     }
   }
 }

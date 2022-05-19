@@ -16,6 +16,10 @@ export default {
     NavHeader,
     NavFooter,
   },
+  mounted() {
+    let lan = localStorage.getItem("language");
+    this.$i18n.locale = lan;
+  },
 };
 </script>
 
@@ -30,7 +34,7 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  min-height:100vh;
+  min-height: 100vh;
   .wrapper {
     flex: 1;
   }
