@@ -1,0 +1,28 @@
+{
+    "PublicResourcesOne": {
+        "title": "《探索》",
+        "detailLink": [
+            {
+                "linkTitle": "爸爸的花儿落了",
+                "linkAddress": "https://baike.baidu.com/item/%E7%88%B8%E7%88%B8%E7%9A%84%E8%8A%B1%E5%84%BF%E8%90%BD%E4%BA%86/2356118"
+            },
+            {
+                "linkTitle": "城南旧事",
+                "linkAddress": "https://baike.baidu.com/item/%E5%9F%8E%E5%8D%97%E6%97%A7%E4%BA%8B/1348801"
+            }
+        ]
+    },
+    "PublicResourcesTwo": {
+        "title": "经典书籍",
+        "detailLink": [
+            {
+                "linkTitle": "林徽因",
+                "linkAddress": "https://baike.baidu.com/item/%E6%9E%97%E5%BE%BD%E5%9B%A0/236792"
+            },
+            {
+                "linkTitle": "毛不易",
+                "linkAddress": "https://baike.baidu.com/item/%E6%AF%9B%E4%B8%8D%E6%98%93/21502600"
+            }
+        ]
+    }
+}
