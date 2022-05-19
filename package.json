@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "npm run build"
+    "start": "npm run build && cd dist"
   },
   "dependencies": {
     "@vue/cli": "^5.0.4",
