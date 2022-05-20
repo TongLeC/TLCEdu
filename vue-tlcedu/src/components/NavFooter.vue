@@ -50,7 +50,7 @@ export default {
   width: 100%;
   background-color: #ebe9e9;
   border-top: 4px solid #a61b29;
-  margin-top: 20px;
+  // margin-top: 20px;
   .nav-footer-top {
     width: 100%;
     display: flex;

@@ -1,19 +1,19 @@
 {
     "rotationMap": [
         {
-            "mapUrl": "/images/banner2.jpg",
+            "mapUrl": "/images/banner3.jpg",
             "mapDetail": "123"
         },
         {
-            "mapUrl": "/images/banner3.jpg",
+            "mapUrl": "/images/banner4.jpg",
             "mapDetail": "gfhfgh"
         },
         {
-            "mapUrl": "/images/banner4.jpg",
+            "mapUrl": "/images/banner5.jpg",
             "mapDetail": "4545"
         },
         {
-            "mapUrl": "/images/banner5.jpg",
+            "mapUrl": "/images/banner2.jpg",
             "mapDetail": "fhfnb"
         },
         {
@@ -158,53 +158,70 @@
     ],
     "homeFind": [
         {
-            "findImg": "/images/《海外中文教育的探索》.jpg",
-            "findUrl": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view",
-            "findDetail": "《海外中文教育的探索》电子版"
+            "homeImg": "/images/《海外中文教育的探索》.jpg",
+            "homeUrl": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view",
+            "homeDetail": "《海外中文教育的探索》电子版"
         },
         {
-            "findImg": "/images/中文寻根(一)-老子.JPG",
-            "findUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
-            "findDetail": "中文寻根(一)-老子"
+            "homeImg": "/images/中文寻根(一)-老子.JPG",
+            "homeUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
+            "homeDetail": "中文寻根(一)-老子"
         },
         {
-            "findImg": "/images/中文寻根(二)-大学·中庸.jpg",
-            "findUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
-            "findDetail": "中文寻根(二)-大学·中庸"
+            "homeImg": "/images/中文寻根(二)-大学·中庸.jpg",
+            "homeUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
+            "homeDetail": "中文寻根(二)-大学·中庸"
+        }
+    ],
+    "homeBible": [
+        {
+            "homeImg": "/images/中文寻根第二卷-《中庸名句》.jpg",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZQSjyRTNoDEKb_hXU1HCsb",
+            "homeDetail": "中文寻根第二卷-《中庸名句》"
+        },
+        {
+            "homeImg": "/images/中文寻根第四卷-《孟庄旬列管墨名言》.jpg",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbfEtp6wnGVS5jwCzqhFWj4",
+            "homeDetail": "中文寻根第四卷-《孟庄旬列管墨名言》"
+        },
+        {
+            "homeImg": "/images/中文寻根第五卷-《经典拾贝》.jpg",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrb9Wne-8ps8GII6_8gLCTWg",
+            "homeDetail": "中文寻根第五卷-《经典拾贝》"
         }
     ],
     "homeFree": [
         {
-            "freeImg": "/images/中文寻根第三卷-《论语名句》.JPG",
-            "freeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZjnVnN-reDOk9rRZ2mS3-H",
-            "freeDetail": "中文寻根第三卷-《论语名句》"
+            "homeImg": "/images/宝宝是小小音乐家.jpg",
+            "homeUrl": "https://youtu.be/9Y6m3E0XZWQ",
+            "homeDetail": "宝宝是小小音乐家"
         },
         {
-            "freeImg": "/images/宝宝是小小音乐家.jpg",
-            "freeUrl": "https://youtu.be/9Y6m3E0XZWQ",
-            "freeDetail": "宝宝是小小音乐家"
+            "homeImg": "/images/中国古乐之音阶-宫商角徵羽.jpg",
+            "homeUrl": "https://youtu.be/y4kgkUn4uLQ",
+            "homeDetail": "认识中国古乐之音阶03 宫商角徵羽 角"
         },
         {
-            "freeImg": "/images/中国古乐之音阶-宫商角徵羽.jpg",
-            "freeUrl": "https://youtu.be/y4kgkUn4uLQ",
-            "freeDetail": "认识中国古乐之音阶03 宫商角徵羽 角"
+            "homeImg": "/images/老北京的纯正味道.jpg",
+            "homeUrl": "https://youtu.be/4uOsZA2N-VE",
+            "homeDetail": "老北京的纯正味道"
         }
     ],
     "homeArticle": [
         {
-            "articleTitle": "文以载道：“文”",
-            "articleImg": "/images/01_文以载道：“文”.png",
-            "articleUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741171&idx=1&sn=01f1229d7c349da07e529d728557ced0&scene=21"
+            "homeDetail": "文以载道：“文”",
+            "homeImg": "/images/01_文以载道：“文”.png",
+            "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741171&idx=1&sn=01f1229d7c349da07e529d728557ced0&scene=21"
         },
         {
-            "articleTitle": "文以载道：“武”",
-            "articleImg": "/images/02_文以载道：“武”.png",
-            "articleUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741188&idx=1&sn=ab2ae22b434aab7be42d2f3839ebe855&scene=21"
+            "homeDetail": "文以载道：“武”",
+            "homeImg": "/images/02_文以载道：“武”.png",
+            "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741188&idx=1&sn=ab2ae22b434aab7be42d2f3839ebe855&scene=21"
         },
         {
-            "articleTitle": "文以载道：“朋友”",
-            "articleImg": "/images/03_文以载道：“朋友”.png",
-            "articleUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741193&idx=1&sn=95948ef2a1aafe023b4404d7714a2d90&scene=21"
+            "homeDetail": "文以载道：“朋友”",
+            "homeImg": "/images/03_文以载道：“朋友”.png",
+            "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741193&idx=1&sn=95948ef2a1aafe023b4404d7714a2d90&scene=21"
         }
     ]
 }

@@ -37,6 +37,7 @@ export default {
   min-height: 100vh;
   .wrapper {
     flex: 1;
+    margin-top: 4.6rem;
   }
 }
 </style>
