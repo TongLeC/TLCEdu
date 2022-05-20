@@ -83,6 +83,7 @@ export default {
   }
   .language-right {
     z-index: 999;
+    padding-bottom: 15px;;
     .language-list {
       height: 3.8rem;
       width: 18.4rem;
@@ -93,6 +94,7 @@ export default {
       display: block;
       white-space: nowrap;
       margin: 3rem 6rem 0 0;
+      padding-left: 5px;
       .language-list-detail {
         font-size: 1.4rem;
         display: block;

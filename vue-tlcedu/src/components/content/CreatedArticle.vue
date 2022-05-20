@@ -31,6 +31,16 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 700px) {
+  .article-list {
+    flex: 0 0 95% !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .article-right {
+    width: 75% !important;
+  }
+}
 
 .created-article {
   position: relative;
@@ -43,21 +53,30 @@ export default {
     box-shadow: 0 0 12px #d1d1d1;
     z-index: 999;
     margin: 6rem auto;
-    max-height: 500px;
+    max-height: 550px;
     overflow-y: auto;
     padding: 1rem 0;
-    .article-list {
-      padding: 8px 30px 10px 10px;
-      margin: 25px 0;
-      border-left: 4px solid #a61b29;
-      .article-list-detail {
-        font-size: 1.4rem;
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 2rem;
+      .article-list {
+        padding: 8px 30px 10px 10px;
+        margin: 25px 0;
+        border: 1px solid #a61b29;
+        border-bottom: 4px solid #a61b29;
+        flex: 0 0 48%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        display: block;
-        width: 100%;
-        text-align: left;
+        .article-list-detail {
+          font-size: 1.4rem;
+          display: block;
+          text-align: center;
+        }
       }
     }
   }

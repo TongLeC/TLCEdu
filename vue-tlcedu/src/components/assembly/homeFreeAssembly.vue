@@ -52,17 +52,17 @@ export default {
   }
   .home-top-left {
     position: relative;
+    margin: 0 auto !important;
     img {
-      position: absolute;
-      left: 0;
-      width: 15rem !important;
+      position: static !important;
+      margin: 1.5rem auto 2rem !important;
     }
   }
   .home-top-right {
     position: relative;
-    margin-left: 10rem !important;
     z-index: 999;
     padding-top: 1rem;
+    margin: 0 auto !important;
   }
 }
 @media (min-width: 760px) and (max-width: 900px) {
@@ -99,7 +99,7 @@ export default {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      max-height: 380px;
+      max-height: 390px;
       padding-left: 1.4rem;
       overflow-y: auto;
       .home-list {
@@ -115,7 +115,7 @@ export default {
           }
         }
         .home-list-title {
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           margin-top: 5px;
         }
       }

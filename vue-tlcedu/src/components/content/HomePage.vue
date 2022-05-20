@@ -110,14 +110,13 @@ export default {
         },
         {
           href: "/languageLearning",
-          json: homePageJson.homeSloganLearning
-        }
-        ,
+          json: homePageJson.homeSloganLearning,
+        },
         {
           imgSrc: "/images/home-flower.png",
           href: "/educationalTheory",
-          json: homePageJson.homeSloganTheory
-        }
+          json: homePageJson.homeSloganTheory,
+        },
       ],
     };
   },
@@ -126,7 +125,7 @@ export default {
     SwiperSlide,
     homeFreeAssembly,
     homeFindAssembly,
-    homeLearningAssembly
+    homeLearningAssembly,
   },
   methods: {
     getItem(item) {
@@ -177,12 +176,10 @@ export default {
   }
 }
 @media screen and (max-width: 860px) {
-  .home-top-left,
   .home-video-left {
     position: relative;
     img {
-      position: absolute;
-      left: 0;
+      margin: 0 auto !important;
       width: 15rem !important;
     }
   }
@@ -191,6 +188,14 @@ export default {
     margin-left: 10rem !important;
     z-index: 999;
     padding-top: 1rem;
+  }
+  .home-video {
+    margin: 0 auto !important;
+    display: block !important;
+    .home-video-box {
+      position: relative !important;
+      margin: 0 auto !important;
+    }
   }
 }
 @media (min-width: 760px) and (max-width: 900px) {

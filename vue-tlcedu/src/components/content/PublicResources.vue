@@ -109,9 +109,18 @@ export default {
 @media screen and (max-width: 670px) {
   .public-left {
     display: block !important;
+    position: relative;
+    margin: 0 auto !important;
     .resources-one {
-      margin: 0 0 20px 0 !important;
       width: 100% !important;
+      margin-top: 2rem !important;
+      margin-left: 0 !important;
+    }
+  }
+  .public-right,
+  .public-bottom-kid {
+    img {
+      position: static !important;
     }
   }
 }

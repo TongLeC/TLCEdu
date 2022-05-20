@@ -3,7 +3,7 @@
         "title": "免费下载的书籍",
         "detailLink": [
             {
-                "linkTitle": "《海外中文教育的探索》电子版",
+                "linkTitle": "《海外中文教育的探索》",
                 "linkAddress": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view"
             },
             {
@@ -35,14 +35,6 @@
     "PublicResourcesTwo": {
         "title": "经典音频",
         "detailLink": [
-            {
-                "linkTitle": "中文寻根(一)-老子",
-                "linkAddress": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view"
-            },
-            {
-                "linkTitle": "中文寻根(二)-大学·中庸",
-                "linkAddress": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view"
-            },
             {
                 "linkTitle": "中文寻根第一卷-《道德经》",
                 "linkAddress": "https://youtube.com/playlist?list=PLZlDloJgXIrZTyG-osKRvETdSjL_Dinw2"

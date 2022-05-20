@@ -1,13 +1,13 @@
 export default {
     en: {
         msg: {
-            homePage: "home page",
+            homePage: "Home",
             languageLearning: "Language learning",
             holisticEducationTheory: "Holistic education",
-            tongleCourse: "Tongle course",
+            tongleCourse: "Course",
             educationalPractice: "Educational practice",
-            publicWelfareResources: "Public welfare resources",
-            originalArticle: "Original article",
+            publicWelfareResources: "Welfare",
+            originalArticle: "Article",
             language: "Language",
             english: "English",
             simplifiedChinese: "Simplified Chinese",

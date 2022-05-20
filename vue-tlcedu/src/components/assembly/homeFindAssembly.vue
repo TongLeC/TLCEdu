@@ -47,19 +47,15 @@ export default {
   }
 }
 @media screen and (max-width: 860px) {
-  .home-top-left {
-    position: relative;
-    img {
-      position: absolute;
-      left: 0;
-      width: 15rem !important;
-    }
+  .home-bottom-left {
+    margin: 1.5rem auto 0 !important;
   }
-  .home-top-right {
-    position: relative;
-    margin-left: 10rem !important;
-    z-index: 999;
-    padding-top: 1rem;
+  .home-bottom-right {
+    position: relative !important;
+    img {
+      position: static !important;
+      margin: 2rem auto 0 !important;
+    }
   }
 }
 @media (min-width: 760px) and (max-width: 900px) {
@@ -89,7 +85,7 @@ export default {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      max-height: 380px;
+      max-height: 390px;
       padding-left: 1.4rem;
       .home-list {
         margin: 10px 28px 20px 0;
@@ -104,7 +100,7 @@ export default {
           }
         }
         .home-list-title {
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           margin-top: 5px;
         }
       }
@@ -117,15 +113,6 @@ export default {
         font-size: 1.2rem;
         color: #9c9c9c;
       }
-    }
-  }
-  .home-bottom-right {
-    img {
-      transform: rotateY(180deg);
-      position: absolute;
-      right: 8.5rem;
-      object-fit: cover;
-      width: 27rem !important;
     }
   }
   .home-bottom-right {

@@ -6,8 +6,8 @@
         class="detail-content"
         v-for="(item, index) in this.detail.detail"
         :key="index"
+        v-html="item"
       >
-        {{ item }}
       </p>
     </div>
     <img class="detail-img" :src="this.detail.imgUrl" alt="" />
@@ -44,12 +44,14 @@ export default {
   width: 68%;
   background: white;
   box-shadow: 0 0 12px #d1d1d1;
-  margin: 3rem auto 2rem;
+  margin: 8rem auto 4rem !important;
   padding-top: 10px;
+  font-family: 'SongTi' !important;
   .detail-title {
     font-size: 1.9rem;
     color: #a61b29;
     margin: 2rem 0;
+    font-weight: bold;
   }
   .detail-content-box {
     margin: 1.5rem;

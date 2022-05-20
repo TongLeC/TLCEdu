@@ -108,7 +108,7 @@ export default {
     }
     .big-slogan {
       font-size: 3rem;
-      color: #020077;
+      color: #16149e;
     }
     .big-detail {
       font-size: 1.6rem;
@@ -144,6 +144,7 @@ export default {
         display: block;
         white-space: nowrap;
         margin: 3rem 1rem 0 0;
+        padding-left: 5px;
         .language-list-detail {
           font-size: 1.4rem;
           display: block;

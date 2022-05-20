@@ -141,7 +141,7 @@ export default {
     box-shadow: 0 0 12px #d1d1d1;
   }
 }
-@media (min-width: 764px) and (max-width: 1170px) {
+@media (min-width: 764px) and (max-width: 1270px) {
   .display-li {
     display: none !important;
   }
@@ -154,7 +154,7 @@ export default {
   height: 4.6rem;
   width: 100%;
   border-bottom: 4px solid #a61b29;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   position: fixed;
   top: 0;
   z-index: 9999;
