@@ -98,9 +98,6 @@ export default {
       publicResourcesJson,
     };
   },
-  mounted() {
-    console.log(publicResourcesJson);
-  },
   methods: {},
 };
 </script>

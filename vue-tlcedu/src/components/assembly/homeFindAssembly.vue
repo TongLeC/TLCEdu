@@ -27,7 +27,7 @@ export default {
     return {};
   },
   props: {
-    home: { type: Object },
+    home: { type: Object }
   },
   methods: {},
 };

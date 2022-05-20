@@ -2,27 +2,27 @@
     "rotationMap": [
         {
             "mapUrl": "/images/banner3.jpg",
-            "mapDetail": "123"
-        },
-        {
-            "mapUrl": "/images/banner4.jpg",
-            "mapDetail": "gfhfgh"
-        },
-        {
-            "mapUrl": "/images/banner5.jpg",
-            "mapDetail": "4545"
-        },
-        {
-            "mapUrl": "/images/banner2.jpg",
-            "mapDetail": "fhfnb"
-        },
-        {
-            "mapUrl": "/images/banner6.jpg",
-            "mapDetail": "gfhfgh"
+            "mapDetail": "茶艺课"
         },
         {
             "mapUrl": "/images/banner7.jpg",
-            "mapDetail": "4545"
+            "mapDetail": "传道授业"
+        },
+        {
+            "mapUrl": "/images/banner5.jpg",
+            "mapDetail": "教书育人"
+        },
+        {
+            "mapUrl": "/images/banner2.jpg",
+            "mapDetail": "格物致知"
+        },
+        {
+            "mapUrl": "/images/banner6.jpg",
+            "mapDetail": "大合照"
+        },
+        {
+            "mapUrl": "/images/banner4.jpg",
+            "mapDetail": "大合照"
         }
     ],
     "homeSloganLearning": {
