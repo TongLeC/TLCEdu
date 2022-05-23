@@ -1,27 +1,27 @@
 {
     "rotationMap": [
         {
-            "mapUrl": "/images/banner3.jpg",
+            "mapUrl": "/TLCEdu/images/banner3.jpg",
             "mapDetail": "茶艺课"
         },
         {
-            "mapUrl": "/images/banner7.jpg",
+            "mapUrl": "/TLCEdu/images/banner7.jpg",
             "mapDetail": "传道授业"
         },
         {
-            "mapUrl": "/images/banner5.jpg",
+            "mapUrl": "/TLCEdu/images/banner5.jpg",
             "mapDetail": "教书育人"
         },
         {
-            "mapUrl": "/images/banner2.jpg",
+            "mapUrl": "/TLCEdu/images/banner2.jpg",
             "mapDetail": "格物致知"
         },
         {
-            "mapUrl": "/images/banner6.jpg",
+            "mapUrl": "/TLCEdu/images/banner6.jpg",
             "mapDetail": "大合照"
         },
         {
-            "mapUrl": "/images/banner4.jpg",
+            "mapUrl": "/TLCEdu/images/banner4.jpg",
             "mapDetail": "大合照"
         }
     ],
