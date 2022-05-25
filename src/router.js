@@ -10,11 +10,14 @@ import LanguageLearningDetail from './components/content/LanguageLearningDetail'
 
 const routerHistory = createWebHistory()
 
+// Change this line when deploying to custom domain
+const publicPath = '/TLCEdu';
+
 const router = createRouter({
     history: routerHistory,
     routes: [
         {
-            path: '/',
+            path: publicPath + '/',
             name: 'home',
             component: HomePage,
             children: [
@@ -22,32 +25,32 @@ const router = createRouter({
             ]
         },
         {
-            path: '/languageLearning',
+            path: publicPath + '/languageLearning',
             name: 'languageLearning',
             component: LanguageLearning,
         },
         {
-            path: '/educationalTheory',
+            path: publicPath + '/educationalTheory',
             name: 'educationalTheory',
             component: EducationalTheory,
         },
         {
-            path: '/educationalPractice',
+            path: publicPath + '/educationalPractice',
             name: 'educationalPractice',
             component: EducationalPractice,
         },
         {
-            path: '/publicResources',
+            path: publicPath + '/publicResources',
             name: 'publicResources',
             component: PublicResources,
         },
         {
-            path: '/createdArticle',
+            path: publicPath + '/createdArticle',
             name: 'createdArticle',
             component: CreatedArticle,
         },
         {
-            path: '/languageLearningDetail',
+            path: publicPath + '/languageLearningDetail',
             name: 'languageLearningDetail',
             component: LanguageLearningDetail,
         }

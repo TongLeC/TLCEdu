@@ -15,7 +15,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" :href="publicPath + '/'">
             <img class="logo-img" src="../../public/images/logo3.png" alt="" />
           </a>
         </div>
@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="display-li">
-              <a href="/">{{ $t("msg.homePage") }}</a>
+              <a :href="publicPath + '/'">{{ $t("msg.homePage") }}</a>
             </li>
             <li class="display-li">
-              <a href="/languageLearning">{{ $t("msg.languageLearning") }}</a>
+              <a :href="publicPath + '/languageLearning'">{{ $t("msg.languageLearning") }}</a>
             </li>
             <li class="display-li">
-              <a href="/educationalTheory">{{
+              <a :href="publicPath + '/educationalTheory'">{{
                 $t("msg.holisticEducationTheory")
               }}</a>
             </li>
@@ -37,21 +37,21 @@
               <a href="www.tonglec.com">{{ $t("msg.tongleCourse") }}</a>
             </li>
             <li class="display-li">
-              <a href="/educationalPractice">{{
+              <a :href="publicPath + '/educationalPractice'">{{
                 $t("msg.educationalPractice")
               }}</a>
             </li>
             <li class="display-li">
-              <a href="/publicResources">{{
+              <a :href="publicPath + '/publicResources'">{{
                 $t("msg.publicWelfareResources")
               }}</a>
             </li>
             <li class="display-li">
-              <a href="/createdArticle">{{ $t("msg.originalArticle") }}</a>
+              <a :href="publicPath + '/createdArticle'">{{ $t("msg.originalArticle") }}</a>
             </li>
             <li class="dropdown display-dropdown" style="display: none">
               <a
-                href="#"
+                :href="publicPath + '#'"
                 class="dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
@@ -60,18 +60,18 @@
                 >同乐教育 <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="/">首页</a></li>
-                <li><a href="/languageLearning">语言学习法</a></li>
-                <li><a href="/educationalTheory">整体教育理论</a></li>
-                <li><a href="#">同乐课程</a></li>
-                <li><a href="/educationalPractice">教育践谈</a></li>
-                <li><a href="/publicResources">公益资源</a></li>
-                <li><a href="/createdArticle">原创文章</a></li>
+                <li><a :href="publicPath + '/'">首页</a></li>
+                <li><a :href="publicPath + '/languageLearning'">语言学习法</a></li>
+                <li><a :href="publicPath + '/educationalTheory'">整体教育理论</a></li>
+                <li><a :href="publicPath + '#'">同乐课程</a></li>
+                <li><a :href="publicPath + '/educationalPractice'">教育践谈</a></li>
+                <li><a :href="publicPath + '/publicResources'">公益资源</a></li>
+                <li><a :href="publicPath + '/createdArticle'">原创文章</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a
-                href="#"
+                :href="publicPath + '#'"
                 class="dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
@@ -106,6 +106,12 @@
 export default {
   name: "NavHeader",
   mounted() {},
+  data() {
+    return {
+      // Change this line when deploying to custom domain
+      publicPath: '/TLCEdu'
+    };
+  },
   methods: {
     switchEnglish() {
       this.$i18n.locale = "en";
