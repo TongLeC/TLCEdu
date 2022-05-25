@@ -6,5 +6,6 @@ module.exports = defineConfig({
         args[0].title = '同乐教育';
         return args;
     })
-}
+  },
+  publicPath: '/'
 })
