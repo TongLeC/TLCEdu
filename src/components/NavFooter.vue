@@ -1,5 +1,6 @@
 <template>
-  <div class="nav-footer">
+<div class="nav-footer">
+  <div class="home-container">
     <div class="nav-footer-top">
       <a class="nav-footer-brand" href="/">
         <img class="logo-img" src="../../public/images/logo3.png" alt="" />
@@ -14,6 +15,7 @@
       欢迎关注同乐公众号
     </div>
     <img class="footer-fish" src="../../public/images/footer-fish.png" alt="" />
+  </div>
   </div>
 </template>
 
@@ -49,8 +51,7 @@ export default {
   height: 16.3rem;
   width: 100%;
   background-color: #ebe9e9;
-  border-top: 4px solid #a61b29;
-  // margin-top: 20px;
+  border-top: 4px solid #d11a2d;
   .nav-footer-top {
     width: 100%;
     display: flex;

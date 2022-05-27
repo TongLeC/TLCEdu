@@ -1,5 +1,5 @@
 <template>
-  <div class="language-learning">
+  <div class="language-learning home-container">
     <div class="language-left">
       <img src="../../../public/images/learning-child.png" alt="" />
     </div>
@@ -87,7 +87,7 @@ export default {
     .language-list {
       height: 3.8rem;
       width: 18.4rem;
-      border-left: 4px solid #a61b29;
+      border-left: 4px solid #d11a2d;
       background: white;
       box-shadow: 0 0 12px #d1d1d1;
       float: left;

@@ -1,6 +1,6 @@
 <template>
   <div class="nav-header">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default home-container">
       <div class="container-fluid">
         <div class="navbar-header">
           <button
@@ -137,7 +137,7 @@ export default {
     box-shadow: 0 0 12px #d1d1d1;
   }
 }
-@media (min-width: 764px) and (max-width: 1270px) {
+@media (min-width: 764px) and (max-width: 1500px) {
   .display-li {
     display: none !important;
   }
@@ -149,8 +149,8 @@ export default {
 .nav-header {
   height: 4.6rem;
   width: 100%;
-  border-bottom: 4px solid #a61b29;
-  font-size: 1.7rem;
+  border-bottom: 4px solid #d11a2d;
+  font-size: 1.9rem;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -162,7 +162,7 @@ export default {
     .collapse {
       padding-top: 0.6rem;
       .nav li a {
-        color: #a61b29;
+        color: #d11a2d;
       }
       .nav li a:hover {
         background: #dfd1d2;
@@ -170,7 +170,12 @@ export default {
     }
     .logo-img {
       object-fit: cover;
-      height: 2.5rem;
+      height: 3rem;
+    }
+  }
+  .dropdown-menu {
+    a {
+      font-size: 1.9rem;
     }
   }
 }

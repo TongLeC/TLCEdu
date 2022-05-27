@@ -1,5 +1,5 @@
 <template>
-  <div class="educational-practice">
+  <div class="educational-practice home-container">
     <div class="educational-practice-top">
       <div class="practice-top-left">
         <img src="../../../public/images/practice1.png" alt="" />
@@ -157,7 +157,7 @@ ul {
       }
       .practice-top-title {
         font-size: 1.9rem;
-        color: #a61b29;
+        color: #d11a2d;
         margin: 2rem 0 1.3rem 0;
       }
     }
@@ -183,7 +183,7 @@ ul {
       }
       .practice-top-title {
         font-size: 1.9rem;
-        color: #a61b29;
+        color: #d11a2d;
         margin: 2rem 0 1.3rem 0;
       }
     }

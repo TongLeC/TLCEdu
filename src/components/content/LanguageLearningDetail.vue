@@ -1,5 +1,5 @@
 <template>
-  <div class="language-learning-detail">
+  <div class="language-learning-detail home-container">
     <h3 class="detail-title">{{ this.detail.title }}</h3>
     <div class="detail-content-box">
       <p
@@ -49,7 +49,7 @@ export default {
   font-family: 'SongTi' !important;
   .detail-title {
     font-size: 1.9rem;
-    color: #a61b29;
+    color: #d11a2d;
     margin: 2rem 0;
     font-weight: bold;
   }

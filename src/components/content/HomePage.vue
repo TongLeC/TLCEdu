@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <div class="home-rotation-map">
+    <div class="home-rotation-map home-container">
       <swiper
         :autoplay="swiper_options.autoplay"
         :loop="swiper_options.loop"
@@ -20,22 +20,22 @@
         </swiper-slide>
       </swiper>
     </div>
-    <div class="home-big-box">
+    <div class="home-big-box home-container">
       <home-learning-assembly :home="home[4]"></home-learning-assembly>
     </div>
     <home-learning-assembly :home="home[5]"></home-learning-assembly>
-    <div class="home-video">
-      <div class="home-video-left">
+    <div class="home-video home-container">
+      <!-- <div class="home-video-left">
         <img src="../../../public/images/video-child.png" alt="" />
-      </div>
+      </div> -->
       <div class="home-video-box">
-        <h3 class="home-top-title">
+        <p class="home-top-title">
           {{ $t("msg.tongleVideo") }}
           <a href="/educationalPractice">{{ $t("msg.seeMore") }}</a>
-        </h3>
-        <ul>
+        </p>
+        <ul class="row">
           <li
-            class="home-list"
+            class="home-list col-sm-4 col-xs-12"
             v-for="(item, index) in homePageJson.homeVideo"
             :key="index"
           >
@@ -50,7 +50,7 @@
         </ul>
       </div>
     </div>
-    <div class="home-public">
+    <div class="home-public home-container">
       <div class="home-public-title">
         不忘初心·方得始终
         <i class="glyphicon glyphicon-heart" style="color: red"></i>
@@ -113,7 +113,7 @@ export default {
           json: homePageJson.homeSloganLearning,
         },
         {
-          imgSrc: "/images/home-flower.png",
+          imgSrc: "/images/video-child.png",
           href: "/educationalTheory",
           json: homePageJson.homeSloganTheory,
         },
@@ -163,61 +163,13 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 420px) {
-  ul {
-    .home-list {
-      flex: 0 0 90% !important;
-    }
-  }
-}
-@media (min-width: 420px) and (max-width: 760px) {
-  .home-list {
-    flex: 0 0 90% !important;
-  }
-}
-@media screen and (max-width: 860px) {
-  .home-video-left {
-    position: relative;
-    img {
-      margin: 0 auto !important;
-      width: 15rem !important;
-    }
-  }
-  .home-top-right {
-    position: relative;
-    margin-left: 10rem !important;
-    z-index: 999;
-    padding-top: 1rem;
-  }
+@media screen and (max-width: 768px) {
   .home-video {
-    margin: 0 auto !important;
-    display: block !important;
-    .home-video-box {
-      position: relative !important;
-      margin: 0 auto !important;
+    ul {
+      padding: 0 15px !important;
     }
   }
 }
-@media (min-width: 760px) and (max-width: 900px) {
-  .home-list {
-    flex: 0 0 42% !important;
-  }
-}
-@media (min-width: 900px) and (max-width: 1600px) {
-  .home-list {
-    flex: 0 0 27% !important;
-  }
-}
-
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-height: 350px;
-  padding-left: 1.4rem;
-}
-
 .home-page {
   .home-rotation-map {
     .swiper-slide {
@@ -232,15 +184,15 @@ ul {
   }
   .home-big-box {
     width: 100%;
-    background: url("../../../public/images/source-banner.png") no-repeat;
-    background-size: 100% 100%;
+    background: url("../../../public/images/banner-learn2.png") no-repeat;
+    background-size: 100% 90%;
   }
   .home-video {
     width: 100%;
     background: url("../../../public/images/video-banne.png") no-repeat;
-    background-size: 100% 150%;
-    padding: 5rem 0;
-    display: flex;
+    background-size: 100% 100%;
+    background-position: 0 260px;
+    padding: 5rem 0 10rem;
     position: relative;
     .home-video-left {
       margin: 4rem 30px 1.5rem 2rem;
@@ -250,29 +202,25 @@ ul {
       }
     }
     .home-video-box {
-      width: 57%;
-      background: white;
-      box-shadow: 0 0 12px #d1d1d1;
       z-index: 999;
       margin: 0 auto;
       padding: 1rem;
       ul {
-        overflow-y: auto;
+        padding: 0 4rem;
         .home-list {
-          margin: 10px 28px 20px 0;
-          flex: 0 0 45%;
+          padding: 1rem 4rem;
           iframe {
             width: 100%;
-            height: 290px;
+            height: 280px;
           }
         }
       }
       .home-top-title {
-        font-size: 1.9rem;
-        color: #a61b29;
+        font-size: 2.5rem;
+        color: #d11a2d;
         margin: 1.2rem 0 1.3rem 0;
         a {
-          font-size: 1.2rem;
+          font-size: 1.7rem;
           color: #9c9c9c;
         }
       }

@@ -1,15 +1,19 @@
 <template>
-  <div class="home-free" :home="home">
-    <div class="home-top-left">
+  <div class="home-free row" :home="home">
+    <div class="home-top-left col-sm-3 col-xs-12 center-block">
       <img :src="home.imgSrc" alt="" />
     </div>
-    <div class="home-top-right">
+    <div class="home-top-right col-sm-9 col-xs-12">
       <h3 class="home-top-title">
         {{ $t(home.title) }}
         <a :href="home.href">{{ $t("msg.seeMore") }}</a>
       </h3>
-      <ul>
-        <li class="home-list" v-for="(item, index) in home.json" :key="index">
+      <ul class="row">
+        <li
+          class="home-list col-sm-4 col-xs-12"
+          v-for="(item, index) in home.json"
+          :key="index"
+        >
           <a class="home-list-detail" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
@@ -34,98 +38,61 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
   ul {
-    .home-list {
-      flex: 0 0 90% !important;
-    }
+    padding-left: 15px !important;
   }
 }
-@media (min-width: 420px) and (max-width: 760px) {
+@media screen and (max-width: 1500px) {
   .home-list {
-    flex: 0 0 90% !important;
+    padding: 0 1rem !important;
+  }
+  ul {
+    padding-left: 0 !important;
   }
 }
-@media screen and (max-width: 860px) {
-  .home-free {
-    display: block !important;
-  }
-  .home-top-left {
-    position: relative;
-    margin: 0 auto !important;
-    img {
-      position: static !important;
-      margin: 1.5rem auto 2rem !important;
-    }
-  }
-  .home-top-right {
-    position: relative;
-    z-index: 999;
-    padding-top: 1rem;
-    margin: 0 auto !important;
-  }
-}
-@media (min-width: 760px) and (max-width: 900px) {
-  .home-list {
-    flex: 0 0 42% !important;
-  }
-}
-@media (min-width: 900px) and (max-width: 1600px) {
-  .home-list {
-    flex: 0 0 27% !important;
-  }
-}
-
 .home-free {
-  display: flex;
-  position: relative;
+  margin: 4rem 0 0;
   .home-top-left {
-    margin: 4rem 30px 1.5rem 9rem;
+    height: 100%;
     img {
       object-fit: cover;
-      width: 26rem;
+      width: 100%;
       transform: rotateY(180deg);
     }
   }
   .home-top-right {
-    width: 59%;
-    background: white;
-    box-shadow: 0 0 12px #d1d1d1;
     z-index: 999;
-    margin: 3rem 30px 1.5rem 2rem;
-    padding: 1rem 0;
     ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-height: 390px;
-      padding-left: 1.4rem;
-      overflow-y: auto;
+      // display: flex;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+      // justify-content: space-between;
+      // max-height: 390px;
+      // padding-left: 1.4rem;
+      // overflow-y: auto;
       .home-list {
-        margin: 10px 28px 20px 0;
-        flex: 0 0 29%;
+        padding: 0 2.5rem;
         .home-list-detail {
           display: block;
           width: 100%;
           object-fit: cover;
           img {
             width: 100%;
-            border: 1px solid #a61b29;
+            border: 2px solid #ffd111;
           }
         }
         .home-list-title {
-          font-size: 1.3rem;
           margin-top: 5px;
         }
       }
     }
     .home-top-title {
-      font-size: 1.9rem;
-      color: #a61b29;
+      font-size: 2.5rem;
+      color: #d11a2d;
       margin: 2rem 0 1.3rem 0;
       a {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
         color: #9c9c9c;
       }
     }

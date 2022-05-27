@@ -1,87 +1,89 @@
 <template>
-  <div class="public-resources">
-    <div class="public-bottom">
-      <img src="../../../public/images/public1.png" alt="" />
-    </div>
-    <div class="public-resources-top">
-      <div class="public-right">
-        <img src="../../../public/images/public-child2.png" alt="" />
+  <div class="public-resources-box">
+    <div class="public-resources home-container">
+      <div class="public-bottom">
+        <img src="../../../public/images/public1.png" alt="" />
       </div>
-      <div class="public-left">
-        <div class="resources-one">
-          <h3 class="resources-title">
-            {{ $t("msg.freeBooks") }}
-          </h3>
-          <ul style="padding: 0">
-            <li
-              class="resources-list"
-              v-for="(item, index) in publicResourcesJson.PublicResourcesOne
-                .detailLink"
-              :key="index"
-            >
-              <a :href="item.linkAddress" class="resources-list-detail">
-                {{ item.linkTitle }}
-              </a>
-            </li>
-          </ul>
+      <div class="public-resources-top">
+        <div class="public-right">
+          <img src="../../../public/images/public-child2.png" alt="" />
         </div>
-        <div class="resources-one" style="margin-left: 5rem">
-          <h3 class="resources-title">
-            {{ $t("msg.classicAudio") }}
-          </h3>
-          <ul style="padding: 0">
-            <li
-              class="resources-list"
-              v-for="(item, index) in publicResourcesJson.PublicResourcesTwo
-                .detailLink"
-              :key="index"
-            >
-              <a :href="item.linkAddress" class="resources-list-detail">
-                {{ item.linkTitle }}
-              </a>
-            </li>
-          </ul>
+        <div class="public-left">
+          <div class="resources-one">
+            <h3 class="resources-title">
+              {{ $t("msg.freeBooks") }}
+            </h3>
+            <ul style="padding: 0">
+              <li
+                class="resources-list"
+                v-for="(item, index) in publicResourcesJson.PublicResourcesOne
+                  .detailLink"
+                :key="index"
+              >
+                <a :href="item.linkAddress" class="resources-list-detail">
+                  {{ item.linkTitle }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="resources-one" style="margin-left: 5rem">
+            <h3 class="resources-title">
+              {{ $t("msg.classicAudio") }}
+            </h3>
+            <ul style="padding: 0">
+              <li
+                class="resources-list"
+                v-for="(item, index) in publicResourcesJson.PublicResourcesTwo
+                  .detailLink"
+                :key="index"
+              >
+                <a :href="item.linkAddress" class="resources-list-detail">
+                  {{ item.linkTitle }}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="public-resources-top">
-      <div class="public-bottom-kid">
-        <img src="../../../public/images/public-kid.png" alt="" />
-      </div>
-      <div class="public-left">
-        <div class="resources-one">
-          <h3 class="resources-title">
-            {{ $t("msg.classicMusic") }}
-          </h3>
-          <ul style="padding: 0">
-            <li
-              class="resources-list"
-              v-for="(item, index) in publicResourcesJson.PublicResourcesThree
-                .detailLink"
-              :key="index"
-            >
-              <a :href="item.linkAddress" class="resources-list-detail">
-                {{ item.linkTitle }}
-              </a>
-            </li>
-          </ul>
+      <div class="public-resources-top">
+        <div class="public-bottom-kid">
+          <img src="../../../public/images/public-kid.png" alt="" />
         </div>
-        <div class="resources-one" style="margin-left: 5rem">
-          <h3 class="resources-title">
-            {{ $t("msg.chineseClassicStories") }}
-          </h3>
-          <ul style="padding: 0">
-            <li
-              class="resources-list"
-              v-for="(item, index) in publicResourcesJson.PublicResourcesFour
-                .detailLink"
-              :key="index"
-            >
-              <a :href="item.linkAddress" class="resources-list-detail">
-                {{ item.linkTitle }}
-              </a>
-            </li>
-          </ul>
+        <div class="public-left">
+          <div class="resources-one">
+            <h3 class="resources-title">
+              {{ $t("msg.classicMusic") }}
+            </h3>
+            <ul style="padding: 0">
+              <li
+                class="resources-list"
+                v-for="(item, index) in publicResourcesJson.PublicResourcesThree
+                  .detailLink"
+                :key="index"
+              >
+                <a :href="item.linkAddress" class="resources-list-detail">
+                  {{ item.linkTitle }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="resources-one" style="margin-left: 5rem">
+            <h3 class="resources-title">
+              {{ $t("msg.chineseClassicStories") }}
+            </h3>
+            <ul style="padding: 0">
+              <li
+                class="resources-list"
+                v-for="(item, index) in publicResourcesJson.PublicResourcesFour
+                  .detailLink"
+                :key="index"
+              >
+                <a :href="item.linkAddress" class="resources-list-detail">
+                  {{ item.linkTitle }}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -135,7 +137,7 @@ export default {
     img {
       position: absolute;
       left: 0;
-      top: 0;
+      top: -4.6rem;
       object-fit: cover;
       width: 24rem;
     }
@@ -155,7 +157,7 @@ export default {
         .resources-title {
           width: 100%;
           margin: 0 0 1.5rem 0;
-          background: #a61b29;
+          background: #d11a2d;
           color: #ffffff;
           font-size: 1.9rem;
           padding: 1.2rem 0;

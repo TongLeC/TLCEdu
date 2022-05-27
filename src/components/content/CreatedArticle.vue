@@ -1,6 +1,6 @@
 <template>
   <div class="created-article">
-    <div class="article-right">
+    <div class="article-right home-container">
       <ul>
         <li
           class="article-list"
@@ -66,8 +66,8 @@ export default {
       .article-list {
         padding: 8px 30px 10px 10px;
         margin: 25px 0;
-        border: 1px solid #a61b29;
-        border-bottom: 4px solid #a61b29;
+        border: 1px solid #d11a2d;
+        border-bottom: 4px solid #d11a2d;
         flex: 0 0 48%;
         overflow: hidden;
         text-overflow: ellipsis;

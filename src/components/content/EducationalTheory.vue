@@ -1,22 +1,24 @@
 <template>
   <div class="educational-theory">
-    <div class="theory-right">
-      <img src="../../../public/images/theory-child.png" alt="" />
-    </div>
-    <div class="theory-left">
-      <ul class="theory-left-ul">
-        <li class="theory-list">
-          <div
-            class="theory-list-router"
-            v-for="(item, index) in educationalTheoryJson.educationalTheory"
-            :key="index"
-            @click="getItem(item)"
-          >
-            <h3 class="theory-title">{{ item.title }}</h3>
-            <h3 class="theory-brief">{{ item.brief }}</h3>
-          </div>
-        </li>
-      </ul>
+    <div class="home-container educational-theory-box">
+      <div class="theory-right">
+        <img src="../../../public/images/theory-child.png" alt="" />
+      </div>
+      <div class="theory-left">
+        <ul class="theory-left-ul">
+          <li class="theory-list">
+            <div
+              class="theory-list-router"
+              v-for="(item, index) in educationalTheoryJson.educationalTheory"
+              :key="index"
+              @click="getItem(item)"
+            >
+              <h3 class="theory-title">{{ item.title }}</h3>
+              <h3 class="theory-brief">{{ item.brief }}</h3>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -36,10 +38,10 @@ export default {
       this.$router.push({
         path: "/languageLearningDetail",
         query: {
-          id: item.id
-        }
+          id: item.id,
+        },
       });
-      localStorage.setItem('item', JSON.stringify(item))
+      localStorage.setItem("item", JSON.stringify(item));
     },
   },
 };
@@ -60,10 +62,12 @@ export default {
   }
 }
 
-.educational-theory {
+.educational-theory-box {
   position: relative;
   .theory-left {
     width: 57%;
+    max-height: 570px;
+    overflow-y: auto;
     background: white;
     box-shadow: 0 0 12px #d1d1d1;
     margin: 4rem 0 2rem 8rem;
@@ -87,7 +91,7 @@ export default {
           }
           .theory-title {
             width: 12rem;
-            border: 2px solid #a61b29;
+            border: 2px solid #d11a2d;
             padding: 14px 15px;
           }
           .theory-brief {
