@@ -87,7 +87,7 @@ export default {
     .language-list {
       height: 3.8rem;
       width: 18.4rem;
-      border-left: 4px solid #d11a2d;
+      border-left: 4px solid #EA4335;
       background: white;
       box-shadow: 0 0 12px #d1d1d1;
       float: left;

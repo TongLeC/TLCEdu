@@ -147,10 +147,12 @@ export default {
 }
 
 .nav-header {
+  font-family: 'HeiTi';
   height: 4.6rem;
   width: 100%;
-  border-bottom: 4px solid #d11a2d;
-  font-size: 1.9rem;
+  border-bottom: 1px solid #322f3b;
+  box-shadow: 0 0 15px #322f3b;
+  font-size: 1.7rem;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -162,7 +164,7 @@ export default {
     .collapse {
       padding-top: 0.6rem;
       .nav li a {
-        color: #d11a2d;
+        color: #322f3b;
       }
       .nav li a:hover {
         background: #dfd1d2;
@@ -175,7 +177,7 @@ export default {
   }
   .dropdown-menu {
     a {
-      font-size: 1.9rem;
+      font-size: 1.7rem;
     }
   }
 }

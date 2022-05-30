@@ -51,7 +51,7 @@ export default {
   height: 16.3rem;
   width: 100%;
   background-color: #ebe9e9;
-  border-top: 4px solid #d11a2d;
+  border-top: 4px solid #EA4335;
   .nav-footer-top {
     width: 100%;
     display: flex;
@@ -93,7 +93,7 @@ export default {
     opacity: 0.5;
     position: absolute;
     top: 20px;
-    right: 25%;
+    right: 23%;
   }
 }
 </style>

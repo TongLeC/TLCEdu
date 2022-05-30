@@ -126,15 +126,17 @@ export default {
     z-index: 999;
     .big-title {
       font-size: 3.7rem;
-      color: #d11a2d;
+      color: #322f3b;
       margin-bottom: 1.5rem;
+      font-family: 'HeiTi';
     }
     // .big-slogan {
     //   font-size: 2.5rem;
-    //   color: #d11a2d;
+    //   color: #EA4335;
     // }
     .big-detail {
       font-size: 2.5rem;
+      color: #322f3b;
     }
   }
   .home-learning-right {
@@ -143,7 +145,7 @@ export default {
     padding-top: 1.5rem;
     .big-slogan {
       font-size: 2.5rem;
-      color: #d11a2d;
+      color: #322f3b;
       font-weight: bold;
     }
     .home-learning-top {
@@ -151,13 +153,15 @@ export default {
       padding: 2rem;
       text-align: left;
       text-indent: 2em;
-      color: #000;
+      color: #322f3b;
+      font-family: 'KaiTi';
     }
     .home-learning-ul {
       margin: 1rem 0;
       padding: 0;
       .language-list {
-        border-left: 4px solid #d11a2d;
+        font-family: 'HeiTi';
+        border-left: 4px solid #EA4335;
         box-shadow: 0 0 12px #d1d1d1;
         margin: 1rem 2rem 1.5rem 0;
         .language-list-detail {
@@ -176,7 +180,7 @@ export default {
         width: 100%;
         float: right;
         a {
-          color: #d11a2d;
+          color: #a9a9a9;
           font-weight: bold;
         }
       }

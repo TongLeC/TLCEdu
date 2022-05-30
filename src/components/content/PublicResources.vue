@@ -157,7 +157,7 @@ export default {
         .resources-title {
           width: 100%;
           margin: 0 0 1.5rem 0;
-          background: #d11a2d;
+          background: #EA4335;
           color: #ffffff;
           font-size: 1.9rem;
           padding: 1.2rem 0;

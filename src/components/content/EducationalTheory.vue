@@ -91,7 +91,7 @@ export default {
           }
           .theory-title {
             width: 12rem;
-            border: 2px solid #d11a2d;
+            border: 2px solid #EA4335;
             padding: 14px 15px;
           }
           .theory-brief {

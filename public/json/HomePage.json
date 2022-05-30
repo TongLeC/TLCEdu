@@ -1,28 +1,19 @@
 {
     "rotationMap": [
         {
-            "mapUrl": "/images/banner3.jpg",
+            "type": "1",
+            "mapUrl": "/images/乐学致远，有教无类.png",
             "mapDetail": "茶艺课"
         },
         {
-            "mapUrl": "/images/banner7.jpg",
+            "type": "1",
+            "mapUrl": "/images/桃李不言，下自成蹊.png",
             "mapDetail": "传道授业"
         },
         {
-            "mapUrl": "/images/banner5.jpg",
+            "type": "1",
+            "mapUrl": "/images/栉风沐雨，薪火相传.png",
             "mapDetail": "教书育人"
-        },
-        {
-            "mapUrl": "/images/banner2.jpg",
-            "mapDetail": "格物致知"
-        },
-        {
-            "mapUrl": "/images/banner6.jpg",
-            "mapDetail": "大合照"
-        },
-        {
-            "mapUrl": "/images/banner4.jpg",
-            "mapDetail": "大合照"
         }
     ],
     "homeSloganLearning": {
@@ -195,31 +186,76 @@
             "homeDetail": "《海外中文教育的探索》"
         },
         {
-            "homeImg": "/images/中文寻根(一)-老子.JPG",
+            "homeImg": "/images/老子.png",
             "homeUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
             "homeDetail": "中文寻根(一)-老子"
         },
         {
-            "homeImg": "/images/中文寻根(二)-大学·中庸.jpg",
+            "homeImg": "/images/大学中庸.png",
             "homeUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
             "homeDetail": "中文寻根(二)-大学·中庸"
+        },
+        {
+            "homeImg": "/images/大学中庸名句.png",
+            "homeUrl": "https://drive.google.com/file/d/1FwgRaSzSsH82LztbtiI1vebROUHcb764/view",
+            "homeDetail": "中文寻根(二)-大学·中庸名句"
+        },
+        {
+            "homeImg": "/images/论语名句.png",
+            "homeUrl": "https://drive.google.com/file/d/1PZJZn70jHVBp5vLjEY_e-66PJ7yMSDAi/view",
+            "homeDetail": "中文寻根(三)-论语名句选 "
+        },
+        {
+            "homeImg": "/images/孟庄.png",
+            "homeUrl": "https://drive.google.com/file/d/17a84j0q53Z9Trr6CSIkIUcJ9jUhFxnR1/view",
+            "homeDetail": "中文寻根(四)-孟庄荀列管墨名言"
+        },
+        {
+            "homeImg": "/images/经典拾贝.png",
+            "homeUrl": "https://drive.google.com/file/d/1_2D14f3WeFLt8GexLVS00yfTAGPJ5PBh/view",
+            "homeDetail": "中文寻根(五) - 经典拾贝"
         }
     ],
     "homeBible": [
         {
-            "homeImg": "/images/中文寻根第二卷-《中庸名句》.jpg",
+            "homeImg": "/images/中文寻根第二卷《中庸名句》.PNG",
             "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZQSjyRTNoDEKb_hXU1HCsb",
-            "homeDetail": "中文寻根-《中庸名句》"
+            "homeDetail": "中文寻根第二卷-《中庸名句》"
         },
         {
-            "homeImg": "/images/中文寻根第四卷-《孟庄旬列管墨名言》.jpg",
+            "homeImg": "/images/中文寻根第四卷《孟庄荀列管墨名言》.PNG",
             "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbfEtp6wnGVS5jwCzqhFWj4",
-            "homeDetail": "中文寻根-《孟庄旬列管墨名言》"
+            "homeDetail": "中文寻根第四卷-《孟庄荀列管墨名言》"
         },
         {
-            "homeImg": "/images/中文寻根第五卷-《经典拾贝》.jpg",
+            "homeImg": "/images/中文寻根第五卷《经典拾贝》.PNG",
             "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrb9Wne-8ps8GII6_8gLCTWg",
-            "homeDetail": "中文寻根-《经典拾贝》"
+            "homeDetail": "中文寻根第五卷-《经典拾贝》"
+        },
+        {
+            "homeImg": "/images/中文寻根第二卷《大学》.PNG",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbBosUaVimWG2HcTAQQEiOO",
+            "homeDetail": "中文寻根第二卷-《大学》"
+        },
+        {
+            "homeImg": "/images/中文寻根第二卷《中庸》.PNG",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZ7-75QojJZQRpeIfUO_LCp",
+            "homeDetail": "中文寻根第二卷-《中庸》"
+        },
+        {
+            "homeImg": "/images/中文寻根第三卷《论语》.PNG",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIraDJAyyG1q3XTMOON-zoy79",
+            "homeDetail": "中文寻根第三卷-《论语》"
+        },
+        {
+            "homeImg": "/images/中文寻根第三卷《论语名句》.PNG",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZjnVnN-reDOk9rRZ2mS3-H",
+            "homeDetail": "中文寻根第三卷-《论语名句》"
+        },
+        {
+            "homeImg": "/images/中文寻根第一卷《道德经》.PNG",
+            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZTyG-osKRvETdSjL_Dinw2",
+            "homeDetail": "中文寻根第一卷-《道德经》"
         }
     ],
     "homeFree": [

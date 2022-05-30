@@ -157,7 +157,7 @@ ul {
       }
       .practice-top-title {
         font-size: 1.9rem;
-        color: #d11a2d;
+        color: #EA4335;
         margin: 2rem 0 1.3rem 0;
       }
     }
@@ -183,7 +183,7 @@ ul {
       }
       .practice-top-title {
         font-size: 1.9rem;
-        color: #d11a2d;
+        color: #EA4335;
         margin: 2rem 0 1.3rem 0;
       }
     }

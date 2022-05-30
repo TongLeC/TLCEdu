@@ -72,7 +72,7 @@ export default {
           object-fit: cover;
           img {
             width: 100%;
-            border: 2px solid #d11a2d;
+            border: 2px solid #EA4335;
           }
         }
         .home-list-title {
@@ -82,11 +82,12 @@ export default {
     }
     .home-top-title {
       font-size: 2.5rem;
-      color: #d11a2d;
+      color: #EA4335;
       margin: 2rem 0 1.3rem 0;
+      font-family: 'HeiTi';
       a {
         font-size: 1.7rem;
-        color: #9c9c9c;
+        color: #a9a9a9;
       }
     }
   }

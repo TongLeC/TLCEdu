@@ -10,3 +10,11 @@
     font-family: 'SongTi';
     src: url('./simsun.ttc');
 }
+@font-face {
+    font-family: 'YaHei';
+    src: url('./msyh.ttf');
+}
+@font-face {
+    font-family: 'HeiTi';
+    src: url('./simhei.ttf');
+}

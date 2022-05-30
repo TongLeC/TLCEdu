@@ -16,7 +16,7 @@
           v-for="(item, index) in homePageJson.rotationMap"
           :key="index"
         >
-          <img class="my_swiper_imgs" :src="item.mapUrl" alt="" />
+          <img class="my_swiper_imgs" :src="item.mapUrl" alt=""/>
         </swiper-slide>
       </swiper>
     </div>
@@ -53,11 +53,11 @@
     <div class="home-public home-container">
       <div class="home-public-title">
         不忘初心·方得始终
-        <i class="glyphicon glyphicon-heart" style="color: red"></i>
+        <i class="glyphicon glyphicon-heart" style="color: #EA4335;"></i>
         公益分享
       </div>
-      <home-find-assembly :home="home[2]"></home-find-assembly>
-      <home-free-assembly :home="home[0]"></home-free-assembly>
+      <home-book-assembly :home="home[2]"></home-book-assembly>
+      <home-bible-assembly :home="home[0]"></home-bible-assembly>
       <home-find-assembly :home="home[3]"></home-find-assembly>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
@@ -75,6 +75,8 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 import homeFreeAssembly from "../assembly/homeFreeAssembly.vue";
 import homeFindAssembly from "../assembly/homeFindAssembly.vue";
+import homeBibleAssembly from "../assembly/homeBibleAssembly.vue";
+import homeBookAssembly from "../assembly/homeBookAssembly.vue";
 import homeLearningAssembly from "../assembly/homeLearningAssembly.vue";
 import homePageJson from "../../../public/json/HomePage.json";
 
@@ -125,6 +127,8 @@ export default {
     SwiperSlide,
     homeFreeAssembly,
     homeFindAssembly,
+    homeBibleAssembly,
+    homeBookAssembly,
     homeLearningAssembly,
   },
   methods: {
@@ -184,15 +188,15 @@ export default {
   }
   .home-big-box {
     width: 100%;
-    background: url("../../../public/images/banner-learn2.png") no-repeat;
-    background-size: 100% 90%;
+    background: url("../../../public/images/千库网_水墨山水云彩风景_元素编号11766622.png") no-repeat;
+    background-size: 100% 100%;
   }
   .home-video {
     width: 100%;
-    background: url("../../../public/images/video-banne.png") no-repeat;
-    background-size: 100% 100%;
-    background-position: 0 260px;
-    padding: 5rem 0 10rem;
+    background: url("../../../public/images/山水footer.png") no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 450px;
+    padding: 5rem 0 15rem;
     position: relative;
     .home-video-left {
       margin: 4rem 30px 1.5rem 2rem;
@@ -211,17 +215,18 @@ export default {
           padding: 1rem 4rem;
           iframe {
             width: 100%;
-            height: 280px;
+            height: 260px;
           }
         }
       }
       .home-top-title {
         font-size: 2.5rem;
-        color: #d11a2d;
+        color: #EA4335;
         margin: 1.2rem 0 1.3rem 0;
+        font-family: 'HeiTi';
         a {
           font-size: 1.7rem;
-          color: #9c9c9c;
+          color: #a9a9a9;
         }
       }
     }
@@ -232,6 +237,7 @@ export default {
     .home-public-title {
       font-size: 4rem;
       font-weight: bold;
+      font-family: 'HeiTi';
       color: #24753b;
     }
   }

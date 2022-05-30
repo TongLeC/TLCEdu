@@ -66,8 +66,8 @@ export default {
       .article-list {
         padding: 8px 30px 10px 10px;
         margin: 25px 0;
-        border: 1px solid #d11a2d;
-        border-bottom: 4px solid #d11a2d;
+        border: 1px solid #EA4335;
+        border-bottom: 4px solid #EA4335;
         flex: 0 0 48%;
         overflow: hidden;
         text-overflow: ellipsis;
