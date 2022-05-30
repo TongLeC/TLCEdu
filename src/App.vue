@@ -30,7 +30,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #333333;
-  font-family: 'LiShu';
+  font-family: "LiShu";
 }
 .app {
   display: flex;

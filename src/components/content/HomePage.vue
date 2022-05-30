@@ -16,9 +16,24 @@
           v-for="(item, index) in homePageJson.rotationMap"
           :key="index"
         >
-          <img class="my_swiper_imgs" :src="item.mapUrl" alt=""/>
+          <img
+            class="my_swiper_imgs"
+            :src="item.mapUrl"
+            alt=""
+            v-if="item.type == 0"
+          />
+          <video controls v-else class="map-video">
+            <source
+              :src="item.mapUrl"
+              type="video/mp4"
+            />
+            您的浏览器不支持 video 标签。
+          </video>
         </swiper-slide>
       </swiper>
+      <!-- <div class="home-transition">
+        同乐语言学习法
+      </div> -->
     </div>
     <div class="home-big-box home-container">
       <home-learning-assembly :home="home[4]"></home-learning-assembly>
@@ -53,7 +68,7 @@
     <div class="home-public home-container">
       <div class="home-public-title">
         不忘初心·方得始终
-        <i class="glyphicon glyphicon-heart" style="color: #EA4335;"></i>
+        <i class="glyphicon glyphicon-heart" style="color: #ea4335"></i>
         公益分享
       </div>
       <home-book-assembly :home="home[2]"></home-book-assembly>
@@ -87,13 +102,13 @@ export default {
       homePageJson,
       home: [
         {
-          imgSrc: "/images/home-bible.png",
+          imgSrc: "/images/bible-child.png",
           title: "msg.classicAudio",
           href: "/publicResources",
           json: homePageJson.homeBible,
         },
         {
-          imgSrc: "/images/public-child.jpg",
+          imgSrc: "/images/article-look.png",
           title: "msg.originalArticle",
           href: "/createdArticle",
           json: homePageJson.homeArticle,
@@ -105,7 +120,7 @@ export default {
           json: homePageJson.homeFind,
         },
         {
-          imgSrc: "/images/article-child.jpg",
+          imgSrc: "/images/music-child.png",
           title: "msg.classicMusic",
           href: "/publicResources",
           json: homePageJson.homeFree,
@@ -169,13 +184,19 @@ export default {
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .home-video {
+    background-size: 200% 20% !important;
     ul {
       padding: 0 15px !important;
+      .home-list {
+        padding: 1rem 2rem !important;
+      }
     }
   }
 }
 .home-page {
   .home-rotation-map {
+    position: relative;
+    max-height: 890px;
     .swiper-slide {
       width: 100%;
       max-height: 890px;
@@ -185,17 +206,33 @@ export default {
         max-height: 890px;
       }
     }
+    .home-transition {
+      width: 46%;
+      font-size: 3rem;
+      background: #fcfafa;
+      position: absolute;
+      right: 0;
+      bottom: -5%;
+      z-index: 9997;
+      font-family: "SourceSansPro-Regular", "HeiTi";
+      padding: 1.7rem 0;
+    }
+    .map-video {
+      // width: 90%;
+      // height: 100%;
+      object-fit: fill;
+    }
   }
   .home-big-box {
     width: 100%;
-    background: url("../../../public/images/千库网_水墨山水云彩风景_元素编号11766622.png") no-repeat;
+    background: url("../../../public/images/水墨10.png") no-repeat;
     background-size: 100% 100%;
   }
   .home-video {
     width: 100%;
     background: url("../../../public/images/山水footer.png") no-repeat;
     background-size: 100% 40%;
-    background-position: 0 450px;
+    background-position: 0 100%;
     padding: 5rem 0 15rem;
     position: relative;
     .home-video-left {
@@ -221,9 +258,9 @@ export default {
       }
       .home-top-title {
         font-size: 2.5rem;
-        color: #EA4335;
+        color: #ea4335;
         margin: 1.2rem 0 1.3rem 0;
-        font-family: 'HeiTi';
+        font-family: "SourceSansPro-Regular", "HeiTi";
         a {
           font-size: 1.7rem;
           color: #a9a9a9;
@@ -237,8 +274,8 @@ export default {
     .home-public-title {
       font-size: 4rem;
       font-weight: bold;
-      font-family: 'HeiTi';
-      color: #24753b;
+      font-family: "SourceSansPro-Regular","HeiTi";
+      color: #34a853;
     }
   }
 }

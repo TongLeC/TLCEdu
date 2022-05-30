@@ -14,7 +14,13 @@
           <a class="home-list-detail" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div class="home-list-title">{{ item.homeDetail }}</div>
+          <div
+            class="home-list-title"
+            v-for="(content, index) in item.homeDetail"
+            :key="index"
+          >
+            {{ content }}
+          </div>
         </li>
       </ul>
     </div>
@@ -43,9 +49,7 @@ export default {
     padding-left: 15px !important;
   }
   .home-bottom-right {
-    img {
-      display: none;
-    }
+    display: none;
   }
 }
 @media screen and (max-width: 1500px) {
@@ -64,7 +68,7 @@ export default {
     padding: 0 2rem;
     .home-bottom-left-ul {
       padding-left: 1.4rem;
-      max-height: 590px;
+      max-height: 630px;
       overflow-y: auto;
       .home-list {
         padding: 0 2.5rem 20px;
@@ -74,7 +78,7 @@ export default {
           object-fit: cover;
           img {
             width: 100%;
-            border: 2px solid #EA4335;
+            border: 2px solid #ea4335;
           }
         }
         .home-list-title {
@@ -84,9 +88,9 @@ export default {
     }
     .home-top-title {
       font-size: 2.5rem;
-      color: #EA4335;
+      color: #ea4335;
       margin: 2rem 0 1.3rem 0;
-      font-family: 'HeiTi';
+      font-family: "SourceSansPro-Regular","HeiTi";
       a {
         font-size: 1.7rem;
         color: #a9a9a9;
@@ -94,9 +98,7 @@ export default {
     }
   }
   .home-bottom-right {
-    // display: flex;
-    // align-items: center;
-    // height: 500px;
+    padding: 7rem 0 0;
     img {
       // align-items: center;
       transform: rotateY(180deg);

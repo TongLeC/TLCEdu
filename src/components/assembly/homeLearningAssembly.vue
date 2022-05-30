@@ -100,6 +100,9 @@ export default {
     img {
       display: none;
     }
+    .home-learning-right {
+      padding-top: 4rem !important;
+    }
   }
 }
 @media screen and (max-width: 860px) {
@@ -110,7 +113,7 @@ export default {
 
 .home-learning {
   width: 100%;
-  padding: 8rem 5rem 0;
+  padding: 6rem 5rem 3rem;
   position: relative;
   margin: 0;
   img {
@@ -128,7 +131,7 @@ export default {
       font-size: 3.7rem;
       color: #322f3b;
       margin-bottom: 1.5rem;
-      font-family: 'HeiTi';
+      font-family: "SourceSansPro-Regular", 'HeiTi';
     }
     // .big-slogan {
     //   font-size: 2.5rem;
@@ -142,7 +145,7 @@ export default {
   .home-learning-right {
     z-index: 999;
     position: relative;
-    padding-top: 1.5rem;
+    padding-top: 7rem;
     .big-slogan {
       font-size: 2.5rem;
       color: #322f3b;

@@ -57,7 +57,7 @@ export default {
     height: 100%;
     img {
       object-fit: cover;
-      width: 100%;
+      width: 87%;
       transform: rotateY(180deg);
     }
   }
@@ -79,6 +79,7 @@ export default {
           object-fit: cover;
           img {
             width: 100%;
+            background: white;
             border: 2px solid #ffd111;
           }
         }
@@ -91,7 +92,7 @@ export default {
       font-size: 2.5rem;
       color: #EA4335;
       margin: 2rem 0 1.3rem 0;
-      font-family: 'HeiTi';
+      font-family: "SourceSansPro-Regular",'HeiTi';
       a {
         font-size: 1.7rem;
         color: #a9a9a9;

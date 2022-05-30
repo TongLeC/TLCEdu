@@ -4,86 +4,64 @@
       <div class="public-bottom">
         <img src="../../../public/images/public1.png" alt="" />
       </div>
-      <div class="public-resources-top">
-        <div class="public-right">
+      <div class="public-resources-top row">
+        <div class="public-left col-sm-9 col-xs-11">
+          <dic class="row">
+            <div
+              class="resources-one col-sm-5 col-xs-12"
+              v-for="(item, index) in publicResourcesJson.PublicResourcesOne"
+              :key="index"
+            >
+              <h3 class="resources-title">
+                {{ $t(item.title) }}
+              </h3>
+              <ul style="padding: 0">
+                <li class="resources-list">
+                  <a
+                    :href="item.linkAddress"
+                    v-for="(item, index) in item.detailLink"
+                    :key="index"
+                    class="resources-list-detail"
+                  >
+                    {{ item.linkTitle }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </dic>
+        </div>
+        <div class="public-right col-sm-3 col-xs-12">
           <img src="../../../public/images/public-child2.png" alt="" />
         </div>
-        <div class="public-left">
-          <div class="resources-one">
-            <h3 class="resources-title">
-              {{ $t("msg.freeBooks") }}
-            </h3>
-            <ul style="padding: 0">
-              <li
-                class="resources-list"
-                v-for="(item, index) in publicResourcesJson.PublicResourcesOne
-                  .detailLink"
-                :key="index"
-              >
-                <a :href="item.linkAddress" class="resources-list-detail">
-                  {{ item.linkTitle }}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="resources-one" style="margin-left: 5rem">
-            <h3 class="resources-title">
-              {{ $t("msg.classicAudio") }}
-            </h3>
-            <ul style="padding: 0">
-              <li
-                class="resources-list"
-                v-for="(item, index) in publicResourcesJson.PublicResourcesTwo
-                  .detailLink"
-                :key="index"
-              >
-                <a :href="item.linkAddress" class="resources-list-detail">
-                  {{ item.linkTitle }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-      <div class="public-resources-top">
-        <div class="public-bottom-kid">
-          <img src="../../../public/images/public-kid.png" alt="" />
+      <div class="public-resources-top row" style="margin-left: 0;">
+        <div class="public-left row col-sm-9 col-xs-11">
+          <dic class="row">
+            <div
+              class="resources-one col-sm-5 col-xs-12"
+              v-for="(item, index) in publicResourcesJson.PublicResourcesTwo"
+              :key="index"
+            >
+              <h3 class="resources-title">
+                {{ $t(item.title) }}
+              </h3>
+              <ul style="padding: 0">
+                <li class="resources-list">
+                  <a
+                    :href="item.linkAddress"
+                    v-for="(item, index) in item.detailLink"
+                    :key="index"
+                    class="resources-list-detail"
+                  >
+                    {{ item.linkTitle }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </dic>
         </div>
-        <div class="public-left">
-          <div class="resources-one">
-            <h3 class="resources-title">
-              {{ $t("msg.classicMusic") }}
-            </h3>
-            <ul style="padding: 0">
-              <li
-                class="resources-list"
-                v-for="(item, index) in publicResourcesJson.PublicResourcesThree
-                  .detailLink"
-                :key="index"
-              >
-                <a :href="item.linkAddress" class="resources-list-detail">
-                  {{ item.linkTitle }}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="resources-one" style="margin-left: 5rem">
-            <h3 class="resources-title">
-              {{ $t("msg.chineseClassicStories") }}
-            </h3>
-            <ul style="padding: 0">
-              <li
-                class="resources-list"
-                v-for="(item, index) in publicResourcesJson.PublicResourcesFour
-                  .detailLink"
-                :key="index"
-              >
-                <a :href="item.linkAddress" class="resources-list-detail">
-                  {{ item.linkTitle }}
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="public-right col-sm-3 col-xs-12">
+          <img src="../../../public/images/public-kid.png" alt="" />
         </div>
       </div>
     </div>
@@ -105,31 +83,6 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 670px) {
-  .public-left {
-    display: block !important;
-    position: relative;
-    margin: 0 auto !important;
-    .resources-one {
-      width: 100% !important;
-      margin-top: 2rem !important;
-      margin-left: 0 !important;
-    }
-  }
-  .public-right,
-  .public-bottom-kid {
-    img {
-      position: static !important;
-    }
-  }
-}
-@media (min-width: 670px) and (max-width: 800px) {
-  .public-left {
-    margin-left: 20px !important;
-    width: 95% !important;
-  }
-}
-
 .public-resources {
   position: relative;
   .public-bottom {
@@ -143,32 +96,35 @@ export default {
     }
   }
   .public-resources-top {
-    position: relative;
+    // position: relative;
     .public-left {
-      width: 70%;
-      margin: 4rem 0 2rem 8rem;
-      position: relative;
-      z-index: 100;
-      display: flex;
+      // width: 100%;
+      // margin: 4rem 0 2rem 8rem;
+      // position: relative;
+      // z-index: 100;
+      // display: flex;
       .resources-one {
-        width: 44%;
+        // width: 100%;
         background: white;
         box-shadow: 0 0 12px #d1d1d1;
+        padding: 0;
+        margin: 1rem 2rem;
         .resources-title {
           width: 100%;
           margin: 0 0 1.5rem 0;
-          background: #EA4335;
+          background: #ea4335;
           color: #ffffff;
-          font-size: 1.9rem;
+          font-size: 2rem;
           padding: 1.2rem 0;
         }
         ul {
           overflow-y: auto;
-          max-height: 430px;
+          min-height: 300px;
+          max-height: 430px !important;
           .resources-list {
-            padding: 0 1.8rem 1.3rem;
+            padding: 0 2rem;
             .resources-list-detail {
-              font-size: 1.4rem;
+              // font-size: 1.4rem;
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
@@ -181,20 +137,8 @@ export default {
     }
     .public-right {
       img {
-        position: absolute;
-        right: 0;
-        top: 40px;
         object-fit: cover;
-        width: 30rem;
-      }
-    }
-    .public-bottom-kid {
-      img {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        object-fit: cover;
-        width: 30rem;
+        width: 100%;
       }
     }
   }

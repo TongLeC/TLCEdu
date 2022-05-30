@@ -46,7 +46,7 @@ export default {
   box-shadow: 0 0 12px #d1d1d1;
   margin: 8rem auto 4rem !important;
   padding-top: 10px;
-  font-family: 'SongTi' !important;
+  font-family: 'KaiTi' !important;
   .detail-title {
     font-size: 1.9rem;
     color: #EA4335;

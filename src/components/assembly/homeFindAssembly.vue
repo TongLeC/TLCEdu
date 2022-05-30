@@ -14,7 +14,13 @@
           <a class="home-list-detail" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div class="home-list-title">{{ item.homeDetail }}</div>
+          <div
+            class="home-list-title"
+            v-for="(content, index) in item.homeDetail"
+            :key="index"
+          >
+            {{ content }}
+          </div>
         </li>
       </ul>
     </div>
@@ -84,7 +90,7 @@ export default {
       font-size: 2.5rem;
       color: #EA4335;
       margin: 2rem 0 1.3rem 0;
-      font-family: 'HeiTi';
+      font-family: "SourceSansPro-Regular",'HeiTi';
       a {
         font-size: 1.7rem;
         color: #a9a9a9;
@@ -92,14 +98,11 @@ export default {
     }
   }
   .home-bottom-right {
-    // display: flex;
-    // align-items: center;
-    // height: 500px;
+    padding: 3rem 0 0;
     img {
-      // align-items: center;
       transform: rotateY(180deg);
       object-fit: cover;
-      width: 100%;
+      width: 90%;
     }
   }
 }
