@@ -147,7 +147,7 @@ export default {
 }
 
 .nav-header {
-  font-family: 'SourceSansPro-Bold', 'HeiTi';
+  font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
   width: 100%;
   border-bottom: 1px solid #322f3b;
@@ -156,7 +156,6 @@ export default {
   position: fixed;
   top: 0;
   z-index: 9999;
-  // background: url("../../public/images/all-background2.jpg") 100% 100%;
   background: #fcfafa;
   .navbar {
     height: 100%;

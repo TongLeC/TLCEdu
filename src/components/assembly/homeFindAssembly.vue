@@ -1,6 +1,6 @@
 <template>
   <div class="home-find row" :home="home">
-    <div class="home-bottom-left col-sm-9 col-xs-12">
+    <div class="home-bottom-left col-xs-12">
       <h3 class="home-top-title">
         {{ $t(home.title) }}
         <a :href="home.href">{{ $t("msg.seeMore") }}</a>
@@ -24,9 +24,9 @@
         </li>
       </ul>
     </div>
-    <div class="home-bottom-right col-sm-3 col-xs-12">
+    <!-- <div class="home-bottom-right col-sm-3 col-xs-12">
       <img :src="home.imgSrc" alt="" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -78,7 +78,8 @@ export default {
           object-fit: cover;
           img {
             width: 100%;
-            border: 2px solid #EA4335;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #a9a9a9;
           }
         }
         .home-list-title {
@@ -88,12 +89,15 @@ export default {
     }
     .home-top-title {
       font-size: 2.5rem;
-      color: #EA4335;
       margin: 2rem 0 1.3rem 0;
       font-family: "SourceSansPro-Regular",'HeiTi';
+      position: relative;
       a {
         font-size: 1.7rem;
         color: #a9a9a9;
+        position: absolute;
+        right: 0;
+        top: 15%;
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <div class="home-rotation-map home-container">
+    <div class="home-rotation-map">
       <swiper
         :autoplay="swiper_options.autoplay"
         :loop="swiper_options.loop"
@@ -23,26 +23,21 @@
             v-if="item.type == 0"
           />
           <video controls v-else class="map-video">
-            <source
-              :src="item.mapUrl"
-              type="video/mp4"
-            />
+            <source :src="item.mapUrl" type="video/mp4" />
             您的浏览器不支持 video 标签。
           </video>
         </swiper-slide>
       </swiper>
-      <!-- <div class="home-transition">
-        同乐语言学习法
-      </div> -->
+      <div class="home-transition">
+        <a href="/languageLearning">语言学习法</a> |
+        <a href="/educationalTheory">同乐整体教育理论</a>
+      </div>
     </div>
     <div class="home-big-box home-container">
       <home-learning-assembly :home="home[4]"></home-learning-assembly>
     </div>
     <home-learning-assembly :home="home[5]"></home-learning-assembly>
     <div class="home-video home-container">
-      <!-- <div class="home-video-left">
-        <img src="../../../public/images/video-child.png" alt="" />
-      </div> -->
       <div class="home-video-box">
         <p class="home-top-title">
           {{ $t("msg.tongleVideo") }}
@@ -50,7 +45,7 @@
         </p>
         <ul class="row">
           <li
-            class="home-list col-sm-4 col-xs-12"
+            class="home-list col-sm-3 col-xs-12"
             v-for="(item, index) in homePageJson.homeVideo"
             :key="index"
           >
@@ -61,6 +56,10 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
+            <div class="video-describe">
+              <p class="video-describe-title">同乐中文海外中文教育</p>
+              <p class="video-describe-detail">这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -73,7 +72,7 @@
       </div>
       <home-book-assembly :home="home[2]"></home-book-assembly>
       <home-bible-assembly :home="home[0]"></home-bible-assembly>
-      <home-find-assembly :home="home[3]"></home-find-assembly>
+      <!-- <home-find-assembly :home="home[3]"></home-find-assembly> -->
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
   </div>
@@ -89,7 +88,6 @@ import "swiper/css/navigation";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 import homeFreeAssembly from "../assembly/homeFreeAssembly.vue";
-import homeFindAssembly from "../assembly/homeFindAssembly.vue";
 import homeBibleAssembly from "../assembly/homeBibleAssembly.vue";
 import homeBookAssembly from "../assembly/homeBookAssembly.vue";
 import homeLearningAssembly from "../assembly/homeLearningAssembly.vue";
@@ -108,7 +106,7 @@ export default {
           json: homePageJson.homeBible,
         },
         {
-          imgSrc: "/images/article-look.png",
+          imgSrc: "/images/child3.png",
           title: "msg.originalArticle",
           href: "/createdArticle",
           json: homePageJson.homeArticle,
@@ -141,7 +139,6 @@ export default {
     Swiper,
     SwiperSlide,
     homeFreeAssembly,
-    homeFindAssembly,
     homeBibleAssembly,
     homeBookAssembly,
     homeLearningAssembly,
@@ -190,58 +187,60 @@ export default {
       .home-list {
         padding: 1rem 2rem !important;
       }
+      .col-sm-3 {
+        width: 100% !important;
+      }
     }
+  }
+  .home-transition {
+    width: 80% !important;
+    font-size: 1.5rem !important;
   }
 }
 .home-page {
   .home-rotation-map {
     position: relative;
-    max-height: 890px;
     .swiper-slide {
       width: 100%;
-      max-height: 890px;
+      max-height: 750px;
       text-align: center;
       .my_swiper_imgs {
         width: 100%;
-        max-height: 890px;
+        max-height: 750px;
       }
     }
     .home-transition {
-      width: 46%;
-      font-size: 3rem;
+      width: 48%;
+      font-size: 2rem;
+      // background: rgba(255, 255, 255, 0.7);
       background: #fcfafa;
+      border-radius: 0 30px 30px 0;
       position: absolute;
-      right: 0;
+      right: left;
       bottom: -5%;
-      z-index: 9997;
+      z-index: 99;
       font-family: "SourceSansPro-Regular", "HeiTi";
-      padding: 1.7rem 0;
+      padding: 1.5rem 0;
+      a:hover {
+        color: #ea4335;
+      }
     }
     .map-video {
-      // width: 90%;
-      // height: 100%;
       object-fit: fill;
     }
   }
   .home-big-box {
     width: 100%;
-    background: url("../../../public/images/水墨10.png") no-repeat;
+    background: url("../../../public/images/banner-learn22.png") no-repeat;
     background-size: 100% 100%;
   }
   .home-video {
     width: 100%;
-    background: url("../../../public/images/山水footer.png") no-repeat;
+    background: url("../../../public/images/画板 1.png") no-repeat;
     background-size: 100% 40%;
     background-position: 0 100%;
-    padding: 5rem 0 15rem;
+    padding: 5rem 0 14rem;
     position: relative;
-    .home-video-left {
-      margin: 4rem 30px 1.5rem 2rem;
-      img {
-        object-fit: cover;
-        width: 25rem;
-      }
-    }
     .home-video-box {
       z-index: 999;
       margin: 0 auto;
@@ -249,21 +248,38 @@ export default {
       ul {
         padding: 0 4rem;
         .home-list {
-          padding: 1rem 4rem;
+          padding: 1rem 1rem;
           iframe {
             width: 100%;
-            height: 260px;
+            height: 230px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #a9a9a9;
           }
+          .video-describe {
+            text-align: left;
+            .video-describe-detail {
+              color: #a9a9a9;
+              text-indent: 2em;
+              font-size: 1.5rem;
+              font-family: 'Kaiti';
+            }
+          }
+        }
+        .col-sm-3 {
+          width: 20%;
         }
       }
       .home-top-title {
         font-size: 2.5rem;
-        color: #ea4335;
         margin: 1.2rem 0 1.3rem 0;
         font-family: "SourceSansPro-Regular", "HeiTi";
+        position: relative;
         a {
           font-size: 1.7rem;
           color: #a9a9a9;
+          position: absolute;
+          right: 5%;
+          top: 20%;
         }
       }
     }
@@ -274,8 +290,7 @@ export default {
     .home-public-title {
       font-size: 4rem;
       font-weight: bold;
-      font-family: "SourceSansPro-Regular","HeiTi";
-      color: #34a853;
+      font-family: "SourceSansPro-Regular", "HeiTi";
     }
   }
 }
