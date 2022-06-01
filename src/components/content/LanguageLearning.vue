@@ -1,20 +1,25 @@
 <template>
   <div class="language-learning home-container">
-    <div class="language-left">
-      <img src="../../../public/images/learning-child.png" alt="" />
+    <div class="language-learning-title">
+      {{ $t("msg.holisticEducationTheory") }}
     </div>
-    <div class="language-right">
-      <ul>
-        <li
-          class="language-list"
-          v-for="(item, index) in languageLearningJson.languageLearning"
-          :key="index"
-        >
-          <div class="language-list-detail" @click="getItem(item)">
-            {{ item.title }}
-          </div>
-        </li>
-      </ul>
+    <div class="language-learning-box row">
+      <div class="language-left col-sm-3 col-xs-12">
+        <img src="../../../public/images/learning-child.png" alt="" />
+      </div>
+      <div class="language-right col-sm-9 col-xs-12">
+        <ul class="row">
+          <li
+            class="language-list col-sm-4 col-xs-12"
+            v-for="(item, index) in languageLearningJson.languageLearning"
+            :key="index"
+          >
+            <div class="language-list-detail" @click="getItem(item)">
+              {{ item.title }}
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="language-banner">
       <img src="../../../public/images/learning-bird.png" alt="" />
@@ -47,74 +52,57 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 430px) {
-  .language-left {
-    img {
-      object-fit: cover;
-      width: 30rem !important;
-    }
-  }
-  .language-banner {
-    img {
-      display: none;
-    }
-  }
-}
-@media screen and (max-width: 900px) {
-  .language-left {
-    position: relative;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
+@media screen and (max-width: 768px) {
+  .language-learning {
+    .language-left {
+      display: none !important;
     }
   }
 }
 
 .language-learning {
-  display: flex;
-  .language-left {
-    img {
-      float: left;
-      object-fit: cover;
-      width: 32rem;
-      transform: rotateY(180deg);
-    }
+  position: relative;
+  padding: 3rem;
+  .language-learning-title {
+    font-size: 2.5rem;
+    font-family: "SourceSansPro-Regular", "HeiTi";
   }
-  .language-right {
-    z-index: 999;
-    padding-bottom: 15px;;
-    .language-list {
-      height: 3.8rem;
-      width: 18.4rem;
-      border-left: 4px solid #EA4335;
-      background: white;
-      box-shadow: 0 0 12px #d1d1d1;
-      float: left;
-      display: block;
-      white-space: nowrap;
-      margin: 3rem 6rem 0 0;
-      padding-left: 5px;
-      .language-list-detail {
-        font-size: 1.4rem;
-        display: block;
-        height: 100%;
+  .language-learning-box {
+    .language-left {
+      position: sticky;
+      top: 3rem;
+      img {
+        object-fit: cover;
         width: 100%;
-        text-align: center;
-        line-height: 3.8rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        cursor: pointer;
+        transform: rotateY(180deg);
+      }
+    }
+    .language-right {
+      z-index: 99;
+      ul {
+        padding: 0;
+        .language-list {
+          height: 3.8rem;
+          border-left: 4px solid #ea4335;
+          background: white;
+          box-shadow: 0 0 12px #d1d1d1;
+          margin: 3rem 6rem 0 0;
+          .language-list-detail {
+            height: 100%;
+            line-height: 3.8rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
   .language-banner {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     img {
-      position: absolute;
-      top: 0;
-      right: 0;
       object-fit: cover;
       width: 25rem;
       transform: rotateY(180deg);

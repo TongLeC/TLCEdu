@@ -2,7 +2,7 @@
   <div class="home-container" :home="home">
     <div class="home-learning row">
       <p class="big-title">
-        {{ home.json.sloganTitle }}
+        {{ $t(home.json.sloganTitle) }}
       </p>
       <!-- <img :src="home.imgSrc" alt="" /> -->
       <div class="home-learning-left col-sm-6 col-xs-12">
@@ -127,6 +127,7 @@ export default {
   }
   .home-learning-left {
     font-weight: bold;
+    font-size: 2rem;
   }
   .home-learning-right {
     .big-slogan {
@@ -148,8 +149,6 @@ export default {
     padding: 0;
     .language-list {
       font-family: "HeiTi";
-      // border-bottom: 4px solid #ea4335;
-      // box-shadow: 0 0 12px #d1d1d1;
       margin: 2rem 0 2rem 0;
       color: white;
       .language-list-detail {

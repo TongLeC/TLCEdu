@@ -14,10 +14,15 @@
             "type": "0",
             "mapUrl": "/images/banner10.png",
             "mapDetail": "教书育人"
+        },
+        {
+            "type": "0",
+            "mapUrl": "/images/banner13.png",
+            "mapDetail": "教书育人"
         }
     ],
     "homeSloganLearning": {
-        "sloganTitle": "同乐语言学习法",
+        "sloganTitle": "msg.languageLearning",
         "sloganDetail": [
             "子初学,倚听觉;",
             "先语言,字缓作;",
@@ -154,7 +159,7 @@
         ]
     },
     "homeSloganTheory": {
-        "sloganTitle": "同乐整体教育理论",
+        "sloganTitle": "msg.holisticEducationTheory",
         "sloganDetail": [
             "同于自性",
             "颐养天真",
@@ -224,151 +229,160 @@
             }
         ]
     },
-    "homeVideo": [
-        {
-            "videoUrl": "https://www.youtube.com/embed/QGTaGPEW0Q8",
-            "videoDetail": "同乐中文--海外中文学习之听评书"
-        },
-        {
-            "videoUrl": "https://www.youtube.com/embed/-DFJgyXmIQo",
-            "videoDetail": "同乐中文--海外中文学习之经典诵读"
-        },
-        {
-            "videoUrl": "https://www.youtube.com/embed/nRJwuNb5X6Q",
-            "videoDetail": "同乐家长会---2021年9月25日"
-        },
-        {
-            "videoUrl": "https://www.youtube.com/embed/vvo6yNvWD_A",
-            "videoDetail": "家长感言_诵读经典_By 舒敏"
-        },
-        {
-            "videoUrl": "https://www.youtube.com/embed/0YMzqOGmBdY",
-            "videoDetail": "家长感言_By Lily"
-        }
-    ],
-    "homeFind": [
-        {
-            "homeImg": "/images/《海外中文教育的探索》.jpg",
-            "homeUrl": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view",
-            "homeDetail": [
-                "《海外中文教育的探索》"
-            ]
-        },
-        {
-            "homeImg": "/images/老子.png",
-            "homeUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
-            "homeDetail": [
-                "中文寻根(一)",
-                "老子"
-            ]
-        },
-        {
-            "homeImg": "/images/大学中庸.png",
-            "homeUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
-            "homeDetail": [
-                "中文寻根(二)",
-                "大学·中庸"
-            ]
-        },
-        {
-            "homeImg": "/images/大学中庸名句.png",
-            "homeUrl": "https://drive.google.com/file/d/1FwgRaSzSsH82LztbtiI1vebROUHcb764/view",
-            "homeDetail": [
-                "中文寻根(二)",
-                "大学·中庸名句"
-            ]
-        },
-        {
-            "homeImg": "/images/论语名句.png",
-            "homeUrl": "https://drive.google.com/file/d/1PZJZn70jHVBp5vLjEY_e-66PJ7yMSDAi/view",
-            "homeDetail": [
-                "中文寻根(三)",
-                "论语名句选"
-            ]
-        },
-        {
-            "homeImg": "/images/孟庄.png",
-            "homeUrl": "https://drive.google.com/file/d/17a84j0q53Z9Trr6CSIkIUcJ9jUhFxnR1/view",
-            "homeDetail": [
-                "中文寻根(四)",
-                "孟庄荀列管墨名言"
-            ]
-        },
-        {
-            "homeImg": "/images/经典拾贝.png",
-            "homeUrl": "https://drive.google.com/file/d/1_2D14f3WeFLt8GexLVS00yfTAGPJ5PBh/view",
-            "homeDetail": [
-                "中文寻根(五)",
-                "经典拾贝"
-            ]
-        }
-    ],
-    "homeBible": [
-        {
-            "homeImg": "/images/中文寻根第二卷《中庸名句》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZQSjyRTNoDEKb_hXU1HCsb",
-            "homeDetail": [
-                "中文寻根第二卷",
-                "《中庸名句》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第四卷《孟庄荀列管墨名言》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbfEtp6wnGVS5jwCzqhFWj4",
-            "homeDetail": [
-                "中文寻根第四卷",
-                "《孟庄荀列管墨名言》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第五卷《经典拾贝》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrb9Wne-8ps8GII6_8gLCTWg",
-            "homeDetail": [
-                "中文寻根第五卷",
-                "《经典拾贝》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第二卷《大学》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbBosUaVimWG2HcTAQQEiOO",
-            "homeDetail": [
-                "中文寻根第二卷",
-                "《大学》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第二卷《中庸》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZ7-75QojJZQRpeIfUO_LCp",
-            "homeDetail": [
-                "中文寻根第二卷",
-                "《中庸》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第三卷《论语》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIraDJAyyG1q3XTMOON-zoy79",
-            "homeDetail": [
-                "中文寻根第三卷",
-                "《论语》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第三卷《论语名句》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZjnVnN-reDOk9rRZ2mS3-H",
-            "homeDetail": [
-                "中文寻根第三卷",
-                "《论语名句》"
-            ]
-        },
-        {
-            "homeImg": "/images/中文寻根第一卷《道德经》.PNG",
-            "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZTyG-osKRvETdSjL_Dinw2",
-            "homeDetail": [
-                "中文寻根第一卷",
-                "《道德经》"
-            ]
-        }
-    ],
+    "homeVideo": {
+        "describe": "教育是一门实践的艺术，实践创造出科学高效的中文学习理念。这里有学习理念、教学经验的分享，也有家长与牛娃们的二三趣事。",
+        "detail": [
+            {
+                "videoUrl": "https://www.youtube.com/embed/QGTaGPEW0Q8",
+                "videoDetail": "海外中文学习之听评书"
+            },
+            {
+                "videoUrl": "https://www.youtube.com/embed/-DFJgyXmIQo",
+                "videoDetail": "海外中文学习之经典诵读"
+            },
+            {
+                "videoUrl": "https://www.youtube.com/embed/nRJwuNb5X6Q",
+                "videoDetail": "同乐K-G6的学习内容"
+            },
+            {
+                "videoUrl": "https://www.youtube.com/embed/vvo6yNvWD_A",
+                "videoDetail": "小娃读经趣事二三"
+            },
+            {
+                "videoUrl": "https://www.youtube.com/embed/0YMzqOGmBdY",
+                "videoDetail": "中文牛娃的成长之路"
+            }
+        ]
+    },
+    "homeFind": {
+        "describe": "中国文化历经千年，典籍浩如烟海，其根本则是经典。同乐中文寻根系列书籍，收录了诸子百家锦言，旨在回归民族的根基，传播永恒的智慧，关怀无价的生命。",
+        "detail": [
+            {
+                "homeImg": "/images/《海外中文教育的探索》.jpg",
+                "homeUrl": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view",
+                "homeDetail": [
+                    "《海外中文教育的探索》"
+                ]
+            },
+            {
+                "homeImg": "/images/老子.png",
+                "homeUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
+                "homeDetail": [
+                    "中文寻根(一)",
+                    "老子"
+                ]
+            },
+            {
+                "homeImg": "/images/大学中庸.png",
+                "homeUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
+                "homeDetail": [
+                    "中文寻根(二)",
+                    "大学·中庸"
+                ]
+            },
+            {
+                "homeImg": "/images/大学中庸名句.png",
+                "homeUrl": "https://drive.google.com/file/d/1FwgRaSzSsH82LztbtiI1vebROUHcb764/view",
+                "homeDetail": [
+                    "中文寻根(二)",
+                    "大学·中庸名句"
+                ]
+            },
+            {
+                "homeImg": "/images/论语名句.png",
+                "homeUrl": "https://drive.google.com/file/d/1PZJZn70jHVBp5vLjEY_e-66PJ7yMSDAi/view",
+                "homeDetail": [
+                    "中文寻根(三)",
+                    "论语名句选"
+                ]
+            },
+            {
+                "homeImg": "/images/孟庄.png",
+                "homeUrl": "https://drive.google.com/file/d/17a84j0q53Z9Trr6CSIkIUcJ9jUhFxnR1/view",
+                "homeDetail": [
+                    "中文寻根(四)",
+                    "孟庄荀列管墨名言"
+                ]
+            },
+            {
+                "homeImg": "/images/经典拾贝.png",
+                "homeUrl": "https://drive.google.com/file/d/1_2D14f3WeFLt8GexLVS00yfTAGPJ5PBh/view",
+                "homeDetail": [
+                    "中文寻根(五)",
+                    "经典拾贝"
+                ]
+            }
+        ]
+    },
+    "homeBible": {
+        "describe": "读经机是经典教育的好帮手，可以用来跟读，也可以熏听。小孩子耳根灵敏，随时随地与经典之声相伴，不知不觉圣贤智慧浸润心田。",
+        "detail": [
+            {
+                "homeImg": "/images/中文寻根第二卷《中庸名句》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZQSjyRTNoDEKb_hXU1HCsb",
+                "homeDetail": [
+                    "中文寻根第二卷",
+                    "《中庸名句》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第四卷《孟庄荀列管墨名言》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbfEtp6wnGVS5jwCzqhFWj4",
+                "homeDetail": [
+                    "中文寻根第四卷",
+                    "《孟庄荀列管墨名言》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第二卷《中庸》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZ7-75QojJZQRpeIfUO_LCp",
+                "homeDetail": [
+                    "中文寻根第二卷",
+                    "《中庸》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第三卷《论语》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIraDJAyyG1q3XTMOON-zoy79",
+                "homeDetail": [
+                    "中文寻根第三卷",
+                    "《论语》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第三卷《论语名句》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZjnVnN-reDOk9rRZ2mS3-H",
+                "homeDetail": [
+                    "中文寻根第三卷",
+                    "《论语名句》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第一卷《道德经》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZTyG-osKRvETdSjL_Dinw2",
+                "homeDetail": [
+                    "中文寻根第一卷",
+                    "《道德经》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第五卷《经典拾贝》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrb9Wne-8ps8GII6_8gLCTWg",
+                "homeDetail": [
+                    "中文寻根第五卷",
+                    "《经典拾贝》"
+                ]
+            },
+            {
+                "homeImg": "/images/中文寻根第二卷《大学》.PNG",
+                "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbBosUaVimWG2HcTAQQEiOO",
+                "homeDetail": [
+                    "中文寻根第二卷",
+                    "《大学》"
+                ]
+            }
+        ]
+    },
     "homeFree": [
         {
             "homeImg": "/images/宝宝是小小音乐家.jpg",
@@ -393,21 +407,34 @@
             ]
         }
     ],
-    "homeArticle": [
-        {
-            "homeDetail": "文以载道：“文”",
-            "homeImg": "/images/01_文以载道：“文”.png",
-            "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741171&idx=1&sn=01f1229d7c349da07e529d728557ced0&scene=21"
-        },
-        {
-            "homeDetail": "文以载道：“武”",
-            "homeImg": "/images/02_文以载道：“武”.png",
-            "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741188&idx=1&sn=ab2ae22b434aab7be42d2f3839ebe855&scene=21"
-        },
-        {
-            "homeDetail": "文以载道：“朋友”",
-            "homeImg": "/images/03_文以载道：“朋友”.png",
-            "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741193&idx=1&sn=95948ef2a1aafe023b4404d7714a2d90&scene=21"
-        }
-    ]
+    "homeArticle": {
+        "describe": "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧。",
+        "detail": [
+            {
+                "homeDetail": "文以载道：“文”",
+                "homeImg": "/images/01_文以载道：“文”.png",
+                "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741171&idx=1&sn=01f1229d7c349da07e529d728557ced0&scene=21"
+            },
+            {
+                "homeDetail": "文以载道：“武”",
+                "homeImg": "/images/02_文以载道：“武”.png",
+                "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741188&idx=1&sn=ab2ae22b434aab7be42d2f3839ebe855&scene=21"
+            },
+            {
+                "homeDetail": "文以载道：“朋友”",
+                "homeImg": "/images/03_文以载道：“朋友”.png",
+                "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741193&idx=1&sn=95948ef2a1aafe023b4404d7714a2d90&scene=21"
+            },
+            {
+                "homeDetail": "文以载道：“仙”与“俗”",
+                "homeImg": "/images/02_文以载道：“武”.png",
+                "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741246&idx=1&sn=b16339f2a548baf4f01d3c6f77dc2d24&scene=21#wechat_redirect"
+            },
+            {
+                "homeDetail": "文以载道：“惑”",
+                "homeImg": "/images/03_文以载道：“朋友”.png",
+                "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741276&idx=1&sn=adf5b19d39e6de3b21cb35535cfe3863&scene=21#wechat_redirect"
+            }
+        ]
+    }
 }

@@ -1,9 +1,12 @@
 <template>
   <div class="created-article">
+    <div class="created-article-title">
+      {{ $t("msg.originalArticle") }}
+    </div>
     <div class="article-right home-container">
-      <ul>
+      <ul class="row">
         <li
-          class="article-list"
+          class="article-list col-sm-4 col-xs-12"
           v-for="(item, index) in createdArticleJson.CreatedArticle"
           :key="index"
         >
@@ -31,51 +34,36 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .article-list {
-    flex: 0 0 95% !important;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .article-right {
-    width: 75% !important;
+    padding: 30px 10px !important;
   }
 }
 
 .created-article {
   position: relative;
-  background: url("../../../public/images/created-banner.jpg");
-  background-size: 100%;
-  min-height: 800px;
+  background: url("../../../public/images/created-banner.png");
+  padding: 2rem;
+  .created-article-title {
+    font-size: 2.5rem;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+  }
   .article-right {
-    width: 53%;
-    background: white;
-    box-shadow: 0 0 12px #d1d1d1;
     z-index: 999;
-    margin: 6rem auto;
-    max-height: 550px;
-    overflow-y: auto;
-    padding: 1rem 0;
+    margin: 1rem auto;
     ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 100%;
-      padding-right: 2rem;
+      padding: 0;
       .article-list {
-        padding: 8px 30px 10px 10px;
-        margin: 25px 0;
-        border: 1px solid #EA4335;
-        border-bottom: 4px solid #EA4335;
-        flex: 0 0 48%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        padding: 30px;
         .article-list-detail {
-          font-size: 1.4rem;
           display: block;
           text-align: center;
+          background: white;
+          box-shadow: 0 0 12px #d1d1d1;
+          padding: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }

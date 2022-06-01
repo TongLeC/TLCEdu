@@ -29,8 +29,8 @@
         </swiper-slide>
       </swiper>
       <div class="home-transition">
-        <a href="/languageLearning">语言学习法</a> |
-        <a href="/educationalTheory">同乐整体教育理论</a>
+        <a href="/languageLearning">{{ $t("msg.languageLearning") }}</a> |
+        <a href="/educationalTheory">{{ $t("msg.holisticEducationTheory") }}</a>
       </div>
     </div>
     <div class="home-big-box home-container">
@@ -39,14 +39,17 @@
     <home-learning-assembly :home="home[5]"></home-learning-assembly>
     <div class="home-video home-container">
       <div class="home-video-box">
-        <p class="home-top-title">
-          {{ $t("msg.tongleVideo") }}
+        <div class="home-top-title">
+          {{ $t("msg.educationalPractice") }}
           <a href="/educationalPractice">{{ $t("msg.seeMore") }}</a>
-        </p>
+          <p class="home-top-describe">
+            {{ homePageJson.homeVideo.describe }}
+          </p>
+        </div>
         <ul class="row">
           <li
             class="home-list col-sm-3 col-xs-12"
-            v-for="(item, index) in homePageJson.homeVideo"
+            v-for="(item, index) in homePageJson.homeVideo.detail"
             :key="index"
           >
             <iframe
@@ -57,8 +60,10 @@
               allowfullscreen
             ></iframe>
             <div class="video-describe">
-              <p class="video-describe-title">同乐中文海外中文教育</p>
-              <p class="video-describe-detail">这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述</p>
+              <p class="video-describe-title">{{ item.videoDetail }}</p>
+              <!-- <p class="video-describe-detail">
+                这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述
+              </p> -->
             </div>
           </li>
         </ul>
@@ -66,13 +71,14 @@
     </div>
     <div class="home-public home-container">
       <div class="home-public-title">
-        不忘初心·方得始终
+        {{ $t("msg.publicTitle") }}
         <i class="glyphicon glyphicon-heart" style="color: #ea4335"></i>
-        公益分享
+        {{ $t("msg.publicTitleTwo") }}
       </div>
       <home-book-assembly :home="home[2]"></home-book-assembly>
-      <home-bible-assembly :home="home[0]"></home-bible-assembly>
-      <!-- <home-find-assembly :home="home[3]"></home-find-assembly> -->
+      <div class="split-line"></div>
+      <home-book-assembly :home="home[0]"></home-book-assembly>
+      <div class="split-line"></div>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
   </div>
@@ -88,7 +94,6 @@ import "swiper/css/navigation";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 import homeFreeAssembly from "../assembly/homeFreeAssembly.vue";
-import homeBibleAssembly from "../assembly/homeBibleAssembly.vue";
 import homeBookAssembly from "../assembly/homeBookAssembly.vue";
 import homeLearningAssembly from "../assembly/homeLearningAssembly.vue";
 import homePageJson from "../../../public/json/HomePage.json";
@@ -104,6 +109,7 @@ export default {
           title: "msg.classicAudio",
           href: "/publicResources",
           json: homePageJson.homeBible,
+          slidesPerView: 4,
         },
         {
           imgSrc: "/images/child3.png",
@@ -116,6 +122,7 @@ export default {
           title: "msg.tongleBooks",
           href: "/publicResources",
           json: homePageJson.homeFind,
+          slidesPerView: 5,
         },
         {
           imgSrc: "/images/music-child.png",
@@ -139,7 +146,6 @@ export default {
     Swiper,
     SwiperSlide,
     homeFreeAssembly,
-    homeBibleAssembly,
     homeBookAssembly,
     homeLearningAssembly,
   },
@@ -175,6 +181,14 @@ export default {
     });
     return { swiper_options };
   },
+  mounted() {
+    // const OpenCC = require("opencc-js");
+    // 繁体转简体
+    // const converter = OpenCC.Converter({ from: "hk", to: "cn" });
+    // 简体转繁体
+    // const restore = OpenCC.Converter({ from: "cn", to: "hk" });
+    // console.log(restore(this.homePageJson.homeSloganLearning.sloganDetail[0]))
+  },
 };
 </script>
 
@@ -193,7 +207,7 @@ export default {
     }
   }
   .home-transition {
-    width: 80% !important;
+    // width: 80% !important;
     font-size: 1.5rem !important;
   }
 }
@@ -212,21 +226,24 @@ export default {
     .home-transition {
       width: 48%;
       font-size: 2rem;
-      // background: rgba(255, 255, 255, 0.7);
       background: #fcfafa;
-      border-radius: 0 30px 30px 0;
+      border-radius: 30px 30px 0 0;
       position: absolute;
-      right: left;
+      right: 27%;
       bottom: -5%;
       z-index: 99;
       font-family: "SourceSansPro-Regular", "HeiTi";
       padding: 1.5rem 0;
+      font-weight: bold;
       a:hover {
         color: #ea4335;
       }
     }
     .map-video {
       object-fit: fill;
+    }
+    ::v-deep .swiper-pagination-bullet {
+      float: right;
     }
   }
   .home-big-box {
@@ -256,18 +273,22 @@ export default {
             box-shadow: 5px 5px 10px #a9a9a9;
           }
           .video-describe {
-            text-align: left;
-            .video-describe-detail {
-              color: #a9a9a9;
-              text-indent: 2em;
-              font-size: 1.5rem;
-              font-family: 'Kaiti';
-            }
+            // text-align: left;
           }
         }
         .col-sm-3 {
           width: 20%;
         }
+      }
+      .home-top-describe {
+        margin-top: 2rem;
+      }
+      .home-top-describe,
+      .video-describe-detail {
+        color: #a9a9a9;
+        // text-indent: 2em;
+        font-size: 1.5rem;
+        font-family: "Kaiti";
       }
       .home-top-title {
         font-size: 2.5rem;
@@ -285,12 +306,18 @@ export default {
     }
   }
   .home-public {
-    width: 100%;
+    // width: 100%;
     padding: 4rem 0;
     .home-public-title {
       font-size: 4rem;
       font-weight: bold;
       font-family: "SourceSansPro-Regular", "HeiTi";
+    }
+    .split-line {
+      width: 100%;
+      height: 1px;
+      background: #ffd111;
+      margin-top: 5rem;
     }
   }
 }

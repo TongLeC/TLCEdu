@@ -1,10 +1,8 @@
 <template>
   <div class="educational-theory">
-    <div class="home-container educational-theory-box">
-      <div class="theory-right">
-        <img src="../../../public/images/theory-child.png" alt="" />
-      </div>
-      <div class="theory-left">
+    <div class="home-container educational-theory-box row">
+      <div class="educational-theory-title">{{ $t("msg.holisticEducationTheory") }}</div>
+      <div class="theory-left col-sm-8 col-xs-12">
         <ul class="theory-left-ul">
           <li class="theory-list">
             <div
@@ -18,6 +16,9 @@
             </div>
           </li>
         </ul>
+      </div>
+      <div class="theory-right col-sm-4 col-xs-12">
+        <img src="../../../public/images/theory-child.png" alt="" />
       </div>
     </div>
   </div>
@@ -48,12 +49,15 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 500px) {
-  .theory-title {
-    width: 18rem !important;
-  }
-  .theory-brief {
-    display: none;
+@media screen and (max-width: 768px) {
+  .educational-theory-box {
+    padding: 2rem !important;
+    .theory-title {
+      width: 100% !important;
+    }
+    .theory-brief {
+      display: none;
+    }
   }
 }
 @media (min-width: 500px) and (max-width: 1280px) {
@@ -63,17 +67,13 @@ export default {
 }
 
 .educational-theory-box {
-  position: relative;
+  padding: 4rem 0 4rem 5rem;
+  .educational-theory-title {
+    font-size: 2.5rem;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+  }
   .theory-left {
-    width: 57%;
-    max-height: 570px;
-    overflow-y: auto;
-    background: white;
-    box-shadow: 0 0 12px #d1d1d1;
-    margin: 4rem 0 2rem 8rem;
     min-height: 500px;
-    position: relative;
-    z-index: 100;
     .theory-left-ul {
       padding: 1rem 2rem;
       .theory-list {
@@ -83,15 +83,15 @@ export default {
           cursor: pointer;
           .theory-title,
           .theory-brief {
-            font-size: 1.4rem;
+            font-size: 1.7rem;
             height: 3.7rem;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
           }
           .theory-title {
-            width: 12rem;
-            border: 2px solid #EA4335;
+            width: 17rem;
+            border: 2px solid #ea4335;
             padding: 14px 15px;
           }
           .theory-brief {
@@ -105,12 +105,12 @@ export default {
     }
   }
   .theory-right {
+    position: sticky;
+    top: 3rem;
     img {
       transform: rotateY(180deg);
-      position: absolute;
-      right: 0;
       object-fit: cover;
-      width: 38rem;
+      width: 100%;
     }
   }
 }

@@ -1,6 +1,9 @@
 <template>
   <div class="public-resources-box">
     <div class="public-resources home-container">
+      <div class="public-resources-title">
+        {{ $t("msg.publicWelfareResources") }}
+      </div>
       <div class="public-bottom">
         <img src="../../../public/images/public1.png" alt="" />
       </div>
@@ -34,8 +37,8 @@
           <img src="../../../public/images/public-child2.png" alt="" />
         </div>
       </div>
-      <div class="public-resources-top row" style="margin-left: 0;">
-        <div class="public-left row col-sm-9 col-xs-11">
+      <div class="public-resources-top row" style="margin-left: 0">
+        <div class="public-left col-sm-9 col-xs-11">
           <dic class="row">
             <div
               class="resources-one col-sm-5 col-xs-12"
@@ -60,7 +63,7 @@
             </div>
           </dic>
         </div>
-        <div class="public-right col-sm-3 col-xs-12">
+        <div class="public-right col-sm-3 col-xs-12" style="position:sticky;top:3rem;">
           <img src="../../../public/images/public-kid.png" alt="" />
         </div>
       </div>
@@ -85,51 +88,45 @@ export default {
 <style scoped lang='scss'>
 .public-resources {
   position: relative;
+  padding: 2rem;
+  .public-resources-title {
+    font-size: 2.5rem;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+  }
   .public-bottom {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     img {
-      position: absolute;
-      left: 0;
-      top: 0;
       object-fit: cover;
       width: 24rem;
     }
   }
   .public-resources-top {
-    // position: relative;
     .public-left {
-      // width: 100%;
-      // margin: 4rem 0 2rem 8rem;
-      // position: relative;
-      // z-index: 100;
-      // display: flex;
       .resources-one {
-        // width: 100%;
         background: white;
         box-shadow: 0 0 12px #d1d1d1;
         padding: 0;
-        margin: 1rem 2rem;
+        margin: 1rem 1.5rem;
         .resources-title {
-          width: 100%;
-          margin: 0 0 1.5rem 0;
+          margin: 0;
           background: #ea4335;
           color: #ffffff;
           font-size: 2rem;
           padding: 1.2rem 0;
+          font-family: "SourceSansPro-Regular", "HeiTi";
         }
         ul {
-          overflow-y: auto;
-          min-height: 300px;
-          max-height: 430px !important;
           .resources-list {
             padding: 0 2rem;
             .resources-list-detail {
-              // font-size: 1.4rem;
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
               display: block;
               width: 100%;
+              padding: 0.5rem 0;
             }
           }
         }

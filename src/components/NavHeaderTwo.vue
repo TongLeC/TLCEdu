@@ -15,38 +15,60 @@
         <!-- <el-menu-item route="/" index="1">
           <img class="logo-img" src="../../public/images/logo3.png" alt="" />
         </el-menu-item> -->
-        <el-menu-item route="/" index="10">{{ $t("msg.homePage") }}</el-menu-item>
+        <el-menu-item route="/" index="10">{{
+          $t("msg.homePage")
+        }}</el-menu-item>
         <el-menu-item index="16">
-            <a href="https://fanyi.baidu.com/">{{ $t("msg.tongleCourse") }}</a>
+          <a href="https://www.tonglec.org/">{{ $t("msg.tongleCourse") }}</a>
         </el-menu-item>
-        <el-sub-menu v-for="(item, index) in NavHeaderJson.NavHeader" :key="index" :index="index">
-          <template #title><a :href="item.href">{{ $t(item.msg) }}</a></template>
-          <el-menu-item v-for="(list, index) in item.child" :key="index">
-            <a :href="list.link" target="view_window" v-if="item.type == 0">{{ list.title }}</a>
+        <el-sub-menu
+          v-for="(item, index) in NavHeaderJson.NavHeader"
+          :key="index"
+          :index="item.id"
+        >
+          <template #title
+            ><a :href="item.href">{{ $t(item.msg) }}</a></template
+          >
+          <el-menu-item
+            v-for="(list, index) in item.child"
+            :key="index"
+            style="border-bottom: 1px solid #ccc"
+          >
+            <a :href="list.link" target="view_window" v-if="item.type == 0">{{
+              list.title
+            }}</a>
             <div @click="getItem(list)" v-else>{{ list.title }}</div>
           </el-menu-item>
           <el-menu-item :index="item.href">
-              {{ $t("msg.seeMore") }}
+            {{ $t("msg.seeMore") }}
           </el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="l">
           <template #title>{{ $t("msg.language") }}</template>
           <p
-            style="margin: 10px; cursor: pointer"
+            style="
+              padding: 5px 10px 8px;
+              cursor: pointer;
+              border-bottom: 1px solid #ccc;
+            "
             class="nav-language"
             @click="switchEnglish()"
           >
             {{ $t("msg.english") }}
           </p>
           <p
-            style="margin: 10px; cursor: pointer"
+            style="
+              padding: 5px 10px 8px;
+              cursor: pointer;
+              border-bottom: 1px solid #ccc;
+            "
             class="nav-language"
             @click="switchSimplified()"
           >
             {{ $t("msg.simplifiedChinese") }}
           </p>
           <p
-            style="margin: 10px; cursor: pointer"
+            style="padding: 0 10px; cursor: pointer"
             class="nav-language"
             @click="switchTraditional()"
           >
@@ -65,7 +87,7 @@ export default {
   name: "NavHeaderTwo",
   data() {
     return {
-        NavHeaderJson
+      NavHeaderJson,
     };
   },
   methods: {
@@ -105,14 +127,15 @@ export default {
   font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
   width: 100%;
-  border-bottom: 1px solid #322f3b;
+  // border-bottom: 1px solid #322f3b;
   box-shadow: 0 0 15px #5d5c5f;
-  font-size: 1.7rem;
   position: fixed;
   top: 0;
   z-index: 9999;
+  background-color: #fcfafa;
   .el-menu {
     background-color: #fcfafa;
+    border: 0;
     height: 100%;
     z-index: 9999;
   }
@@ -121,9 +144,10 @@ export default {
     height: 3rem;
   }
   ::v-deep .el-sub-menu__title,
-  ::v-deep .el-menu-item{
-      font-size: 1.7rem;
-      font-family: 'HeiTi';
+  ::v-deep .el-menu-item {
+    font-size: 1.5rem;
+    font-family: "HeiTi";
+    font-weight: bold;
   }
 }
 </style>

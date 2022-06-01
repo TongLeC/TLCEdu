@@ -1,14 +1,29 @@
 <template>
-  <div class="home-find row" :home="home">
-    <div class="home-bottom-left col-xs-12">
-      <h3 class="home-top-title">
-        {{ $t(home.title) }}
-        <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-      </h3>
-      <ul class="home-bottom-left-ul row">
-        <li
-          class="home-list col-sm-3 col-xs-12"
-          v-for="(item, index) in home.json"
+  <div class="home-find" :home="home">
+    <h3 class="home-top-title">
+      {{ $t(home.title) }}
+      <a :href="home.href">{{ $t("msg.seeMore") }}</a>
+      <p class="home-top-describe">
+        {{ home.json.describe }}
+      </p>
+    </h3>
+    <div class="list-box" v-if="isShow == 1">
+      <swiper
+        :slidesPerView="home.slidesPerView"
+        :spaceBetween="30"
+        :slidesPerGroup="home.slidesPerView"
+        :loop="true"
+        :loopFillGroupWithBlank="true"
+        :pagination="{
+          clickable: true,
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper home-list-box"
+      >
+        <swiper-slide
+          class="home-list"
+          v-for="(item, index) in home.json.detail"
           :key="index"
         >
           <a class="home-list-detail" :href="item.homeUrl">
@@ -21,64 +36,104 @@
           >
             {{ content }}
           </div>
-        </li>
-      </ul>
+        </swiper-slide>
+      </swiper>
     </div>
-    <!-- <div class="home-bottom-right col-sm-3 col-xs-12">
-      <img :src="home.imgSrc" alt="" />
-    </div> -->
+    <div class="list-box" v-else>
+      <swiper
+        :slidesPerView="1"
+        :spaceBetween="30"
+        :slidesPerGroup="1"
+        :loop="true"
+        :loopFillGroupWithBlank="true"
+        :pagination="{
+          clickable: true,
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper home-list-box"
+      >
+        <swiper-slide
+          class="home-list"
+          v-for="(item, index) in home.json.detail"
+          :key="index"
+        >
+          <a class="home-list-detail" :href="item.homeUrl">
+            <img :src="item.homeImg" :alt="item.homeDetail" />
+          </a>
+          <div
+            class="home-list-title"
+            v-for="(content, index) in item.homeDetail"
+            :key="index"
+          >
+            {{ content }}
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
+
 export default {
   name: "homeBookAssembly",
   data() {
-    return {};
+    return {
+      isShow: "1",
+    };
+  },
+  components: {
+    Swiper,
+    SwiperSlide,
   },
   props: {
     home: { type: Object },
   },
   methods: {},
+  setup() {
+    return {
+      modules: [Pagination, Navigation],
+    };
+  },
+  mounted() {
+    if (document.body.clientWidth < 768) {
+      this.isShow = "0";
+    }
+  },
+  // 销毁，防止继续占用内存
+  unmounted() {
+    window.onresize = null;
+  },
 };
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 768px) {
-  ul {
-    padding-left: 15px !important;
-  }
-  .home-bottom-right {
-    display: none;
-  }
-  .col-sm-3 {
-    width: 100% !important;
-  }
-}
-@media screen and (max-width: 1500px) {
-  .home-list {
-    padding: 0 1rem !important;
-  }
-  ul {
-    padding-left: 0 !important;
-  }
-}
 .home-find {
-  margin: 4rem 0 0;
-  .home-bottom-left {
+  margin: 5rem 0 0;
+  padding: 0 4rem 20px;
+  .home-top-title {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    font-family: "SourceSansPro-Regular", "HeiTi";
     position: relative;
-    z-index: 100;
-    padding: 0 2rem;
-    .home-bottom-left-ul {
-      padding-left: 1.4rem;
-      max-height: 520px;
-      width: 100%;
-      // white-space: nowrap;
-      // overflow-x: scroll;
-      overflow-y: auto;
+    a {
+      font-size: 1.7rem;
+      color: #a9a9a9;
+      position: absolute;
+      right: 0;
+      top: 20%;
+    }
+  }
+  .list-box {
+    .home-list-box {
+      padding: 0 1rem;
       .home-list {
-        padding: 0 2.5rem 20px;
-        white-space: nowrap;
         .home-list-detail {
           display: block;
           width: 100%;
@@ -93,32 +148,21 @@ export default {
           margin-top: 5px;
         }
       }
-      .col-sm-3 {
-        width: 20%;
-      }
-    }
-    .home-top-title {
-      font-size: 2.5rem;
-      margin: 2rem 0;
-      font-family: "SourceSansPro-Regular", "HeiTi";
-      position: relative;
-      a {
-        font-size: 1.7rem;
-        color: #a9a9a9;
-        position: absolute;
-        right: 0;
-        top: 15%;
-      }
     }
   }
-  .home-bottom-right {
-    padding: 7rem 0 0;
-    img {
-      // align-items: center;
-      transform: rotateY(180deg);
-      object-fit: cover;
-      width: 100%;
-    }
+  .home-top-describe {
+    margin-top: 2rem;
+  }
+  .home-top-describe,
+  .home-list-describe {
+    color: #a9a9a9;
+    // text-indent: 2em;
+    font-size: 1.5rem;
+    font-family: "Kaiti";
+    // text-align: left;
+  }
+  ::v-deep .swiper-pagination {
+    bottom: -10px !important;
   }
 }
 </style>

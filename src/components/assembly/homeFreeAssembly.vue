@@ -3,15 +3,18 @@
     <!-- <div class="home-top-left col-sm-3 col-xs-12 center-block">
       <img :src="home.imgSrc" alt="" />
     </div> -->
+    <h3 class="home-top-title">
+      {{ $t(home.title) }}
+      <a :href="home.href">{{ $t("msg.seeMore") }}</a>
+      <p class="home-top-describe">
+        {{ home.json.describe }}
+      </p>
+    </h3>
     <div class="home-top-right col-xs-12">
-      <h3 class="home-top-title">
-        {{ $t(home.title) }}
-        <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-      </h3>
       <ul class="row">
         <li
-          class="home-list col-sm-4 col-xs-12"
-          v-for="(item, index) in home.json"
+          class="home-list col-sm-3 col-xs-12"
+          v-for="(item, index) in home.json.detail"
           :key="index"
         >
           <a class="home-list-detail" :href="item.homeUrl">
@@ -41,6 +44,9 @@ export default {
 @media screen and (max-width: 768px) {
   ul {
     padding-left: 15px !important;
+    .col-sm-3 {
+      width: 100% !important;
+    }
   }
 }
 @media screen and (max-width: 1500px) {
@@ -53,33 +59,32 @@ export default {
 }
 .home-free {
   margin: 4rem 0 0;
-  .home-top-left {
-    height: 100%;
-    padding: 3.5rem 0 0;
-    img {
-      object-fit: cover;
-      width: 100%;
-      transform: rotateY(180deg);
+  padding: 0 4rem;
+  .home-top-title {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+    position: relative;
+    a {
+      font-size: 1.7rem;
+      color: #a9a9a9;
+      position: absolute;
+      right: 0;
+      top: 20%;
     }
   }
   .home-top-right {
     z-index: 999;
     ul {
-      // display: flex;
-      // flex-direction: row;
-      // flex-wrap: wrap;
-      // justify-content: space-between;
-      // max-height: 390px;
-      // padding-left: 1.4rem;
-      // overflow-y: auto;
+      padding: 0;
       .home-list {
-        padding: 0 2.5rem;
+        padding: 0 1.5rem;
         .home-list-detail {
           display: block;
           width: 100%;
           object-fit: cover;
           img {
-            width: 60%;
+            width: 100%;
             background: white;
             border-radius: 15px;
             box-shadow: 5px 5px 10px #a9a9a9;
@@ -89,20 +94,21 @@ export default {
           margin-top: 5px;
         }
       }
-    }
-    .home-top-title {
-      font-size: 2.5rem;
-      margin: 2rem 0;
-      font-family: "SourceSansPro-Regular",'HeiTi';
-      position: relative;
-      a {
-        font-size: 1.7rem;
-        color: #a9a9a9;
-        position: absolute;
-        right: 0;
-        top: 15%;
+      .col-sm-3 {
+        width: 20%;
       }
     }
+  }
+  .home-top-describe {
+    margin-top: 2rem;
+  }
+  .home-top-describe,
+  .home-list-describe {
+    color: #a9a9a9;
+    // text-indent: 2em;
+    font-size: 1.5rem;
+    font-family: "Kaiti";
+    // text-align: left;
   }
 }
 </style>
