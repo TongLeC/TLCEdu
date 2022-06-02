@@ -2,6 +2,7 @@
     "NavHeader": [
         {
             "type": "1",
+            "id": "1df2as1",
             "href": "/languageLearning",
             "msg": "msg.languageLearning",
             "child": [
@@ -123,6 +124,7 @@
         },
         {
             "type": "1",
+            "id": "mslfdz",
             "href": "/educationalTheory",
             "msg": "msg.holisticEducationTheory",
             "child": [
@@ -184,6 +186,7 @@
         },
         {
             "type": "0",
+            "id": "f45dsfg",
             "href": "/educationalPractice",
             "msg": "msg.educationalPractice",
             "child": [
@@ -215,6 +218,7 @@
         },
         {
             "type": "0",
+            "id": "4vg5dsf4g",
             "href": "/publicResources",
             "msg": "msg.publicWelfareResources",
             "child": [
@@ -246,6 +250,7 @@
         },
         {
             "type": "0",
+            "id": "4f5ds",
             "href": "/createdArticle",
             "msg": "msg.originalArticle",
             "child": [
