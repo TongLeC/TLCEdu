@@ -76,6 +76,7 @@ export default {
   .educational-practice-title {
     font-size: 2.5rem;
     font-family: "SourceSansPro-Regular", "HeiTi";
+    font-weight: bold;
   }
   .practice-top-title {
     margin: 2rem 0 1.3rem 0;

@@ -12,14 +12,11 @@
         active-text-color="#ea4335"
         router
       >
-        <!-- <el-menu-item route="/" index="1">
-          <img class="logo-img" src="../../public/images/logo3.png" alt="" />
-        </el-menu-item> -->
         <el-menu-item route="/" index="10">{{
           $t("msg.homePage")
         }}</el-menu-item>
-        <el-menu-item index="16">
-          <a href="https://www.tonglec.org/">{{ $t("msg.tongleCourse") }}</a>
+        <el-menu-item>
+          <a href="https://www.tonglec.org/" target="blank">{{ $t("msg.tongleCourse") }}</a>
         </el-menu-item>
         <el-sub-menu
           v-for="(item, index) in NavHeaderJson.NavHeader"
@@ -34,10 +31,10 @@
             :key="index"
             style="border-bottom: 1px solid #ccc"
           >
-            <a :href="list.link" target="view_window" v-if="item.type == 0">{{
-              list.title
-            }}</a>
-            <div @click="getItem(list)" v-else>{{ list.title }}</div>
+            <a :href="list.link" target="view_window" v-if="item.type == 0">
+              {{ list.title }}
+            </a>
+            <div @click="getItem(list, item.child)" v-else>{{ list.title }}</div>
           </el-menu-item>
           <el-menu-item :index="item.href">
             {{ $t("msg.seeMore") }}
@@ -45,7 +42,7 @@
         </el-sub-menu>
         <el-sub-menu index="l">
           <template #title>{{ $t("msg.language") }}</template>
-          <p
+          <!-- <p
             style="
               padding: 5px 10px 8px;
               cursor: pointer;
@@ -55,7 +52,7 @@
             @click="switchEnglish()"
           >
             {{ $t("msg.english") }}
-          </p>
+          </p> -->
           <p
             style="
               padding: 5px 10px 8px;
@@ -103,14 +100,15 @@ export default {
       this.$i18n.locale = "zhFan";
       localStorage.setItem("language", this.$i18n.locale);
     },
-    getItem(item) {
+    getItem(list, item) {
       this.$router.push({
-        path: "/languageLearningDetail",
+        path: "/LanguageLearningDetailTwo",
         query: {
-          id: item.id,
+          id: list.id,
         },
       });
-      localStorage.setItem("item", JSON.stringify(item));
+      localStorage.setItem("json", JSON.stringify(item));
+      console.log(item)
 
       const { now } = this.$route.query;
       if (typeof now === "undefined" && location.href.includes("?")) {

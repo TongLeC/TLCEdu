@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
 import createdArticleJson from "../../../public/json/CreatedArticle.json";
 
 export default {
@@ -27,9 +28,20 @@ export default {
   data() {
     return {
       createdArticleJson,
+      zhcreatedArticleJson: createdArticleJson
     };
   },
   methods: {},
+  mounted() {
+    const { proxy } = getCurrentInstance();
+    window.addEventListener("setItemEvent", (e) => {
+      if (e.newValue == "zhFan") {
+        this.createdArticleJson = proxy.$deepClone(createdArticleJson);
+      } else if (e.newValue == "zh") {
+        this.createdArticleJson = this.zhcreatedArticleJson;
+      }
+    });
+  }
 };
 </script>
 
@@ -47,6 +59,7 @@ export default {
   .created-article-title {
     font-size: 2.5rem;
     font-family: "SourceSansPro-Regular", "HeiTi";
+    font-weight: bold;
   }
   .article-right {
     z-index: 999;
@@ -58,12 +71,16 @@ export default {
         .article-list-detail {
           display: block;
           text-align: center;
-          background: white;
           box-shadow: 0 0 12px #d1d1d1;
           padding: 20px;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+          text-decoration: underline;
+        }
+        .article-list-detail:hover {
+          color: #ea4335;
+          transition: all 0.4s ease 0s;
         }
       }
     }

@@ -6,7 +6,7 @@ import EducationalTheory from './components/content/EducationalTheory'
 import EducationalPractice from './components/content/EducationalPractice'
 import PublicResources from './components/content/PublicResources'
 import CreatedArticle from './components/content/CreatedArticle'
-import LanguageLearningDetail from './components/content/LanguageLearningDetail'
+import LanguageLearningDetailTwo from './components/content/LanguageLearningDetailTwo'
 
 const routerHistory = createWebHistory()
 
@@ -47,9 +47,9 @@ const router = createRouter({
             component: CreatedArticle,
         },
         {
-            path: '/languageLearningDetail',
-            name: 'languageLearningDetail',
-            component: LanguageLearningDetail,
+            path: '/LanguageLearningDetailTwo',
+            name: 'LanguageLearningDetailTwo',
+            component: LanguageLearningDetailTwo,
         }
     ]
 })

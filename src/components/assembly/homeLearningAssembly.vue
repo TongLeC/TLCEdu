@@ -1,9 +1,9 @@
 <template>
   <div class="home-container" :home="home">
     <div class="home-learning row">
-      <p class="big-title">
+      <a class="big-title" :href="home.href">
         {{ $t(home.json.sloganTitle) }}
-      </p>
+      </a>
       <!-- <img :src="home.imgSrc" alt="" /> -->
       <div class="home-learning-left col-sm-6 col-xs-12">
         <p
@@ -34,7 +34,7 @@
           v-for="(item, index) in home.json.sloganList"
           :key="index"
         >
-          <div class="language-list-detail" @click="getItem(item)">
+          <div class="language-list-detail" @click="getItem(item, home.json.sloganList)">
             {{ item.title }}
           </div>
         </li>
@@ -56,14 +56,14 @@ export default {
     home: { type: Object },
   },
   methods: {
-    getItem(item) {
+    getItem(item, json) {
       this.$router.push({
-        path: "/languageLearningDetail",
+        path: "/languageLearningDetailTwo",
         query: {
           id: item.id,
         },
       });
-      localStorage.setItem("item", JSON.stringify(item));
+      localStorage.setItem("json", JSON.stringify(json));
     },
   },
 };
@@ -124,6 +124,11 @@ export default {
     font-family: "SourceSansPro-Regular", "Lishu";
     text-align: center;
     font-weight: bold;
+    display: block;
+  }
+  .big-title:hover {
+    color: #ea4335;
+    transition: all 0.4s ease 0s;
   }
   .home-learning-left {
     font-weight: bold;
@@ -165,6 +170,11 @@ export default {
         padding: 0 1.5rem;
         border-radius: 10px;
       }
+      .language-list-detail:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px #d1d1d1;
+        transition: all 0.4s ease 0s;
+      }
     }
     .language-a {
       width: 100%;
@@ -172,6 +182,10 @@ export default {
       a {
         color: #a9a9a9;
       }
+    }
+    .language-a a:hover {
+      color: #ea4335;
+      transition: all 0.4s ease 0s;
     }
   }
 }

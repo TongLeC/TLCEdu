@@ -35,12 +35,15 @@
     </div>
     <div class="home-big-box home-container">
       <home-learning-assembly :home="home[4]"></home-learning-assembly>
+      <home-learning-assembly :home="home[5]"></home-learning-assembly>
     </div>
-    <home-learning-assembly :home="home[5]"></home-learning-assembly>
+    <!-- <home-learning-assembly :home="home[5]"></home-learning-assembly> -->
     <div class="home-video home-container">
       <div class="home-video-box">
         <div class="home-top-title">
-          {{ $t("msg.educationalPractice") }}
+          <span style="font-weight: bold">{{
+            $t("msg.educationalPractice")
+          }}</span>
           <a href="/educationalPractice">{{ $t("msg.seeMore") }}</a>
           <p class="home-top-describe">
             {{ homePageJson.homeVideo.describe }}
@@ -85,7 +88,7 @@
 </template>
 
 <script>
-import { reactive } from "vue";
+import { reactive, getCurrentInstance } from "vue";
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -102,6 +105,7 @@ export default {
   name: "HomePage",
   data() {
     return {
+      zhhomePageJson: homePageJson,
       homePageJson,
       home: [
         {
@@ -182,12 +186,88 @@ export default {
     return { swiper_options };
   },
   mounted() {
-    // const OpenCC = require("opencc-js");
-    // 繁体转简体
-    // const converter = OpenCC.Converter({ from: "hk", to: "cn" });
-    // 简体转繁体
-    // const restore = OpenCC.Converter({ from: "cn", to: "hk" });
-    // console.log(restore(this.homePageJson.homeSloganLearning.sloganDetail[0]))
+    const { proxy } = getCurrentInstance();
+    window.addEventListener("setItemEvent", (e) => {
+      if (e.newValue == "zhFan") {
+        this.homePageJson = proxy.$deepClone(homePageJson);
+        this.home = [
+          {
+            imgSrc: "/images/bible-child.png",
+            title: "msg.classicAudio",
+            href: "/publicResources",
+            json: this.homePageJson.homeBible,
+            slidesPerView: 4,
+          },
+          {
+            imgSrc: "/images/child3.png",
+            title: "msg.originalArticle",
+            href: "/createdArticle",
+            json: this.homePageJson.homeArticle,
+          },
+          {
+            imgSrc: "/images/book-child.png",
+            title: "msg.tongleBooks",
+            href: "/publicResources",
+            json: this.homePageJson.homeFind,
+            slidesPerView: 5,
+          },
+          {
+            imgSrc: "/images/music-child.png",
+            title: "msg.classicMusic",
+            href: "/publicResources",
+            json: this.homePageJson.homeFree,
+          },
+          {
+            href: "/languageLearning",
+            json: this.homePageJson.homeSloganLearning,
+          },
+          {
+            imgSrc: "/images/video-child.png",
+            href: "/educationalTheory",
+            json: this.homePageJson.homeSloganTheory,
+          },
+        ];
+      } else if (e.newValue == "zh") {
+        this.homePageJson = this.zhhomePageJson;
+        this.home = [
+          {
+            imgSrc: "/images/bible-child.png",
+            title: "msg.classicAudio",
+            href: "/publicResources",
+            json: this.homePageJson.homeBible,
+            slidesPerView: 4,
+          },
+          {
+            imgSrc: "/images/child3.png",
+            title: "msg.originalArticle",
+            href: "/createdArticle",
+            json: this.homePageJson.homeArticle,
+          },
+          {
+            imgSrc: "/images/book-child.png",
+            title: "msg.tongleBooks",
+            href: "/publicResources",
+            json: this.homePageJson.homeFind,
+            slidesPerView: 5,
+          },
+          {
+            imgSrc: "/images/music-child.png",
+            title: "msg.classicMusic",
+            href: "/publicResources",
+            json: this.homePageJson.homeFree,
+          },
+          {
+            href: "/languageLearning",
+            json: this.homePageJson.homeSloganLearning,
+          },
+          {
+            imgSrc: "/images/video-child.png",
+            href: "/educationalTheory",
+            json: this.homePageJson.homeSloganTheory,
+          },
+        ];
+      }
+    });
   },
 };
 </script>
@@ -207,7 +287,6 @@ export default {
     }
   }
   .home-transition {
-    // width: 80% !important;
     font-size: 1.5rem !important;
   }
 }
@@ -237,6 +316,7 @@ export default {
       font-weight: bold;
       a:hover {
         color: #ea4335;
+        transition: all 0.4s ease 0s;
       }
     }
     .map-video {
@@ -253,10 +333,10 @@ export default {
   }
   .home-video {
     width: 100%;
-    background: url("../../../public/images/画板 1.png") no-repeat;
+    background: url("../../../public/images/banner-img.png") no-repeat;
     background-size: 100% 40%;
     background-position: 0 100%;
-    padding: 5rem 0 14rem;
+    padding: 5rem 0 20rem;
     position: relative;
     .home-video-box {
       z-index: 999;
@@ -271,9 +351,6 @@ export default {
             height: 230px;
             border-radius: 15px;
             box-shadow: 5px 5px 10px #a9a9a9;
-          }
-          .video-describe {
-            // text-align: left;
           }
         }
         .col-sm-3 {
@@ -301,6 +378,10 @@ export default {
           position: absolute;
           right: 5%;
           top: 20%;
+        }
+        a:hover {
+          color: #ea4335;
+          transition: all 0.4s ease 0s;
         }
       }
     }

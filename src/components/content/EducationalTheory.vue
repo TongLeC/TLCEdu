@@ -1,7 +1,9 @@
 <template>
   <div class="educational-theory">
     <div class="home-container educational-theory-box row">
-      <div class="educational-theory-title">{{ $t("msg.holisticEducationTheory") }}</div>
+      <div class="educational-theory-title">
+        {{ $t("msg.holisticEducationTheory") }}
+      </div>
       <div class="theory-left col-sm-8 col-xs-12">
         <ul class="theory-left-ul">
           <li class="theory-list">
@@ -25,6 +27,7 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
 import educationalTheoryJson from "../../../public/json/EducationalTheory.json";
 
 export default {
@@ -32,19 +35,34 @@ export default {
   data() {
     return {
       educationalTheoryJson,
+      zheducationalTheoryJson: educationalTheoryJson
     };
   },
   methods: {
     getItem(item) {
       this.$router.push({
-        path: "/languageLearningDetail",
+        path: "/LanguageLearningDetailTwo",
         query: {
           id: item.id,
         },
       });
-      localStorage.setItem("item", JSON.stringify(item));
+      // localStorage.setItem("item", JSON.stringify(item));
+      localStorage.setItem(
+        "json",
+        JSON.stringify(this.educationalTheoryJson.educationalTheory)
+      );
     },
   },
+  mounted() {
+    const { proxy } = getCurrentInstance();
+    window.addEventListener("setItemEvent", (e) => {
+      if (e.newValue == "zhFan") {
+        this.educationalTheoryJson = proxy.$deepClone(educationalTheoryJson);
+      } else if (e.newValue == "zh") {
+        this.educationalTheoryJson = this.zheducationalTheoryJson;
+      }
+    });
+  }
 };
 </script>
 
@@ -71,6 +89,7 @@ export default {
   .educational-theory-title {
     font-size: 2.5rem;
     font-family: "SourceSansPro-Regular", "HeiTi";
+    font-weight: bold;
   }
   .theory-left {
     min-height: 500px;
@@ -100,6 +119,10 @@ export default {
             width: 49rem;
             padding: 16px 0;
           }
+        }
+        .theory-list-router:hover {
+          transform: scale(1.05);
+          transition: all 0.4s ease 0s;
         }
       }
     }

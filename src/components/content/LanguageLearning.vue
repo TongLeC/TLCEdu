@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
 import languageLearningJson from "../../../public/json/LanguageLearning.json";
 
 export default {
@@ -35,19 +36,34 @@ export default {
   data() {
     return {
       languageLearningJson,
+      zhlanguageLearningJson: languageLearningJson
     };
   },
   methods: {
     getItem(item) {
       this.$router.push({
-        path: "/languageLearningDetail",
+        path: "/LanguageLearningDetailTwo",
         query: {
           id: item.id,
         },
       });
-      localStorage.setItem("item", JSON.stringify(item));
+      // localStorage.setItem("item", JSON.stringify(item));
+      localStorage.setItem(
+        "json",
+        JSON.stringify(this.languageLearningJson.languageLearning)
+      );
     },
   },
+  mounted() {
+    const { proxy } = getCurrentInstance();
+    window.addEventListener("setItemEvent", (e) => {
+      if (e.newValue == "zhFan") {
+        this.languageLearningJson = proxy.$deepClone(languageLearningJson);
+      } else if (e.newValue == "zh") {
+        this.languageLearningJson = this.zhlanguageLearningJson;
+      }
+    });
+  }
 };
 </script>
 
@@ -66,6 +82,7 @@ export default {
   .language-learning-title {
     font-size: 2.5rem;
     font-family: "SourceSansPro-Regular", "HeiTi";
+    font-weight: bold;
   }
   .language-learning-box {
     .language-left {
@@ -94,6 +111,10 @@ export default {
             text-overflow: ellipsis;
             cursor: pointer;
           }
+        }
+        .language-list:hover {
+          transform: scale(1.05);
+          transition: all 0.4s ease 0s;
         }
       }
     }

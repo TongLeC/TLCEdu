@@ -63,7 +63,10 @@
             </div>
           </dic>
         </div>
-        <div class="public-right col-sm-3 col-xs-12" style="position:sticky;top:3rem;">
+        <div
+          class="public-right col-sm-3 col-xs-12"
+          style="position: sticky; top: 3rem"
+        >
           <img src="../../../public/images/public-kid.png" alt="" />
         </div>
       </div>
@@ -72,16 +75,28 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
 import publicResourcesJson from "../../../public/json/PublicResources.json";
 
 export default {
   name: "PublicResources",
   data() {
     return {
+      zhpublicResourcesJson: this.publicResourcesJson,
       publicResourcesJson,
     };
   },
   methods: {},
+  mounted() {
+    const { proxy } = getCurrentInstance();
+    window.addEventListener("setItemEvent", (e) => {
+      if (e.newValue == "zhFan") {
+        this.publicResourcesJson = proxy.$deepClone(publicResourcesJson);
+      } else if (e.newValue == "zh") {
+        this.publicResourcesJson = this.zhpublicResourcesJson;
+      }
+    });
+  },
 };
 </script>
 
@@ -92,6 +107,7 @@ export default {
   .public-resources-title {
     font-size: 2.5rem;
     font-family: "SourceSansPro-Regular", "HeiTi";
+    font-weight: bold;
   }
   .public-bottom {
     position: absolute;
@@ -128,6 +144,11 @@ export default {
               width: 100%;
               padding: 0.5rem 0;
             }
+          }
+          .resources-list :hover {
+            transform: scale(1.05);
+            color: #ea4335;
+            transition: all 0.4s ease 0s;
           }
         }
       }

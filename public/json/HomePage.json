@@ -258,14 +258,14 @@
         "describe": "中国文化历经千年，典籍浩如烟海，其根本则是经典。同乐中文寻根系列书籍，收录了诸子百家锦言，旨在回归民族的根基，传播永恒的智慧，关怀无价的生命。",
         "detail": [
             {
-                "homeImg": "/images/《海外中文教育的探索》.jpg",
+                "homeImg": "/images/home-find1.jpg",
                 "homeUrl": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view",
                 "homeDetail": [
                     "《海外中文教育的探索》"
                 ]
             },
             {
-                "homeImg": "/images/老子.png",
+                "homeImg": "/images/home-find2.png",
                 "homeUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
                 "homeDetail": [
                     "中文寻根(一)",
@@ -273,7 +273,7 @@
                 ]
             },
             {
-                "homeImg": "/images/大学中庸.png",
+                "homeImg": "/images/home-find3.png",
                 "homeUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
                 "homeDetail": [
                     "中文寻根(二)",
@@ -281,7 +281,7 @@
                 ]
             },
             {
-                "homeImg": "/images/大学中庸名句.png",
+                "homeImg": "/images/home-find4.png",
                 "homeUrl": "https://drive.google.com/file/d/1FwgRaSzSsH82LztbtiI1vebROUHcb764/view",
                 "homeDetail": [
                     "中文寻根(二)",
@@ -289,7 +289,7 @@
                 ]
             },
             {
-                "homeImg": "/images/论语名句.png",
+                "homeImg": "/images/home-find5.png",
                 "homeUrl": "https://drive.google.com/file/d/1PZJZn70jHVBp5vLjEY_e-66PJ7yMSDAi/view",
                 "homeDetail": [
                     "中文寻根(三)",
@@ -297,7 +297,7 @@
                 ]
             },
             {
-                "homeImg": "/images/孟庄.png",
+                "homeImg": "/images/home-find6.png",
                 "homeUrl": "https://drive.google.com/file/d/17a84j0q53Z9Trr6CSIkIUcJ9jUhFxnR1/view",
                 "homeDetail": [
                     "中文寻根(四)",
@@ -305,7 +305,7 @@
                 ]
             },
             {
-                "homeImg": "/images/经典拾贝.png",
+                "homeImg": "/images/home-find7.png",
                 "homeUrl": "https://drive.google.com/file/d/1_2D14f3WeFLt8GexLVS00yfTAGPJ5PBh/view",
                 "homeDetail": [
                     "中文寻根(五)",
@@ -318,7 +318,7 @@
         "describe": "读经机是经典教育的好帮手，可以用来跟读，也可以熏听。小孩子耳根灵敏，随时随地与经典之声相伴，不知不觉圣贤智慧浸润心田。",
         "detail": [
             {
-                "homeImg": "/images/中文寻根第二卷《中庸名句》.PNG",
+                "homeImg": "/images/bible1.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZQSjyRTNoDEKb_hXU1HCsb",
                 "homeDetail": [
                     "中文寻根第二卷",
@@ -326,7 +326,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第四卷《孟庄荀列管墨名言》.PNG",
+                "homeImg": "/images/bible2.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbfEtp6wnGVS5jwCzqhFWj4",
                 "homeDetail": [
                     "中文寻根第四卷",
@@ -334,7 +334,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第二卷《中庸》.PNG",
+                "homeImg": "/images/bible3.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZ7-75QojJZQRpeIfUO_LCp",
                 "homeDetail": [
                     "中文寻根第二卷",
@@ -342,7 +342,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第三卷《论语》.PNG",
+                "homeImg": "/images/bible4.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIraDJAyyG1q3XTMOON-zoy79",
                 "homeDetail": [
                     "中文寻根第三卷",
@@ -350,7 +350,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第三卷《论语名句》.PNG",
+                "homeImg": "/images/bible5.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZjnVnN-reDOk9rRZ2mS3-H",
                 "homeDetail": [
                     "中文寻根第三卷",
@@ -358,7 +358,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第一卷《道德经》.PNG",
+                "homeImg": "/images/bible6.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrZTyG-osKRvETdSjL_Dinw2",
                 "homeDetail": [
                     "中文寻根第一卷",
@@ -366,7 +366,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第五卷《经典拾贝》.PNG",
+                "homeImg": "/images/bible7.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrb9Wne-8ps8GII6_8gLCTWg",
                 "homeDetail": [
                     "中文寻根第五卷",
@@ -374,7 +374,7 @@
                 ]
             },
             {
-                "homeImg": "/images/中文寻根第二卷《大学》.PNG",
+                "homeImg": "/images/bible8.PNG",
                 "homeUrl": "https://youtube.com/playlist?list=PLZlDloJgXIrbBosUaVimWG2HcTAQQEiOO",
                 "homeDetail": [
                     "中文寻根第二卷",
@@ -385,14 +385,14 @@
     },
     "homeFree": [
         {
-            "homeImg": "/images/宝宝是小小音乐家.jpg",
+            "homeImg": "/images/music1.jpg",
             "homeUrl": "https://youtu.be/9Y6m3E0XZWQ",
             "homeDetail": [
                 "宝宝是小小音乐家"
             ]
         },
         {
-            "homeImg": "/images/中国古乐之音阶-宫商角徵羽.jpg",
+            "homeImg": "/images/music2.jpg",
             "homeUrl": "https://youtu.be/y4kgkUn4uLQ",
             "homeDetail": [
                 "认识中国古乐之音阶",
@@ -400,7 +400,7 @@
             ]
         },
         {
-            "homeImg": "/images/老北京的纯正味道.jpg",
+            "homeImg": "/images/music3.jpg",
             "homeUrl": "https://youtu.be/4uOsZA2N-VE",
             "homeDetail": [
                 "老北京的纯正味道"
@@ -412,27 +412,27 @@
         "detail": [
             {
                 "homeDetail": "文以载道：“文”",
-                "homeImg": "/images/01_文以载道：“文”.png",
+                "homeImg": "/images/article1.png",
                 "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741171&idx=1&sn=01f1229d7c349da07e529d728557ced0&scene=21"
             },
             {
                 "homeDetail": "文以载道：“武”",
-                "homeImg": "/images/02_文以载道：“武”.png",
+                "homeImg": "/images/article2.png",
                 "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741188&idx=1&sn=ab2ae22b434aab7be42d2f3839ebe855&scene=21"
             },
             {
                 "homeDetail": "文以载道：“朋友”",
-                "homeImg": "/images/03_文以载道：“朋友”.png",
+                "homeImg": "/images/article3.png",
                 "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741193&idx=1&sn=95948ef2a1aafe023b4404d7714a2d90&scene=21"
             },
             {
                 "homeDetail": "文以载道：“仙”与“俗”",
-                "homeImg": "/images/02_文以载道：“武”.png",
+                "homeImg": "/images/article2.png",
                 "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741246&idx=1&sn=b16339f2a548baf4f01d3c6f77dc2d24&scene=21#wechat_redirect"
             },
             {
                 "homeDetail": "文以载道：“惑”",
-                "homeImg": "/images/03_文以载道：“朋友”.png",
+                "homeImg": "/images/article3.png",
                 "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741276&idx=1&sn=adf5b19d39e6de3b21cb35535cfe3863&scene=21#wechat_redirect"
             }
         ]

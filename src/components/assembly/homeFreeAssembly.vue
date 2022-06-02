@@ -4,7 +4,7 @@
       <img :src="home.imgSrc" alt="" />
     </div> -->
     <h3 class="home-top-title">
-      {{ $t(home.title) }}
+      <span style="font-weight:bold;">{{ $t(home.title) }}</span>
       <a :href="home.href">{{ $t("msg.seeMore") }}</a>
       <p class="home-top-describe">
         {{ home.json.describe }}
@@ -72,6 +72,10 @@ export default {
       right: 0;
       top: 20%;
     }
+    a:hover{
+      color: #ea4335;
+      transition: all 0.4s ease 0s;
+    }
   }
   .home-top-right {
     z-index: 999;
@@ -93,6 +97,10 @@ export default {
         .home-list-title {
           margin-top: 5px;
         }
+      }
+      .home-list-detail:hover img {
+        box-shadow: 5px 5px 10px #ee958d;
+        transition: all 0.4s ease 0s;
       }
       .col-sm-3 {
         width: 20%;
