@@ -1,5 +1,5 @@
 {
-    "PublicResourcesOne": [
+    "resourceOne": [
         {
             "title": "msg.freeBooks",
             "detailLink": [
@@ -71,7 +71,7 @@
             ]
         }
     ],
-    "PublicResourcesTwo": [
+    "resourceTwo": [
         {
             "title": "msg.classicMusic",
             "detailLink": [
