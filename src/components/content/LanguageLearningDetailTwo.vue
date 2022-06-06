@@ -31,6 +31,7 @@
 <script>
 import { getCurrentInstance } from "vue";
 import { mapGetters } from "vuex";
+// import { onBeforeRouteUpdate } from "vue-router";
 
 export default {
   name: "LanguageLearningDetailTwo",
@@ -52,6 +53,12 @@ export default {
       this.json = this.zhJson;
     }
   },
+  setup() {
+    // onBeforeRouteUpdate((to) => {
+    //   console.log(to.query.id);
+    //   this.activeTab = to.query.id;
+    // });
+  },
   computed: {
     ...mapGetters(["getLanguage"]),
   },
@@ -62,6 +69,12 @@ export default {
       } else if (this.$store.state.language == "zh") {
         this.json = this.zhJson;
       }
+    },
+    $route: {
+      handler: function (val) {
+        console.log(val,this.$route.query.id);
+        this.activeTab= this.$route.query.id;
+      },
     },
   },
 };

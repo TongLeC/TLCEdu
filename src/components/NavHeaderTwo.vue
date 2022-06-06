@@ -36,7 +36,7 @@
             <a :href="list.link" target="view_window" v-if="item.type == 0">
               {{ list.title }}
             </a>
-            <div @click="getItem(list, item.child)" v-else>
+            <div @click.stop @click="getItem(list, item.child)" v-else>
               {{ list.title }}
             </div>
           </el-menu-item>
@@ -83,7 +83,6 @@
 
 <script>
 import NavHeaderJson from "../../public/json/NavHeader.json";
-// import { mapGetters } from "vuex";
 
 export default {
   name: "NavHeaderTwo",
@@ -113,12 +112,6 @@ export default {
         },
       });
       localStorage.setItem("detail", JSON.stringify(item));
-
-      const { now } = this.$route.query;
-      if (typeof now === "undefined" && location.href.includes("?")) {
-        location.href = location.href + `&now=${Date.now()}`;
-        window.location.reload();
-      }
     },
   },
 };
@@ -129,7 +122,6 @@ export default {
   font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
   width: 100%;
-  // border-bottom: 1px solid #322f3b;
   box-shadow: 0 0 15px #5d5c5f;
   position: fixed;
   top: 0;
@@ -150,6 +142,18 @@ export default {
     font-size: 1.5rem;
     font-family: "HeiTi";
     font-weight: bold;
+  }
+  ::v-deep .el-menu-item:hover,
+  ::v-deep .el-sub-menu__title:hover {
+    background: #f7e7e7 !important;
+    color: #ea4335 !important;
+  }
+  ::v-deep .el-menu-item.is-active,
+  ::v-deep .el-sub-menu__title.is-active {
+    background: #f7e7e7 !important;
+  }
+  ::v-deep .el-sub-menu__title:hover a {
+    color: #ea4335 !important;
   }
 }
 </style>
