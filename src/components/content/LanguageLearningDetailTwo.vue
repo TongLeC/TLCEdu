@@ -4,6 +4,7 @@
       :tab-position="tabPosition"
       class="demo-tabs language-learning-tab"
       v-model="activeTab"
+      @tab-change = "tabChange"
     >
       <el-tab-pane
         :label="item.title"
@@ -31,7 +32,6 @@
 <script>
 import { getCurrentInstance } from "vue";
 import { mapGetters } from "vuex";
-// import { onBeforeRouteUpdate } from "vue-router";
 
 export default {
   name: "LanguageLearningDetailTwo",
@@ -53,12 +53,6 @@ export default {
       this.json = this.zhJson;
     }
   },
-  setup() {
-    // onBeforeRouteUpdate((to) => {
-    //   console.log(to.query.id);
-    //   this.activeTab = to.query.id;
-    // });
-  },
   computed: {
     ...mapGetters(["getLanguage"]),
   },
@@ -71,12 +65,23 @@ export default {
       }
     },
     $route: {
-      handler: function (val) {
-        console.log(val,this.$route.query.id);
-        this.activeTab= this.$route.query.id;
+      handler: function () {
+        // console.log(val, this.$route.query.id);
+        this.activeTab = this.$route.query.id;
+        this.json = JSON.parse(localStorage.getItem("detail"));
+        this.zhJson = JSON.parse(localStorage.getItem("detail"));
       },
     },
   },
+  methods: {
+    tabChange (){
+      this.$router.replace({
+        query: {
+          id: this.activeTab
+        }
+      })
+    }
+  }
 };
 </script>
 
