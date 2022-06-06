@@ -63,7 +63,7 @@ export default {
           id: item.id,
         },
       });
-      localStorage.setItem("json", JSON.stringify(json));
+      localStorage.setItem("detail", JSON.stringify(json));
     },
   },
 };

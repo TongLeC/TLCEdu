@@ -16,7 +16,9 @@
           $t("msg.homePage")
         }}</el-menu-item>
         <el-menu-item>
-          <a href="https://www.tonglec.org/" target="blank">{{ $t("msg.tongleCourse") }}</a>
+          <a href="https://www.tonglec.org/" target="blank">{{
+            $t("msg.tongleCourse")
+          }}</a>
         </el-menu-item>
         <el-sub-menu
           v-for="(item, index) in NavHeaderJson.NavHeader"
@@ -34,7 +36,9 @@
             <a :href="list.link" target="view_window" v-if="item.type == 0">
               {{ list.title }}
             </a>
-            <div @click="getItem(list, item.child)" v-else>{{ list.title }}</div>
+            <div @click="getItem(list, item.child)" v-else>
+              {{ list.title }}
+            </div>
           </el-menu-item>
           <el-menu-item :index="item.href">
             {{ $t("msg.seeMore") }}
@@ -79,6 +83,7 @@
 
 <script>
 import NavHeaderJson from "../../public/json/NavHeader.json";
+// import { mapGetters } from "vuex";
 
 export default {
   name: "NavHeaderTwo",
@@ -90,15 +95,15 @@ export default {
   methods: {
     switchEnglish() {
       this.$i18n.locale = "en";
-      localStorage.setItem("language", this.$i18n.locale);
+      this.$store.commit("setLanguage", this.$i18n.locale);
     },
     switchSimplified() {
       this.$i18n.locale = "zh";
-      localStorage.setItem("language", this.$i18n.locale);
+      this.$store.commit("setLanguage", this.$i18n.locale);
     },
     switchTraditional() {
       this.$i18n.locale = "zhFan";
-      localStorage.setItem("language", this.$i18n.locale);
+      this.$store.commit("setLanguage", this.$i18n.locale);
     },
     getItem(list, item) {
       this.$router.push({
@@ -107,8 +112,7 @@ export default {
           id: list.id,
         },
       });
-      localStorage.setItem("json", JSON.stringify(item));
-      console.log(item)
+      localStorage.setItem("detail", JSON.stringify(item));
 
       const { now } = this.$route.query;
       if (typeof now === "undefined" && location.href.includes("?")) {

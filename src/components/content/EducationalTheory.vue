@@ -28,6 +28,7 @@
 
 <script>
 import { getCurrentInstance } from "vue";
+import { mapGetters } from "vuex";
 import educationalTheoryJson from "../../../public/json/EducationalTheory.json";
 
 export default {
@@ -35,7 +36,8 @@ export default {
   data() {
     return {
       educationalTheoryJson,
-      zheducationalTheoryJson: educationalTheoryJson
+      zhFaneducationalTheoryJson: {},
+      zheducationalTheoryJson: educationalTheoryJson,
     };
   },
   methods: {
@@ -46,23 +48,33 @@ export default {
           id: item.id,
         },
       });
-      // localStorage.setItem("item", JSON.stringify(item));
       localStorage.setItem(
-        "json",
+        "detail",
         JSON.stringify(this.educationalTheoryJson.educationalTheory)
       );
     },
   },
-  mounted() {
+   mounted() {
     const { proxy } = getCurrentInstance();
-    window.addEventListener("setItemEvent", (e) => {
-      if (e.newValue == "zhFan") {
-        this.educationalTheoryJson = proxy.$deepClone(educationalTheoryJson);
-      } else if (e.newValue == "zh") {
+    this.zhFaneducationalTheoryJson = proxy.$deepClone(educationalTheoryJson);
+    if (this.$store.state.language == "zhFan") {
+      this.educationalTheoryJson = this.zhFaneducationalTheoryJson;
+    } else if (this.$store.state.language == "zh") {
+      this.educationalTheoryJson = this.zheducationalTheoryJson;
+    }
+  },
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.educationalTheoryJson = this.zhFaneducationalTheoryJson;
+      } else if (this.$store.state.language == "zh") {
         this.educationalTheoryJson = this.zheducationalTheoryJson;
       }
-    });
-  }
+    },
+  },
 };
 </script>
 

@@ -91,6 +91,7 @@
 import { reactive, getCurrentInstance } from "vue";
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { mapGetters } from "vuex";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -105,6 +106,7 @@ export default {
   name: "HomePage",
   data() {
     return {
+      zhFanhomePageJson: {},
       zhhomePageJson: homePageJson,
       homePageJson,
       home: [
@@ -153,17 +155,7 @@ export default {
     homeBookAssembly,
     homeLearningAssembly,
   },
-  methods: {
-    getItem(item) {
-      this.$router.push({
-        path: "/languageLearningDetail",
-        query: {
-          id: item.id,
-        },
-      });
-      localStorage.setItem("item", JSON.stringify(item));
-    },
-  },
+  methods: {},
   setup() {
     let swiper_options = reactive({
       autoplay: {
@@ -187,9 +179,9 @@ export default {
   },
   mounted() {
     const { proxy } = getCurrentInstance();
-    window.addEventListener("setItemEvent", (e) => {
-      if (e.newValue == "zhFan") {
-        this.homePageJson = proxy.$deepClone(homePageJson);
+    this.zhFanhomePageJson = proxy.$deepClone(homePageJson);
+    if (this.$store.state.language == "zhFan") {
+        this.homePageJson = this.zhFanhomePageJson;
         this.home = [
           {
             imgSrc: "/images/bible-child.png",
@@ -227,7 +219,7 @@ export default {
             json: this.homePageJson.homeSloganTheory,
           },
         ];
-      } else if (e.newValue == "zh") {
+      } else if (this.$store.state.language == "zh") {
         this.homePageJson = this.zhhomePageJson;
         this.home = [
           {
@@ -267,7 +259,92 @@ export default {
           },
         ];
       }
-    });
+  },
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.homePageJson = this.zhFanhomePageJson;
+        this.home = [
+          {
+            imgSrc: "/images/bible-child.png",
+            title: "msg.classicAudio",
+            href: "/publicResources",
+            json: this.homePageJson.homeBible,
+            slidesPerView: 4,
+          },
+          {
+            imgSrc: "/images/child3.png",
+            title: "msg.originalArticle",
+            href: "/createdArticle",
+            json: this.homePageJson.homeArticle,
+          },
+          {
+            imgSrc: "/images/book-child.png",
+            title: "msg.tongleBooks",
+            href: "/publicResources",
+            json: this.homePageJson.homeFind,
+            slidesPerView: 5,
+          },
+          {
+            imgSrc: "/images/music-child.png",
+            title: "msg.classicMusic",
+            href: "/publicResources",
+            json: this.homePageJson.homeFree,
+          },
+          {
+            href: "/languageLearning",
+            json: this.homePageJson.homeSloganLearning,
+          },
+          {
+            imgSrc: "/images/video-child.png",
+            href: "/educationalTheory",
+            json: this.homePageJson.homeSloganTheory,
+          },
+        ];
+      } else if (this.$store.state.language == "zh") {
+        this.homePageJson = this.zhhomePageJson;
+        this.home = [
+          {
+            imgSrc: "/images/bible-child.png",
+            title: "msg.classicAudio",
+            href: "/publicResources",
+            json: this.homePageJson.homeBible,
+            slidesPerView: 4,
+          },
+          {
+            imgSrc: "/images/child3.png",
+            title: "msg.originalArticle",
+            href: "/createdArticle",
+            json: this.homePageJson.homeArticle,
+          },
+          {
+            imgSrc: "/images/book-child.png",
+            title: "msg.tongleBooks",
+            href: "/publicResources",
+            json: this.homePageJson.homeFind,
+            slidesPerView: 5,
+          },
+          {
+            imgSrc: "/images/music-child.png",
+            title: "msg.classicMusic",
+            href: "/publicResources",
+            json: this.homePageJson.homeFree,
+          },
+          {
+            href: "/languageLearning",
+            json: this.homePageJson.homeSloganLearning,
+          },
+          {
+            imgSrc: "/images/video-child.png",
+            href: "/educationalTheory",
+            json: this.homePageJson.homeSloganTheory,
+          },
+        ];
+      }
+    },
   },
 };
 </script>

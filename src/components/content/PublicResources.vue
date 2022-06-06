@@ -12,7 +12,7 @@
           <dic class="row">
             <div
               class="resources-one col-sm-5 col-xs-12"
-              v-for="(item, index) in publicResourcesJson.PublicResourcesOne"
+              v-for="(item, index) in publicResourcesJson.resourceOne"
               :key="index"
             >
               <h3 class="resources-title">
@@ -21,12 +21,13 @@
               <ul style="padding: 0">
                 <li class="resources-list">
                   <a
-                    :href="item.linkAddress"
-                    v-for="(item, index) in item.detailLink"
-                    :key="index"
+                    :href="detail.linkAddress"
+                    v-for="(detail, i) in item.detailLink"
+                    :key="i"
                     class="resources-list-detail"
+                    target="blank"
                   >
-                    {{ item.linkTitle }}
+                    {{ detail.linkTitle }}
                   </a>
                 </li>
               </ul>
@@ -42,7 +43,7 @@
           <dic class="row">
             <div
               class="resources-one col-sm-5 col-xs-12"
-              v-for="(item, index) in publicResourcesJson.PublicResourcesTwo"
+              v-for="(item, index) in publicResourcesJson.resourceTwo"
               :key="index"
             >
               <h3 class="resources-title">
@@ -51,12 +52,13 @@
               <ul style="padding: 0">
                 <li class="resources-list">
                   <a
-                    :href="item.linkAddress"
-                    v-for="(item, index) in item.detailLink"
-                    :key="index"
+                    :href="detail.linkAddress"
+                    v-for="(detail, i) in item.detailLink"
+                    :key="i"
                     class="resources-list-detail"
+                    target="blank"
                   >
-                    {{ item.linkTitle }}
+                    {{ detail.linkTitle }}
                   </a>
                 </li>
               </ul>
@@ -76,12 +78,14 @@
 
 <script>
 import { getCurrentInstance } from "vue";
+import { mapGetters } from "vuex";
 import publicResourcesJson from "../../../public/json/PublicResources.json";
 
 export default {
   name: "PublicResources",
   data() {
     return {
+      zhFanpublicResourcesJson: {},
       zhpublicResourcesJson: this.publicResourcesJson,
       publicResourcesJson,
     };
@@ -89,13 +93,24 @@ export default {
   methods: {},
   mounted() {
     const { proxy } = getCurrentInstance();
-    window.addEventListener("setItemEvent", (e) => {
-      if (e.newValue == "zhFan") {
-        this.publicResourcesJson = proxy.$deepClone(publicResourcesJson);
-      } else if (e.newValue == "zh") {
+    this.zhFanpublicResourcesJson = proxy.$deepClone(publicResourcesJson);
+    if (this.$store.state.language == "zhFan") {
+      this.publicResourcesJson = this.zhFanpublicResourcesJson;
+    } else if (this.$store.state.language == "zh") {
+      this.publicResourcesJson = this.zhpublicResourcesJson;
+    }
+  },
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.publicResourcesJson = this.zhFanpublicResourcesJson;
+      } else if (this.$store.state.language == "zh") {
         this.publicResourcesJson = this.zhpublicResourcesJson;
       }
-    });
+    },
   },
 };
 </script>

@@ -29,6 +29,7 @@
 
 <script>
 import { getCurrentInstance } from "vue";
+import { mapGetters } from "vuex";
 import languageLearningJson from "../../../public/json/LanguageLearning.json";
 
 export default {
@@ -36,7 +37,8 @@ export default {
   data() {
     return {
       languageLearningJson,
-      zhlanguageLearningJson: languageLearningJson
+      zhFanlanguageLearningJson: {},
+      zhlanguageLearningJson: languageLearningJson,
     };
   },
   methods: {
@@ -47,23 +49,33 @@ export default {
           id: item.id,
         },
       });
-      // localStorage.setItem("item", JSON.stringify(item));
       localStorage.setItem(
-        "json",
+        "detail",
         JSON.stringify(this.languageLearningJson.languageLearning)
       );
     },
   },
   mounted() {
     const { proxy } = getCurrentInstance();
-    window.addEventListener("setItemEvent", (e) => {
-      if (e.newValue == "zhFan") {
-        this.languageLearningJson = proxy.$deepClone(languageLearningJson);
-      } else if (e.newValue == "zh") {
+    this.zhFanlanguageLearningJson = proxy.$deepClone(languageLearningJson);
+    if (this.$store.state.language == "zhFan") {
+      this.languageLearningJson = this.zhFanlanguageLearningJson;
+    } else if (this.$store.state.language == "zh") {
+      this.languageLearningJson = this.zhlanguageLearningJson;
+    }
+  },
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.languageLearningJson = this.zhFanlanguageLearningJson;
+      } else if (this.$store.state.language == "zh") {
         this.languageLearningJson = this.zhlanguageLearningJson;
       }
-    });
-  }
+    },
+  },
 };
 </script>
 

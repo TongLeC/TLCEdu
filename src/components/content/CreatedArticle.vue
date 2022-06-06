@@ -10,7 +10,7 @@
           v-for="(item, index) in createdArticleJson.CreatedArticle"
           :key="index"
         >
-          <a class="article-list-detail" :href="item.articleLink">
+          <a class="article-list-detail" :href="item.articleLink" target="blank">
             {{ item.articleTitle }}
           </a>
         </li>
@@ -21,6 +21,7 @@
 
 <script>
 import { getCurrentInstance } from "vue";
+import { mapGetters } from "vuex";
 import createdArticleJson from "../../../public/json/CreatedArticle.json";
 
 export default {
@@ -28,20 +29,32 @@ export default {
   data() {
     return {
       createdArticleJson,
+      zhFancreatedArticleJson: {},
       zhcreatedArticleJson: createdArticleJson
     };
   },
   methods: {},
   mounted() {
     const { proxy } = getCurrentInstance();
-    window.addEventListener("setItemEvent", (e) => {
-      if (e.newValue == "zhFan") {
-        this.createdArticleJson = proxy.$deepClone(createdArticleJson);
-      } else if (e.newValue == "zh") {
+    this.zhFancreatedArticleJson = proxy.$deepClone(createdArticleJson);
+    if (this.$store.state.language == "zhFan") {
+      this.createdArticleJson = this.zhFancreatedArticleJson;
+    } else if (this.$store.state.language == "zh") {
+      this.createdArticleJson = this.zhcreatedArticleJson;
+    }
+  },
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.createdArticleJson = this.zhFancreatedArticleJson;
+      } else if (this.$store.state.language == "zh") {
         this.createdArticleJson = this.zhcreatedArticleJson;
       }
-    });
-  }
+    },
+  },
 };
 </script>
 

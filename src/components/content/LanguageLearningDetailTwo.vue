@@ -29,19 +29,41 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
+import { mapGetters } from "vuex";
+
 export default {
   name: "LanguageLearningDetailTwo",
   data() {
     return {
-      json: [],
+      json: JSON.parse(localStorage.getItem("detail")),
+      zhJson: JSON.parse(localStorage.getItem("detail")),
+      zhFanJson: [],
       tabPosition: "left",
       activeTab: this.$route.query.id,
     };
   },
   mounted() {
-    this.json = JSON.parse(localStorage.getItem("json"));
+    const { proxy } = getCurrentInstance();
+    this.zhFanJson = proxy.$deepClone(this.json);
+    if (this.$store.state.language == "zhFan") {
+      this.json = this.zhFanJson;
+    } else if (this.$store.state.language == "zh") {
+      this.json = this.zhJson;
+    }
   },
-  methods: {},
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.json = this.zhFanJson;
+      } else if (this.$store.state.language == "zh") {
+        this.json = this.zhJson;
+      }
+    },
+  },
 };
 </script>
 

@@ -34,7 +34,7 @@ export default {
         this.languageDetail = item;
       }
     });
-    this.detail = JSON.parse(localStorage.getItem("item"));
+    this.detail = JSON.parse(localStorage.getItem("detail"));
   },
   methods: {},
 };
