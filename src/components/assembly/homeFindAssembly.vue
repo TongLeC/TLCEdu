@@ -1,22 +1,32 @@
 <template>
-  <div class="home-find" :home="home">
-    <div class="home-bottom-right">
-      <img :src="home.imgSrc" alt="" />
-    </div>
-    <div class="home-bottom-left">
+  <div class="home-find row" :home="home">
+    <div class="home-bottom-left col-xs-12">
       <h3 class="home-top-title">
         {{ $t(home.title) }}
         <a :href="home.href">{{ $t("msg.seeMore") }}</a>
       </h3>
-      <ul class="home-bottom-left-ul">
-        <li class="home-list" v-for="(item, index) in home.json" :key="index">
+      <ul class="home-bottom-left-ul row">
+        <li
+          class="home-list col-sm-4 col-xs-12"
+          v-for="(item, index) in home.json"
+          :key="index"
+        >
           <a class="home-list-detail" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div class="home-list-title">{{ item.homeDetail }}</div>
+          <div
+            class="home-list-title"
+            v-for="(content, index) in item.homeDetail"
+            :key="index"
+          >
+            {{ content }}
+          </div>
         </li>
       </ul>
     </div>
+    <!-- <div class="home-bottom-right col-sm-3 col-xs-12">
+      <img :src="home.imgSrc" alt="" />
+    </div> -->
   </div>
 </template>
 
@@ -27,101 +37,76 @@ export default {
     return {};
   },
   props: {
-    home: { type: Object }
+    home: { type: Object },
   },
   methods: {},
 };
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
   ul {
-    .home-list {
-      flex: 0 0 90% !important;
-    }
-  }
-}
-@media (min-width: 420px) and (max-width: 760px) {
-  .home-list {
-    flex: 0 0 90% !important;
-  }
-}
-@media screen and (max-width: 860px) {
-  .home-bottom-left {
-    margin: 1.5rem auto 0 !important;
+    padding-left: 15px !important;
   }
   .home-bottom-right {
-    position: relative !important;
     img {
-      position: static !important;
-      margin: 2rem auto 0 !important;
+      display: none;
     }
   }
 }
-@media (min-width: 760px) and (max-width: 900px) {
+@media screen and (max-width: 1500px) {
   .home-list {
-    flex: 0 0 42% !important;
+    padding: 0 1rem !important;
+  }
+  ul {
+    padding-left: 0 !important;
   }
 }
-@media (min-width: 900px) and (max-width: 1600px) {
-  .home-list {
-    flex: 0 0 27% !important;
-  }
-}
-
 .home-find {
-  position: relative;
+  margin: 4rem 0 0;
   .home-bottom-left {
-    width: 59%;
-    background: white;
-    box-shadow: 0 0 12px #d1d1d1;
-    margin: 4rem 0 2rem 10rem;
-    padding: 0.7rem 0 1rem 0;
     position: relative;
     z-index: 100;
+    padding: 0 2rem;
     .home-bottom-left-ul {
-      overflow-y: auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-height: 390px;
       padding-left: 1.4rem;
       .home-list {
-        margin: 10px 28px 20px 0;
-        flex: 0 0 29%;
+        padding: 0 2.5rem;
         .home-list-detail {
           display: block;
           width: 100%;
           object-fit: cover;
           img {
             width: 100%;
-            border: 1px solid #a61b29;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #a9a9a9;
           }
         }
         .home-list-title {
-          font-size: 1.3rem;
           margin-top: 5px;
         }
       }
     }
     .home-top-title {
-      font-size: 1.9rem;
-      color: #a61b29;
+      font-size: 2.5rem;
       margin: 2rem 0 1.3rem 0;
+      font-family: "SourceSansPro-Regular",'HeiTi';
+      position: relative;
       a {
-        font-size: 1.2rem;
-        color: #9c9c9c;
+        font-size: 1.7rem;
+        color: #a9a9a9;
+        position: absolute;
+        right: 0;
+        top: 15%;
       }
     }
   }
   .home-bottom-right {
+    padding: 3rem 0 0;
     img {
       transform: rotateY(180deg);
-      position: absolute;
-      right: 8rem;
       object-fit: cover;
-      width: 26rem;
+      width: 90%;
     }
   }
 }

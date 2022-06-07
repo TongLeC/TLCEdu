@@ -1,16 +1,17 @@
 <template>
-  <div class="language-learning-detail">
-    <h3 class="detail-title">{{ this.detail.title }}</h3>
-    <div class="detail-content-box">
-      <p
-        class="detail-content"
-        v-for="(item, index) in this.detail.detail"
-        :key="index"
-        v-html="item"
-      >
-      </p>
+  <div class="home-container">
+    <div class="language-learning-detail">
+      <h3 class="detail-title">{{ this.detail.title }}</h3>
+      <div class="detail-content-box">
+        <p
+          class="detail-content"
+          v-for="(item, index) in this.detail.detail"
+          :key="index"
+          v-html="item"
+        ></p>
+      </div>
+      <img class="detail-img" :src="this.detail.imgUrl" alt="" />
     </div>
-    <img class="detail-img" :src="this.detail.imgUrl" alt="" />
   </div>
 </template>
 
@@ -33,7 +34,7 @@ export default {
         this.languageDetail = item;
       }
     });
-    this.detail = JSON.parse(localStorage.getItem('item'))
+    this.detail = JSON.parse(localStorage.getItem("detail"));
   },
   methods: {},
 };
@@ -44,12 +45,12 @@ export default {
   width: 68%;
   background: white;
   box-shadow: 0 0 12px #d1d1d1;
-  margin: 8rem auto 4rem !important;
+  margin: 4rem auto !important;
   padding-top: 10px;
-  font-family: 'SongTi' !important;
+  font-family: "KaiTi" !important;
   .detail-title {
     font-size: 1.9rem;
-    color: #a61b29;
+    color: #ea4335;
     margin: 2rem 0;
     font-weight: bold;
   }
@@ -68,7 +69,7 @@ export default {
     object-fit: cover;
     opacity: 0.5;
     z-index: -1;
-    float: right;
+    // float: right;
   }
 }
 </style>

@@ -1,38 +1,40 @@
 <template>
-  <div class="home-learning" :home="home">
-    <img :src="home.imgSrc" alt="" />
-    <div class="home-learning-left">
-      <p class="big-title">
-        {{ home.json.sloganTitle }}
-      </p>
-      <p
-        class="big-detail"
-        v-for="(item, index) in home.json.sloganDetail"
-        :key="index"
-      >
-        {{ item }}
-      </p>
-      <p
-        class="big-slogan"
-        v-for="(item, index) in home.json.slogan"
-        :key="index"
-      >
-        {{ item }}
-      </p>
-    </div>
-    <div class="home-learning-right">
-      <div class="home-learning-top">
-        <div v-for="(item, index) in home.json.sloganIntroduce" :key="index">
+  <div class="home-container" :home="home">
+    <div class="home-learning row">
+      <a class="big-title" :href="home.href">
+        {{ $t(home.json.sloganTitle) }}
+      </a>
+      <!-- <img :src="home.imgSrc" alt="" /> -->
+      <div class="home-learning-left col-sm-6 col-xs-12">
+        <p
+          class="big-detail"
+          v-for="(item, index) in home.json.sloganDetail"
+          :key="index"
+        >
           {{ item }}
+        </p>
+      </div>
+      <div class="home-learning-right col-sm-6 col-xs-12">
+        <p
+          class="big-slogan"
+          v-for="(item, index) in home.json.slogan"
+          :key="index"
+        >
+          {{ item }}
+        </p>
+        <div class="home-learning-top">
+          <div v-for="(item, index) in home.json.sloganIntroduce" :key="index">
+            {{ item }}
+          </div>
         </div>
       </div>
-      <ul class="home-learning-ul">
+      <ul class="home-learning-ul row">
         <li
-          class="language-list"
+          class="language-list col-md-3 col-xs-12"
           v-for="(item, index) in home.json.sloganList"
           :key="index"
         >
-          <div class="language-list-detail" @click="getItem(item)">
+          <div class="language-list-detail" @click="getItem(item, home.json)">
             {{ item.title }}
           </div>
         </li>
@@ -45,6 +47,9 @@
 </template>
 
 <script>
+import languageLearningJson from "../../../public/json/LanguageLearning.json";
+import educationalTheoryJson from "../../../public/json/EducationalTheory.json";
+
 export default {
   name: "homeLearningAssembly",
   data() {
@@ -54,14 +59,24 @@ export default {
     home: { type: Object },
   },
   methods: {
-    getItem(item) {
+    getItem(item, json) {
       this.$router.push({
-        path: "/languageLearningDetail",
+        path: "/languageLearningDetailTwo",
         query: {
           id: item.id,
         },
       });
-      localStorage.setItem("item", JSON.stringify(item));
+      if (json.id == "learn") {
+        localStorage.setItem(
+          "detail",
+          JSON.stringify(languageLearningJson.languageLearning)
+        );
+      } else if (json.id == "theory") {
+        localStorage.setItem(
+          "detail",
+          JSON.stringify(educationalTheoryJson.educationalTheory)
+        );
+      }
     },
   },
 };
@@ -71,12 +86,28 @@ export default {
 @media screen and (max-width: 420px) {
   .home-learning {
     padding: 5rem !important;
-    .big-title,
+    .big-title {
+      font-size: 2.5rem !important;
+    }
     .big-slogan {
       font-size: 2rem !important;
     }
     .big-detail {
       font-size: 1.5rem !important;
+    }
+    img {
+      width: 25rem !important;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-learning {
+    padding: 5rem 2rem 0 !important;
+    img {
+      display: none;
+    }
+    .home-learning-right {
+      padding-top: 4rem !important;
     }
   }
 }
@@ -88,86 +119,86 @@ export default {
 
 .home-learning {
   width: 100%;
-  padding: 8rem;
-  display: flex;
+  padding: 4rem 5rem 5rem;
   position: relative;
+  margin: 0;
   img {
     position: absolute;
     object-fit: cover;
-    width: 37rem;
-    right: 0;
-    top: -20rem;
+    width: 35rem;
+    left: 2rem;
+    bottom: -5rem;
+    transform: rotateY(180deg);
+  }
+  .big-title {
+    font-size: 3.7rem;
+    color: #322f3b;
+    margin-bottom: 4rem;
+    font-family: "SourceSansPro-Regular", "Lishu";
+    text-align: center;
+    font-weight: bold;
+    display: block;
+  }
+  .big-title:hover {
+    color: #ea4335;
+    transition: all 0.4s ease 0s;
   }
   .home-learning-left {
     font-weight: bold;
-    flex: 1.5;
-    z-index: 999;
-    .big-title {
-      font-size: 3rem;
-      color: #a61b29;
-    }
-    .big-slogan {
-      font-size: 3rem;
-      color: #16149e;
-    }
-    .big-detail {
-      font-size: 1.6rem;
-    }
+    font-size: 2rem;
   }
   .home-learning-right {
-    flex: 1;
-    z-index: 999;
-    position: relative;
+    .big-slogan {
+      font-size: 2.5rem;
+      color: #322f3b;
+      font-weight: bold;
+    }
     .home-learning-top {
-      background: white;
-      box-shadow: 0 0 12px #d1d1d1;
       width: 100%;
       padding: 2rem;
-      font-size: 1.4rem;
       text-align: left;
       text-indent: 2em;
+      color: #322f3b;
+      font-family: "KaiTi";
     }
-    .home-learning-ul {
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-height: 350px;
-      padding-left: 1.4rem;
-      .language-list {
-        width: 18.4rem;
-        border-left: 4px solid #a61b29;
-        background: white;
-        box-shadow: 0 0 12px #d1d1d1;
-        float: left;
+  }
+  .home-learning-ul {
+    margin: 1rem 0;
+    padding: 0;
+    .language-list {
+      font-family: "HeiTi";
+      margin: 2rem 0 2rem 0;
+      color: white;
+      .language-list-detail {
         display: block;
-        white-space: nowrap;
-        margin: 3rem 1rem 0 0;
-        padding-left: 5px;
-        .language-list-detail {
-          font-size: 1.4rem;
-          display: block;
-          height: 100%;
-          width: 100%;
-          text-align: center;
-          line-height: 3.8rem;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          cursor: pointer;
-        }
-      }
-      .language-a {
-        margin-top: 1rem;
+        height: 100%;
         width: 100%;
-        float: right;
-        a {
-          font-size: 1.4rem;
-          color: #a61b29;
-          font-weight: bold;
-        }
+        text-align: center;
+        line-height: 3.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #a9a9a9;
+        padding: 0 1.5rem;
+        border-radius: 10px;
       }
+      .language-list-detail:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px #d1d1d1;
+        transition: all 0.4s ease 0s;
+      }
+    }
+    .language-a {
+      width: 100%;
+      float: right;
+      a {
+        color: #a9a9a9;
+      }
+    }
+    .language-a a:hover {
+      color: #ea4335;
+      transition: all 0.4s ease 0s;
     }
   }
 }

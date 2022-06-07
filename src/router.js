@@ -7,6 +7,7 @@ import EducationalPractice from './components/content/EducationalPractice'
 import PublicResources from './components/content/PublicResources'
 import CreatedArticle from './components/content/CreatedArticle'
 import LanguageLearningDetail from './components/content/LanguageLearningDetail'
+import LanguageLearningDetailTwo from './components/content/LanguageLearningDetailTwo'
 import NotFound from './components/NotFound'
 
 const routerHistory = createWebHistory()
@@ -53,16 +54,21 @@ const router = createRouter({
             component: LanguageLearningDetail,
         },
         {
+            path: '/LanguageLearningDetailTwo',
+            name: 'LanguageLearningDetailTwo',
+            component: LanguageLearningDetailTwo,
+        },
+        {
             path: '/404',
             name: 'NotFound',
             component: NotFound,
             hidden: true
-          },
-          {
+        },
+        {
             path: '/:pathMatch(.*)',
             redirect: '/404',
             hidden: true
-          }
+        }
     ]
 })
 

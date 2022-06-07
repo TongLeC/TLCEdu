@@ -1,14 +1,17 @@
 <template>
-  <div class="educational-practice">
-    <div class="educational-practice-top">
-      <div class="practice-top-left">
-        <img src="../../../public/images/practice1.png" alt="" />
+  <div class="educational-practice home-container">
+    <div class="educational-practice-title">
+      {{ $t("msg.educationalPractice") }}
+    </div>
+    <div class="educational-practice-top row">
+      <div class="practice-top-left col-sm-3 col-xs-12">
+        <img src="../../../public/images/practice1.png" style="position: absolute;left:-2rem;" alt="" />
       </div>
-      <div class="practice-top-right">
+      <div class="practice-top-right col-sm-9 col-xs-12">
         <h3 class="practice-top-title">{{ $t("msg.tongleLecture") }}</h3>
-        <ul>
+        <ul class="row">
           <li
-            class="practice-list"
+            class="practice-list col-sm-4 col-xs-12"
             v-for="(
               item, index
             ) in educationalPracticeJson.educationalPracticeOne"
@@ -25,15 +28,12 @@
         </ul>
       </div>
     </div>
-    <div class="educational-practice-bottom">
-      <div class="practice-bottom-right">
-        <img src="../../../public/images/practice2.png" alt="" />
-      </div>
-      <div class="practice-bottom-left">
+    <div class="educational-practice-top row">
+      <div class="practice-top-right col-sm-9 col-xs-12">
         <h3 class="practice-top-title">{{ $t("msg.educationalPractice") }}</h3>
-        <ul class="practice-bottom-left-ul">
+        <ul class="row">
           <li
-            class="practice-list"
+            class="practice-list col-sm-4 col-xs-12"
             v-for="(
               item, index
             ) in educationalPracticeJson.educationalPracticeTwo"
@@ -49,6 +49,9 @@
           </li>
         </ul>
       </div>
+      <div class="practice-top-left col-sm-3 col-xs-12" style="position:sticky;top: 3rem;">
+          <img src="../../../public/images/practice2.png" alt="" />
+        </div>
     </div>
   </div>
 </template>
@@ -68,131 +71,39 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 360px) {
-  .practice-list {
-    flex: 0 0 90% !important;
-  }
-  ul {
-    padding-left: 1.5rem !important;
-  }
-}
-@media (min-width: 360px) and (max-width: 530px) {
-  .practice-list {
-    flex: 0 0 40% !important;
-  }
-}
-@media (min-width: 530px) and (max-width: 760px) {
-  .practice-list {
-    flex: 0 0 27% !important;
-  }
-}
-@media (min-width: 760px) and (max-width: 980px) {
-  .practice-list {
-    flex: 0 0 29% !important;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .practice-top-left {
-    position: relative;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-  .practice-top-right,
-  .practice-bottom-left {
-    width: 90% !important;
-    margin-right: 10px !important;
-  }
-  .practice-bottom-left {
-    margin-left: 2rem !important;
-  }
-}
-@media (min-width: 1100px) and (max-width: 1200px) {
-  .practice-list {
-    flex: 0 0 28% !important;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1550px) {
-  .practice-list {
-    flex: 0 0 29% !important;
-  }
-}
-
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-height: 350px;
-  overflow-y: auto;
-}
-
 .educational-practice {
+  padding: 2rem;
+  .educational-practice-title {
+    font-size: 2.5rem;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+    font-weight: bold;
+  }
+  .practice-top-title {
+    margin: 2rem 0 1.3rem 0;
+    font-size: 2rem;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+  }
   .educational-practice-top {
-    display: flex;
+    margin: 3rem 0;
     position: relative;
     .practice-top-left {
       img {
-        float: left;
         object-fit: cover;
-        width: 33rem;
+        width: 100%;
       }
     }
     .practice-top-right {
-      width: 59%;
-      background: white;
+      background: #fcfafa;
       box-shadow: 0 0 12px #d1d1d1;
       z-index: 999;
-      margin: 3rem 30px 1.5rem 2rem;
       ul {
+        padding: 0 1.5rem;
         .practice-list {
-          margin: 10px 28px 20px 0;
-          flex: 0 0 30%;
+          margin: 10px 0;
           iframe {
             width: 100%;
           }
         }
-      }
-      .practice-top-title {
-        font-size: 1.9rem;
-        color: #a61b29;
-        margin: 2rem 0 1.3rem 0;
-      }
-    }
-  }
-  .educational-practice-bottom {
-    position: relative;
-    .practice-bottom-left {
-      width: 59%;
-      background: white;
-      box-shadow: 0 0 12px #d1d1d1;
-      margin: 4rem 0 2rem 8rem;
-      padding: 0.7rem 0 2rem 0;
-      position: relative;
-      z-index: 100;
-      .practice-bottom-left-ul {
-        .practice-list {
-          margin: 10px 28px 20px 0;
-          flex: 0 0 30%;
-          iframe {
-            width: 100%;
-          }
-        }
-      }
-      .practice-top-title {
-        font-size: 1.9rem;
-        color: #a61b29;
-        margin: 2rem 0 1.3rem 0;
-      }
-    }
-    .practice-bottom-right {
-      img {
-        position: absolute;
-        right: 0;
-        object-fit: cover;
-        width: 24rem;
       }
     }
   }
