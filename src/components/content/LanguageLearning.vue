@@ -1,7 +1,7 @@
 <template>
   <div class="language-learning home-container">
     <div class="language-learning-title">
-      {{ $t("msg.holisticEducationTheory") }}
+      {{ $t("msg.languageLearning") }}
     </div>
     <div class="language-learning-box row">
       <div class="language-left col-sm-3 col-xs-12">

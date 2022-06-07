@@ -34,7 +34,7 @@
           v-for="(item, index) in home.json.sloganList"
           :key="index"
         >
-          <div class="language-list-detail" @click="getItem(item, home.json.sloganList)">
+          <div class="language-list-detail" @click="getItem(item, home.json)">
             {{ item.title }}
           </div>
         </li>
@@ -47,6 +47,9 @@
 </template>
 
 <script>
+import languageLearningJson from "../../../public/json/LanguageLearning.json";
+import educationalTheoryJson from "../../../public/json/EducationalTheory.json";
+
 export default {
   name: "homeLearningAssembly",
   data() {
@@ -63,7 +66,17 @@ export default {
           id: item.id,
         },
       });
-      localStorage.setItem("detail", JSON.stringify(json));
+      if (json.id == "learn") {
+        localStorage.setItem(
+          "detail",
+          JSON.stringify(languageLearningJson.languageLearning)
+        );
+      } else if (json.id == "theory") {
+        localStorage.setItem(
+          "detail",
+          JSON.stringify(educationalTheoryJson.educationalTheory)
+        );
+      }
     },
   },
 };

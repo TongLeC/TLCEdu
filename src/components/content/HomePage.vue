@@ -64,9 +64,6 @@
             ></iframe>
             <div class="video-describe">
               <p class="video-describe-title">{{ item.videoDetail }}</p>
-              <!-- <p class="video-describe-detail">
-                这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述这是一段描述
-              </p> -->
             </div>
           </li>
         </ul>
@@ -365,6 +362,9 @@ export default {
   }
   .home-transition {
     font-size: 1.5rem !important;
+    width: 100% !important;
+    right: 0 !important;
+    bottom: -28% !important;
   }
 }
 .home-page {

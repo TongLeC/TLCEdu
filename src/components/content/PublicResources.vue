@@ -9,11 +9,11 @@
       </div>
       <div class="public-resources-top row">
         <div class="public-left col-sm-9 col-xs-11">
-          <dic class="row">
+          <div class="row" v-if="publicResourcesJson">
             <div
               class="resources-one col-sm-5 col-xs-12"
               v-for="(item, index) in publicResourcesJson.resourceOne"
-              :key="index"
+              :key="'one'+index"
             >
               <h3 class="resources-title">
                 {{ $t(item.title) }}
@@ -32,7 +32,7 @@
                 </li>
               </ul>
             </div>
-          </dic>
+          </div>
         </div>
         <div class="public-right col-sm-3 col-xs-12">
           <img src="../../../public/images/public-child2.png" alt="" />
@@ -40,11 +40,11 @@
       </div>
       <div class="public-resources-top row" style="margin-left: 0">
         <div class="public-left col-sm-9 col-xs-11">
-          <dic class="row">
+          <div class="row" v-if="publicResourcesJson">
             <div
               class="resources-one col-sm-5 col-xs-12"
               v-for="(item, index) in publicResourcesJson.resourceTwo"
-              :key="index"
+              :key="'two'+index"
             >
               <h3 class="resources-title">
                 {{ $t(item.title) }}
@@ -63,7 +63,7 @@
                 </li>
               </ul>
             </div>
-          </dic>
+          </div>
         </div>
         <div
           class="public-right col-sm-3 col-xs-12"
@@ -86,12 +86,16 @@ export default {
   data() {
     return {
       zhFanpublicResourcesJson: {},
-      zhpublicResourcesJson: this.publicResourcesJson,
+      // zhpublicResourcesJson: {},
+      // publicResourcesJson:{},
       publicResourcesJson,
+      zhpublicResourcesJson: publicResourcesJson
     };
   },
   methods: {},
   mounted() {
+    // this.publicResourcesJson = publicResourcesJson;
+    // this.zhpublicResourcesJson = publicResourcesJson;
     const { proxy } = getCurrentInstance();
     this.zhFanpublicResourcesJson = proxy.$deepClone(publicResourcesJson);
     if (this.$store.state.language == "zhFan") {

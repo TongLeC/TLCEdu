@@ -4,7 +4,7 @@
       :tab-position="tabPosition"
       class="demo-tabs language-learning-tab"
       v-model="activeTab"
-      @tab-change = "tabChange"
+      @tab-change="tabChange"
     >
       <el-tab-pane
         :label="item.title"
@@ -39,16 +39,19 @@ export default {
     return {
       json: JSON.parse(localStorage.getItem("detail")),
       zhJson: JSON.parse(localStorage.getItem("detail")),
-      zhFanJson: [],
+      zhFanJson: {},
       tabPosition: "left",
       activeTab: this.$route.query.id,
+      proxy: null
     };
   },
   mounted() {
     const { proxy } = getCurrentInstance();
-    this.zhFanJson = proxy.$deepClone(this.json);
+    this.proxy = proxy
+    this.jsonDetail(this.json)
     if (this.$store.state.language == "zhFan") {
       this.json = this.zhFanJson;
+      this.activeTab = this.$route.query.id;
     } else if (this.$store.state.language == "zh") {
       this.json = this.zhJson;
     }
@@ -60,28 +63,33 @@ export default {
     getLanguage() {
       if (this.$store.state.language == "zhFan") {
         this.json = this.zhFanJson;
+        this.activeTab = this.$route.query.id;
       } else if (this.$store.state.language == "zh") {
         this.json = this.zhJson;
       }
     },
     $route: {
       handler: function () {
-        // console.log(val, this.$route.query.id);
         this.activeTab = this.$route.query.id;
         this.json = JSON.parse(localStorage.getItem("detail"));
+        this.jsonDetail(this.json)
         this.zhJson = JSON.parse(localStorage.getItem("detail"));
       },
     },
   },
   methods: {
-    tabChange (){
+    tabChange() {
       this.$router.replace({
         query: {
-          id: this.activeTab
-        }
-      })
+          id: this.activeTab,
+        },
+      });
+    },
+    jsonDetail(json) {
+      this.zhFanJson = this.proxy.$deepClone(json);
+      return this.zhFanJson;
     }
-  }
+  },
 };
 </script>
 

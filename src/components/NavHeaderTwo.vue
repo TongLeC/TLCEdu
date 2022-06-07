@@ -1,24 +1,24 @@
 <template>
   <div class="nav-header">
     <div class="home-container el-menu row">
-      <span class="logo-img-box col-xs-3">
+      <span class="logo-img-box col-sm-3 col-xs-9">
         <a class="navbar-brand" href="/">
           <img class="logo-img" src="../../public/images/logo3.png" alt="" />
         </a>
       </span>
       <el-menu
-        class="el-menu-demo col-xs-9"
+        class="el-menu-demo col-sm-9 col-xs-3"
         mode="horizontal"
         active-text-color="#ea4335"
         router
       >
-        <el-menu-item route="/" index="10">{{
-          $t("msg.homePage")
-        }}</el-menu-item>
+        <el-menu-item route="/" index="10" id="home">
+          {{ $t("msg.homePage") }}
+        </el-menu-item>
         <el-menu-item>
-          <a href="https://www.tonglec.org/" target="blank">{{
-            $t("msg.tongleCourse")
-          }}</a>
+          <a href="https://www.tonglec.org/" @click.stop target="blank">
+            {{ $t("msg.tongleCourse") }}
+          </a>
         </el-menu-item>
         <el-sub-menu
           v-for="(item, index) in NavHeaderJson.NavHeader"
@@ -33,10 +33,10 @@
             :key="index"
             style="border-bottom: 1px solid #ccc"
           >
-            <a :href="list.link" target="view_window" v-if="item.type == 0">
+            <a :href="list.link" @click.stop target="view_window" v-if="item.type == 0">
               {{ list.title }}
             </a>
-            <div @click.stop @click="getItem(list, item.child)" v-else>
+            <div @click.stop @click="getItem(list, item)" v-else>
               {{ list.title }}
             </div>
           </el-menu-item>
@@ -64,6 +64,7 @@
               border-bottom: 1px solid #ccc;
             "
             class="nav-language"
+            @click.stop
             @click="switchSimplified()"
           >
             {{ $t("msg.simplifiedChinese") }}
@@ -71,6 +72,7 @@
           <p
             style="padding: 0 10px; cursor: pointer"
             class="nav-language"
+            @click.stop
             @click="switchTraditional()"
           >
             {{ $t("msg.traditionalChinese") }}
@@ -82,13 +84,17 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import NavHeaderJson from "../../public/json/NavHeader.json";
+import languageLearningJson from "../../public/json/LanguageLearning.json";
+import educationalTheoryJson from "../../public/json/EducationalTheory.json";
 
 export default {
   name: "NavHeaderTwo",
   data() {
     return {
       NavHeaderJson,
+      languageLearningJson
     };
   },
   methods: {
@@ -111,13 +117,31 @@ export default {
           id: list.id,
         },
       });
-      localStorage.setItem("detail", JSON.stringify(item));
+      if (item.id == 'learn') {
+        localStorage.setItem("detail", JSON.stringify(languageLearningJson.languageLearning));
+      } else if (item.id == 'theory') {
+        localStorage.setItem("detail", JSON.stringify(educationalTheoryJson.educationalTheory));
+      }
+    },
+  },
+  watch: {
+    $route: {
+      handler: function (val) {
+        if (val.name == 'LanguageLearningDetailTwo') {
+          $('#home').removeClass('is-active')
+        } else if (val.name == 'home') {
+          $('#home').addClass('is-active')
+        }
+      },
     },
   },
 };
 </script>
 
 <style scoped lang='scss'>
+.navbar-brand {
+  padding: 1rem !important;
+}
 .nav-header {
   font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
