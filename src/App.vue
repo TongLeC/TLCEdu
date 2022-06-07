@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import NavHeader from "./components/NavHeader.vue";
+import NavHeader from "./components/NavHeaderTwo.vue";
 import NavFooter from "./components/NavFooter.vue";
 
 export default {
@@ -30,7 +30,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #333333;
-  font-family: 'LiShu';
+  font-family: "LiShu";
 }
 .app {
   display: flex;

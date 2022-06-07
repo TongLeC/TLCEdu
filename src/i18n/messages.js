@@ -20,13 +20,15 @@ export default {
             classicAudio: "Online Bible reader - free",
             classicMusic: "Music resources",
             chineseClassicStories: "Chinese classic stories",
+            publicTitle: "Never forget the original intention · Fang de always",
+            publicTitleTwo: "Commonweal sharing"
         },
     },
     zh: {
         msg: {
             homePage: "首页",
-            languageLearning: "语言学习法",
-            holisticEducationTheory: "整体教育理论",
+            languageLearning: "同乐语言学习法",
+            holisticEducationTheory: "同乐整体教育理论",
             tongleCourse: "同乐课程",
             educationalPractice: "教育践谈",
             publicWelfareResources: "公益资源",
@@ -43,13 +45,15 @@ export default {
             classicAudio: "网上读经机-免费",
             classicMusic: "音乐资源",
             chineseClassicStories: "中华经典故事",
+            publicTitle: "不忘初心·方得始终",
+            publicTitleTwo: "公益分享"
         },
     },
     zhFan: {
         msg: {
             homePage: "首頁",
-            languageLearning: "語言學習法",
-            holisticEducationTheory: "整體教育理論",
+            languageLearning: "同樂語言學習法",
+            holisticEducationTheory: "同樂整體教育理論",
             tongleCourse: "同樂課程",
             educationalPractice: "教育踐談",
             publicWelfareResources: "公益資源",
@@ -66,6 +70,8 @@ export default {
             classicAudio: "網上讀經機-免費",
             classicMusic: "音樂資源",
             chineseClassicStories: "中華經典故事",
+            publicTitle: "不忘初心·方得始終",
+            publicTitleTwo: "公益分享"
         },
     },
 }

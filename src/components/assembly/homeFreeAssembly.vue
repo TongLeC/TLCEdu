@@ -1,15 +1,22 @@
 <template>
-  <div class="home-free" :home="home">
-    <div class="home-top-left">
+  <div class="home-free row" :home="home">
+    <!-- <div class="home-top-left col-sm-3 col-xs-12 center-block">
       <img :src="home.imgSrc" alt="" />
-    </div>
-    <div class="home-top-right">
-      <h3 class="home-top-title">
-        {{ $t(home.title) }}
-        <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-      </h3>
-      <ul>
-        <li class="home-list" v-for="(item, index) in home.json" :key="index">
+    </div> -->
+    <h3 class="home-top-title">
+      <span style="font-weight:bold;">{{ $t(home.title) }}</span>
+      <a :href="home.href">{{ $t("msg.seeMore") }}</a>
+      <p class="home-top-describe">
+        {{ home.json.describe }}
+      </p>
+    </h3>
+    <div class="home-top-right col-xs-12">
+      <ul class="row">
+        <li
+          class="home-list col-sm-3 col-xs-12"
+          v-for="(item, index) in home.json.detail"
+          :key="index"
+        >
           <a class="home-list-detail" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
@@ -34,101 +41,82 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
   ul {
-    .home-list {
-      flex: 0 0 90% !important;
+    padding-left: 15px !important;
+    .col-sm-3 {
+      width: 100% !important;
     }
   }
 }
-@media (min-width: 420px) and (max-width: 760px) {
+@media screen and (max-width: 1500px) {
   .home-list {
-    flex: 0 0 90% !important;
+    padding: 0 1rem !important;
+  }
+  ul {
+    padding-left: 0 !important;
   }
 }
-@media screen and (max-width: 860px) {
-  .home-free {
-    display: block !important;
-  }
-  .home-top-left {
-    position: relative;
-    margin: 0 auto !important;
-    img {
-      position: static !important;
-      margin: 1.5rem auto 2rem !important;
-    }
-  }
-  .home-top-right {
-    position: relative;
-    z-index: 999;
-    padding-top: 1rem;
-    margin: 0 auto !important;
-  }
-}
-@media (min-width: 760px) and (max-width: 900px) {
-  .home-list {
-    flex: 0 0 42% !important;
-  }
-}
-@media (min-width: 900px) and (max-width: 1600px) {
-  .home-list {
-    flex: 0 0 27% !important;
-  }
-}
-
 .home-free {
-  display: flex;
-  position: relative;
-  .home-top-left {
-    margin: 4rem 30px 1.5rem 9rem;
-    img {
-      object-fit: cover;
-      width: 26rem;
-      transform: rotateY(180deg);
+  margin: 4rem 0 0;
+  padding: 0 4rem;
+  .home-top-title {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    font-family: "SourceSansPro-Regular", "HeiTi";
+    position: relative;
+    a {
+      font-size: 1.7rem;
+      color: #a9a9a9;
+      position: absolute;
+      right: 0;
+      top: 20%;
+    }
+    a:hover{
+      color: #ea4335;
+      transition: all 0.4s ease 0s;
     }
   }
   .home-top-right {
-    width: 59%;
-    background: white;
-    box-shadow: 0 0 12px #d1d1d1;
     z-index: 999;
-    margin: 3rem 30px 1.5rem 2rem;
-    padding: 1rem 0;
     ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-height: 390px;
-      padding-left: 1.4rem;
-      overflow-y: auto;
+      padding: 0;
       .home-list {
-        margin: 10px 28px 20px 0;
-        flex: 0 0 29%;
+        padding: 0 1.5rem;
         .home-list-detail {
           display: block;
           width: 100%;
           object-fit: cover;
           img {
             width: 100%;
-            border: 1px solid #a61b29;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #a9a9a9;
           }
         }
         .home-list-title {
-          font-size: 1.3rem;
           margin-top: 5px;
         }
       }
-    }
-    .home-top-title {
-      font-size: 1.9rem;
-      color: #a61b29;
-      margin: 2rem 0 1.3rem 0;
-      a {
-        font-size: 1.2rem;
-        color: #9c9c9c;
+      .home-list-detail:hover img {
+        box-shadow: 5px 5px 10px #ee958d;
+        transition: all 0.4s ease 0s;
+      }
+      .col-sm-3 {
+        width: 20%;
       }
     }
+  }
+  .home-top-describe {
+    margin-top: 2rem;
+  }
+  .home-top-describe,
+  .home-list-describe {
+    color: #a9a9a9;
+    // text-indent: 2em;
+    font-size: 1.5rem;
+    font-family: "Kaiti";
+    // text-align: left;
   }
 }
 </style>
