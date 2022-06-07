@@ -2,7 +2,7 @@
     "rotationMap": [
         {
             "type": "0",
-            "mapUrl": "/images/banner13.png",
+            "mapUrl": "/images/banner12.png",
             "mapDetail": "茶艺课"
         },
         {
@@ -22,6 +22,7 @@
         }
     ],
     "homeSloganLearning": {
+        "id": "learn",
         "sloganTitle": "msg.languageLearning",
         "sloganDetail": [
             "子初学,倚听觉;",
@@ -91,6 +92,7 @@
         ]
     },
     "homeSloganTheory": {
+        "id": "theory",
         "sloganTitle": "msg.holisticEducationTheory",
         "sloganDetail": [
             "同于自性",
