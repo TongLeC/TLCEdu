@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-    <nav-header></nav-header>
+    <nav-header v-show="isShow"></nav-header>
     <router-view class="wrapper"></router-view>
-    <nav-footer></nav-footer>
+    <nav-footer v-show="isShow"></nav-footer>
   </div>
 </template>
 
@@ -16,9 +16,23 @@ export default {
     NavHeader,
     NavFooter,
   },
+  data() {
+    return {
+      isShow: true
+    }
+  },
   mounted() {
     let lan = localStorage.getItem("language");
     this.$i18n.locale = lan;
+  },
+  watch: {
+    $route: {
+      handler: function (val) {
+        if (val.name == 'NotFound') {
+          this.isShow = false
+        }
+      },
+    },
   },
 };
 </script>
