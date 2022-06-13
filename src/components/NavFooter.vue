@@ -79,6 +79,7 @@ export default {
       .erweima-img {
         object-fit: cover;
         height: 10.3rem;
+        border-radius: 12px;
       }
     }
   }
