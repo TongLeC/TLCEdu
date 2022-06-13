@@ -75,7 +75,7 @@
         <i class="glyphicon glyphicon-heart" style="color: #ea4335"></i>
         {{ $t("msg.publicTitleTwo") }}
       </div>
-      <home-book-assembly :home="home[2]"></home-book-assembly>
+      <home-book-assembly-two :home="home[2]"></home-book-assembly-two>
       <div class="split-line"></div>
       <home-book-assembly :home="home[0]"></home-book-assembly>
       <div class="split-line"></div>
@@ -96,6 +96,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 import homeFreeAssembly from "../assembly/homeFreeAssembly.vue";
 import homeBookAssembly from "../assembly/homeBookAssembly.vue";
+import homeBookAssemblyTwo from "../assembly/homeBookAssemblyTwo.vue";
 import homeLearningAssembly from "../assembly/homeLearningAssembly.vue";
 import homePageJson from "../../../public/json/HomePage.json";
 
@@ -108,27 +109,22 @@ export default {
       homePageJson,
       home: [
         {
-          imgSrc: "/images/bible-child.png",
           title: "msg.classicAudio",
           href: "/publicResources",
           json: homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
-          imgSrc: "/images/child3.png",
           title: "msg.originalArticle",
           href: "/createdArticle",
           json: homePageJson.homeArticle,
         },
         {
-          imgSrc: "/images/book-child.png",
           title: "msg.tongleBooks",
-          href: "/publicResources",
-          json: homePageJson.homeFind,
-          slidesPerView: 5,
+          href: "/tongleBook",
+          json: homePageJson.homeBook,
         },
         {
-          imgSrc: "/images/music-child.png",
           title: "msg.classicMusic",
           href: "/publicResources",
           json: homePageJson.homeFree,
@@ -138,7 +134,6 @@ export default {
           json: homePageJson.homeSloganLearning,
         },
         {
-          imgSrc: "/images/video-child.png",
           href: "/educationalTheory",
           json: homePageJson.homeSloganTheory,
         },
@@ -150,6 +145,7 @@ export default {
     SwiperSlide,
     homeFreeAssembly,
     homeBookAssembly,
+    homeBookAssemblyTwo,
     homeLearningAssembly,
   },
   methods: {},
@@ -181,27 +177,22 @@ export default {
         this.homePageJson = this.zhFanhomePageJson;
         this.home = [
           {
-            imgSrc: "/images/bible-child.png",
             title: "msg.classicAudio",
             href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
-            imgSrc: "/images/child3.png",
             title: "msg.originalArticle",
             href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
-            imgSrc: "/images/book-child.png",
             title: "msg.tongleBooks",
-            href: "/publicResources",
-            json: this.homePageJson.homeFind,
-            slidesPerView: 5,
+            href: "/tongleBook",
+            json: this.homePageJson.homeBook,
           },
           {
-            imgSrc: "/images/music-child.png",
             title: "msg.classicMusic",
             href: "/publicResources",
             json: this.homePageJson.homeFree,
@@ -211,7 +202,6 @@ export default {
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            imgSrc: "/images/video-child.png",
             href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
@@ -220,27 +210,22 @@ export default {
         this.homePageJson = this.zhhomePageJson;
         this.home = [
           {
-            imgSrc: "/images/bible-child.png",
             title: "msg.classicAudio",
             href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
-            imgSrc: "/images/child3.png",
             title: "msg.originalArticle",
             href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
-            imgSrc: "/images/book-child.png",
             title: "msg.tongleBooks",
-            href: "/publicResources",
-            json: this.homePageJson.homeFind,
-            slidesPerView: 5,
+            href: "/tongleBook",
+            json: this.homePageJson.homeBook,
           },
           {
-            imgSrc: "/images/music-child.png",
             title: "msg.classicMusic",
             href: "/publicResources",
             json: this.homePageJson.homeFree,
@@ -250,7 +235,6 @@ export default {
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            imgSrc: "/images/video-child.png",
             href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
@@ -266,27 +250,22 @@ export default {
         this.homePageJson = this.zhFanhomePageJson;
         this.home = [
           {
-            imgSrc: "/images/bible-child.png",
             title: "msg.classicAudio",
             href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
-            imgSrc: "/images/child3.png",
             title: "msg.originalArticle",
             href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
-            imgSrc: "/images/book-child.png",
             title: "msg.tongleBooks",
-            href: "/publicResources",
-            json: this.homePageJson.homeFind,
-            slidesPerView: 5,
+            href: "/tongleBook",
+            json: this.homePageJson.homeBook,
           },
           {
-            imgSrc: "/images/music-child.png",
             title: "msg.classicMusic",
             href: "/publicResources",
             json: this.homePageJson.homeFree,
@@ -296,7 +275,6 @@ export default {
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            imgSrc: "/images/video-child.png",
             href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
@@ -305,27 +283,22 @@ export default {
         this.homePageJson = this.zhhomePageJson;
         this.home = [
           {
-            imgSrc: "/images/bible-child.png",
             title: "msg.classicAudio",
             href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
-            imgSrc: "/images/child3.png",
             title: "msg.originalArticle",
             href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
-            imgSrc: "/images/book-child.png",
             title: "msg.tongleBooks",
-            href: "/publicResources",
-            json: this.homePageJson.homeFind,
-            slidesPerView: 5,
+            href: "/tongleBook",
+            json: this.homePageJson.homeBook,
           },
           {
-            imgSrc: "/images/music-child.png",
             title: "msg.classicMusic",
             href: "/publicResources",
             json: this.homePageJson.homeFree,
@@ -335,7 +308,6 @@ export default {
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            imgSrc: "/images/video-child.png",
             href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },

@@ -123,6 +123,7 @@ export default {
           .theory-title {
             width: 17rem;
             border: 2px solid #ea4335;
+            border-radius: 15px;
             padding: 14px 15px;
           }
           .theory-brief {

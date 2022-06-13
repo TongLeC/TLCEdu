@@ -1,13 +1,13 @@
 <template>
   <div class="nav-header">
     <div class="home-container el-menu row">
-      <span class="logo-img-box col-sm-3 col-xs-9">
+      <span class="logo-img-box col-sm-2 col-xs-9">
         <a class="navbar-brand" href="/">
           <img class="logo-img" src="../../public/images/logo3.png" alt="" />
         </a>
       </span>
       <el-menu
-        class="el-menu-demo col-sm-9 col-xs-3"
+        class="el-menu-demo col-sm-10 col-xs-3"
         mode="horizontal"
         active-text-color="#ea4335"
         router
@@ -44,6 +44,9 @@
             {{ $t("msg.seeMore") }}
           </el-menu-item>
         </el-sub-menu>
+        <el-menu-item route="/tongleBook" index="10">
+          {{ $t("msg.tongleBooks") }}
+        </el-menu-item>
         <el-sub-menu index="l">
           <template #title>{{ $t("msg.language") }}</template>
           <!-- <p
