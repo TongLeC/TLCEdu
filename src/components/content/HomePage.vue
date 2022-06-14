@@ -451,13 +451,13 @@ export default {
         position: relative;
         a {
           font-size: 1.7rem;
-          color: #a9a9a9;
+          color: #EA4335;
           position: absolute;
           right: 5%;
           top: 20%;
         }
         a:hover {
-          color: #ea4335;
+          color: #ffd111;
           transition: all 0.4s ease 0s;
         }
       }

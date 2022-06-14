@@ -132,7 +132,7 @@ export default {
   }
   .big-title {
     font-size: 3.7rem;
-    color: #322f3b;
+    color: #EA4335;
     margin-bottom: 4rem;
     font-family: "SourceSansPro-Regular", "Lishu";
     text-align: center;
@@ -140,7 +140,7 @@ export default {
     display: block;
   }
   .big-title:hover {
-    color: #ea4335;
+    color: #ffd111;
     transition: all 0.4s ease 0s;
   }
   .home-learning-left {
@@ -179,7 +179,7 @@ export default {
         text-overflow: ellipsis;
         white-space: nowrap;
         cursor: pointer;
-        background: #a9a9a9;
+        background: #ea4335;
         padding: 0 1.5rem;
         border-radius: 10px;
       }
@@ -193,11 +193,11 @@ export default {
       width: 100%;
       float: right;
       a {
-        color: #a9a9a9;
+        color: #EA4335;
       }
     }
     .language-a a:hover {
-      color: #ea4335;
+      color: #ffd111;
       transition: all 0.4s ease 0s;
     }
   }
