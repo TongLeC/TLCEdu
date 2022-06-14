@@ -36,15 +36,40 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
+import { mapGetters } from "vuex";
 import TongleBookJson from "../../../public/json/TongleBook.json";
 export default {
   name: "TongleBook",
   data() {
     return {
       TongleBookJson,
+      zhFanTongleBookJson: {},
+      zhTongleBookJson: TongleBookJson
     };
   },
   methods: {},
+  mounted() {
+    const { proxy } = getCurrentInstance();
+    this.zhFanTongleBookJson = proxy.$deepClone(TongleBookJson);
+    if (this.$store.state.language == "zhFan") {
+      this.TongleBookJson = this.zhFanTongleBookJson;
+    } else if (this.$store.state.language == "zh") {
+      this.TongleBookJson = this.zhTongleBookJson;
+    }
+  },
+  computed: {
+    ...mapGetters(["getLanguage"]),
+  },
+  watch: {
+    getLanguage() {
+      if (this.$store.state.language == "zhFan") {
+        this.TongleBookJson = this.zhFanTongleBookJson;
+      } else if (this.$store.state.language == "zh") {
+        this.TongleBookJson = this.zhTongleBookJson;
+      }
+    },
+  },
 };
 </script>
 
