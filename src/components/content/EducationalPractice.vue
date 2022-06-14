@@ -102,6 +102,7 @@ export default {
           margin: 10px 0;
           iframe {
             width: 100%;
+            height: 240px;
           }
         }
       }

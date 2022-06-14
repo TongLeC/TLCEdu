@@ -2,7 +2,7 @@
     "NavHeader": [
         {
             "type": "1",
-            "id": "1df2as1",
+            "id": "learn",
             "href": "/languageLearning",
             "msg": "msg.languageLearning",
             "child": [
@@ -66,7 +66,7 @@
         },
         {
             "type": "1",
-            "id": "mslfdz",
+            "id": "theory",
             "href": "/educationalTheory",
             "msg": "msg.holisticEducationTheory",
             "child": [
