@@ -20,14 +20,14 @@
         <li class="books-detail">
           <span class="books-title">·{{ detail.name }}</span>
           <div class="link-box">
-            <button
+            <a
               v-for="(content, x) in detail.link"
               :key="x"
               :href="content.linkAddress"
-              class="books-link"
               target="blank"
-              >{{ content.linkTitle }}</button
             >
+              <button class="books-link">{{ content.linkTitle }}</button>
+            </a>
           </div>
         </li>
       </ul>
