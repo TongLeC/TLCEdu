@@ -86,16 +86,12 @@ export default {
   data() {
     return {
       zhFanpublicResourcesJson: {},
-      // zhpublicResourcesJson: {},
-      // publicResourcesJson:{},
       publicResourcesJson,
       zhpublicResourcesJson: publicResourcesJson
     };
   },
   methods: {},
   mounted() {
-    // this.publicResourcesJson = publicResourcesJson;
-    // this.zhpublicResourcesJson = publicResourcesJson;
     const { proxy } = getCurrentInstance();
     this.zhFanpublicResourcesJson = proxy.$deepClone(publicResourcesJson);
     if (this.$store.state.language == "zhFan") {

@@ -6,6 +6,7 @@ import EducationalTheory from './components/content/EducationalTheory'
 import EducationalPractice from './components/content/EducationalPractice'
 import PublicResources from './components/content/PublicResources'
 import CreatedArticle from './components/content/CreatedArticle'
+import TongleBook from './components/content/TongleBook'
 import LanguageLearningDetail from './components/content/LanguageLearningDetail'
 import LanguageLearningDetailTwo from './components/content/LanguageLearningDetailTwo'
 import NotFound from './components/NotFound'
@@ -47,6 +48,11 @@ const router = createRouter({
             path: '/createdArticle',
             name: 'createdArticle',
             component: CreatedArticle,
+        },
+        {
+            path: '/tongleBook',
+            name: 'tongleBook',
+            component: TongleBook,
         },
         {
             path: '/languageLearningDetail',
