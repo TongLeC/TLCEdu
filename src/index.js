@@ -11,7 +11,11 @@ function deepClone(target) {
             if (typeof val === "object" && val) {
                 cloneObj[key] = deepClone(val);
             } else {
-                cloneObj[key] = restore(val);
+                if(typeof val === "string") {
+                    cloneObj[key] = restore(val);
+                } else {
+                    cloneObj[key] = val;
+                }
             }
         }
         return cloneObj;
