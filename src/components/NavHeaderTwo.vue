@@ -160,6 +160,9 @@ export default {
     height: 100%;
     z-index: 9999;
   }
+  .logo-img-box {
+    margin-top: 0.75rem !important;
+  }
   .logo-img {
     object-fit: cover;
     height: 3rem;

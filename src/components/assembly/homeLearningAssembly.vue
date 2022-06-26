@@ -4,44 +4,22 @@
       <a class="big-title" :href="home.href">
         {{ $t(home.json.sloganTitle) }}
       </a>
-      <!-- <img :src="home.imgSrc" alt="" /> -->
-      <div class="home-learning-left col-sm-6 col-xs-12">
+      <div v-if="!home.json.image.floatLeft" class="col col-5">
+        <img :src="home.json.image.url" class="mx-auto rounded d-block img-fluid">
+      </div>
+      <div class="col col-7 text-center">
         <p
-          class="big-detail"
-          v-for="(item, index) in home.json.sloganDetail"
+          class=""
+          v-for="(item, index) in home.json.bulletPointDescription"
           :key="index"
         >
-          {{ item }}
+          <strong>{{ item.bold }}</strong>
+          {{ item.text }}
         </p>
       </div>
-      <div class="home-learning-right col-sm-6 col-xs-12">
-        <p
-          class="big-slogan"
-          v-for="(item, index) in home.json.slogan"
-          :key="index"
-        >
-          {{ item }}
-        </p>
-        <div class="home-learning-top">
-          <div v-for="(item, index) in home.json.sloganIntroduce" :key="index">
-            {{ item }}
-          </div>
-        </div>
+      <div v-if="home.json.image.floatLeft" class="col col-5">
+        <img :src="home.json.image.url" class="mx-auto rounded d-block img-fluid">
       </div>
-      <ul class="home-learning-ul row">
-        <li
-          class="language-list col-md-3 col-xs-12"
-          v-for="(item, index) in home.json.sloganList"
-          :key="index"
-        >
-          <div class="language-list-detail" @click="getItem(item, home.json)">
-            {{ item.title }}
-          </div>
-        </li>
-        <li class="language-a">
-          <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-        </li>
-      </ul>
     </div>
   </div>
 </template>
@@ -117,18 +95,22 @@ export default {
   }
 }
 
+p {
+  font-family: "YaHei";
+}
+
 .home-learning {
   width: 100%;
   padding: 4rem 5rem 5rem;
   position: relative;
   margin: 0;
   img {
-    position: absolute;
+    //position: absolute;
     object-fit: cover;
-    width: 35rem;
-    left: 2rem;
-    bottom: -5rem;
-    transform: rotateY(180deg);
+    //width: 35rem;
+    //left: 2rem;
+    //bottom: -5rem;
+    //transform: rotateY(180deg);
   }
   .big-title {
     font-size: 3.7rem;

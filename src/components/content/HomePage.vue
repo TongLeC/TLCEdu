@@ -377,7 +377,6 @@ export default {
   }
   .home-big-box {
     width: 100%;
-    background: url("../../../public/images/banner-learn22.png") no-repeat;
     background-size: 100% 100%;
   }
   .home-video {
