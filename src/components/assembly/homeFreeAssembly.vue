@@ -4,7 +4,7 @@
       <img :src="home.imgSrc" alt="" />
     </div> -->
     <h3 class="home-top-title">
-      <span style="font-weight:bold;">{{ $t(home.title) }}</span>
+      <span style="font-weight: bold">{{ $t(home.title) }}</span>
       <a :href="home.href">{{ $t("msg.seeMore") }}</a>
       <p class="home-top-describe">
         {{ home.json.describe }}
@@ -17,7 +17,7 @@
           v-for="(item, index) in home.json.detail"
           :key="index"
         >
-          <a class="home-list-detail" :href="item.homeUrl">
+          <a class="home-list-detail" :href="item.homeUrl" target="blank">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
           <div class="home-list-title">{{ item.homeDetail }}</div>
@@ -67,12 +67,12 @@ export default {
     position: relative;
     a {
       font-size: 1.7rem;
-      color: #EA4335;
+      color: #ea4335;
       position: absolute;
       right: 0;
       top: 20%;
     }
-    a:hover{
+    a:hover {
       color: #ffd111;
       transition: all 0.4s ease 0s;
     }

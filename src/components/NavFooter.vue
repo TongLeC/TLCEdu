@@ -1,21 +1,25 @@
 <template>
-<div class="nav-footer">
-  <div class="home-container">
-    <div class="nav-footer-top">
-      <a class="nav-footer-brand" href="/">
-        <img class="logo-img" src="../../public/images/logo3.png" alt="" />
-      </a>
-      <p class="nav-footer-p">同于自性，颐养天真。有教无类，乐学致远。</p>
-      <div class="nav-footer-erweima">
-        <img class="erweima-img" src="../../public/images/erweima-image.png" alt="" />
+  <div class="nav-footer">
+    <div class="home-container">
+      <div class="nav-footer-top">
+        <a class="nav-footer-brand" href="/">
+          <img class="logo-img" src="../../public/images/logo3.png" alt="" />
+        </a>
+        <p class="nav-footer-p">同于自性，颐养天真。有教无类，乐学致远。</p>
+        <div class="nav-footer-erweima">
+          <img
+            class="erweima-img"
+            src="../../public/images/erweima-image.png"
+            alt=""
+          />
+        </div>
       </div>
+      <div class="nav-footer-bottom">
+        版权所有©同乐文化科技有限公司 | Email: registrar@tonglec.org |
+        欢迎关注同乐公众号
+      </div>
+      <!-- <img class="footer-fish" src="../../public/images/footer-fish.png" alt="" /> -->
     </div>
-    <div class="nav-footer-bottom">
-      版权所有©同乐文化科技有限公司 | Email: registrar@tonglec.org |
-      欢迎关注同乐公众号
-    </div>
-    <img class="footer-fish" src="../../public/images/footer-fish.png" alt="" />
-  </div>
   </div>
 </template>
 
@@ -32,17 +36,17 @@ export default {
 <style scoped lang='scss'>
 @media screen and (max-width: 330px) {
   .nav-footer {
-    height: 170px!important;
+    height: 170px !important;
   }
 }
 @media screen and (max-width: 470px) {
   .nav-footer-brand {
-    display: none!important;
+    display: none !important;
   }
 }
 @media screen and (max-width: 1100px) {
   .nav-footer-p {
-    line-height: 2.1rem!important;
+    line-height: 2.1rem !important;
   }
 }
 
@@ -51,7 +55,7 @@ export default {
   height: 16.3rem;
   width: 100%;
   background-color: #ebe9e9;
-  border-top: 4px solid #EA4335;
+  border-top: 4px solid #ea4335;
   .nav-footer-top {
     width: 100%;
     display: flex;

@@ -5,7 +5,11 @@
     </div>
     <div class="educational-practice-top row">
       <div class="practice-top-left col-sm-3 col-xs-12">
-        <img src="../../../public/images/practice1.png" style="position: absolute;left:-2rem;" alt="" />
+        <img
+          src="../../../public/images/practice1.png"
+          style="position: absolute; left: -2rem"
+          alt=""
+        />
       </div>
       <div class="practice-top-right col-sm-9 col-xs-12">
         <h3 class="practice-top-title">{{ $t("msg.tongleLecture") }}</h3>
@@ -18,6 +22,7 @@
             :key="index"
           >
             <iframe
+              style="border-radius: 15px"
               :src="item.videoUrl"
               title="YouTube video player"
               frameborder="0"
@@ -40,6 +45,7 @@
             :key="index"
           >
             <iframe
+              style="border-radius: 15px"
               :src="item.videoUrl"
               title="YouTube video player"
               frameborder="0"
@@ -49,9 +55,12 @@
           </li>
         </ul>
       </div>
-      <div class="practice-top-left col-sm-3 col-xs-12" style="position:sticky;top: 3rem;">
-          <img src="../../../public/images/practice2.png" alt="" />
-        </div>
+      <div
+        class="practice-top-left col-sm-3 col-xs-12"
+        style="position: sticky; top: 3rem"
+      >
+        <img src="../../../public/images/practice2.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -95,6 +104,7 @@ export default {
     .practice-top-right {
       background: #fcfafa;
       box-shadow: 0 0 12px #d1d1d1;
+      border-radius: 15px;
       z-index: 999;
       ul {
         padding: 0 1.5rem;
