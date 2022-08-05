@@ -18,7 +18,7 @@
       </p>
       <ul class="books-box" v-for="(detail, i) in item.book" :key="i">
         <li class="books-detail">
-          <span class="books-title">·{{ detail.name }}</span>
+          <span class="books-title" v-html="'·' + detail.name"></span>
           <div class="link-box">
             <a
               v-for="(content, x) in detail.link"
@@ -45,7 +45,7 @@ export default {
     return {
       TongleBookJson,
       zhFanTongleBookJson: {},
-      zhTongleBookJson: TongleBookJson
+      zhTongleBookJson: TongleBookJson,
     };
   },
   methods: {},

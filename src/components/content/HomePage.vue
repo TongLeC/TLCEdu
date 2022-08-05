@@ -354,7 +354,8 @@ export default {
       text-align: center;
       .my_swiper_imgs {
         width: 100%;
-        max-height: 750px;
+        // max-height: 750px;
+        height: auto;
       }
     }
     .home-transition {
