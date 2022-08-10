@@ -442,7 +442,7 @@
       ]
     },
     {
-      "grade": "二级整体中文课",
+      "grade": "二级整体中文课（快班）",
       "book": [
         {
           "name": "中文寻根（三）-论语名句选（黑白）",
@@ -505,12 +505,73 @@
           ]
         },
         {
-          "name": "阅读理解，二级，全一册（黑白）",
+          "name": "阅读理解，二级，全一册（黑白）<span style='font-size:1.3rem;color: #929292'>备注：本教材只适用于“快班”，如报名“1对1-2-3灵活班”，请与课程顾问联系，购买另外的教材。</span>",
           "img": "/images/book20.jpg",
           "link": [
             {
               "linkTitle": "购买打印版",
               "linkAddress": "https://www.lulu.com/en/us/shop/bitao-li/chinese-reading-comprehension-grade-2/paperback/product-1e4wp772.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": "二级整体中文课（灵活班）",
+      "book": [
+        {
+          "name": "中文寻根（三）-论语名句选（黑白）",
+          "img": "/images/book4.jpg",
+          "link": [
+            {
+              "linkTitle": "购买打印版",
+              "linkAddress": "https://www.lulu.com/en/us/shop/kong-zi/confucius-speaks/paperback/product-1dgmmmrj.html"
+            },
+            {
+              "linkTitle": "免费下载电子版",
+              "linkAddress": "https://tonglechinese-my.sharepoint.com/:b:/g/personal/registrar_tonglec_org/ETSOJ0vydeFGsUULrkzu-hABt-TEl-SUxLcVprGGKmw4YQ?e=Aq7ma6"
+            },
+            {
+              "linkTitle": "网上读经机",
+              "linkAddress": "https://www.youtube.com/playlist?list=PLZlDloJgXIrZjnVnN-reDOk9rRZ2mS3-H"
+            }
+          ]
+        },
+        {
+          "name": "文化短语&三国，二级，全一册（彩色）",
+          "img": "/images/book17.jpg",
+          "link": [
+            {
+              "linkTitle": "高材质印刷",
+              "linkAddress": "https://www.lulu.com/en/us/shop/bitao-li/chinese-idiom-and-colloquialism-grade-2/paperback/product-124v94j7.html"
+            },
+            {
+              "linkTitle": "标准印刷",
+              "linkAddress": "https://www.lulu.com/en/us/shop/bitao-li/chinese-idiom-and-colloquialism-grade-2-economy-printing/paperback/product-4jjmyr.html"
+            }
+          ]
+        },
+        {
+          "name": "字里藏意，二级，全一册 （彩色）<span style='font-size:1.3rem;color: #929292'>备注：本教材只适用于“灵活班”，如果报名“快班”，请购买另外的对应教材。</span>",
+          "img": "/images/book18.jpg",
+          "link": [
+            {
+              "linkTitle": "高材质印刷",
+              "linkAddress": "https://www.lulu.com/shop/bitao-li/chinese-characters-with-illustration-level_2-all-one-volume-premium-printing-tonglec-textbook/paperback/product-vdq7rd.html"
+            },
+            {
+              "linkTitle": "标准印刷",
+              "linkAddress": "https://www.lulu.com/shop/bitao-li/chinese-characters-with-illustration-level_2-all-one-volume-standard-printing-tonglec-textbook/paperback/product-zdwem9.html"
+            }
+          ]
+        },
+        {
+          "name": "阅读理解，二级，全一册（黑白）<span style='font-size:1.3rem;color: #929292'>备注：本教材只适用于“灵活班”，如果报名“快班”，请购买另外的对应教材。</span>",
+          "img": "/images/book20.jpg",
+          "link": [
+            {
+              "linkTitle": "购买打印版",
+              "linkAddress": "https://www.lulu.com/shop/mijiao-fan-and-bitao-li/chinese-reading-comprehension-level_2-all-one-volume-tonglec-textbook/paperback/product-qvj979.html"
             }
           ]
         }
