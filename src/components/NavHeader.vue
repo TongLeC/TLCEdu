@@ -173,6 +173,7 @@ export default {
     .logo-img {
       object-fit: cover;
       height: 3rem;
+      margin-top: 1rem;
     }
   }
   .dropdown-menu {
