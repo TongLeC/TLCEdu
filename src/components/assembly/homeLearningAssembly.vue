@@ -5,7 +5,7 @@
         {{ $t(home.json.sloganTitle) }}
       </a>
       <!-- <img :src="home.imgSrc" alt="" /> -->
-      <div class="home-learning-left col-sm-6 col-xs-12">
+      <div class="home-learning-left" :class="classCol">
         <p
           class="big-detail"
           v-for="(item, index) in home.json.sloganDetail"
@@ -14,7 +14,7 @@
           {{ item }}
         </p>
       </div>
-      <div class="home-learning-right col-sm-6 col-xs-12">
+      <div class="home-learning-right" :class="classCol">
         <p
           class="big-slogan"
           v-for="(item, index) in home.json.slogan"
@@ -57,6 +57,7 @@ export default {
   },
   props: {
     home: { type: Object },
+    classCol: { type: String },
   },
   methods: {
     getItem(item, json) {
@@ -132,7 +133,7 @@ export default {
   }
   .big-title {
     font-size: 3.7rem;
-    color: #EA4335;
+    color: #ea4335;
     margin-bottom: 4rem;
     font-family: "SourceSansPro-Regular", "Lishu";
     text-align: center;
@@ -193,7 +194,7 @@ export default {
       width: 100%;
       float: right;
       a {
-        color: #EA4335;
+        color: #ea4335;
       }
     }
     .language-a a:hover {
