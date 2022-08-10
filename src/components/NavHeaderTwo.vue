@@ -16,7 +16,7 @@
           {{ $t("msg.homePage") }}
         </el-menu-item>
         <el-menu-item>
-          <a href="https://www.tonglec.org/" @click.stop target="blank">
+          <a href="https://www.tonglec.com/" @click.stop target="blank">
             {{ $t("msg.tongleCourse") }}
           </a>
         </el-menu-item>
