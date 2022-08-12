@@ -1,13 +1,12 @@
 name: Application CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "ci-config" ]
 
 jobs:
   build-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Install vue cli for build
         run: npm install @vue/cli-service
       - name: Build project
