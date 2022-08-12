@@ -1,0 +1,16 @@
+name: Application CI
+on:
+  push:
+    branches: [ "main", "ci-config" ]
+
+jobs:
+  build-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install vue cli for build
+        run: npm install @vue/cli-service
+      - name: Build project
+        run: npm run build
+      - name: Echo domain cname
+        run: cd docs && echo 'tonglec.org' > CNAME
