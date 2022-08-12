@@ -16,5 +16,6 @@ jobs:
         run: |
           git config --global user.name 'TongLeC'
           git config --global user.email 'TongLeChinese@tonglec.org'
-          git commit -am "Build /docs for static serve"
+          git add .
+          git commit -m "Build /docs for static serve"
           git push
