@@ -16,3 +16,5 @@ jobs:
         run: npm run build
       - name: Echo domain cname
         run: cd docs && echo 'tonglec.org' > CNAME
+      - name: Push results to origin
+        run: cd ../ && git add . && git commit -m "Build /docs for static serve" && git push
