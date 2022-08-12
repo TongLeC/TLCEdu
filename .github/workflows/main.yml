@@ -1,8 +1,7 @@
 name: Application CI
 on:
   push:
-    branches:
-      - [ "main", "ci-config" ]
+    branches: [ "main", "ci-config" ]
 
 jobs:
   build:
