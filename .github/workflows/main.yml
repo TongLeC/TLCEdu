@@ -1,7 +1,7 @@
 name: Application CI
 on:
   push:
-    branches: [ "main", "ci-config" ]
+    branches: [ "main" ]
 
 jobs:
   build-project:
@@ -12,5 +12,10 @@ jobs:
         run: npm install @vue/cli-service
       - name: Build project
         run: npm run build
-      - name: Echo domain cname
-        run: cd docs && echo 'tonglec.org' > CNAME
+      - name: Push results to origin
+        run: |
+          git config --global user.name 'TongLeC'
+          git config --global user.email 'TongLeChinese@tonglec.org'
+          git add docs
+          git commit -m "Build /docs for static serve"
+          git push
