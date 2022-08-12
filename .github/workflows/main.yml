@@ -7,14 +7,17 @@ jobs:
   build-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-        with:
-          ref: ${{ github.ref }}
+      - uses: actions/checkout@v3
       - name: Install vue cli for build
         run: npm install @vue/cli-service
       - name: Build project
         run: npm run build
-      - name: Echo domain cname
-        run: cd docs && echo 'tonglec.org' > CNAME
+#      - name: Echo domain cname
+#        run: cd docs && echo 'tonglec.org' > CNAME
       - name: Push results to origin
-        run: cd ../ && git add . && git commit -m "Build /docs for static serve" && git push
+#        run: cd ../ && git add . && git commit -m "Build /docs for static serve" && git push
+        run: |
+#          git config --global user.name 'Your Name'
+#          git config --global user.email 'your-username@users.noreply.github.com'
+          git commit -am "Build /docs for static serve"
+          git push
