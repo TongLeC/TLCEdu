@@ -14,5 +14,7 @@ jobs:
         run: npm run build
       - name: Push results to origin
         run: |
+          git config --global user.name 'TongLeC'
+          git config --global user.email 'TongLeChinese@tonglec.org'
           git commit -am "Build /docs for static serve"
           git push
