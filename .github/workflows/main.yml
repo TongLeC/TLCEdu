@@ -11,7 +11,9 @@ jobs:
       - name: Install vue cli for build
         run: npm install @vue/cli-service
       - name: Build project
-        run: npm run build
+        run: |
+          npm run build
+          echo 'tonglec.org' > docs/CNAME
       - name: Push results to origin
         run: |
           git config --global user.name 'TongLeC'
