@@ -47,12 +47,13 @@ export default {
         path: "/LanguageLearningDetailTwo",
         query: {
           id: item.id,
+          file: "LanguageLearning",
         },
       });
-      localStorage.setItem(
-        "detail",
-        JSON.stringify(this.languageLearningJson.languageLearning)
-      );
+      // localStorage.setItem(
+      //   "detail",
+      //   JSON.stringify(this.languageLearningJson.languageLearning)
+      // );
     },
   },
   mounted() {

@@ -47,9 +47,6 @@
 </template>
 
 <script>
-import languageLearningJson from "../../../public/json/LanguageLearning.json";
-import educationalTheoryJson from "../../../public/json/EducationalTheory.json";
-
 export default {
   name: "homeLearningAssembly",
   data() {
@@ -61,22 +58,22 @@ export default {
   },
   methods: {
     getItem(item, json) {
-      this.$router.push({
-        path: "/languageLearningDetailTwo",
-        query: {
-          id: item.id,
-        },
-      });
       if (json.id == "learn") {
-        localStorage.setItem(
-          "detail",
-          JSON.stringify(languageLearningJson.languageLearning)
-        );
+        this.$router.push({
+          path: "/LanguageLearningDetailTwo",
+          query: {
+            id: item.id,
+            file: "LanguageLearning",
+          },
+        });
       } else if (json.id == "theory") {
-        localStorage.setItem(
-          "detail",
-          JSON.stringify(educationalTheoryJson.educationalTheory)
-        );
+        this.$router.push({
+          path: "/LanguageLearningDetailTwo",
+          query: {
+            id: item.id,
+            file: "EducationalTheory",
+          },
+        });
       }
     },
   },

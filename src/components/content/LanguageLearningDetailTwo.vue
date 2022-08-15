@@ -42,13 +42,13 @@ export default {
       zhFanJson: {},
       tabPosition: "left",
       activeTab: this.$route.query.id,
-      proxy: null
+      proxy: null,
     };
   },
   mounted() {
     const { proxy } = getCurrentInstance();
-    this.proxy = proxy
-    this.jsonDetail(this.json)
+    this.proxy = proxy;
+    this.jsonDetail(this.json);
     if (this.$store.state.language == "zhFan") {
       this.json = this.zhFanJson;
       this.activeTab = this.$route.query.id;
@@ -72,7 +72,7 @@ export default {
       handler: function () {
         this.activeTab = this.$route.query.id;
         this.json = JSON.parse(localStorage.getItem("detail"));
-        this.jsonDetail(this.json)
+        this.jsonDetail(this.json);
         this.zhJson = JSON.parse(localStorage.getItem("detail"));
       },
     },
@@ -82,13 +82,14 @@ export default {
       this.$router.replace({
         query: {
           id: this.activeTab,
+          file: this.$route.query.file,
         },
       });
     },
     jsonDetail(json) {
       this.zhFanJson = this.proxy.$deepClone(json);
       return this.zhFanJson;
-    }
+    },
   },
 };
 </script>

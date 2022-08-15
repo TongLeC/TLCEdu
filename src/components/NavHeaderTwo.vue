@@ -112,15 +112,12 @@
 <script>
 import $ from "jquery";
 import NavHeaderJson from "../../public/json/NavHeader.json";
-import languageLearningJson from "../../public/json/LanguageLearning.json";
-import educationalTheoryJson from "../../public/json/EducationalTheory.json";
 
 export default {
   name: "NavHeaderTwo",
   data() {
     return {
       NavHeaderJson,
-      languageLearningJson,
     };
   },
   methods: {
@@ -137,22 +134,26 @@ export default {
       this.$store.commit("setLanguage", this.$i18n.locale);
     },
     getItem(list, item) {
-      this.$router.push({
-        path: "/LanguageLearningDetailTwo",
-        query: {
-          id: list.id,
-        },
-      });
       if (item.id == "learn") {
-        localStorage.setItem(
-          "detail",
-          JSON.stringify(languageLearningJson.languageLearning)
-        );
+        // localStorage.setItem(
+        //   "detail",
+        //   JSON.stringify(languageLearningJson.languageLearning)
+        // );
+        this.$router.push({
+          path: "/LanguageLearningDetailTwo",
+          query: {
+            id: list.id,
+            file: "LanguageLearning",
+          },
+        });
       } else if (item.id == "theory") {
-        localStorage.setItem(
-          "detail",
-          JSON.stringify(educationalTheoryJson.educationalTheory)
-        );
+        this.$router.push({
+          path: "/LanguageLearningDetailTwo",
+          query: {
+            id: list.id,
+            file: "EducationalTheory",
+          },
+        });
       }
     },
   },
