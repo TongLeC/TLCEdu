@@ -14,68 +14,68 @@ import NotFound from './components/NotFound'
 const routerHistory = createWebHistory()
 
 const router = createRouter({
-    history: routerHistory,
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: HomePage,
-            children: [
+  history: routerHistory,
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomePage,
+      children: [
 
-            ]
-        },
-        {
-            path: '/languageLearning',
-            name: 'languageLearning',
-            component: LanguageLearning,
-        },
-        {
-            path: '/educationalTheory',
-            name: 'educationalTheory',
-            component: EducationalTheory,
-        },
-        {
-            path: '/educationalPractice',
-            name: 'educationalPractice',
-            component: EducationalPractice,
-        },
-        {
-            path: '/publicResources',
-            name: 'publicResources',
-            component: PublicResources,
-        },
-        {
-            path: '/createdArticle',
-            name: 'createdArticle',
-            component: CreatedArticle,
-        },
-        {
-            path: '/tongleBook',
-            name: 'tongleBook',
-            component: TongleBook,
-        },
-        {
-            path: '/languageLearningDetail',
-            name: 'languageLearningDetail',
-            component: LanguageLearningDetail,
-        },
-        {
-            path: '/LanguageLearningDetailTwo',
-            name: 'LanguageLearningDetailTwo',
-            component: LanguageLearningDetailTwo,
-        },
-        {
-            path: '/404',
-            name: 'NotFound',
-            component: NotFound,
-            hidden: true
-        },
-        {
-            path: '/:pathMatch(.*)',
-            redirect: '/404',
-            hidden: true
-        }
-    ]
+      ]
+    },
+    {
+      path: '/languageLearning',
+      name: 'languageLearning',
+      component: LanguageLearning,
+    },
+    {
+      path: '/educationalTheory',
+      name: 'educationalTheory',
+      component: EducationalTheory,
+    },
+    {
+      path: '/educationalPractice',
+      name: 'educationalPractice',
+      component: EducationalPractice,
+    },
+    {
+      path: '/publicResources',
+      name: 'publicResources',
+      component: PublicResources,
+    },
+    {
+      path: '/createdArticle',
+      name: 'createdArticle',
+      component: CreatedArticle,
+    },
+    {
+      path: '/tongleBook',
+      name: 'tongleBook',
+      component: TongleBook,
+    },
+    {
+      path: '/languageLearningDetail',
+      name: 'languageLearningDetail',
+      component: LanguageLearningDetail,
+    },
+    {
+      path: '/LanguageLearningDetailTwo',
+      name: 'LanguageLearningDetailTwo',
+      component: LanguageLearningDetailTwo,
+    },
+    {
+      path: '/404',
+      name: 'NotFound',
+      component: NotFound,
+      hidden: true
+    },
+    {
+      path: '/:pathMatch(.*)',
+      redirect: '/404',
+      hidden: true
+    }
+  ]
 })
 
 export default router

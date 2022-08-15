@@ -46,15 +46,16 @@ export default {
         path: "/LanguageLearningDetailTwo",
         query: {
           id: item.id,
+          file: "EducationalTheory",
         },
       });
-      localStorage.setItem(
-        "detail",
-        JSON.stringify(this.educationalTheoryJson.educationalTheory)
-      );
+      // localStorage.setItem(
+      //   "detail",
+      //   JSON.stringify(this.educationalTheoryJson.educationalTheory)
+      // );
     },
   },
-   mounted() {
+  mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFaneducationalTheoryJson = proxy.$deepClone(educationalTheoryJson);
     if (this.$store.state.language == "zhFan") {
