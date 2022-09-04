@@ -1,0 +1,14 @@
+# *
+User-agent: *
+
+# Host
+Host: https://www.tonglec.org/
+
+# Disallow
+Disallow: /json
+Disallow: /css
+Disallow: /fonts
+
+
+#Sitemaps
+Sitemap: https://www.tonglec.org/sitemap.xml
