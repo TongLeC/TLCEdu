@@ -18,8 +18,8 @@ export default {
   },
   data() {
     return {
-      isShow: true
-    }
+      isShow: true,
+    };
   },
   mounted() {
     let lan = localStorage.getItem("language");
@@ -28,8 +28,8 @@ export default {
   watch: {
     $route: {
       handler: function (val) {
-        if (val.name == 'NotFound') {
-          this.isShow = false
+        if (val.name == "NotFound") {
+          this.isShow = false;
         }
       },
     },
@@ -52,7 +52,7 @@ export default {
   min-height: 100vh;
   .wrapper {
     flex: 1;
-    margin-top: 4.6rem;
+    margin-top: 70px;
   }
 }
 </style>

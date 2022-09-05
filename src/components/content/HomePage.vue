@@ -22,15 +22,56 @@
             alt=""
             v-if="item.type == 0"
           />
-          <video controls v-else class="map-video">
-            <source :src="item.mapUrl" type="video/mp4" />
-            您的浏览器不支持 video 标签。
-          </video>
         </swiper-slide>
       </swiper>
       <div class="home-transition">
-        <a href="/languageLearning">{{ $t("msg.languageLearning") }}</a> |
-        <a href="/educationalTheory">{{ $t("msg.holisticEducationTheory") }}</a>
+        <router-link to="/languageLearning">
+          {{ $t("msg.languageLearning") }}
+          <svg
+            class="home-transition-svg"
+            id="faa00db7-5049-4f88-91cb-430b5e5f1777"
+            data-name="图层 20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40.73 25.04"
+          >
+            <polygon
+              class="e7012c15-b97e-4beb-b68f-77e9c6a73f7b"
+              points="2.37 25.04 0 22.67 10.16 12.51 0 2.37 2.37 0 14.89 12.51 2.37 25.04"
+            />
+            <polygon
+              class="f318b36b-2f3d-4370-9f30-e11dbe5b7d64"
+              points="15.27 25.04 12.9 22.67 23.06 12.51 12.9 2.37 15.27 0 27.79 12.51 15.27 25.04"
+            />
+            <polygon
+              class="acfbcbba-992b-444a-97c4-531c4f40c44c"
+              points="28.2 25.04 25.84 22.67 35.99 12.51 25.84 2.37 28.2 0 40.73 12.51 28.2 25.04"
+            />
+          </svg>
+        </router-link>
+        |
+        <router-link to="/educationalTheory">
+          {{ $t("msg.holisticEducationTheory") }}
+          <svg
+            class="home-transition-svg"
+            id="faa00db7-5049-4f88-91cb-430b5e5f1777"
+            data-name="图层 20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40.73 25.04"
+          >
+            <polygon
+              class="e7012c15-b97e-4beb-b68f-77e9c6a73f7b"
+              points="2.37 25.04 0 22.67 10.16 12.51 0 2.37 2.37 0 14.89 12.51 2.37 25.04"
+            />
+            <polygon
+              class="f318b36b-2f3d-4370-9f30-e11dbe5b7d64"
+              points="15.27 25.04 12.9 22.67 23.06 12.51 12.9 2.37 15.27 0 27.79 12.51 15.27 25.04"
+            />
+            <polygon
+              class="acfbcbba-992b-444a-97c4-531c4f40c44c"
+              points="28.2 25.04 25.84 22.67 35.99 12.51 25.84 2.37 28.2 0 40.73 12.51 28.2 25.04"
+            />
+          </svg>
+        </router-link>
       </div>
     </div>
     <div class="home-big-box home-container">
@@ -38,10 +79,10 @@
         :home="home[4]"
         :classCol="'col-sm-6 col-xs-12'"
       ></home-learning-assembly>
-      <home-learning-assembly
+      <!-- <home-learning-assembly
         :home="home[5]"
         :classCol="'col-12'"
-      ></home-learning-assembly>
+      ></home-learning-assembly> -->
     </div>
     <!-- <home-learning-assembly :home="home[5]"></home-learning-assembly> -->
     <div class="home-video home-container">
@@ -346,6 +387,7 @@ export default {
   }
 }
 .home-page {
+  background: $sub-color;
   .home-rotation-map {
     position: relative;
     .swiper-slide {
@@ -361,7 +403,7 @@ export default {
     .home-transition {
       width: 48%;
       font-size: 2rem;
-      background: #fcfafa;
+      background: $sub-color;
       border-radius: 30px 30px 0 0;
       position: absolute;
       right: 27%;
@@ -371,21 +413,33 @@ export default {
       padding: 1.5rem 0;
       font-weight: bold;
       a:hover {
-        color: #ea4335;
+        color: $main-color;
         transition: all 0.4s ease 0s;
+      }
+      .e7012c15-b97e-4beb-b68f-77e9c6a73f7b {
+        fill: #d0e8f5;
+      }
+      .f318b36b-2f3d-4370-9f30-e11dbe5b7d64 {
+        fill: #9ac5e2;
+      }
+      .acfbcbba-992b-444a-97c4-531c4f40c44c {
+        fill: #6dabdd;
+      }
+      .home-transition-svg {
+        height: 20px;
       }
     }
     .map-video {
       object-fit: fill;
     }
-    ::v-deep .swiper-pagination-bullet {
+    :deep(.swiper-pagination-bullet) {
       float: right;
     }
   }
   .home-big-box {
     width: 100%;
-    background: url("../../../public/images/banner-learn22.png") no-repeat;
-    background-size: 100% 100%;
+    // background: url("../../../public/images/banner-learn22.png") no-repeat;
+    // background-size: 100% 100%;
   }
   .home-video {
     width: 100%;
@@ -429,14 +483,14 @@ export default {
         font-family: "SourceSansPro-Regular", "HeiTi";
         position: relative;
         a {
-          font-size: 1.7rem;
-          color: #ea4335;
+          font-size: 1.5rem;
+          color: $main-text-color;
           position: absolute;
           right: 5%;
           top: 20%;
         }
         a:hover {
-          color: #ffd111;
+          color: $main-color;
           transition: all 0.4s ease 0s;
         }
       }

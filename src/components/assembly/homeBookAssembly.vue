@@ -1,7 +1,7 @@
 <template>
   <div class="home-find" :home="home">
     <h3 class="home-top-title">
-      <span style="font-weight:bold;">{{ $t(home.title) }}</span>
+      <span style="font-weight: bold">{{ $t(home.title) }}</span>
       <a :href="home.href">{{ $t("msg.seeMore") }}</a>
       <p class="home-top-describe">
         {{ home.json.describe }}
@@ -124,12 +124,12 @@ export default {
     position: relative;
     a {
       font-size: 1.7rem;
-      color: #EA4335;
+      color: #ea4335;
       position: absolute;
       right: 0;
       top: 20%;
     }
-    a:hover{
+    a:hover {
       color: #ffd111;
       transition: all 0.4s ease 0s;
     }
@@ -169,7 +169,7 @@ export default {
     font-family: "Kaiti";
     // text-align: left;
   }
-  ::v-deep .swiper-pagination {
+  :deep(.swiper-pagination) {
     bottom: -10px !important;
   }
 }

@@ -96,22 +96,22 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  ::v-deep .el-tabs__header {
+  :deep(.el-tabs__header) {
     float: none !important;
     width: 100% !important;
   }
-  ::v-deep .el-tabs__item {
+  :deep(.el-tabs__item) {
     border-radius: 15px !important;
   }
 }
 
 .language-learning-tab {
   padding: 2rem;
-  ::v-deep .el-tabs__header {
+  :deep(.el-tabs__header) {
     margin-right: 0;
     width: 20%;
   }
-  ::v-deep .el-tabs__item {
+  :deep(.el-tabs__item) {
     border: 1px solid #ea4335;
     border-radius: 15px 0 0 15px;
     text-align: left !important;
@@ -121,12 +121,12 @@ export default {
     white-space: normal;
     height: auto;
   }
-  ::v-deep .el-tabs__item.is-active {
+  :deep(.el-tabs__item.is-active) {
     color: white;
     background: #ea4335;
   }
-  ::v-deep .el-tabs__nav-wrap.is-left::after,
-  ::v-deep .el-tabs__active-bar {
+  :deep(.el-tabs__nav-wrap.is-left::after),
+  :deep(.el-tabs__active-bar) {
     display: none;
   }
   .language-learning-detail {

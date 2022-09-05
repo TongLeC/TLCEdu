@@ -1,10 +1,21 @@
 <template>
   <div class="home-container" :home="home">
     <div class="home-learning row">
-      <a class="big-title" :href="home.href">
+      <div class="big-title">
         {{ $t(home.json.sloganTitle) }}
-      </a>
-      <!-- <img :src="home.imgSrc" alt="" /> -->
+        <span class="see-more"
+          ><router-link :to="home.href"
+            >{{ $t("msg.seeMore") }} ></router-link
+          ></span
+        >
+      </div>
+      <p
+        class="big-slogan"
+        v-for="(item, index) in home.json.slogan"
+        :key="index"
+      >
+        {{ item }}
+      </p>
       <div class="home-learning-left" :class="classCol">
         <p
           class="big-detail"
@@ -15,13 +26,6 @@
         </p>
       </div>
       <div class="home-learning-right" :class="classCol">
-        <p
-          class="big-slogan"
-          v-for="(item, index) in home.json.slogan"
-          :key="index"
-        >
-          {{ item }}
-        </p>
         <div class="home-learning-top">
           <div v-for="(item, index) in home.json.sloganIntroduce" :key="index">
             {{ item }}
@@ -37,9 +41,6 @@
           <div class="language-list-detail" @click="getItem(item, home.json)">
             {{ item.title }}
           </div>
-        </li>
-        <li class="language-a">
-          <a :href="home.href">{{ $t("msg.seeMore") }}</a>
         </li>
       </ul>
     </div>
@@ -84,12 +85,6 @@ export default {
 @media screen and (max-width: 420px) {
   .home-learning {
     padding: 5rem !important;
-    .big-title {
-      font-size: 2.5rem !important;
-    }
-    .big-slogan {
-      font-size: 2rem !important;
-    }
     .big-detail {
       font-size: 1.5rem !important;
     }
@@ -116,10 +111,10 @@ export default {
 }
 
 .home-learning {
-  width: 100%;
-  padding: 4rem 5rem 5rem;
+  width: 80%;
+  margin: 0 auto;
   position: relative;
-  margin: 0;
+  padding: 40px 0;
   img {
     position: absolute;
     object-fit: cover;
@@ -129,28 +124,31 @@ export default {
     transform: rotateY(180deg);
   }
   .big-title {
-    font-size: 3.7rem;
-    color: #ea4335;
-    margin-bottom: 4rem;
-    font-family: "SourceSansPro-Regular", "Lishu";
-    text-align: center;
+    font-size: 2.8rem;
+    color: $main-text-color;
+    border-left: 8px solid $adorn-color;
+    text-align: left;
     font-weight: bold;
-    display: block;
+    .see-more {
+      font-size: 1.5rem;
+      color: $main-text-color;
+      float: right;
+    }
+    .see-more:hover a {
+      color: $main-color;
+      transition: all 0.4s ease 0s;
+    }
   }
-  .big-title:hover {
-    color: #ffd111;
-    transition: all 0.4s ease 0s;
+  .big-slogan {
+    font-size: 1.5rem;
+    color: $main-color;
+    text-align: left;
   }
   .home-learning-left {
     font-weight: bold;
     font-size: 2rem;
   }
   .home-learning-right {
-    .big-slogan {
-      font-size: 2.5rem;
-      color: #322f3b;
-      font-weight: bold;
-    }
     .home-learning-top {
       width: 100%;
       padding: 2rem;
