@@ -147,7 +147,6 @@ export default {
 }
 
 .nav-header {
-  font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
   width: 100%;
   border-bottom: 1px solid #322f3b;

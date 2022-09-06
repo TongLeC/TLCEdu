@@ -89,19 +89,16 @@ export default {
   padding: 2rem 0;
   .tongle-book-title {
     font-size: 2.5rem;
-    font-family: "SourceSansPro-Regular", "HeiTi";
     font-weight: bold;
   }
   .tongle-book-content {
     padding: 1rem 18rem;
     border-bottom: 1px solid #ffd111;
     .tongle-book-grade {
-      font-family: "SourceSansPro-Regular", "HeiTi";
       font-size: 2rem;
     }
     .tongle-book-describe {
       font-size: 1.5rem;
-      font-family: "Kaiti";
       text-align: left;
       text-indent: 2em;
     }

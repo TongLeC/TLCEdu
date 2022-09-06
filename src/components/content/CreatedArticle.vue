@@ -10,7 +10,11 @@
           v-for="(item, index) in createdArticleJson.CreatedArticle"
           :key="index"
         >
-          <a class="article-list-detail" :href="item.articleLink" target="blank">
+          <a
+            class="article-list-detail"
+            :href="item.articleLink"
+            target="blank"
+          >
             {{ item.articleTitle }}
           </a>
         </li>
@@ -30,7 +34,7 @@ export default {
     return {
       createdArticleJson,
       zhFancreatedArticleJson: {},
-      zhcreatedArticleJson: createdArticleJson
+      zhcreatedArticleJson: createdArticleJson,
     };
   },
   methods: {},
@@ -71,7 +75,6 @@ export default {
   padding: 2rem;
   .created-article-title {
     font-size: 2.5rem;
-    font-family: "SourceSansPro-Regular", "HeiTi";
     font-weight: bold;
   }
   .article-right {

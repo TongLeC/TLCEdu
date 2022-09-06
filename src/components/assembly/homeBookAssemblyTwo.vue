@@ -1,33 +1,40 @@
+<!--  首页同乐书籍  -->
 <template>
   <div class="home-find" :home="home">
-    <h3 class="home-top-title">
-      <span style="font-weight: bold">{{ $t(home.title) }}</span>
-      <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-      <p class="home-top-describe">
-        {{ home.json.describe }}
-      </p>
-    </h3>
-    <div class="home-book row">
-      <img
-        :src="home.json.detail.homeImg"
-        alt=""
-        class="book-img col-sm-3 col-xs-12"
-      />
-      <div class="book-describe-box col-sm-9 col-xs-12">
-        <p
-          class="book-describe"
-          v-for="(item, index) in home.json.detail.homeDescribe"
-          :key="index"
-        >
-          {{ item }}
-        </p>
-        <p class="book-more">30+ 免费电子书与教材</p>
-        <a :href="home.href">{{ $t("msg.seeMore") }}</a>
+    <div class="big-title">
+      {{ $t(home.title) }}
+      <div class="see-more">
+        <router-link :to="home.href">{{ $t("msg.seeMore") }} ></router-link>
       </div>
-      <!-- <div class="book-box col-sm-2 col-xs-12">
-        <img src="" alt="">
-        <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-      </div> -->
+    </div>
+    <p class="big-slogan">
+      {{ home.json.describe }}
+    </p>
+    <div class="home-book">
+      <div class="home-public">
+        <div class="home-public-title">
+          {{ $t("msg.publicTitle") }} {{ $t("msg.publicTitleTwo") }}
+        </div>
+        <p class="book-more">—— 30+ 免费电子书与教材 ——</p>
+      </div>
+      <div class="row">
+        <div class="img-box col-12 col-md-3">
+          <div class="book-img">
+            <img :src="home.json.detail.homeImg" />
+            <div>海外中文教育的探索</div>
+          </div>
+        </div>
+
+        <div class="book-describe-box col-12 col-md-9">
+          <p
+            class="book-describe"
+            v-for="(item, index) in home.json.detail.homeDescribe"
+            :key="index"
+          >
+            {{ item }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,51 +58,47 @@ export default {
 
 <style scoped lang='scss'>
 .home-find {
-  margin: 5rem 0 0;
-  padding: 0 4rem 20px;
-  .home-top-title {
-    font-size: 2.5rem;
-    margin: 2rem 0;
-    font-family: "SourceSansPro-Regular", "HeiTi";
-    position: relative;
-    a {
-      font-size: 1.7rem;
-      color: #a9a9a9;
-      position: absolute;
-      right: 0;
-      top: 20%;
-    }
+  width: 75%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  .home-public-title {
+    color: $adorn-color;
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  .book-more {
+    font-size: 1.5rem;
   }
   .home-book {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px $shadow-color;
+    padding: 30px 40px;
+    font-size: 1.5rem;
     .book-describe-box {
       padding-top: 1rem;
       .book-describe {
-        font-size: 1.5rem;
-        font-family: "Kaiti";
         text-align: left;
         text-indent: 2em;
         margin: 0;
       }
-      .book-more {
-        font-size: 2rem;
-        color: #ea4335;
-        font-family: "SourceSansPro-Regular", "HeiTi";
-        margin-top: 1.5rem;
+    }
+    .img-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .book-img {
+        width: 100%;
+        border: 2px solid $adorn-color;
+        border-radius: 15px;
+        padding: 15px;
+        img {
+          width: 100%;
+          margin-bottom: 10px;
+          border-radius: 15px;
+        }
       }
     }
-  }
-  .home-top-describe {
-    margin-top: 2rem;
-  }
-  .home-top-describe,
-  .home-list-describe {
-    color: #a9a9a9;
-    font-size: 1.5rem;
-    font-family: "Kaiti";
-  }
-  a:hover {
-    color: #ea4335;
-    transition: all 0.4s ease 0s;
   }
 }
 </style>

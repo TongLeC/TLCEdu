@@ -176,7 +176,6 @@ export default {
   padding: 1rem !important;
 }
 .nav-header {
-  font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
   width: 100%;
   box-shadow: 0 0 15px #5d5c5f;
@@ -197,23 +196,21 @@ export default {
     height: 3rem;
     object-fit: cover;
   }
-  ::v-deep .el-sub-menu__title,
-  ::v-deep .el-menu-item {
-    font-size: 1.5rem;
-    font-family: "HeiTi";
-    font-weight: bold;
+  :deep(.el-sub-menu__title),
+  :deep(.el-menu-item) {
+    font-size: 1.3rem;
   }
-  ::v-deep .el-menu-item:hover,
-  ::v-deep .el-sub-menu__title:hover {
-    background: #f7e7e7 !important;
-    color: #ea4335 !important;
+  :deep(.el-menu-item:hover),
+  :deep(.el-sub-menu__title:hover) {
+    background: $main-color !important;
+    color: #fff !important;
   }
-  ::v-deep .el-menu-item.is-active,
-  ::v-deep .el-sub-menu__title.is-active {
-    background: #f7e7e7 !important;
+  :deep(.el-menu-item.is-active),
+  :deep(.el-sub-menu__title.is-active) {
+    background: $main-color !important;
   }
-  ::v-deep .el-sub-menu__title:hover a {
-    color: #ea4335 !important;
+  :deep(.el-sub-menu__title:hover) a {
+    color: #fff !important;
   }
 }
 </style>

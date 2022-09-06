@@ -112,18 +112,18 @@ export default {
     width: 20%;
   }
   :deep(.el-tabs__item) {
-    border: 1px solid #ea4335;
+    border: 1px solid $main-color;
     border-radius: 15px 0 0 15px;
     text-align: left !important;
     font-size: 1.7rem;
-    color: #ea4335;
+    color: $main-color;
     width: 100%;
     white-space: normal;
     height: auto;
   }
   :deep(.el-tabs__item.is-active) {
     color: white;
-    background: #ea4335;
+    background: $main-color;
   }
   :deep(.el-tabs__nav-wrap.is-left::after),
   :deep(.el-tabs__active-bar) {
@@ -134,10 +134,9 @@ export default {
     box-shadow: 0 0 12px #d1d1d1;
     margin: 0.5rem auto !important;
     padding: 10px 2rem 0;
-    font-family: "KaiTi" !important;
     .detail-title {
       font-size: 1.9rem;
-      color: #ea4335;
+      color: $main-text-color;
       margin: 2rem 0;
       font-weight: bold;
     }

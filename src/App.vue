@@ -43,8 +43,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #333333;
-  font-family: "LiShu";
+  color: $main-text-color;
+  font-family: "AlibabaPuHuiTi";
+  background: $sub-color;
 }
 .app {
   display: flex;

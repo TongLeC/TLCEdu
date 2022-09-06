@@ -55,7 +55,7 @@
         target="blank"
         class="course-btn tlc-btn tlc-btn-secondary r-10"
       >
-        选择课程
+        体验课程
       </a>
       <div
         class="language-selector"
@@ -186,7 +186,6 @@ export default {
 
 <style scoped lang='scss'>
 .nav-header {
-  font-family: "SourceSansPro-Bold", "HeiTi";
   height: 70px;
   width: 100%;
   box-shadow: 0 0 15px #5d5c5f;
@@ -294,21 +293,20 @@ export default {
       color: $main-text-color;
     }
   }
-  ::v-deep .el-sub-menu__title,
-  ::v-deep .el-menu-item {
+  :deep(.el-sub-menu__title),
+  :deep(.el-menu-item) {
     font-size: 1.3rem;
-    font-family: "HeiTi";
   }
-  ::v-deep .el-menu-item:hover,
-  ::v-deep .el-sub-menu__title:hover {
+  :deep(.el-menu-item:hover),
+  :deep(.el-sub-menu__title:hover) {
     background: $main-color !important;
     color: #fff !important;
   }
-  ::v-deep .el-menu-item.is-active,
-  ::v-deep .el-sub-menu__title.is-active {
+  :deep(.el-menu-item.is-active),
+  :deep(.el-sub-menu__title.is-active) {
     background: $main-color !important;
   }
-  ::v-deep .el-sub-menu__title:hover a {
+  :deep(.el-sub-menu__title:hover) a {
     color: #fff !important;
   }
 }

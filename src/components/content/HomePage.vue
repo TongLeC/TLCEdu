@@ -7,7 +7,6 @@
         :speed="swiper_options.speed"
         :pagination="swiper_options.pagination"
         :navigation="swiper_options.navigation"
-        :spaceBetween="swiper_options.spaceBetween"
         :centeredSlides="swiper_options.centeredSlides"
         :slidesPerView="swiper_options.slidesPerView"
         class="swiper"
@@ -25,7 +24,7 @@
         </swiper-slide>
       </swiper>
       <div class="home-transition">
-        <router-link to="/languageLearning">
+        <router-link to="/languageLearning" style="margin-right: 10px">
           {{ $t("msg.languageLearning") }}
           <svg
             class="home-transition-svg"
@@ -48,7 +47,6 @@
             />
           </svg>
         </router-link>
-        |
         <router-link to="/educationalTheory">
           {{ $t("msg.holisticEducationTheory") }}
           <svg
@@ -75,57 +73,45 @@
       </div>
     </div>
     <div class="home-big-box home-container">
-      <home-learning-assembly
-        :home="home[4]"
-        :classCol="'col-sm-6 col-xs-12'"
-      ></home-learning-assembly>
-      <!-- <home-learning-assembly
-        :home="home[5]"
-        :classCol="'col-12'"
-      ></home-learning-assembly> -->
+      <home-learning-assembly :home="home[4]"></home-learning-assembly>
+      <home-learning-assembly-two :home="home[5]"></home-learning-assembly-two>
     </div>
-    <!-- <home-learning-assembly :home="home[5]"></home-learning-assembly> -->
     <div class="home-video home-container">
       <div class="home-video-box">
-        <div class="home-top-title">
-          <span style="font-weight: bold">{{
-            $t("msg.educationalPractice")
-          }}</span>
-          <a href="/educationalPractice">{{ $t("msg.seeMore") }}</a>
-          <p class="home-top-describe">
-            {{ homePageJson.homeVideo.describe }}
-          </p>
+        <div class="big-title">
+          {{ $t("msg.educationalPractice") }}
+          <div class="see-more">
+            <router-link to="/educationalPractice"
+              >{{ $t("msg.seeMore") }} ></router-link
+            >
+          </div>
         </div>
+        <p class="big-slogan">
+          {{ homePageJson.homeVideo.describe }}
+        </p>
         <ul class="row">
           <li
-            class="home-list col-sm-3 col-xs-12"
+            class="home-list col-12 col-lg-3"
             v-for="(item, index) in homePageJson.homeVideo.detail"
             :key="index"
           >
-            <iframe
-              :src="item.videoUrl"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-            <div class="video-describe">
-              <p class="video-describe-title">{{ item.videoDetail }}</p>
+            <div class="home-list-div">
+              <iframe
+                :src="item.videoUrl"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <div class="video-describe">{{ item.videoDetail }}</div>
             </div>
           </li>
         </ul>
       </div>
     </div>
     <div class="home-public home-container">
-      <div class="home-public-title">
-        {{ $t("msg.publicTitle") }}
-        <i class="glyphicon glyphicon-heart" style="color: #ea4335"></i>
-        {{ $t("msg.publicTitleTwo") }}
-      </div>
       <home-book-assembly-two :home="home[2]"></home-book-assembly-two>
-      <div class="split-line"></div>
       <home-book-assembly :home="home[0]"></home-book-assembly>
-      <div class="split-line"></div>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
   </div>
@@ -145,6 +131,7 @@ import homeFreeAssembly from "../assembly/homeFreeAssembly.vue";
 import homeBookAssembly from "../assembly/homeBookAssembly.vue";
 import homeBookAssemblyTwo from "../assembly/homeBookAssemblyTwo.vue";
 import homeLearningAssembly from "../assembly/homeLearningAssembly.vue";
+import homeLearningAssemblyTwo from "../assembly/homeLearningAssemblyTwo.vue";
 import homePageJson from "../../../public/json/HomePage.json";
 
 export default {
@@ -194,6 +181,7 @@ export default {
     homeBookAssembly,
     homeBookAssemblyTwo,
     homeLearningAssembly,
+    homeLearningAssemblyTwo,
   },
   methods: {},
   setup() {
@@ -206,7 +194,6 @@ export default {
       loop: true,
       slidesPerView: "auto",
       centeredSlides: true,
-      spaceBetween: 20,
       navigation: {
         nextElRef: ".swiper-button-next",
         prevElRef: ".swiper-button-prev",
@@ -367,23 +354,21 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  .home-video {
-    background-size: 200% 20% !important;
-    ul {
-      padding: 0 15px !important;
-      .home-list {
-        padding: 1rem 2rem !important;
-      }
-      .col-sm-3 {
-        width: 100% !important;
-      }
-    }
-  }
   .home-transition {
     font-size: 1.5rem !important;
     width: 100% !important;
     right: 0 !important;
     bottom: -28% !important;
+    .home-transition-svg {
+      height: 16px !important;
+    }
+  }
+}
+@media screen and (max-width: 1140px) {
+  .home-video {
+    .col-lg-3 {
+      width: 100% !important;
+    }
   }
 }
 .home-page {
@@ -396,7 +381,6 @@ export default {
       text-align: center;
       .my_swiper_imgs {
         width: 100%;
-        // max-height: 750px;
         height: auto;
       }
     }
@@ -409,9 +393,7 @@ export default {
       right: 27%;
       bottom: -5%;
       z-index: 99;
-      font-family: "SourceSansPro-Regular", "HeiTi";
       padding: 1.5rem 0;
-      font-weight: bold;
       a:hover {
         color: $main-color;
         transition: all 0.4s ease 0s;
@@ -436,26 +418,26 @@ export default {
       float: right;
     }
   }
-  .home-big-box {
-    width: 100%;
-    // background: url("../../../public/images/banner-learn22.png") no-repeat;
-    // background-size: 100% 100%;
-  }
   .home-video {
-    width: 100%;
-    background: url("../../../public/images/banner-img.png") no-repeat;
-    background-size: 100% 40%;
-    background-position: 0 100%;
-    padding: 5rem 0 20rem;
     position: relative;
+    padding: 40px 0;
     .home-video-box {
-      z-index: 999;
       margin: 0 auto;
-      padding: 1rem;
+      width: 75%;
       ul {
-        padding: 0 4rem;
+        padding: 15px 20px;
+        font-size: 1.5rem;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px $shadow-color;
         .home-list {
-          padding: 1rem 1rem;
+          padding: 1rem;
+          .home-list-div {
+            height: 100%;
+            border: 2px solid $adorn-color;
+            border-radius: 15px;
+            padding: 15px;
+          }
           iframe {
             width: 100%;
             height: 230px;
@@ -463,52 +445,10 @@ export default {
             box-shadow: 5px 5px 10px #a9a9a9;
           }
         }
-        .col-sm-3 {
+        .col-lg-3 {
           width: 20%;
         }
       }
-      .home-top-describe {
-        margin-top: 2rem;
-      }
-      .home-top-describe,
-      .video-describe-detail {
-        color: #a9a9a9;
-        // text-indent: 2em;
-        font-size: 1.5rem;
-        font-family: "Kaiti";
-      }
-      .home-top-title {
-        font-size: 2.5rem;
-        margin: 1.2rem 0 1.3rem 0;
-        font-family: "SourceSansPro-Regular", "HeiTi";
-        position: relative;
-        a {
-          font-size: 1.5rem;
-          color: $main-text-color;
-          position: absolute;
-          right: 5%;
-          top: 20%;
-        }
-        a:hover {
-          color: $main-color;
-          transition: all 0.4s ease 0s;
-        }
-      }
-    }
-  }
-  .home-public {
-    // width: 100%;
-    padding: 4rem 0;
-    .home-public-title {
-      font-size: 4rem;
-      font-weight: bold;
-      font-family: "SourceSansPro-Regular", "HeiTi";
-    }
-    .split-line {
-      width: 100%;
-      height: 1px;
-      background: #ffd111;
-      margin-top: 5rem;
     }
   }
 }
