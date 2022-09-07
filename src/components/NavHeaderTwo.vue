@@ -46,47 +46,45 @@
         <el-menu-item route="/tongleBook" index="10">
           {{ $t("msg.tongleBooks") }}
         </el-menu-item>
-      </el-menu>
-    </div>
-
-    <div class="nav-tool-right">
-      <a
-        href="https://www.tonglec.com/"
-        target="blank"
-        class="course-btn tlc-btn tlc-btn-secondary r-10"
-      >
-        体验课程
-      </a>
-      <div
-        class="language-selector"
-        @mouseenter="mouseInNavItem($event)"
-        @mouseleave="mouseOutNavItem($event)"
-        @click="mouseToogleNavItem($event)"
-        ref="languageSelector"
-      >
-        <a class="dropdown">
-          <svg
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 33.2 33.19"
+        <el-menu-item class="select-course">
+          <a
+            href="https://www.tonglec.com/"
+            target="blank"
+            class="course-btn tlc-btn tlc-btn-secondary r-10"
           >
-            <path
-              class="cls-1"
-              d="M1570.1,46.34a16.61,16.61,0,0,0-16.59,16.59,16.28,16.28,0,0,0,1.21,6.21l.08.54h.14a16.6,16.6,0,0,0,30.33,0h.18v-.44a16.44,16.44,0,0,0,1.25-6.31A16.61,16.61,0,0,0,1570.1,46.34Zm-7.78,21h-5.76a14,14,0,0,1-.72-4.41,13.83,13.83,0,0,1,.32-2.89h6c-.07,1-.11,1.93-.11,2.89A35.17,35.17,0,0,0,1562.32,67.34Zm15.45-9.64a20.52,20.52,0,0,0-2.82-8.16,14.38,14.38,0,0,1,8.4,8.16Zm-2.83,18.63a19.29,19.29,0,0,0,2.56-6.65h5.15A14.11,14.11,0,0,1,1574.94,76.33Zm-9.68-26.79a20.52,20.52,0,0,0-2.82,8.16h-5.58A14.38,14.38,0,0,1,1565.26,49.54Zm10.56,13.39a30.83,30.83,0,0,1-.31,4.41h-10.82a32.35,32.35,0,0,1-.3-4.41c0-.94,0-1.91.13-2.89h11.17C1575.78,61,1575.82,62,1575.82,62.93Zm-11-5.23c.9-5.33,3-9,5.28-9s4.39,3.69,5.29,9Zm-2.11,12a19.09,19.09,0,0,0,2.56,6.65,14.08,14.08,0,0,1-7.71-6.65Zm12.38,0c-1,4.51-3,7.51-5,7.51s-3.94-2.94-5-7.51Zm3-9.64h6a13.8,13.8,0,0,1,.31,2.89,14.18,14.18,0,0,1-.71,4.41h-5.76a35.41,35.41,0,0,0,.27-4.41C1578.16,62,1578.12,61,1578,60Z"
-              transform="translate(-1553.51 -46.34)"
-            />
-          </svg>
-          <span class="text"> {{ $t("msg.language") }}</span>
-        </a>
-        <ul @click.stop>
-          <li @click="switchSimplified()">
-            {{ $t("msg.simplifiedChinese") }}
-          </li>
-          <li @click="switchTraditional()">
-            {{ $t("msg.traditionalChinese") }}
-          </li>
-        </ul>
-      </div>
+            体验课程
+          </a>
+        </el-menu-item>
+        <el-sub-menu class="language-selector">
+          <template #title>
+            <div class="language-selector-a">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-globe2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5H4.51zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008h2.49zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"
+                />
+              </svg>
+              {{ $t("msg.language") }}
+            </div>
+          </template>
+          <el-menu-item @click.stop>
+            <div @click="switchSimplified()">
+              {{ $t("msg.simplifiedChinese") }}
+            </div>
+          </el-menu-item>
+          <el-menu-item @click.stop>
+            <div @click="switchTraditional()">
+              {{ $t("msg.traditionalChinese") }}
+            </div>
+          </el-menu-item>
+        </el-sub-menu>
+      </el-menu>
     </div>
   </div>
 </template>
@@ -184,6 +182,33 @@ export default {
 };
 </script>
 
+<style>
+.el-menu-item:hover,
+.el-sub-menu__title:hover {
+  background: #2b85c3 !important;
+  color: #fff !important;
+}
+.el-sub-menu__title:hover a {
+  color: #fff !important;
+}
+.el-menu-item.is-active,
+.el-sub-menu__title.is-active {
+  background: #2b85c3 !important;
+}
+.language-selector .el-sub-menu__title:hover {
+  background: #fff !important;
+  color: #2b85c3 !important;
+}
+.language-selector .el-sub-menu__title {
+  padding: 0 !important;
+}
+.el-sub-menu__title * {
+  vertical-align: middle !important;
+}
+.select-course.el-menu-item:hover {
+  background: #fff !important;
+}
+</style>
 <style scoped lang='scss'>
 .nav-header {
   height: 70px;
@@ -209,12 +234,6 @@ export default {
     height: 3rem;
     object-fit: cover;
   }
-  .nav-tool-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.3rem;
-  }
   .course-btn {
     margin: 3px 10px 3px 0;
     line-height: 40px;
@@ -231,62 +250,17 @@ export default {
   }
   .language-selector {
     width: 150px;
-    text-align: center;
-    position: relative;
-    height: 40px;
-    border: 1px solid $main-text-color;
-    border-radius: 15px;
-    margin-right: 15px;
-    a {
-      width: inherit;
-      margin: 5px auto;
+    height: 70px;
+    &-a {
+      margin: 0 auto;
+      border: 1px solid $main-text-color;
+      width: 100%;
       height: 40px;
       border-radius: 15px;
-      justify-content: space-between;
       background: white;
-      .text {
-        color: $main-text-color;
-        width: 100%;
-        text-align: center;
-        vertical-align: middle;
-      }
-    }
-    ul {
-      display: none; //下拉框
-      position: absolute;
-      width: 150px;
-      right: 0;
-      background-color: white;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0px 0px 3px 1px rgba($color: #000000, $alpha: 0.25);
-      li {
-        text-align: center;
-        padding: 5px 10px;
-        cursor: pointer;
-        &.active {
-          color: white;
-          background-color: $main-color;
-        }
-        &:hover {
-          color: white;
-          background-color: $main-color;
-        }
-        &:first-child {
-          padding-top: 5px;
-        }
-        &:last-child {
-          padding-bottom: 5px;
-        }
-      }
-    }
-    &.active {
-      ul {
-        display: block; //下拉框
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .icon {
       height: 20px;
@@ -296,18 +270,6 @@ export default {
   :deep(.el-sub-menu__title),
   :deep(.el-menu-item) {
     font-size: 1.3rem;
-  }
-  :deep(.el-menu-item:hover),
-  :deep(.el-sub-menu__title:hover) {
-    background: $main-color !important;
-    color: #fff !important;
-  }
-  :deep(.el-menu-item.is-active),
-  :deep(.el-sub-menu__title.is-active) {
-    background: $main-color !important;
-  }
-  :deep(.el-sub-menu__title:hover) a {
-    color: #fff !important;
   }
 }
 </style>

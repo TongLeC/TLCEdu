@@ -355,13 +355,19 @@ export default {
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .home-transition {
-    font-size: 1.5rem !important;
     width: 100% !important;
     right: 0 !important;
     bottom: -28% !important;
     .home-transition-svg {
       height: 16px !important;
     }
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none !important;
+  }
+  .home-video-box {
+    width: 90% !important;
   }
 }
 @media screen and (max-width: 1140px) {
@@ -386,7 +392,7 @@ export default {
     }
     .home-transition {
       width: 48%;
-      font-size: 2rem;
+      font-size: 1.5rem;
       background: $sub-color;
       border-radius: 30px 30px 0 0;
       position: absolute;
@@ -426,7 +432,7 @@ export default {
       width: 75%;
       ul {
         padding: 15px 20px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         background: #fff;
         border-radius: 15px;
         box-shadow: 2px 2px 10px $shadow-color;
@@ -442,7 +448,6 @@ export default {
             width: 100%;
             height: 230px;
             border-radius: 15px;
-            box-shadow: 5px 5px 10px #a9a9a9;
           }
         }
         .col-lg-3 {

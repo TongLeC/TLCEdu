@@ -46,6 +46,7 @@ export default {
   color: $main-text-color;
   font-family: "AlibabaPuHuiTi";
   background: $sub-color;
+  font-size: 1.4rem;
 }
 .app {
   display: flex;

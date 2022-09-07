@@ -90,6 +90,9 @@ export default {
       line-height: 30px !important;
     }
   }
+  .home-learning {
+    width: 90% !important;
+  }
 }
 
 .home-learning {

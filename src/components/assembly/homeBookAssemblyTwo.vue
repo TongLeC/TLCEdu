@@ -57,6 +57,11 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 768px) {
+  .home-find {
+    width: 90% !important;
+  }
+}
 .home-find {
   width: 75%;
   margin: 0 auto;
@@ -74,7 +79,7 @@ export default {
     border-radius: 15px;
     box-shadow: 2px 2px 10px $shadow-color;
     padding: 30px 40px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     .book-describe-box {
       padding-top: 1rem;
       .book-describe {

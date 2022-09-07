@@ -72,6 +72,11 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 768px) {
+  .educational-practice {
+    width: 90% !important;
+  }
+}
 .educational-practice {
   width: 75%;
   margin: 70px auto;

@@ -120,6 +120,9 @@ export default {
       margin-top: 20px;
     }
   }
+  .home-learning {
+    width: 90% !important;
+  }
 }
 
 .home-learning {

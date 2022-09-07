@@ -1,36 +1,42 @@
 <template>
   <div class="tongle-book home-container">
-    <div class="tongle-book-title">
-      {{ $t("msg.tongleBooks") }}
+    <div class="other-page">
+      <p class="other-page-title">{{ $t("msg.tongleBooks") }}</p>
+      <p class="other-page-slogan">{{ $t("msg.slogan[3]") }}</p>
     </div>
     <div
       class="tongle-book-content"
       v-for="(item, index) in TongleBookJson.TongleBook"
       :key="index"
     >
-      <p class="tongle-book-grade">{{ item.grade }}</p>
-      <p
-        class="tongle-book-describe"
-        v-for="(describe, y) in item.describe"
-        :key="y"
-      >
-        {{ describe }}
-      </p>
-      <ul class="books-box" v-for="(detail, i) in item.book" :key="i">
-        <li class="books-detail">
-          <span class="books-title" v-html="'·' + detail.name"></span>
-          <div class="link-box">
-            <a
-              v-for="(content, x) in detail.link"
-              :key="x"
-              :href="content.linkAddress"
-              target="blank"
-            >
-              <button class="books-link">{{ content.linkTitle }}</button>
-            </a>
-          </div>
-        </li>
-      </ul>
+      <div class="big-title">
+        {{ item.grade }}
+      </div>
+      <div class="big-box">
+        <p
+          class="tongle-book-describe"
+          v-for="(describe, y) in item.describe"
+          :key="y"
+        >
+          {{ describe }}
+        </p>
+        <div v-if="item.describe != false" class="split-line"></div>
+        <ul class="books-box" v-for="(detail, i) in item.book" :key="i">
+          <li class="books-detail">
+            <div class="books-title" v-html="detail.name"></div>
+            <div class="link-box">
+              <a
+                v-for="(content, x) in detail.link"
+                :key="x"
+                :href="content.linkAddress"
+                target="blank"
+              >
+                <button class="books-link">{{ content.linkTitle }}</button>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -74,61 +80,54 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 700px) {
-  .tongle-book-content {
-    padding: 1rem 3rem !important;
-  }
-}
-@media (min-width: 700px) and (max-width: 1200px) {
-  .tongle-book-content {
-    padding: 1rem 10rem !important;
+@media screen and (max-width: 768px) {
+  .tongle-book {
+    width: 90% !important;
   }
 }
 .tongle-book {
-  width: 100%;
-  padding: 2rem 0;
-  .tongle-book-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
+  width: 75%;
   .tongle-book-content {
-    padding: 1rem 18rem;
-    border-bottom: 1px solid #ffd111;
-    .tongle-book-grade {
-      font-size: 2rem;
-    }
     .tongle-book-describe {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-align: left;
       text-indent: 2em;
+    }
+    .big-box {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px $shadow-color;
+      padding: 30px 40px 10px;
+      margin: 20px 0 50px;
+    }
+
+    .split-line {
+      height: 4px;
+      width: 200px;
+      background: $adorn-color;
     }
     .books-box {
       padding: 0;
       margin: 0 auto;
       .books-detail {
-        margin: 1.5rem 0;
+        margin: 1rem 0;
         text-align: left;
-        .books-title {
+        .books-link {
+          padding: 0.6rem 2rem;
+          border: 2px solid $main-color;
+          border-radius: 15px;
+          color: #fff;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: normal;
+          overflow: hidden;
+          margin: 0.5rem;
+          background: $main-color;
         }
-        .link-box {
-          margin: 0.5rem 0 0;
-          .books-link {
-            padding: 0.6rem 2rem;
-            border: 2px solid #ea4335;
-            border-radius: 15px;
-            color: #ea4335;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            overflow: hidden;
-            margin: 0.5rem;
-            background: #f7e7e7;
-          }
-          .books-link:hover {
-            background: #ea4335;
-            color: white;
-            transition: all 0.4s ease 0s;
-          }
+        .books-link:hover {
+          background: #fff;
+          color: $main-color;
+          transition: all 0.4s ease 0s;
         }
       }
     }

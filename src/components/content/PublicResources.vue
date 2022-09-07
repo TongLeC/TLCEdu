@@ -25,7 +25,7 @@
                   class="resources-list-detail"
                   target="blank"
                 >
-                  {{ detail.linkTitle }}
+                  {{ i + 1 }}. {{ detail.linkTitle }}
                 </a>
               </li>
             </ul>
@@ -76,6 +76,11 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 768px) {
+  .public-resources {
+    width: 90% !important;
+  }
+}
 .public-resources {
   width: 75%;
   margin: 0 auto;
@@ -90,15 +95,17 @@ export default {
         box-shadow: 2px 2px 10px $shadow-color;
         padding: 0;
         .resources-list {
+          text-align: left;
           .resources-list-detail {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             display: block;
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 0.7rem 1.5rem;
           }
-          &:nth-child(2n) {
+          &:nth-child(4n + 2),
+          &:nth-child(4n + 3) {
             background: $sub-color;
           }
         }

@@ -127,6 +127,11 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@media screen and (max-width: 768px) {
+  .bible-find {
+    width: 90% !important;
+  }
+}
 .bible-find {
   width: 75%;
   margin: 80px auto 0;

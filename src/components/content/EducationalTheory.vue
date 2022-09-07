@@ -79,6 +79,9 @@ export default {
   .language-list {
     margin: 10px 0 !important;
   }
+  .language-learning {
+    width: 90% !important;
+  }
 }
 
 .language-learning {
@@ -94,6 +97,7 @@ export default {
           height: 100%;
           padding: 15px 20px;
           display: flex;
+          background: #fff;
           align-items: center;
           justify-content: center;
           cursor: pointer;

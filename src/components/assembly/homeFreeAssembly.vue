@@ -42,19 +42,11 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  ul {
-    padding-left: 15px !important;
-    .col-sm-3 {
-      width: 100% !important;
-    }
+  .col-sm-3 {
+    width: 100% !important;
   }
-}
-@media screen and (max-width: 1500px) {
-  .free-list {
-    padding: 0 1rem !important;
-  }
-  ul {
-    padding-left: 0 !important;
+  .free-box {
+    width: 90% !important;
   }
 }
 .free-box {
@@ -65,7 +57,10 @@ export default {
     background: #fff;
     border-radius: 15px;
     box-shadow: 2px 2px 10px $shadow-color;
-    padding: 30px 20px;
+    padding: 25px 25px 10px;
+    .free-list {
+      margin-bottom: 15px;
+    }
     .free-list-box {
       border: 2px solid $adorn-color;
       border-radius: 15px;
