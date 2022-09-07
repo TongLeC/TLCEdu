@@ -5,9 +5,7 @@ User-agent: *
 Host: https://www.tonglec.org/
 
 # Disallow
-Disallow: /json
-Disallow: /css
-Disallow: /fonts
+
 
 
 #Sitemaps
