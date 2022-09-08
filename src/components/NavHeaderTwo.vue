@@ -1,7 +1,7 @@
 <template>
   <div class="nav-header">
     <div class="logo-img-box">
-      <router-link class="navbar-brand" to="/">
+      <router-link class="navbar-brand" :to="{ name: 'home' }">
         <img class="logo-img" src="../../public/images/logo3.png" alt="" />
       </router-link>
     </div>
@@ -18,13 +18,14 @@
           :index="item.id"
         >
           <template #title
-            ><router-link :to="item.href">{{
+            ><router-link :to="{ name: item.href }">{{
               $t(item.msg)
             }}</router-link></template
           >
           <el-menu-item
-            v-for="(list, index) in item.child"
-            :key="index"
+            v-for="(list, i) in item.child"
+            :key="i"
+            :index="'p' + i"
             style="border-bottom: 1px solid #ccc"
           >
             <a
@@ -39,11 +40,11 @@
               {{ list.title }}
             </div>
           </el-menu-item>
-          <el-menu-item :index="item.href">
+          <el-menu-item :route="{ name: item.href }" :index="'n' + index">
             {{ $t("msg.seeMore") }}
           </el-menu-item>
         </el-sub-menu>
-        <el-menu-item route="/tongleBook" index="10">
+        <el-menu-item :route="{ name: 'tongleBook' }" index="100">
           {{ $t("msg.tongleBooks") }}
         </el-menu-item>
         <el-menu-item class="select-course">
@@ -55,7 +56,7 @@
             体验课程
           </a>
         </el-menu-item>
-        <el-sub-menu class="language-selector">
+        <el-sub-menu class="language-selector" index="language">
           <template #title>
             <div class="language-selector-a">
               <svg
@@ -107,17 +108,25 @@ export default {
       this.$store.commit("setLanguage", this.$i18n.locale);
     },
     switchSimplified() {
-      this.$i18n.locale = "zh";
+      this.$i18n.locale = "zh-hans";
       this.$store.commit("setLanguage", this.$i18n.locale);
+      console.log(this.$i18n.locale);
+      this.$router
+        .push({ params: { lang: this.$i18n.locale } })
+        .catch(() => {});
     },
     switchTraditional() {
-      this.$i18n.locale = "zhFan";
+      this.$i18n.locale = "zh-hant";
       this.$store.commit("setLanguage", this.$i18n.locale);
+      console.log(this.$i18n.locale);
+      this.$router
+        .push({ params: { lang: this.$i18n.locale } })
+        .catch(() => {});
     },
     getItem(list, item) {
       if (item.id == "learn") {
         this.$router.push({
-          path: "/LanguageLearningDetailTwo",
+          name: "LanguageLearningDetailTwo",
           query: {
             id: list.id,
             file: "LanguageLearning",
@@ -125,7 +134,7 @@ export default {
         });
       } else if (item.id == "theory") {
         this.$router.push({
-          path: "/LanguageLearningDetailTwo",
+          name: "LanguageLearningDetailTwo",
           query: {
             id: list.id,
             file: "EducationalTheory",

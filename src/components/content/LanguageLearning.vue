@@ -38,7 +38,7 @@ export default {
   methods: {
     getItem(item) {
       this.$router.push({
-        path: "/LanguageLearningDetailTwo",
+        name: "LanguageLearningDetailTwo",
         query: {
           id: item.id,
           file: "LanguageLearning",
@@ -49,9 +49,9 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFanlanguageLearningJson = proxy.$deepClone(languageLearningJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.languageLearningJson = this.zhFanlanguageLearningJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.languageLearningJson = this.zhlanguageLearningJson;
     }
   },
@@ -60,9 +60,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.languageLearningJson = this.zhFanlanguageLearningJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.languageLearningJson = this.zhlanguageLearningJson;
       }
     },
@@ -82,7 +82,7 @@ export default {
 
 .language-learning {
   width: 75%;
-  margin: 0 auto;
+  margin: 70px auto;
   position: relative;
   .language-learning-box {
     .language-right {

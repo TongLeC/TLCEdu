@@ -58,9 +58,9 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFanTongleBookJson = proxy.$deepClone(TongleBookJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.TongleBookJson = this.zhFanTongleBookJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.TongleBookJson = this.zhTongleBookJson;
     }
   },
@@ -69,9 +69,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.TongleBookJson = this.zhFanTongleBookJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.TongleBookJson = this.zhTongleBookJson;
       }
     },
@@ -87,6 +87,7 @@ export default {
 }
 .tongle-book {
   width: 75%;
+  margin: 70px auto;
   .tongle-book-content {
     .tongle-book-describe {
       font-size: 1.4rem;

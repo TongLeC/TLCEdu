@@ -24,7 +24,7 @@ export default {
       publicTitleTwo: "Commonweal sharing"
     },
   },
-  zh: {
+  'zh-hans': {
     msg: {
       homePage: "首页",
       languageLearning: "同乐语言学习法",
@@ -57,7 +57,7 @@ export default {
       ],
     },
   },
-  zhFan: {
+  'zh-hant': {
     msg: {
       homePage: "首頁",
       languageLearning: "同樂語言學習法",

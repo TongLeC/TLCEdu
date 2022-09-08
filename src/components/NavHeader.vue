@@ -112,11 +112,11 @@ export default {
       localStorage.setItem("language", this.$i18n.locale);
     },
     switchSimplified() {
-      this.$i18n.locale = "zh";
+      this.$i18n.locale = "zh-hans";
       localStorage.setItem("language", this.$i18n.locale);
     },
     switchTraditional() {
-      this.$i18n.locale = "zhFan";
+      this.$i18n.locale = "zh-hant";
       localStorage.setItem("language", this.$i18n.locale);
     },
   },

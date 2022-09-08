@@ -126,11 +126,11 @@ export default {
       this.$store.commit("setLanguage", this.$i18n.locale);
     },
     switchSimplified() {
-      this.$i18n.locale = "zh";
+      this.$i18n.locale = "zh-hans";
       this.$store.commit("setLanguage", this.$i18n.locale);
     },
     switchTraditional() {
-      this.$i18n.locale = "zhFan";
+      this.$i18n.locale = "zh-hant";
       this.$store.commit("setLanguage", this.$i18n.locale);
     },
     getItem(list, item) {

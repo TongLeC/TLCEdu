@@ -5,7 +5,9 @@
       <div class="big-title">
         {{ $t(home.json.sloganTitle) }}
         <div class="see-more">
-          <router-link :to="home.href">{{ $t("msg.seeMore") }} ></router-link>
+          <router-link :to="{ name: 'languageLearning' }"
+            >{{ $t("msg.seeMore") }} ></router-link
+          >
         </div>
       </div>
       <p
@@ -80,7 +82,7 @@ export default {
     getItem(item, json) {
       if (json.id == "learn") {
         this.$router.push({
-          path: "/LanguageLearningDetailTwo",
+          name: "LanguageLearningDetailTwo",
           query: {
             id: item.id,
             file: "LanguageLearning",
@@ -88,7 +90,7 @@ export default {
         });
       } else if (json.id == "theory") {
         this.$router.push({
-          path: "/LanguageLearningDetailTwo",
+          name: "LanguageLearningDetailTwo",
           query: {
             id: item.id,
             file: "EducationalTheory",

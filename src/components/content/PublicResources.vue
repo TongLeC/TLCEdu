@@ -54,9 +54,9 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFanpublicResourcesJson = proxy.$deepClone(publicResourcesJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.publicResourcesJson = this.zhFanpublicResourcesJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.publicResourcesJson = this.zhpublicResourcesJson;
     }
   },
@@ -65,9 +65,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.publicResourcesJson = this.zhFanpublicResourcesJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.publicResourcesJson = this.zhpublicResourcesJson;
       }
     },

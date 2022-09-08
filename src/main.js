@@ -11,13 +11,13 @@ import './assets/fonts/fonts.css'
 import '../public/css/global.scss'
 import languageLearningJson from "../public/json/LanguageLearning.json";
 import educationalTheoryJson from "../public/json/EducationalTheory.json";
-const app = createApp(App)
-app.config.globalProperties.$deepClone = deepClone;
-app.use(router).use(i18n).use(ElementUI).use(store).mount('#app')
 
-
-
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from) => {
+  if (from.fullPath == '/') {
+    i18n.locale = to.params.lang || 'zh-hans';
+    store.commit("setLanguage", i18n.locale);
+  }
+  document.documentElement.scrollTop = 0;
   if (to.query.file == 'LanguageLearning') {
     localStorage.setItem(
       "detail",
@@ -29,6 +29,7 @@ router.beforeEach((to, from, next) => {
       JSON.stringify(educationalTheoryJson.educationalTheory)
     );
   }
-  document.documentElement.scrollTop = 0
-  next()
 })
+const app = createApp(App)
+app.config.globalProperties.$deepClone = deepClone;
+app.use(router).use(i18n).use(ElementUI).use(store).mount('#app')

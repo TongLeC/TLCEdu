@@ -43,9 +43,9 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFancreatedArticleJson = proxy.$deepClone(createdArticleJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.createdArticleJson = this.zhFancreatedArticleJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.createdArticleJson = this.zhcreatedArticleJson;
     }
   },
@@ -54,9 +54,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.createdArticleJson = this.zhFancreatedArticleJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.createdArticleJson = this.zhcreatedArticleJson;
       }
     },
@@ -76,7 +76,7 @@ export default {
 
 .language-learning {
   width: 75%;
-  margin: 0 auto;
+  margin: 70px auto;
   position: relative;
   .language-learning-box {
     .language-right {

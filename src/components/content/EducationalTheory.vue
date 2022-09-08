@@ -38,7 +38,7 @@ export default {
   methods: {
     getItem(item) {
       this.$router.push({
-        path: "/LanguageLearningDetailTwo",
+        name: "LanguageLearningDetailTwo",
         query: {
           id: item.id,
           file: "EducationalTheory",
@@ -53,9 +53,9 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFaneducationalTheoryJson = proxy.$deepClone(educationalTheoryJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.educationalTheoryJson = this.zhFaneducationalTheoryJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.educationalTheoryJson = this.zheducationalTheoryJson;
     }
   },
@@ -64,9 +64,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.educationalTheoryJson = this.zhFaneducationalTheoryJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.educationalTheoryJson = this.zheducationalTheoryJson;
       }
     },
@@ -86,7 +86,7 @@ export default {
 
 .language-learning {
   width: 75%;
-  margin: 0 auto;
+  margin: 70px auto;
   position: relative;
   .language-learning-box {
     .language-right {

@@ -3,7 +3,7 @@
     {
       "type": "1",
       "id": "learn",
-      "href": "/languageLearning",
+      "href": "languageLearning",
       "msg": "msg.languageLearning",
       "child": [
         {
@@ -67,7 +67,7 @@
     {
       "type": "1",
       "id": "theory",
-      "href": "/educationalTheory",
+      "href": "educationalTheory",
       "msg": "msg.holisticEducationTheory",
       "child": [
         {
@@ -175,7 +175,7 @@
     {
       "type": "0",
       "id": "f45dsfg",
-      "href": "/educationalPractice",
+      "href": "educationalPractice",
       "msg": "msg.educationalPractice",
       "child": [
         {
@@ -207,7 +207,7 @@
     {
       "type": "0",
       "id": "4vg5dsf4g",
-      "href": "/publicResources",
+      "href": "publicResources",
       "msg": "msg.publicWelfareResources",
       "child": [
         {
@@ -239,7 +239,7 @@
     {
       "type": "0",
       "id": "4f5ds",
-      "href": "/createdArticle",
+      "href": "createdArticle",
       "msg": "msg.originalArticle",
       "child": [
         {

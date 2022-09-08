@@ -1,19 +1,19 @@
 <template>
   <div class="app">
-    <nav-header v-show="isShow"></nav-header>
-    <router-view class="wrapper"></router-view>
+    <!-- <nav-header v-show="isShow"></nav-header> -->
+    <router-view></router-view>
     <nav-footer v-show="isShow"></nav-footer>
   </div>
 </template>
 
 <script>
-import NavHeader from "./components/NavHeaderTwo.vue";
+// import NavHeader from "./components/NavHeaderTwo.vue";
 import NavFooter from "./components/NavFooter.vue";
 
 export default {
   name: "App",
   components: {
-    NavHeader,
+    // NavHeader,
     NavFooter,
   },
   data() {
@@ -52,9 +52,5 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  .wrapper {
-    flex: 1;
-    margin-top: 70px;
-  }
 }
 </style>

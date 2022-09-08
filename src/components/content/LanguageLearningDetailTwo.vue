@@ -49,10 +49,10 @@ export default {
     const { proxy } = getCurrentInstance();
     this.proxy = proxy;
     this.jsonDetail(this.json);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.json = this.zhFanJson;
       this.activeTab = this.$route.query.id;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.json = this.zhJson;
     }
   },
@@ -61,10 +61,10 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.json = this.zhFanJson;
         this.activeTab = this.$route.query.id;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.json = this.zhJson;
       }
     },
@@ -114,6 +114,7 @@ export default {
 
 .language-detail {
   width: 75%;
+  margin: 70px auto;
 }
 .language-learning-tab {
   padding: 2rem 0;

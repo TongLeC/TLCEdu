@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 //组件模块
+import LangRouter from './components/LangRouter'
 import HomePage from './components/content/HomePage'
 import LanguageLearning from './components/content/LanguageLearning'
 import EducationalTheory from './components/content/EducationalTheory'
@@ -11,71 +12,78 @@ import LanguageLearningDetail from './components/content/LanguageLearningDetail'
 import LanguageLearningDetailTwo from './components/content/LanguageLearningDetailTwo'
 import NotFound from './components/NotFound'
 
-const routerHistory = createWebHistory()
 
 const router = createRouter({
-  history: routerHistory,
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomePage,
+      redirect: { path: '/zh-hans' }
+    },
+    {
+      path: '/:lang(zh-hans|zh-hant)',
+      component: LangRouter,
       children: [
-
+        {
+          path: '',
+          name: 'home',
+          component: HomePage,
+        },
+        {
+          path: 'language-learning',
+          name: 'languageLearning',
+          component: LanguageLearning,
+        },
+        {
+          path: 'educational-theory',
+          name: 'educationalTheory',
+          component: EducationalTheory,
+        },
+        {
+          path: 'educational-practice',
+          name: 'educationalPractice',
+          component: EducationalPractice,
+        },
+        {
+          path: 'public-resources',
+          name: 'publicResources',
+          component: PublicResources,
+        },
+        {
+          path: 'created-article',
+          name: 'createdArticle',
+          component: CreatedArticle,
+        },
+        {
+          path: 'tongle-book',
+          name: 'tongleBook',
+          component: TongleBook,
+        },
+        {
+          path: 'language-learning-detail',
+          name: 'languageLearningDetail',
+          component: LanguageLearningDetail,
+        },
+        {
+          path: 'Language-learning-detail-two',
+          name: 'LanguageLearningDetailTwo',
+          component: LanguageLearningDetailTwo,
+        },
+        {
+          path: '404',
+          name: 'NotFound',
+          component: NotFound,
+          hidden: true,
+          redirect: { path: '/' }
+        }
+        // {
+        //   path: ':pathMatch(.*)',
+        //   redirect: '/',
+        //   hidden: true,
+        // }
       ]
-    },
-    {
-      path: '/languageLearning',
-      name: 'languageLearning',
-      component: LanguageLearning,
-    },
-    {
-      path: '/educationalTheory',
-      name: 'educationalTheory',
-      component: EducationalTheory,
-    },
-    {
-      path: '/educationalPractice',
-      name: 'educationalPractice',
-      component: EducationalPractice,
-    },
-    {
-      path: '/publicResources',
-      name: 'publicResources',
-      component: PublicResources,
-    },
-    {
-      path: '/createdArticle',
-      name: 'createdArticle',
-      component: CreatedArticle,
-    },
-    {
-      path: '/tongleBook',
-      name: 'tongleBook',
-      component: TongleBook,
-    },
-    {
-      path: '/languageLearningDetail',
-      name: 'languageLearningDetail',
-      component: LanguageLearningDetail,
-    },
-    {
-      path: '/LanguageLearningDetailTwo',
-      name: 'LanguageLearningDetailTwo',
-      component: LanguageLearningDetailTwo,
-    },
-    {
-      path: '/404',
-      name: 'NotFound',
-      component: NotFound,
-      hidden: true
-    },
-    {
-      path: '/:pathMatch(.*)',
-      redirect: '/404',
-      hidden: true
     }
-  ]
+  ],
 })
 
 export default router

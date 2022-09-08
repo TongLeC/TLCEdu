@@ -4,7 +4,9 @@
     <div class="big-title">
       {{ $t(home.title) }}
       <div class="see-more">
-        <router-link :to="home.href">{{ $t("msg.seeMore") }} ></router-link>
+        <router-link :to="{ name: 'publicResources' }"
+          >{{ $t("msg.seeMore") }} ></router-link
+        >
       </div>
     </div>
     <p class="big-slogan">

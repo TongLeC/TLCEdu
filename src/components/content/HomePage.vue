@@ -24,7 +24,10 @@
         </swiper-slide>
       </swiper>
       <div class="home-transition">
-        <router-link to="/languageLearning" style="margin-right: 10px">
+        <router-link
+          :to="{ name: 'languageLearning' }"
+          style="margin-right: 10px"
+        >
           {{ $t("msg.languageLearning") }}
           <svg
             class="home-transition-svg"
@@ -47,7 +50,7 @@
             />
           </svg>
         </router-link>
-        <router-link to="/educationalTheory">
+        <router-link :to="{ name: 'educationalTheory' }">
           {{ $t("msg.holisticEducationTheory") }}
           <svg
             class="home-transition-svg"
@@ -81,7 +84,7 @@
         <div class="big-title">
           {{ $t("msg.educationalPractice") }}
           <div class="see-more">
-            <router-link to="/educationalPractice"
+            <router-link :to="{ name: 'educationalPractice' }"
               >{{ $t("msg.seeMore") }} ></router-link
             >
           </div>
@@ -144,31 +147,25 @@ export default {
       home: [
         {
           title: "msg.classicAudio",
-          href: "/publicResources",
           json: homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
           title: "msg.originalArticle",
-          href: "/createdArticle",
           json: homePageJson.homeArticle,
         },
         {
           title: "msg.tongleBooks",
-          href: "/tongleBook",
           json: homePageJson.homeBook,
         },
         {
           title: "msg.classicMusic",
-          href: "/publicResources",
           json: homePageJson.homeFree,
         },
         {
-          href: "/languageLearning",
           json: homePageJson.homeSloganLearning,
         },
         {
-          href: "/educationalTheory",
           json: homePageJson.homeSloganTheory,
         },
       ],
@@ -207,69 +204,57 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFanhomePageJson = proxy.$deepClone(homePageJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.homePageJson = this.zhFanhomePageJson;
       this.home = [
         {
           title: "msg.classicAudio",
-          href: "/publicResources",
           json: this.homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
           title: "msg.originalArticle",
-          href: "/createdArticle",
           json: this.homePageJson.homeArticle,
         },
         {
           title: "msg.tongleBooks",
-          href: "/tongleBook",
           json: this.homePageJson.homeBook,
         },
         {
           title: "msg.classicMusic",
-          href: "/publicResources",
           json: this.homePageJson.homeFree,
         },
         {
-          href: "/languageLearning",
           json: this.homePageJson.homeSloganLearning,
         },
         {
-          href: "/educationalTheory",
           json: this.homePageJson.homeSloganTheory,
         },
       ];
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.homePageJson = this.zhhomePageJson;
       this.home = [
         {
           title: "msg.classicAudio",
-          href: "/publicResources",
           json: this.homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
           title: "msg.originalArticle",
-          href: "/createdArticle",
           json: this.homePageJson.homeArticle,
         },
         {
           title: "msg.tongleBooks",
-          href: "/tongleBook",
           json: this.homePageJson.homeBook,
         },
         {
           title: "msg.classicMusic",
-          href: "/publicResources",
           json: this.homePageJson.homeFree,
         },
         {
-          href: "/languageLearning",
           json: this.homePageJson.homeSloganLearning,
         },
         {
-          href: "/educationalTheory",
           json: this.homePageJson.homeSloganTheory,
         },
       ];
@@ -280,69 +265,57 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.homePageJson = this.zhFanhomePageJson;
         this.home = [
           {
             title: "msg.classicAudio",
-            href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
             title: "msg.originalArticle",
-            href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
             title: "msg.tongleBooks",
-            href: "/tongleBook",
             json: this.homePageJson.homeBook,
           },
           {
             title: "msg.classicMusic",
-            href: "/publicResources",
             json: this.homePageJson.homeFree,
           },
           {
-            href: "/languageLearning",
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
         ];
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.homePageJson = this.zhhomePageJson;
         this.home = [
           {
             title: "msg.classicAudio",
-            href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
             title: "msg.originalArticle",
-            href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
             title: "msg.tongleBooks",
-            href: "/tongleBook",
             json: this.homePageJson.homeBook,
           },
           {
             title: "msg.classicMusic",
-            href: "/publicResources",
             json: this.homePageJson.homeFree,
           },
           {
-            href: "/languageLearning",
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
         ];
