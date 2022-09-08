@@ -97,8 +97,9 @@ export default {
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   :deep(.el-tabs__header) {
-    float: none !important;
-    width: 100% !important;
+    // float: none !important;
+    // width: 100% !important;
+    display: none !important;
   }
   :deep(.el-tabs__item) {
     border-radius: 15px !important;
