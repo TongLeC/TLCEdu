@@ -75,12 +75,12 @@ const router = createRouter({
           component: NotFound,
           hidden: true,
           redirect: { path: '/' }
+        },
+        {
+          path: ':pathMatch(.*)',
+          redirect: '/',
+          hidden: true,
         }
-        // {
-        //   path: ':pathMatch(.*)',
-        //   redirect: '/',
-        //   hidden: true,
-        // }
       ]
     }
   ],

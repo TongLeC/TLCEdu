@@ -17,6 +17,11 @@ router.beforeEach(async (to, from) => {
     i18n.locale = to.params.lang || 'zh-hans';
     store.commit("setLanguage", i18n.locale);
   }
+
+  if (!to.matched.length) {
+    const url = 'zh-hans' + to.fullPath;
+    router.push({ path: url })
+  }
   document.documentElement.scrollTop = 0;
   if (to.query.file == 'LanguageLearning') {
     localStorage.setItem(
