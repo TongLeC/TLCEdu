@@ -1,0 +1,31 @@
+<template>
+  <div id="app" class="app">
+    <nav-header />
+    <NuxtPage />
+    <nav-footer />
+  </div>
+</template>
+<script setup>
+import { ID_INJECTION_KEY } from "element-plus";
+provide(ID_INJECTION_KEY, {
+  prefix: 100,
+  current: 0,
+});
+</script>
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $main-text-color;
+  font-family: "AlibabaPuHuiTi";
+  background: $sub-color;
+  font-size: 1.4rem;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+</style>
