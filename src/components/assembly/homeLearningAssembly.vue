@@ -1,47 +1,69 @@
+<!--  首页同乐语言学习法  -->
 <template>
   <div class="home-container" :home="home">
-    <div class="home-learning row">
-      <a class="big-title" :href="home.href">
+    <div class="home-learning">
+      <div class="big-title">
         {{ $t(home.json.sloganTitle) }}
-      </a>
-      <!-- <img :src="home.imgSrc" alt="" /> -->
-      <div class="home-learning-left" :class="classCol">
-        <p
-          class="big-detail"
-          v-for="(item, index) in home.json.sloganDetail"
-          :key="index"
-        >
-          {{ item }}
-        </p>
-      </div>
-      <div class="home-learning-right" :class="classCol">
-        <p
-          class="big-slogan"
-          v-for="(item, index) in home.json.slogan"
-          :key="index"
-        >
-          {{ item }}
-        </p>
-        <div class="home-learning-top">
-          <div v-for="(item, index) in home.json.sloganIntroduce" :key="index">
-            {{ item }}
-          </div>
+        <div class="see-more">
+          <router-link :to="{ name: 'languageLearning' }"
+            >{{ $t("msg.seeMore") }} ></router-link
+          >
         </div>
       </div>
-      <ul class="home-learning-ul row">
-        <li
-          class="language-list col-md-3 col-xs-12"
-          v-for="(item, index) in home.json.sloganList"
-          :key="index"
+      <p
+        class="big-slogan"
+        v-for="(item, index) in home.json.slogan"
+        :key="index"
+      >
+        {{ item }}
+      </p>
+      <div class="home-learning-box row">
+        <div class="home-learning-top col-12 col-md-9">
+          <p
+            class="big-detail"
+            v-for="(item, index) in home.json.sloganDetail"
+            :key="index"
+          >
+            {{ item }}
+          </p>
+        </div>
+        <ul class="home-learning-ul col-12 col-md-3" style="padding-left: 20px">
+          <li
+            class="language-list"
+            v-for="(item, index) in home.json.sloganListOne"
+            :key="index"
+          >
+            <div class="language-list-detail" @click="getItem(item, home.json)">
+              {{ item.title }}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="home-learning-box home-learning-last row">
+        <ul
+          class="home-learning-ul col-12 col-md-3"
+          style="padding-right: 20px"
         >
-          <div class="language-list-detail" @click="getItem(item, home.json)">
-            {{ item.title }}
-          </div>
-        </li>
-        <li class="language-a">
-          <a :href="home.href">{{ $t("msg.seeMore") }}</a>
-        </li>
-      </ul>
+          <li
+            class="language-list"
+            v-for="(item, index) in home.json.sloganListTwo"
+            :key="index"
+          >
+            <div class="language-list-detail" @click="getItem(item, home.json)">
+              {{ item.title }}
+            </div>
+          </li>
+        </ul>
+        <div class="home-learning-top col-12 col-md-9">
+          <p
+            class="big-detail big-detail-p"
+            v-for="(item, index) in home.json.sloganIntroduce"
+            :key="index"
+          >
+            {{ item }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -60,7 +82,7 @@ export default {
     getItem(item, json) {
       if (json.id == "learn") {
         this.$router.push({
-          path: "/LanguageLearningDetailTwo",
+          name: "LanguageLearningDetailTwo",
           query: {
             id: item.id,
             file: "LanguageLearning",
@@ -68,7 +90,7 @@ export default {
         });
       } else if (json.id == "theory") {
         this.$router.push({
-          path: "/LanguageLearningDetailTwo",
+          name: "LanguageLearningDetailTwo",
           query: {
             id: item.id,
             file: "EducationalTheory",
@@ -81,122 +103,70 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@media screen and (max-width: 420px) {
-  .home-learning {
-    padding: 5rem !important;
-    .big-title {
-      font-size: 2.5rem !important;
-    }
-    .big-slogan {
-      font-size: 2rem !important;
-    }
-    .big-detail {
-      font-size: 1.5rem !important;
-    }
-    img {
-      width: 25rem !important;
-    }
-  }
-}
 @media screen and (max-width: 768px) {
-  .home-learning {
-    padding: 5rem 2rem 0 !important;
-    img {
-      display: none;
+  .home-learning-ul {
+    padding: 0 !important;
+  }
+  .language-list {
+    margin-top: 20px;
+    text-align: center !important;
+  }
+  .home-learning-box:last-child {
+    padding-top: 0 !important;
+  }
+  .home-learning-last {
+    .language-list:first-child {
+      margin: 0 !important;
     }
-    .home-learning-right {
-      padding-top: 4rem !important;
+    .home-learning-top {
+      margin-top: 20px;
     }
   }
-}
-@media screen and (max-width: 860px) {
   .home-learning {
-    display: block !important;
+    width: 90% !important;
   }
 }
 
 .home-learning {
-  width: 100%;
-  padding: 4rem 5rem 5rem;
+  width: 75%;
+  margin: 0 auto;
   position: relative;
-  margin: 0;
-  img {
-    position: absolute;
-    object-fit: cover;
-    width: 35rem;
-    left: 2rem;
-    bottom: -5rem;
-    transform: rotateY(180deg);
-  }
-  .big-title {
-    font-size: 3.7rem;
-    color: #ea4335;
-    margin-bottom: 4rem;
-    font-family: "SourceSansPro-Regular", "Lishu";
-    text-align: center;
-    font-weight: bold;
-    display: block;
-  }
-  .big-title:hover {
-    color: #ffd111;
-    transition: all 0.4s ease 0s;
-  }
-  .home-learning-left {
-    font-weight: bold;
-    font-size: 2rem;
-  }
-  .home-learning-right {
-    .big-slogan {
-      font-size: 2.5rem;
-      color: #322f3b;
-      font-weight: bold;
-    }
+  padding: 70px 0 20px;
+  &-box {
+    padding: 12px 0;
     .home-learning-top {
-      width: 100%;
-      padding: 2rem;
-      text-align: left;
-      text-indent: 2em;
-      color: #322f3b;
-      font-family: "KaiTi";
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px $shadow-color;
+      padding: 30px 40px;
     }
-  }
-  .home-learning-ul {
-    margin: 1rem 0;
-    padding: 0;
+    .home-learning-ul {
+      padding: 0;
+      margin: 0;
+    }
     .language-list {
-      font-family: "HeiTi";
-      margin: 2rem 0 2rem 0;
-      color: white;
-      .language-list-detail {
-        display: block;
-        height: 100%;
-        width: 100%;
-        text-align: center;
-        line-height: 3.8rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        cursor: pointer;
-        background: #ea4335;
-        padding: 0 1.5rem;
-        border-radius: 10px;
+      background: $main-color;
+      box-shadow: 2px 2px 10px $shadow-color;
+      color: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: left;
+      cursor: pointer;
+      &:last-child {
+        margin-top: 20px;
       }
-      .language-list-detail:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 12px #d1d1d1;
+      &:hover {
+        color: $main-color;
+        background: $bg-main-color;
         transition: all 0.4s ease 0s;
       }
     }
-    .language-a {
-      width: 100%;
-      float: right;
-      a {
-        color: #ea4335;
-      }
+    p:last-child {
+      margin: 0;
     }
-    .language-a a:hover {
-      color: #ffd111;
-      transition: all 0.4s ease 0s;
+    .big-detail-p {
+      text-align: left;
+      text-indent: 2em;
     }
   }
 }

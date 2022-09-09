@@ -1,28 +1,22 @@
 <template>
   <div class="language-learning home-container">
-    <div class="language-learning-title">
-      {{ $t("msg.languageLearning") }}
+    <div class="other-page">
+      <p class="other-page-title">{{ $t("msg.languageLearning") }}</p>
+      <p class="other-page-slogan">{{ $t("msg.slogan[0]") }}</p>
     </div>
-    <div class="language-learning-box row">
-      <div class="language-left col-sm-3 col-xs-12">
-        <img src="../../../public/images/learning-child.png" alt="" />
-      </div>
-      <div class="language-right col-sm-9 col-xs-12">
-        <ul class="row">
-          <li
-            class="language-list col-sm-4 col-xs-12"
-            v-for="(item, index) in languageLearningJson.languageLearning"
-            :key="index"
-          >
-            <div class="language-list-detail" @click="getItem(item)">
-              {{ item.title }}
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="language-banner">
-      <img src="../../../public/images/learning-bird.png" alt="" />
+    <div class="language-learning-box">
+      <ul class="language-right row">
+        <li
+          class="language-list col-sm-4 col-xs-12"
+          v-for="(item, index) in languageLearningJson.languageLearning"
+          :key="index"
+        >
+          <div class="language-list-detail" @click="getItem(item)">
+            {{ item.title }}
+            <div class="bookmark"></div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -44,24 +38,20 @@ export default {
   methods: {
     getItem(item) {
       this.$router.push({
-        path: "/LanguageLearningDetailTwo",
+        name: "LanguageLearningDetailTwo",
         query: {
           id: item.id,
           file: "LanguageLearning",
         },
       });
-      // localStorage.setItem(
-      //   "detail",
-      //   JSON.stringify(this.languageLearningJson.languageLearning)
-      // );
     },
   },
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFanlanguageLearningJson = proxy.$deepClone(languageLearningJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.languageLearningJson = this.zhFanlanguageLearningJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.languageLearningJson = this.zhlanguageLearningJson;
     }
   },
@@ -70,9 +60,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.languageLearningJson = this.zhFanlanguageLearningJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.languageLearningJson = this.zhlanguageLearningJson;
       }
     },
@@ -82,64 +72,66 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
+  .language-list {
+    margin: 10px 0 !important;
+  }
   .language-learning {
-    .language-left {
-      display: none !important;
-    }
+    width: 90% !important;
   }
 }
 
 .language-learning {
+  width: 75%;
+  margin: 70px auto;
   position: relative;
-  padding: 3rem;
-  .language-learning-title {
-    font-size: 2.5rem;
-    font-family: "SourceSansPro-Regular", "HeiTi";
-    font-weight: bold;
-  }
   .language-learning-box {
-    .language-left {
-      position: sticky;
-      top: 3rem;
-      img {
-        object-fit: cover;
-        width: 100%;
-        transform: rotateY(180deg);
-      }
-    }
     .language-right {
-      z-index: 99;
-      ul {
-        padding: 0;
-        .language-list {
-          height: 3.8rem;
-          border-left: 4px solid #ea4335;
+      padding: 0;
+      .language-list {
+        margin: 20px 0;
+        .language-list-detail {
+          height: 100%;
+          padding: 15px 30px;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
           border-radius: 15px;
-          box-shadow: 0 0 12px #d1d1d1;
-          margin: 3rem 6rem 0 0;
-          .language-list-detail {
-            height: 100%;
-            line-height: 3.8rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            cursor: pointer;
+          box-shadow: 2px 2px 10px $shadow-color;
+          position: relative;
+          .bookmark {
+            width: 16px;
+            height: 30px;
+            background: $main-color;
+            position: absolute;
+            top: 0;
+            right: 18px;
+            &::before {
+              content: "";
+              display: block;
+              width: 10px;
+              height: 5px;
+              border: 8px solid;
+              border-color: $main-color transparent transparent transparent;
+              position: absolute;
+              bottom: -16px;
+              right: 0;
+            }
           }
         }
-        .language-list:hover {
-          transform: scale(1.05);
-          transition: all 0.4s ease 0s;
+      }
+      .language-list:hover .language-list-detail {
+        color: #fff;
+        background: $main-color;
+        transition: all 0.4s ease 0s;
+        .bookmark {
+          background: #fff;
+          &::before {
+            border-color: #fff transparent transparent transparent;
+          }
         }
       }
-    }
-  }
-  .language-banner {
-    position: absolute;
-    top: 0;
-    right: 0;
-    img {
-      object-fit: cover;
-      width: 25rem;
-      transform: rotateY(180deg);
     }
   }
 }

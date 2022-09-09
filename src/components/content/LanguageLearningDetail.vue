@@ -47,7 +47,6 @@ export default {
   box-shadow: 0 0 12px #d1d1d1;
   margin: 4rem auto !important;
   padding-top: 10px;
-  font-family: "KaiTi" !important;
   .detail-title {
     font-size: 1.9rem;
     color: #ea4335;
@@ -69,7 +68,6 @@ export default {
     object-fit: cover;
     opacity: 0.5;
     z-index: -1;
-    // float: right;
   }
 }
 </style>

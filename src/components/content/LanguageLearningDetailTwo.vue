@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container">
+  <div class="language-detail home-container">
     <el-tabs
       :tab-position="tabPosition"
       class="demo-tabs language-learning-tab"
@@ -49,10 +49,10 @@ export default {
     const { proxy } = getCurrentInstance();
     this.proxy = proxy;
     this.jsonDetail(this.json);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.json = this.zhFanJson;
       this.activeTab = this.$route.query.id;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.json = this.zhJson;
     }
   },
@@ -61,10 +61,10 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.json = this.zhFanJson;
         this.activeTab = this.$route.query.id;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.json = this.zhJson;
       }
     },
@@ -96,48 +96,65 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  ::v-deep .el-tabs__header {
-    float: none !important;
-    width: 100% !important;
+  :deep(.el-tabs__header) {
+    // float: none !important;
+    // width: 100% !important;
+    display: none !important;
   }
-  ::v-deep .el-tabs__item {
+  :deep(.el-tabs__item) {
     border-radius: 15px !important;
+  }
+  .language-learning-tab {
+    padding: 2rem 5px !important;
+  }
+  .language-detail {
+    width: 90% !important;
   }
 }
 
+.language-detail {
+  width: 75%;
+  margin: 70px auto;
+}
 .language-learning-tab {
-  padding: 2rem;
-  ::v-deep .el-tabs__header {
+  padding: 2rem 0;
+  :deep(.el-tabs__header) {
     margin-right: 0;
     width: 20%;
   }
-  ::v-deep .el-tabs__item {
-    border: 1px solid #ea4335;
+  :deep(.el-tabs__item) {
+    border: 1px solid $main-color;
     border-radius: 15px 0 0 15px;
     text-align: left !important;
-    font-size: 1.7rem;
-    color: #ea4335;
+    font-size: 1.4rem;
+    background: #fff;
+    color: $main-color;
     width: 100%;
     white-space: normal;
     height: auto;
   }
-  ::v-deep .el-tabs__item.is-active {
-    color: white;
-    background: #ea4335;
+  :deep(.el-tabs__item:hover) {
+    background: $main-color;
+    color: #fff;
   }
-  ::v-deep .el-tabs__nav-wrap.is-left::after,
-  ::v-deep .el-tabs__active-bar {
+  :deep(.el-tabs__item.is-active) {
+    color: white;
+    background: $main-color;
+  }
+  :deep(.el-tabs__nav-wrap.is-left::after),
+  :deep(.el-tabs__active-bar) {
     display: none;
   }
   .language-learning-detail {
     width: 98%;
-    box-shadow: 0 0 12px #d1d1d1;
-    margin: 0.5rem auto !important;
+    box-shadow: 2px 2px 10px $shadow-color;
+    margin: 0 0 5px 0 !important;
+    background: #fff;
     padding: 10px 2rem 0;
-    font-family: "KaiTi" !important;
+    border-radius: 15px;
     .detail-title {
       font-size: 1.9rem;
-      color: #ea4335;
+      color: $main-text-color;
       margin: 2rem 0;
       font-weight: bold;
     }

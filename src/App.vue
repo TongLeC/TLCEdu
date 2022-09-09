@@ -1,25 +1,25 @@
 <template>
   <div class="app">
-    <nav-header v-show="isShow"></nav-header>
-    <router-view class="wrapper"></router-view>
+    <!-- <nav-header v-show="isShow"></nav-header> -->
+    <router-view></router-view>
     <nav-footer v-show="isShow"></nav-footer>
   </div>
 </template>
 
 <script>
-import NavHeader from "./components/NavHeaderTwo.vue";
+// import NavHeader from "./components/NavHeaderTwo.vue";
 import NavFooter from "./components/NavFooter.vue";
 
 export default {
   name: "App",
   components: {
-    NavHeader,
+    // NavHeader,
     NavFooter,
   },
   data() {
     return {
-      isShow: true
-    }
+      isShow: true,
+    };
   },
   mounted() {
     let lan = localStorage.getItem("language");
@@ -28,8 +28,8 @@ export default {
   watch: {
     $route: {
       handler: function (val) {
-        if (val.name == 'NotFound') {
-          this.isShow = false
+        if (val.name == "NotFound") {
+          this.isShow = false;
         }
       },
     },
@@ -43,16 +43,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #333333;
-  font-family: "LiShu";
+  color: $main-text-color;
+  font-family: "AlibabaPuHuiTi";
+  background: $sub-color;
+  font-size: 1.4rem;
 }
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  .wrapper {
-    flex: 1;
-    margin-top: 4.6rem;
-  }
 }
 </style>

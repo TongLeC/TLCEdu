@@ -7,7 +7,6 @@
         :speed="swiper_options.speed"
         :pagination="swiper_options.pagination"
         :navigation="swiper_options.navigation"
-        :spaceBetween="swiper_options.spaceBetween"
         :centeredSlides="swiper_options.centeredSlides"
         :slidesPerView="swiper_options.slidesPerView"
         class="swiper"
@@ -22,69 +21,100 @@
             alt=""
             v-if="item.type == 0"
           />
-          <video controls v-else class="map-video">
-            <source :src="item.mapUrl" type="video/mp4" />
-            您的浏览器不支持 video 标签。
-          </video>
         </swiper-slide>
       </swiper>
       <div class="home-transition">
-        <a href="/languageLearning">{{ $t("msg.languageLearning") }}</a> |
-        <a href="/educationalTheory">{{ $t("msg.holisticEducationTheory") }}</a>
+        <router-link
+          :to="{ name: 'languageLearning' }"
+          style="margin-right: 10px"
+        >
+          {{ $t("msg.languageLearning") }}
+          <svg
+            class="home-transition-svg"
+            id="faa00db7-5049-4f88-91cb-430b5e5f1777"
+            data-name="图层 20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40.73 25.04"
+          >
+            <polygon
+              class="e7012c15-b97e-4beb-b68f-77e9c6a73f7b"
+              points="2.37 25.04 0 22.67 10.16 12.51 0 2.37 2.37 0 14.89 12.51 2.37 25.04"
+            />
+            <polygon
+              class="f318b36b-2f3d-4370-9f30-e11dbe5b7d64"
+              points="15.27 25.04 12.9 22.67 23.06 12.51 12.9 2.37 15.27 0 27.79 12.51 15.27 25.04"
+            />
+            <polygon
+              class="acfbcbba-992b-444a-97c4-531c4f40c44c"
+              points="28.2 25.04 25.84 22.67 35.99 12.51 25.84 2.37 28.2 0 40.73 12.51 28.2 25.04"
+            />
+          </svg>
+        </router-link>
+        <router-link :to="{ name: 'educationalTheory' }">
+          {{ $t("msg.holisticEducationTheory") }}
+          <svg
+            class="home-transition-svg"
+            id="faa00db7-5049-4f88-91cb-430b5e5f1777"
+            data-name="图层 20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40.73 25.04"
+          >
+            <polygon
+              class="e7012c15-b97e-4beb-b68f-77e9c6a73f7b"
+              points="2.37 25.04 0 22.67 10.16 12.51 0 2.37 2.37 0 14.89 12.51 2.37 25.04"
+            />
+            <polygon
+              class="f318b36b-2f3d-4370-9f30-e11dbe5b7d64"
+              points="15.27 25.04 12.9 22.67 23.06 12.51 12.9 2.37 15.27 0 27.79 12.51 15.27 25.04"
+            />
+            <polygon
+              class="acfbcbba-992b-444a-97c4-531c4f40c44c"
+              points="28.2 25.04 25.84 22.67 35.99 12.51 25.84 2.37 28.2 0 40.73 12.51 28.2 25.04"
+            />
+          </svg>
+        </router-link>
       </div>
     </div>
     <div class="home-big-box home-container">
-      <home-learning-assembly
-        :home="home[4]"
-        :classCol="'col-sm-6 col-xs-12'"
-      ></home-learning-assembly>
-      <home-learning-assembly
-        :home="home[5]"
-        :classCol="'col-12'"
-      ></home-learning-assembly>
+      <home-learning-assembly :home="home[4]"></home-learning-assembly>
+      <home-learning-assembly-two :home="home[5]"></home-learning-assembly-two>
     </div>
-    <!-- <home-learning-assembly :home="home[5]"></home-learning-assembly> -->
     <div class="home-video home-container">
       <div class="home-video-box">
-        <div class="home-top-title">
-          <span style="font-weight: bold">{{
-            $t("msg.educationalPractice")
-          }}</span>
-          <a href="/educationalPractice">{{ $t("msg.seeMore") }}</a>
-          <p class="home-top-describe">
-            {{ homePageJson.homeVideo.describe }}
-          </p>
+        <div class="big-title">
+          {{ $t("msg.educationalPractice") }}
+          <div class="see-more">
+            <router-link :to="{ name: 'educationalPractice' }"
+              >{{ $t("msg.seeMore") }} ></router-link
+            >
+          </div>
         </div>
+        <p class="big-slogan">
+          {{ homePageJson.homeVideo.describe }}
+        </p>
         <ul class="row">
           <li
-            class="home-list col-sm-3 col-xs-12"
+            class="home-list col-12 col-lg-3"
             v-for="(item, index) in homePageJson.homeVideo.detail"
             :key="index"
           >
-            <iframe
-              :src="item.videoUrl"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-            <div class="video-describe">
-              <p class="video-describe-title">{{ item.videoDetail }}</p>
+            <div class="home-list-div">
+              <iframe
+                :src="item.videoUrl"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <div class="video-describe">{{ item.videoDetail }}</div>
             </div>
           </li>
         </ul>
       </div>
     </div>
     <div class="home-public home-container">
-      <div class="home-public-title">
-        {{ $t("msg.publicTitle") }}
-        <i class="glyphicon glyphicon-heart" style="color: #ea4335"></i>
-        {{ $t("msg.publicTitleTwo") }}
-      </div>
       <home-book-assembly-two :home="home[2]"></home-book-assembly-two>
-      <div class="split-line"></div>
       <home-book-assembly :home="home[0]"></home-book-assembly>
-      <div class="split-line"></div>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
   </div>
@@ -104,6 +134,7 @@ import homeFreeAssembly from "../assembly/homeFreeAssembly.vue";
 import homeBookAssembly from "../assembly/homeBookAssembly.vue";
 import homeBookAssemblyTwo from "../assembly/homeBookAssemblyTwo.vue";
 import homeLearningAssembly from "../assembly/homeLearningAssembly.vue";
+import homeLearningAssemblyTwo from "../assembly/homeLearningAssemblyTwo.vue";
 import homePageJson from "../../../public/json/HomePage.json";
 
 export default {
@@ -116,31 +147,25 @@ export default {
       home: [
         {
           title: "msg.classicAudio",
-          href: "/publicResources",
           json: homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
           title: "msg.originalArticle",
-          href: "/createdArticle",
           json: homePageJson.homeArticle,
         },
         {
           title: "msg.tongleBooks",
-          href: "/tongleBook",
           json: homePageJson.homeBook,
         },
         {
           title: "msg.classicMusic",
-          href: "/publicResources",
           json: homePageJson.homeFree,
         },
         {
-          href: "/languageLearning",
           json: homePageJson.homeSloganLearning,
         },
         {
-          href: "/educationalTheory",
           json: homePageJson.homeSloganTheory,
         },
       ],
@@ -153,6 +178,7 @@ export default {
     homeBookAssembly,
     homeBookAssemblyTwo,
     homeLearningAssembly,
+    homeLearningAssemblyTwo,
   },
   methods: {},
   setup() {
@@ -165,7 +191,6 @@ export default {
       loop: true,
       slidesPerView: "auto",
       centeredSlides: true,
-      spaceBetween: 20,
       navigation: {
         nextElRef: ".swiper-button-next",
         prevElRef: ".swiper-button-prev",
@@ -179,69 +204,57 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFanhomePageJson = proxy.$deepClone(homePageJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.homePageJson = this.zhFanhomePageJson;
       this.home = [
         {
           title: "msg.classicAudio",
-          href: "/publicResources",
           json: this.homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
           title: "msg.originalArticle",
-          href: "/createdArticle",
           json: this.homePageJson.homeArticle,
         },
         {
           title: "msg.tongleBooks",
-          href: "/tongleBook",
           json: this.homePageJson.homeBook,
         },
         {
           title: "msg.classicMusic",
-          href: "/publicResources",
           json: this.homePageJson.homeFree,
         },
         {
-          href: "/languageLearning",
           json: this.homePageJson.homeSloganLearning,
         },
         {
-          href: "/educationalTheory",
           json: this.homePageJson.homeSloganTheory,
         },
       ];
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.homePageJson = this.zhhomePageJson;
       this.home = [
         {
           title: "msg.classicAudio",
-          href: "/publicResources",
           json: this.homePageJson.homeBible,
           slidesPerView: 4,
         },
         {
           title: "msg.originalArticle",
-          href: "/createdArticle",
           json: this.homePageJson.homeArticle,
         },
         {
           title: "msg.tongleBooks",
-          href: "/tongleBook",
           json: this.homePageJson.homeBook,
         },
         {
           title: "msg.classicMusic",
-          href: "/publicResources",
           json: this.homePageJson.homeFree,
         },
         {
-          href: "/languageLearning",
           json: this.homePageJson.homeSloganLearning,
         },
         {
-          href: "/educationalTheory",
           json: this.homePageJson.homeSloganTheory,
         },
       ];
@@ -252,69 +265,57 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.homePageJson = this.zhFanhomePageJson;
         this.home = [
           {
             title: "msg.classicAudio",
-            href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
             title: "msg.originalArticle",
-            href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
             title: "msg.tongleBooks",
-            href: "/tongleBook",
             json: this.homePageJson.homeBook,
           },
           {
             title: "msg.classicMusic",
-            href: "/publicResources",
             json: this.homePageJson.homeFree,
           },
           {
-            href: "/languageLearning",
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
         ];
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.homePageJson = this.zhhomePageJson;
         this.home = [
           {
             title: "msg.classicAudio",
-            href: "/publicResources",
             json: this.homePageJson.homeBible,
             slidesPerView: 4,
           },
           {
             title: "msg.originalArticle",
-            href: "/createdArticle",
             json: this.homePageJson.homeArticle,
           },
           {
             title: "msg.tongleBooks",
-            href: "/tongleBook",
             json: this.homePageJson.homeBook,
           },
           {
             title: "msg.classicMusic",
-            href: "/publicResources",
             json: this.homePageJson.homeFree,
           },
           {
-            href: "/languageLearning",
             json: this.homePageJson.homeSloganLearning,
           },
           {
-            href: "/educationalTheory",
             json: this.homePageJson.homeSloganTheory,
           },
         ];
@@ -326,26 +327,31 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  .home-video {
-    background-size: 200% 20% !important;
-    ul {
-      padding: 0 15px !important;
-      .home-list {
-        padding: 1rem 2rem !important;
-      }
-      .col-sm-3 {
-        width: 100% !important;
-      }
-    }
-  }
   .home-transition {
-    font-size: 1.5rem !important;
     width: 100% !important;
     right: 0 !important;
     bottom: -28% !important;
+    .home-transition-svg {
+      height: 16px !important;
+    }
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none !important;
+  }
+  .home-video-box {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .home-video {
+    .col-lg-3 {
+      width: 100% !important;
+    }
   }
 }
 .home-page {
+  background: $sub-color;
   .home-rotation-map {
     position: relative;
     .swiper-slide {
@@ -354,107 +360,73 @@ export default {
       text-align: center;
       .my_swiper_imgs {
         width: 100%;
-        // max-height: 750px;
         height: auto;
       }
     }
     .home-transition {
       width: 48%;
-      font-size: 2rem;
-      background: #fcfafa;
+      font-size: 1.5rem;
+      background: $sub-color;
       border-radius: 30px 30px 0 0;
       position: absolute;
       right: 27%;
       bottom: -5%;
       z-index: 99;
-      font-family: "SourceSansPro-Regular", "HeiTi";
       padding: 1.5rem 0;
-      font-weight: bold;
       a:hover {
-        color: #ea4335;
+        color: $main-color;
         transition: all 0.4s ease 0s;
+      }
+      .e7012c15-b97e-4beb-b68f-77e9c6a73f7b {
+        fill: #d0e8f5;
+      }
+      .f318b36b-2f3d-4370-9f30-e11dbe5b7d64 {
+        fill: #9ac5e2;
+      }
+      .acfbcbba-992b-444a-97c4-531c4f40c44c {
+        fill: #6dabdd;
+      }
+      .home-transition-svg {
+        height: 20px;
       }
     }
     .map-video {
       object-fit: fill;
     }
-    ::v-deep .swiper-pagination-bullet {
+    :deep(.swiper-pagination-bullet) {
       float: right;
     }
   }
-  .home-big-box {
-    width: 100%;
-    background: url("../../../public/images/banner-learn22.png") no-repeat;
-    background-size: 100% 100%;
-  }
   .home-video {
-    width: 100%;
-    background: url("../../../public/images/banner-img.png") no-repeat;
-    background-size: 100% 40%;
-    background-position: 0 100%;
-    padding: 5rem 0 20rem;
     position: relative;
+    padding: 40px 0;
     .home-video-box {
-      z-index: 999;
       margin: 0 auto;
-      padding: 1rem;
+      width: 75%;
       ul {
-        padding: 0 4rem;
+        padding: 15px 20px;
+        font-size: 1.4rem;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px $shadow-color;
         .home-list {
-          padding: 1rem 1rem;
+          padding: 1rem;
+          .home-list-div {
+            height: 100%;
+            border: 2px solid $adorn-color;
+            border-radius: 15px;
+            padding: 15px;
+          }
           iframe {
             width: 100%;
             height: 230px;
             border-radius: 15px;
-            box-shadow: 5px 5px 10px #a9a9a9;
           }
         }
-        .col-sm-3 {
+        .col-lg-3 {
           width: 20%;
         }
       }
-      .home-top-describe {
-        margin-top: 2rem;
-      }
-      .home-top-describe,
-      .video-describe-detail {
-        color: #a9a9a9;
-        // text-indent: 2em;
-        font-size: 1.5rem;
-        font-family: "Kaiti";
-      }
-      .home-top-title {
-        font-size: 2.5rem;
-        margin: 1.2rem 0 1.3rem 0;
-        font-family: "SourceSansPro-Regular", "HeiTi";
-        position: relative;
-        a {
-          font-size: 1.7rem;
-          color: #ea4335;
-          position: absolute;
-          right: 5%;
-          top: 20%;
-        }
-        a:hover {
-          color: #ffd111;
-          transition: all 0.4s ease 0s;
-        }
-      }
-    }
-  }
-  .home-public {
-    // width: 100%;
-    padding: 4rem 0;
-    .home-public-title {
-      font-size: 4rem;
-      font-weight: bold;
-      font-family: "SourceSansPro-Regular", "HeiTi";
-    }
-    .split-line {
-      width: 100%;
-      height: 1px;
-      background: #ffd111;
-      margin-top: 5rem;
     }
   }
 }

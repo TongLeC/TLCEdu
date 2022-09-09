@@ -1,71 +1,128 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    // background: url("../images/all-background2.jpg") 100% 100%;
-    background: #fcfafa;
-    font-size: 1.7rem;
-    color: #322f3b;
+  margin: 0;
+  padding: 0;
+  background: #fcfafa;
+  font-size: 1.5rem;
+  color: #322f3b;
 }
 
 .home-container {
-    max-width: 1920px;
-    margin: 0 auto;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 ul li {
-    list-style: none
+  list-style: none
 }
 
 a {
-	text-decoration: none;
-	outline: none;
-	color: #333333;
+  text-decoration: none;
+  outline: none;
+  color: #333333;
 }
+
 a:hover {
-    text-decoration: none;
-	outline: none;
-    color: #333333;
+  text-decoration: none;
+  outline: none;
+  color: #333333;
 }
 
 @media (min-width: 0) {
-    html {
-        font-size: 0.5rem;
-    }
+  html {
+    font-size: 0.6rem;
+  }
 }
 
 @media (min-width: 328px) {
-    html {
-        font-size: 0.7rem;
-    }
+  html {
+    font-size: 0.7rem;
+  }
 }
 
 @media (min-width: 576px) {
-    html {
-        font-size: 0.75rem;
-    }
+  html {
+    font-size: 0.75rem;
+  }
 }
 
 @media (min-width: 576px) {
-    html {
-        font-size: 0.8rem;
-    }
+  html {
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 0.85rem;
-    }
+  html {
+    font-size: 0.85rem;
+  }
 }
 
 @media (min-width: 992px) {
-    html {
-        font-size: 0.9rem;
-    }
+  html {
+    font-size: 0.9rem;
+  }
 }
 
 @media (min-width: 1400px) {
-    html {
-        font-size: 1rem;
+  html {
+    font-size: 1rem;
+  }
+}
+
+.big-title {
+  font-size: 2.2rem;
+  color: $main-text-color;
+  border-left: 8px solid $adorn-color;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 0 12px;
+
+  .see-more {
+    height: 100%;
+    font-size: 1.4rem;
+    color: $main-text-color;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+  }
+
+  .see-more:hover a {
+    color: $main-color;
+    transition: all 0.4s ease 0s;
+  }
+}
+
+.big-slogan {
+  font-size: 1.4rem;
+  color: $main-color;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+
+.other-page {
+  padding: 40px 0 10px;
+
+  .other-page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    &::after {
+      content: "";
+      height: 10px;
+      width: 60%;
+      display: block;
+      margin: -20px auto;
+      background: url("../images/bottom-color.png") no-repeat;
+      background-size: 100% 100%;
     }
+  }
+
+  .other-page-slogan {
+    padding-top: 20px;
+  }
 }

@@ -1,17 +1,23 @@
 <template>
-  <div class="created-article">
-    <div class="created-article-title">
-      {{ $t("msg.originalArticle") }}
+  <div class="language-learning home-container">
+    <div class="other-page">
+      <p class="other-page-title">{{ $t("msg.originalArticle") }}</p>
+      <p class="other-page-slogan">{{ $t("msg.slogan[5]") }}</p>
     </div>
-    <div class="article-right home-container">
-      <ul class="row">
+    <div class="language-learning-box">
+      <ul class="language-right row">
         <li
-          class="article-list col-sm-4 col-xs-12"
+          class="language-list col-sm-4 col-xs-12"
           v-for="(item, index) in createdArticleJson.CreatedArticle"
           :key="index"
         >
-          <a class="article-list-detail" :href="item.articleLink" target="blank">
+          <a
+            class="language-list-detail"
+            :href="item.articleLink"
+            target="blank"
+          >
             {{ item.articleTitle }}
+            <div class="bookmark"></div>
           </a>
         </li>
       </ul>
@@ -30,16 +36,16 @@ export default {
     return {
       createdArticleJson,
       zhFancreatedArticleJson: {},
-      zhcreatedArticleJson: createdArticleJson
+      zhcreatedArticleJson: createdArticleJson,
     };
   },
   methods: {},
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFancreatedArticleJson = proxy.$deepClone(createdArticleJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.createdArticleJson = this.zhFancreatedArticleJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.createdArticleJson = this.zhcreatedArticleJson;
     }
   },
@@ -48,9 +54,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.createdArticleJson = this.zhFancreatedArticleJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.createdArticleJson = this.zhcreatedArticleJson;
       }
     },
@@ -60,40 +66,64 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  .article-list {
-    padding: 30px 10px !important;
+  .language-list {
+    margin: 10px 0 !important;
+  }
+  .language-learning {
+    width: 90% !important;
   }
 }
 
-.created-article {
+.language-learning {
+  width: 75%;
+  margin: 70px auto;
   position: relative;
-  background: url("../../../public/images/created-banner.png");
-  padding: 2rem;
-  .created-article-title {
-    font-size: 2.5rem;
-    font-family: "SourceSansPro-Regular", "HeiTi";
-    font-weight: bold;
-  }
-  .article-right {
-    z-index: 999;
-    margin: 1rem auto;
-    ul {
+  .language-learning-box {
+    .language-right {
       padding: 0;
-      .article-list {
-        padding: 30px;
-        .article-list-detail {
-          display: block;
-          text-align: center;
-          box-shadow: 0 0 12px #d1d1d1;
-          padding: 20px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          text-decoration: underline;
+      .language-list {
+        margin: 20px 0;
+        .language-list-detail {
+          height: 100%;
+          padding: 15px 30px;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          border-radius: 15px;
+          box-shadow: 2px 2px 10px $shadow-color;
+          position: relative;
+          .bookmark {
+            width: 16px;
+            height: 30px;
+            background: $main-color;
+            position: absolute;
+            top: 0;
+            right: 18px;
+            &::before {
+              content: "";
+              display: block;
+              width: 10px;
+              height: 5px;
+              border: 8px solid;
+              border-color: $main-color transparent transparent transparent;
+              position: absolute;
+              bottom: -16px;
+              right: 0;
+            }
+          }
         }
-        .article-list-detail:hover {
-          color: #ea4335;
-          transition: all 0.4s ease 0s;
+      }
+      .language-list:hover .language-list-detail {
+        color: #fff;
+        background: $main-color;
+        transition: all 0.4s ease 0s;
+        .bookmark {
+          background: #fff;
+          &::before {
+            border-color: #fff transparent transparent transparent;
+          }
         }
       }
     }

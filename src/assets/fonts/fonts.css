@@ -1,20 +1,30 @@
 @font-face {
-    font-family: 'LiShu';
-    src: url('./SIMLI.TTF');
+  font-family: 'LiShu';
+  src: url('./SIMLI.TTF');
 }
+
 @font-face {
-    font-family: 'KaiTi';
-    src: url('./FangZhengKaiTiFanTi-1.ttf');
+  font-family: 'KaiTi';
+  src: url('./FangZhengKaiTiFanTi-1.ttf');
 }
+
 @font-face {
-    font-family: 'SongTi';
-    src: url('./simsun.ttc');
+  font-family: 'SongTi';
+  src: url('./simsun.ttc');
 }
+
 @font-face {
-    font-family: 'YaHei';
-    src: url('./msyh.ttf');
+  font-family: 'YaHei';
+  src: url('./msyh.ttf');
 }
+
 @font-face {
-    font-family: 'HeiTi';
-    src: url('./simhei.ttf');
+  font-family: 'HeiTi';
+  src: url('./simhei.ttf');
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('./alibaba-puhuiti-regular._9jDUvz2glX.woff');
+  font-display: swap;
 }

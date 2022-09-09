@@ -1,27 +1,22 @@
 <template>
-  <div class="educational-theory">
-    <div class="home-container educational-theory-box row">
-      <div class="educational-theory-title">
-        {{ $t("msg.holisticEducationTheory") }}
-      </div>
-      <div class="theory-left col-sm-8 col-xs-12">
-        <ul class="theory-left-ul">
-          <li class="theory-list">
-            <div
-              class="theory-list-router"
-              v-for="(item, index) in educationalTheoryJson.educationalTheory"
-              :key="index"
-              @click="getItem(item)"
-            >
-              <h3 class="theory-title">{{ item.title }}</h3>
-              <h3 class="theory-brief">{{ item.brief }}</h3>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="theory-right col-sm-4 col-xs-12">
-        <img src="../../../public/images/theory-child.png" alt="" />
-      </div>
+  <div class="language-learning home-container">
+    <div class="other-page">
+      <p class="other-page-title">{{ $t("msg.holisticEducationTheory") }}</p>
+      <p class="other-page-slogan">{{ $t("msg.slogan[1]") }}</p>
+    </div>
+    <div class="language-learning-box">
+      <ul class="language-right row">
+        <li
+          class="language-list col-sm-4 col-xs-12"
+          v-for="(item, index) in educationalTheoryJson.educationalTheory"
+          :key="index"
+        >
+          <div class="language-list-detail" @click="getItem(item)">
+            {{ item.title }}
+            <div class="bookmark"></div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -43,7 +38,7 @@ export default {
   methods: {
     getItem(item) {
       this.$router.push({
-        path: "/LanguageLearningDetailTwo",
+        name: "LanguageLearningDetailTwo",
         query: {
           id: item.id,
           file: "EducationalTheory",
@@ -58,9 +53,9 @@ export default {
   mounted() {
     const { proxy } = getCurrentInstance();
     this.zhFaneducationalTheoryJson = proxy.$deepClone(educationalTheoryJson);
-    if (this.$store.state.language == "zhFan") {
+    if (this.$store.state.language == "zh-hant") {
       this.educationalTheoryJson = this.zhFaneducationalTheoryJson;
-    } else if (this.$store.state.language == "zh") {
+    } else if (this.$store.state.language == "zh-hans") {
       this.educationalTheoryJson = this.zheducationalTheoryJson;
     }
   },
@@ -69,9 +64,9 @@ export default {
   },
   watch: {
     getLanguage() {
-      if (this.$store.state.language == "zhFan") {
+      if (this.$store.state.language == "zh-hant") {
         this.educationalTheoryJson = this.zhFaneducationalTheoryJson;
-      } else if (this.$store.state.language == "zh") {
+      } else if (this.$store.state.language == "zh-hans") {
         this.educationalTheoryJson = this.zheducationalTheoryJson;
       }
     },
@@ -81,73 +76,66 @@ export default {
 
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
-  .educational-theory-box {
-    padding: 2rem !important;
-    .theory-title {
-      width: 100% !important;
-    }
-    .theory-brief {
-      display: none;
-    }
+  .language-list {
+    margin: 10px 0 !important;
   }
-}
-@media (min-width: 500px) and (max-width: 1280px) {
-  .theory-title {
-    width: 18rem !important;
+  .language-learning {
+    width: 90% !important;
   }
 }
 
-.educational-theory-box {
-  padding: 4rem 0 4rem 5rem;
-  .educational-theory-title {
-    font-size: 2.5rem;
-    font-family: "SourceSansPro-Regular", "HeiTi";
-    font-weight: bold;
-  }
-  .theory-left {
-    min-height: 500px;
-    .theory-left-ul {
-      padding: 1rem 2rem;
-      .theory-list {
-        .theory-list-router {
-          width: 100%;
+.language-learning {
+  width: 75%;
+  margin: 70px auto;
+  position: relative;
+  .language-learning-box {
+    .language-right {
+      padding: 0;
+      .language-list {
+        margin: 20px 0;
+        .language-list-detail {
+          height: 100%;
+          padding: 15px 20px;
           display: flex;
+          background: #fff;
+          align-items: center;
+          justify-content: center;
           cursor: pointer;
-          .theory-title,
-          .theory-brief {
-            font-size: 1.7rem;
-            height: 3.7rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+          border-radius: 15px;
+          box-shadow: 2px 2px 10px $shadow-color;
+          position: relative;
+          .bookmark {
+            width: 16px;
+            height: 30px;
+            background: $main-color;
+            position: absolute;
+            top: 0;
+            right: 18px;
+            &::before {
+              content: "";
+              display: block;
+              width: 10px;
+              height: 5px;
+              border: 8px solid;
+              border-color: $main-color transparent transparent transparent;
+              position: absolute;
+              bottom: -16px;
+              right: 0;
+            }
           }
-          .theory-title {
-            width: 17rem;
-            border: 2px solid #ea4335;
-            border-radius: 15px;
-            padding: 14px 15px;
-          }
-          .theory-brief {
-            color: #a9a9a9;
-            margin-left: 2rem;
-            width: 49rem;
-            padding: 16px 0;
-          }
-        }
-        .theory-list-router:hover {
-          transform: scale(1.05);
-          transition: all 0.4s ease 0s;
         }
       }
-    }
-  }
-  .theory-right {
-    position: sticky;
-    top: 3rem;
-    img {
-      transform: rotateY(180deg);
-      object-fit: cover;
-      width: 100%;
+      .language-list:hover .language-list-detail {
+        color: #fff;
+        background: $main-color;
+        transition: all 0.4s ease 0s;
+        .bookmark {
+          background: #fff;
+          &::before {
+            border-color: #fff transparent transparent transparent;
+          }
+        }
+      }
     }
   }
 }

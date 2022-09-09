@@ -112,11 +112,11 @@ export default {
       localStorage.setItem("language", this.$i18n.locale);
     },
     switchSimplified() {
-      this.$i18n.locale = "zh";
+      this.$i18n.locale = "zh-hans";
       localStorage.setItem("language", this.$i18n.locale);
     },
     switchTraditional() {
-      this.$i18n.locale = "zhFan";
+      this.$i18n.locale = "zh-hant";
       localStorage.setItem("language", this.$i18n.locale);
     },
   },
@@ -147,7 +147,6 @@ export default {
 }
 
 .nav-header {
-  font-family: "SourceSansPro-Bold", "HeiTi";
   height: 4.6rem;
   width: 100%;
   border-bottom: 1px solid #322f3b;
