@@ -72,6 +72,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/i18n',
     ],
+    target: 'static',
     i18n: {
         strategy: 'prefix',
         defaultLocale: 'zh-hans',
@@ -102,5 +103,8 @@ export default defineNuxtConfig({
                 { src: '/jquery-3.5.1/jquery-3.5.1.min.js' }
             ]
         }
-    }
+    },
+    build: {
+        transpile: ['swiper'],
+    },
 })
