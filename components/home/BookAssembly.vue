@@ -157,7 +157,7 @@ export default {
       .bible-list {
         border: 2px solid $adorn-color;
         border-radius: 15px;
-        padding: 15px;
+        padding: 15px 15px 0;
         height: auto;
         .bible-list-detail {
           display: block;

@@ -43,11 +43,6 @@ useHead({
 <script>
 export default {
   name: "CreatedArticle",
-  data() {
-    return {
-      createdArticleJson,
-    };
-  },
 };
 </script>
 
