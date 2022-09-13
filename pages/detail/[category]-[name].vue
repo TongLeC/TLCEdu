@@ -40,7 +40,6 @@ let activeTab = route.params.name;
 
 <script>
 export default {
-  components: { Article },
   name: "LanguageLearningDetailTwo",
   data() {
     return {
