@@ -1,14 +1,14 @@
 <!--  首页网上读经机-免费  -->
 <template>
-  <div class="bible-find" :home="home">
-    <div class="big-title">
+  <main class="bible-find" :home="home">
+    <h2 class="big-title">
       {{ $t(home.title) }}
-      <div class="see-more">
+      <p class="see-more">
         <router-link :to="localePath({ name: 'Resources' })"
           >{{ $t("msg.seeMore") }} ></router-link
         >
-      </div>
-    </div>
+      </p>
+    </h2>
     <p class="big-slogan">
       {{ home.json.describe }}
     </p>
@@ -32,13 +32,13 @@
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div
+          <p
             class="bible-list-title"
             v-for="(content, index) in item.homeDetail"
             :key="index"
           >
             {{ content }}
-          </div>
+          </p>
         </swiper-slide>
       </swiper>
       <swiper
@@ -60,21 +60,20 @@
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div
+          <p
             class="bible-list-title"
             v-for="(content, index) in item.homeDetail"
             :key="index"
           >
             {{ content }}
-          </div>
+          </p>
         </swiper-slide>
       </swiper>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-// import { reactive } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -128,6 +127,16 @@ export default {
 };
 </script>
 
+<style>
+.bible-list-box .swiper-button-prev {
+  position: absolute;
+  left: -2px !important;
+}
+.bible-list-box .swiper-button-next {
+  position: absolute;
+  right: -2px !important;
+}
+</style>
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .bible-find {
@@ -143,7 +152,7 @@ export default {
     box-shadow: 2px 2px 10px $shadow-color;
     padding: 30px 20px;
     .bible-list-box {
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       height: 100%;
       .bible-list {
         border: 2px solid $adorn-color;

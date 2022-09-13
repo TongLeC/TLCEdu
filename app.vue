@@ -1,9 +1,9 @@
 <template>
-  <div id="app" class="app">
+  <main id="app" class="app">
     <nav-header />
     <NuxtPage />
     <nav-footer />
-  </div>
+  </main>
 </template>
 <script setup>
 import { ID_INJECTION_KEY } from "element-plus";

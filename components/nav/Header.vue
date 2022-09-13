@@ -1,11 +1,11 @@
 <template>
-  <div class="nav-header">
-    <div class="logo-img-box">
+  <header class="nav-header">
+    <nav class="logo-img-box">
       <NuxtLink class="navbar-brand" :to="localePath({ name: 'index' })">
         <img class="logo-img" src="/images/logo3.png" alt="" />
       </NuxtLink>
-    </div>
-    <div class="home-container el-menu">
+    </nav>
+    <nav class="home-container el-menu">
       <ClientOnly>
         <el-menu
           class="el-menu-demo"
@@ -94,8 +94,8 @@
           </el-sub-menu>
         </el-menu>
       </ClientOnly>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 <script setup>
 const { data: NavHeaderJSON } = await useFetch("/api/json/NavHeader");

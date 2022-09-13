@@ -1,14 +1,14 @@
 <template>
-  <div class="educational-practice home-container">
-    <div class="other-page">
-      <p class="other-page-title">{{ $t("msg.educationalPractice") }}</p>
+  <main class="educational-practice home-container">
+    <section class="other-page">
+      <h1 class="other-page-title">{{ $t("msg.educationalPractice") }}</h1>
       <p class="other-page-slogan">{{ $t("msg.slogan[2]") }}</p>
-    </div>
+    </section>
     <div class="educational-practice-top">
-      <div class="practice-top-right">
-        <div class="big-title">
+      <section class="practice-top-right">
+        <h2 class="big-title">
           {{ $t("msg.tongleLecture") }}
-        </div>
+        </h2>
         <ul class="row">
           <li
             class="practice-list col-sm-4 col-xs-12"
@@ -27,13 +27,13 @@
             ></iframe>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
     <div class="educational-practice-top">
-      <div class="practice-top-right">
-        <div class="big-title">
+      <section class="practice-top-right">
+        <h2 class="big-title">
           {{ $t("msg.educationalPractice") }}
-        </div>
+        </h2>
         <ul class="row">
           <li
             class="practice-list col-sm-4 col-xs-12"
@@ -52,9 +52,9 @@
             ></iframe>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

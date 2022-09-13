@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <main class="home-page">
     <div class="home-rotation-map">
       <swiper
         :autoplay="swiper_options.autoplay"
@@ -23,7 +23,7 @@
           />
         </swiper-slide>
       </swiper>
-      <div class="home-transition">
+      <nav class="home-transition">
         <router-link
           :to="localePath({ name: 'Method' })"
           style="margin-right: 10px"
@@ -73,22 +73,22 @@
             />
           </svg>
         </router-link>
-      </div>
+      </nav>
     </div>
     <div class="home-big-box home-container">
       <HomeLearningAssembly :home="home[4]"></HomeLearningAssembly>
       <HomeLearningAssemblyTwo :home="home[5]"></HomeLearningAssemblyTwo>
     </div>
     <div class="home-video home-container">
-      <div class="home-video-box">
-        <div class="big-title">
+      <section class="home-video-box">
+        <h2 class="big-title">
           {{ $t("msg.educationalPractice") }}
-          <div class="see-more">
+          <p class="see-more">
             <router-link :to="localePath({ name: 'Speech' })"
               >{{ $t("msg.seeMore") }} ></router-link
             >
-          </div>
-        </div>
+          </p>
+        </h2>
         <p class="big-slogan">
           {{ homePageJson.homeVideo.describe }}
         </p>
@@ -106,18 +106,18 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-              <div class="video-describe">{{ item.videoDetail }}</div>
+              <p class="video-describe">{{ item.videoDetail }}</p>
             </div>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
     <div class="home-public home-container">
       <home-book-assembly-two :home="home[2]"></home-book-assembly-two>
       <home-book-assembly :home="home[0]"></home-book-assembly>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -249,6 +249,7 @@ export default {
 }
 .home-page {
   background: $sub-color;
+  padding: 70px 0 0;
   .home-rotation-map {
     position: relative;
     .swiper-slide {
@@ -312,7 +313,7 @@ export default {
             height: 100%;
             border: 2px solid $adorn-color;
             border-radius: 15px;
-            padding: 15px;
+            padding: 15px 15px 0;
           }
           iframe {
             width: 100%;
