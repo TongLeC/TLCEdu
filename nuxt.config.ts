@@ -68,9 +68,14 @@ const zh_hans = {
 }
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    nitro: {
+        prerender: {
+            routes: []
+        }
+    },
     css: ['~/assets/scss/global.scss'],
     modules: [
-        '@nuxtjs/i18n',
+        '@nuxtjs/i18n'
     ],
     target: 'static',
     i18n: {

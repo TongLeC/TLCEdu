@@ -4,11 +4,11 @@
       :tab-position="tabPosition"
       class="demo-tabs language-learning-tab"
       v-model="activeTab"
-      @tab-change="tabChange"
+      @tab-click="tabChange"
     >
       <el-tab-pane
         :label="item.title"
-        v-for="(item, index) in json"
+        v-for="(item, index) in pageData"
         :key="index"
         :name="item.id"
       >
@@ -29,51 +29,38 @@
   </main>
 </template>
 
-<script>
-import { getCurrentInstance } from "vue";
-import Article from "../Article.vue";
+<script setup>
+const route = useRoute();
+const { locale, locales } = useI18n();
+const { data: pageData1 } = await useFetch("/api/json/LanguageLearning");
+const { data: pageData2 } = await useFetch("/api/json/EducationalTheory");
+const category = route.params.category;
+let activeTab = route.params.name;
+</script>
 
+<script>
 export default {
   components: { Article },
   name: "LanguageLearningDetailTwo",
   data() {
     return {
-      json: JSON.parse(localStorage.getItem("detail")),
-      zhJson: JSON.parse(localStorage.getItem("detail")),
-      zhFanJson: {},
       tabPosition: "left",
-      activeTab: this.$route.query.id,
-      proxy: null,
+      pageData: [],
     };
   },
   mounted() {
-    const { proxy } = getCurrentInstance();
-    this.proxy = proxy;
-    this.jsonDetail(this.json);
-  },
-
-  watch: {
-    $route: {
-      handler: function () {
-        this.activeTab = this.$route.query.id;
-        this.json = JSON.parse(localStorage.getItem("detail"));
-        this.jsonDetail(this.json);
-        this.zhJson = JSON.parse(localStorage.getItem("detail"));
-      },
-    },
+    if (this.category === "Method") {
+      this.pageData = this.pageData1.languageLearning;
+    } else if (this.category === "Theory") {
+      this.pageData = this.pageData2.educationalTheory;
+    }
   },
   methods: {
-    tabChange() {
-      this.$router.replace({
-        query: {
-          id: this.activeTab,
-          file: this.$route.query.file,
-        },
-      });
-    },
-    jsonDetail(json) {
-      this.zhFanJson = this.proxy.$deepClone(json);
-      return this.zhFanJson;
+    tabChange(TabsPaneContext) {
+      navigateTo(
+        `/${this.locale}/detail/${this.category}-${TabsPaneContext.props.name}`
+      );
+      console.log(TabsPaneContext);
     },
   },
 };
