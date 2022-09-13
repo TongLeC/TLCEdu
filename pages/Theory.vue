@@ -34,15 +34,12 @@ useHead({
     },
   ],
 });
-</script>
-<script>
-import { getCurrentInstance } from "vue";
-import educationalTheoryJson from "@/assets/json/EducationalTheory.json";
 const { data: educationalTheoryJson } = await useFetch(
   "/api/json/EducationalTheory"
 );
 const { locale } = useI18n();
-
+</script>
+<script>
 export default {
   name: "EducationalTheory",
   methods: {

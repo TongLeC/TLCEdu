@@ -40,14 +40,6 @@
 const { data: publicResourcesJson } = await useFetch(
   "/api/json/PublicResources"
 );
-</script>
-<script>
-export default {
-  name: "PublicResources",
-};
-</script>
-
-<script setup>
 const title = ref("公益资源");
 const description = ref("My amazing Nuxt app");
 
@@ -61,6 +53,12 @@ useHead({
   ],
 });
 </script>
+<script>
+export default {
+  name: "PublicResources",
+};
+</script>
+
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .public-resources {

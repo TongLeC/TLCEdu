@@ -26,6 +26,7 @@
 </template>
 
 <script setup>
+const { data: createdArticleJson } = await useFetch("/api/json/CreatedArticle");
 const title = ref("原创文章");
 const description = ref("My amazing Nuxt app");
 
@@ -40,8 +41,6 @@ useHead({
 });
 </script>
 <script>
-import createdArticleJson from "@/assets/json/CreatedArticle.json";
-
 export default {
   name: "CreatedArticle",
   data() {
@@ -50,7 +49,6 @@ export default {
     };
   },
 };
-const { data: createdArticleJson } = await useFetch("/api/json/CreatedArticle");
 </script>
 
 <style scoped lang='scss'>

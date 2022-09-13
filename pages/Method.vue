@@ -25,9 +25,6 @@ const { data: languageLearningJson } = await useFetch(
   "/api/json/LanguageLearning"
 );
 const { locale } = useI18n();
-</script>
-
-<script setup>
 const title = ref("同乐语言学习法");
 const description = ref("My amazing Nuxt app");
 
