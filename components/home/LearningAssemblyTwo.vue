@@ -37,6 +37,10 @@
   </main>
 </template>
 
+<script setup>
+const { locale } = useI18n();
+</script>
+
 <script>
 export default {
   name: "homeLearningAssembly",
@@ -45,27 +49,10 @@ export default {
   },
   props: {
     home: { type: Object },
-    classCol: { type: String },
   },
   methods: {
-    getItem(item, json) {
-      if (json.id == "learn") {
-        this.$router.push({
-          name: "LanguageLearningDetailTwo",
-          query: {
-            id: item.id,
-            file: "LanguageLearning",
-          },
-        });
-      } else if (json.id == "theory") {
-        this.$router.push({
-          name: "LanguageLearningDetailTwo",
-          query: {
-            id: item.id,
-            file: "EducationalTheory",
-          },
-        });
-      }
+    getItem(list, item) {
+      navigateTo(`/${this.locale}/detail/${item.id}-${list.id}`);
     },
   },
 };

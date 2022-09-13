@@ -12,7 +12,7 @@
         class="swiper"
       >
         <swiper-slide
-          v-for="(item, index) in homePageJson.rotationMap"
+          v-for="(item, index) in HomePage.rotationMap"
           :key="index"
         >
           <img
@@ -90,12 +90,12 @@
           </p>
         </h2>
         <p class="big-slogan">
-          {{ homePageJson.homeVideo.describe }}
+          {{ HomePage.homeVideo.describe }}
         </p>
         <ul class="row">
           <li
             class="home-list col-12 col-lg-3"
-            v-for="(item, index) in homePageJson.homeVideo.detail"
+            v-for="(item, index) in HomePage.homeVideo.detail"
             :key="index"
           >
             <div class="home-list-div">
@@ -119,9 +119,53 @@
     </div>
   </main>
 </template>
+<script setup>
+const { data: HomePage } = await useFetch("/api/json/HomePage");
+const swiper_options = reactive({
+  autoplay: {
+    disableOnInteraction: false,
+    delay: 3000,
+  },
+  speed: 500,
+  loop: true,
+  slidesPerView: "auto",
+  centeredSlides: true,
+  navigation: {
+    nextElRef: ".swiper-button-next",
+    prevElRef: ".swiper-button-prev",
+  },
+  pagination: {
+    clickable: true,
+  },
+});
+const home = [
+  {
+    title: "msg.classicAudio",
+    json: HomePage.value.homeBible,
+    slidesPerView: 4,
+  },
+  {
+    title: "msg.originalArticle",
+    json: HomePage.value.homeArticle,
+  },
+  {
+    title: "msg.tongleBooks",
+    json: HomePage.value.homeBook,
+  },
+  {
+    title: "msg.classicMusic",
+    json: HomePage.value.homeFree,
+  },
+  {
+    json: HomePage.value.homeSloganLearning,
+  },
+  {
+    json: HomePage.value.homeSloganTheory,
+  },
+];
+</script>
 
 <script>
-import { reactive, getCurrentInstance } from "vue";
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -129,94 +173,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
-import homePageJson from "@/assets/json/HomePage.json";
-
 export default {
   name: "HomePage",
-  data() {
-    return {
-      zhFanhomePageJson: {},
-      zhhomePageJson: homePageJson,
-      homePageJson,
-      home: [
-        {
-          title: "msg.classicAudio",
-          json: homePageJson.homeBible,
-          slidesPerView: 4,
-        },
-        {
-          title: "msg.originalArticle",
-          json: homePageJson.homeArticle,
-        },
-        {
-          title: "msg.tongleBooks",
-          json: homePageJson.homeBook,
-        },
-        {
-          title: "msg.classicMusic",
-          json: homePageJson.homeFree,
-        },
-        {
-          json: homePageJson.homeSloganLearning,
-        },
-        {
-          json: homePageJson.homeSloganTheory,
-        },
-      ],
-    };
-  },
   components: {
     Swiper,
     SwiperSlide,
-  },
-  methods: {},
-  setup() {
-    let swiper_options = reactive({
-      autoplay: {
-        disableOnInteraction: false,
-        delay: 3000,
-      },
-      speed: 500,
-      loop: true,
-      slidesPerView: "auto",
-      centeredSlides: true,
-      navigation: {
-        nextElRef: ".swiper-button-next",
-        prevElRef: ".swiper-button-prev",
-      },
-      pagination: {
-        clickable: true,
-      },
-    });
-    return { swiper_options };
-  },
-  mounted() {
-    this.homePageJson = this.zhhomePageJson;
-    this.home = [
-      {
-        title: "msg.classicAudio",
-        json: this.homePageJson.homeBible,
-        slidesPerView: 4,
-      },
-      {
-        title: "msg.originalArticle",
-        json: this.homePageJson.homeArticle,
-      },
-      {
-        title: "msg.tongleBooks",
-        json: this.homePageJson.homeBook,
-      },
-      {
-        title: "msg.classicMusic",
-        json: this.homePageJson.homeFree,
-      },
-      {
-        json: this.homePageJson.homeSloganLearning,
-      },
-      {
-        json: this.homePageJson.homeSloganTheory,
-      },
-    ];
   },
 };
 //

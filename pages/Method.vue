@@ -20,6 +20,12 @@
     </div>
   </main>
 </template>
+<script setup>
+const { data: languageLearningJson } = await useFetch(
+  "/api/json/LanguageLearning"
+);
+const { locale } = useI18n();
+</script>
 
 <script setup>
 const title = ref("同乐语言学习法");
@@ -36,31 +42,12 @@ useHead({
 });
 </script>
 <script>
-import { getCurrentInstance } from "vue";
-import languageLearningJson from "@/assets/json/LanguageLearning.json";
-
 export default {
   name: "LanguageLearning",
-  data() {
-    return {
-      languageLearningJson,
-      zhFanlanguageLearningJson: {},
-      zhlanguageLearningJson: languageLearningJson,
-    };
-  },
   methods: {
     getItem(item) {
-      this.$router.push({
-        name: "LanguageLearningDetailTwo",
-        query: {
-          id: item.id,
-          file: "LanguageLearning",
-        },
-      });
+      navigateTo(`/${this.locale}/detail/Method-${item.id}`);
     },
-  },
-  mounted() {
-    const { proxy } = getCurrentInstance();
   },
 };
 </script>

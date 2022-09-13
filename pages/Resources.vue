@@ -36,23 +36,14 @@
   </main>
 </template>
 
+<script setup>
+const { data: publicResourcesJson } = await useFetch(
+  "/api/json/PublicResources"
+);
+</script>
 <script>
-import { getCurrentInstance } from "vue";
-import publicResourcesJson from "@/assets/json/PublicResources.json";
-
 export default {
   name: "PublicResources",
-  data() {
-    return {
-      zhFanpublicResourcesJson: {},
-      publicResourcesJson,
-      zhpublicResourcesJson: publicResourcesJson,
-    };
-  },
-  methods: {},
-  mounted() {
-    const { proxy } = getCurrentInstance();
-  },
 };
 </script>
 

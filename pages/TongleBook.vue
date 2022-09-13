@@ -54,27 +54,11 @@ useHead({
     },
   ],
 });
+const { data: TongleBookJson } = await useFetch("/api/json/TongleBook");
 </script>
 <script>
-import { getCurrentInstance } from "vue";
-import TongleBookJson from "@/assets/json/TongleBook.json";
-import Article from "./Article.vue";
 export default {
-  components: { Article },
   name: "TongleBook",
-  data() {
-    return {
-      TongleBookJson,
-      zhFanTongleBookJson: {},
-      zhTongleBookJson: TongleBookJson,
-    };
-  },
-  methods: {},
-  mounted() {
-    const { proxy } = getCurrentInstance();
-  },
-
-  watch: {},
 };
 </script>
 

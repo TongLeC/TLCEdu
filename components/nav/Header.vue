@@ -56,7 +56,7 @@
           >
             {{ $t("msg.tongleBooks") }}
           </el-menu-item>
-          <el-menu-item class="select-course" :index="'asdasd'">
+          <el-menu-item class="select-course" index="">
             <a
               href="https://www.tonglec.com/"
               target="blank"

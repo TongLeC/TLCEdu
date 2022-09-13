@@ -38,33 +38,17 @@ useHead({
 <script>
 import { getCurrentInstance } from "vue";
 import educationalTheoryJson from "@/assets/json/EducationalTheory.json";
+const { data: educationalTheoryJson } = await useFetch(
+  "/api/json/EducationalTheory"
+);
+const { locale } = useI18n();
 
 export default {
   name: "EducationalTheory",
-  data() {
-    return {
-      educationalTheoryJson,
-      zhFaneducationalTheoryJson: {},
-      zheducationalTheoryJson: educationalTheoryJson,
-    };
-  },
   methods: {
     getItem(item) {
-      this.$router.push({
-        name: "LanguageLearningDetailTwo",
-        query: {
-          id: item.id,
-          file: "EducationalTheory",
-        },
-      });
-      // localStorage.setItem(
-      //   "detail",
-      //   JSON.stringify(this.educationalTheoryJson.educationalTheory)
-      // );
+      navigateTo(`/${this.locale}/detail/Theory-${item.id}`);
     },
-  },
-  mounted() {
-    const { proxy } = getCurrentInstance();
   },
 };
 </script>

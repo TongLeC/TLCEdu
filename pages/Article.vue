@@ -50,6 +50,7 @@ export default {
     };
   },
 };
+const { data: createdArticleJson } = await useFetch("/api/json/CreatedArticle");
 </script>
 
 <style scoped lang='scss'>
