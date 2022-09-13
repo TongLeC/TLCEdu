@@ -18,12 +18,10 @@
         v-for="(item, index) in home.json.detail"
         :key="index"
       >
-        <div class="free-list-box">
-          <a class="free-list-detail" :href="item.homeUrl" target="blank">
-            <img :src="item.homeImg" :alt="item.homeDetail" />
-          </a>
+        <a class="free-list-detail" :href="item.homeUrl" target="blank">
+          <img :src="item.homeImg" :alt="item.homeDetail" />
           <div class="free-list-title">{{ item.homeDetail }}</div>
-        </div>
+        </a>
       </li>
     </ul>
   </div>
@@ -63,19 +61,17 @@ export default {
     .free-list {
       margin-bottom: 15px;
     }
-    .free-list-box {
+    .free-list-detail {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 10px;
       border: 2px solid $adorn-color;
       border-radius: 15px;
       padding: 15px;
       height: 100%;
-      .free-list-detail {
-        display: block;
+      img {
         width: 100%;
-        object-fit: cover;
-        margin-bottom: 10px;
-        img {
-          width: 100%;
-        }
       }
     }
     .col-sm-3 {

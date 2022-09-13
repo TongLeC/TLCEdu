@@ -128,6 +128,16 @@ export default {
 };
 </script>
 
+<style>
+.bible-list-box .swiper-button-prev {
+  position: absolute;
+  left: -2px !important;
+}
+.bible-list-box .swiper-button-next {
+  position: absolute;
+  right: -2px !important;
+}
+</style>
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .bible-find {
@@ -143,8 +153,9 @@ export default {
     box-shadow: 2px 2px 10px $shadow-color;
     padding: 30px 20px;
     .bible-list-box {
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       height: 100%;
+      position: relative;
       .bible-list {
         border: 2px solid $adorn-color;
         border-radius: 15px;
@@ -165,6 +176,14 @@ export default {
       }
       .bible-list-detail:hover img {
         transition: all 0.4s ease 0s;
+      }
+      .swiper-button-prev {
+        position: absolute;
+        left: 0 !important;
+      }
+      .swiper-button-next {
+        position: absolute;
+        right: 0 !important;
       }
     }
   }
