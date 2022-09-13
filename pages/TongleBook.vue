@@ -41,6 +41,20 @@
   </main>
 </template>
 
+<script setup>
+const title = ref("同乐书籍");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <script>
 import { getCurrentInstance } from "vue";
 import TongleBookJson from "@/assets/json/TongleBook.json";

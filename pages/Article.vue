@@ -25,6 +25,20 @@
   </main>
 </template>
 
+<script setup>
+const title = ref("原创文章");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <script>
 import createdArticleJson from "@/assets/json/CreatedArticle.json";
 

@@ -21,6 +21,20 @@
   </main>
 </template>
 
+<script setup>
+const title = ref("同乐语言学习法");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <script>
 import { getCurrentInstance } from "vue";
 import languageLearningJson from "@/assets/json/LanguageLearning.json";

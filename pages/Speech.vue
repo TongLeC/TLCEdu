@@ -57,6 +57,20 @@
   </main>
 </template>
 
+<script setup>
+const title = ref("教育践谈");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <script>
 import educationalPracticeJson from "@/assets/json/EducationalPractice.json";
 

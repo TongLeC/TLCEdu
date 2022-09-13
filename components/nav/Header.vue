@@ -2,7 +2,7 @@
   <header class="nav-header">
     <nav class="logo-img-box">
       <NuxtLink class="navbar-brand" :to="localePath({ name: 'index' })">
-        <img class="logo-img" src="/images/logo3.png" alt="" />
+        <img class="logo-img" src="/images/tonglec-logo.jpg" alt="" />
       </NuxtLink>
     </nav>
     <nav class="home-container el-menu">

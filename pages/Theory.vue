@@ -21,6 +21,20 @@
   </main>
 </template>
 
+<script setup>
+const title = ref("同乐整体教育理论");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <script>
 import { getCurrentInstance } from "vue";
 import educationalTheoryJson from "@/assets/json/EducationalTheory.json";

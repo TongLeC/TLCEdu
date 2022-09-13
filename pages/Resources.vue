@@ -56,6 +56,20 @@ export default {
 };
 </script>
 
+<script setup>
+const title = ref("公益资源");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .public-resources {
@@ -66,6 +80,7 @@ export default {
   width: 75%;
   margin: 0 auto;
   position: relative;
+  padding-top: 70px;
   .public-resources-top {
     .resources-one {
       padding: 0;

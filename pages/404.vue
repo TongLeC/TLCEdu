@@ -5,6 +5,20 @@
   </main>
 </template>
 
+<script setup>
+const title = ref("404");
+const description = ref("My amazing Nuxt app");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
 <script>
 export default {
   name: "NotFound",
