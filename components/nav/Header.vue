@@ -1,11 +1,11 @@
 <template>
-  <div class="nav-header">
-    <div class="logo-img-box">
+  <header class="nav-header">
+    <nav class="logo-img-box">
       <NuxtLink class="navbar-brand" :to="localePath({ name: 'index' })">
         <img class="logo-img" src="/images/logo3.png" alt="" />
       </NuxtLink>
-    </div>
-    <div class="home-container el-menu">
+    </nav>
+    <nav class="home-container el-menu">
       <ClientOnly>
         <el-menu
           class="el-menu-demo"
@@ -37,9 +37,9 @@
               >
                 {{ list.title }}
               </a>
-              <div @click.stop @click="getItem(list, item)" v-else>
+              <nav @click.stop @click="getItem(list, item)" v-else>
                 {{ list.title }}
-              </div>
+              </nav>
             </el-menu-item>
             <el-menu-item :route="{ name: item.href }" :index="'n' + index">
               {{ $t("msg.seeMore") }}
@@ -76,20 +76,20 @@
               </div>
             </template>
             <el-menu-item @click.stop>
-              <div @click="switchSimplified()">
+              <nav @click="switchSimplified()">
                 {{ $t("msg.simplifiedChinese") }}
-              </div>
+              </nav>
             </el-menu-item>
             <el-menu-item @click.stop>
-              <div @click="switchTraditional()">
+              <nav @click="switchTraditional()">
                 {{ $t("msg.traditionalChinese") }}
-              </div>
+              </nav>
             </el-menu-item>
           </el-sub-menu>
         </el-menu></ClientOnly
       >
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
 <script>

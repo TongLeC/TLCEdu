@@ -1,5 +1,5 @@
 <template>
-  <div class="language-detail home-container">
+  <main class="language-detail home-container">
     <el-tabs
       :tab-position="tabPosition"
       class="demo-tabs language-learning-tab"
@@ -12,27 +12,29 @@
         :key="index"
         :name="item.id"
       >
-        <div class="language-learning-detail">
+        <section class="language-learning-detail">
           <h3 class="detail-title">{{ item.title }}</h3>
-          <div class="detail-content-box">
+          <article class="detail-content-box">
             <p
               class="detail-content"
               v-for="(item, index) in item.detail"
               :key="index"
               v-html="item"
             ></p>
-          </div>
+          </article>
           <img class="detail-img" :src="item.imgUrl" alt="" />
-        </div>
+        </section>
       </el-tab-pane>
     </el-tabs>
-  </div>
+  </main>
 </template>
 
 <script>
 import { getCurrentInstance } from "vue";
+import Article from "../Article.vue";
 
 export default {
+  components: { Article },
   name: "LanguageLearningDetailTwo",
   data() {
     return {

@@ -1,14 +1,14 @@
 <!--  首页原创文章  -->
 <template>
-  <div class="free-box" :home="home">
-    <div class="big-title">
+  <main class="free-box" :home="home">
+    <h2 class="big-title">
       {{ $t(home.title) }}
-      <div class="see-more">
+      <p class="see-more">
         <router-link :to="localePath({ name: 'Article' })"
           >{{ $t("msg.seeMore") }} ></router-link
         >
-      </div>
-    </div>
+      </p>
+    </h2>
     <p class="big-slogan">
       {{ home.json.describe }}
     </p>
@@ -18,15 +18,13 @@
         v-for="(item, index) in home.json.detail"
         :key="index"
       >
-        <div class="free-list-box">
-          <a class="free-list-detail" :href="item.homeUrl" target="blank">
-            <img :src="item.homeImg" :alt="item.homeDetail" />
-          </a>
-          <div class="free-list-title">{{ item.homeDetail }}</div>
-        </div>
+        <a class="free-list-detail" :href="item.homeUrl" target="blank">
+          <img :src="item.homeImg" :alt="item.homeDetail" />
+          <p class="free-list-title">{{ item.homeDetail }}</p>
+        </a>
       </li>
     </ul>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -63,19 +61,17 @@ export default {
     .free-list {
       margin-bottom: 15px;
     }
-    .free-list-box {
+    .free-list-detail {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 10px;
       border: 2px solid $adorn-color;
       border-radius: 15px;
-      padding: 15px;
+      padding: 15px 15px 0;
       height: 100%;
-      .free-list-detail {
-        display: block;
+      img {
         width: 100%;
-        object-fit: cover;
-        margin-bottom: 10px;
-        img {
-          width: 100%;
-        }
       }
     }
     .col-sm-3 {

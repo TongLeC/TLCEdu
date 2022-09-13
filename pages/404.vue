@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <main>
     Not Found 404
     <a href="/" class="return-button">返回首页</a>
-  </div>
+  </main>
 </template>
 
 <script>

@@ -1,9 +1,9 @@
 <template>
-  <div class="language-learning home-container">
-    <div class="other-page">
-      <p class="other-page-title">{{ $t("msg.originalArticle") }}</p>
+  <main class="language-learning home-container">
+    <section class="other-page">
+      <h1 class="other-page-title">{{ $t("msg.originalArticle") }}</h1>
       <p class="other-page-slogan">{{ $t("msg.slogan[5]") }}</p>
-    </div>
+    </section>
     <div class="language-learning-box">
       <ul class="language-right row">
         <li
@@ -17,12 +17,12 @@
             target="blank"
           >
             {{ item.articleTitle }}
-            <div class="bookmark"></div>
+            <span class="bookmark"></span>
           </a>
         </li>
       </ul>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

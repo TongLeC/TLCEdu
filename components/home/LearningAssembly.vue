@@ -1,15 +1,15 @@
 <!--  首页同乐语言学习法  -->
 <template>
-  <div class="home-container" :home="home">
-    <div class="home-learning">
-      <div class="big-title">
+  <main class="home-container" :home="home">
+    <section class="home-learning">
+      <h2 class="big-title">
         {{ $t(home.json.sloganTitle) }}
-        <div class="see-more">
+        <p class="see-more">
           <router-link :to="localePath({ name: 'Method' })"
             >{{ $t("msg.seeMore") }} ></router-link
           >
-        </div>
-      </div>
+        </p>
+      </h2>
       <p
         class="big-slogan"
         v-for="(item, index) in home.json.slogan"
@@ -18,7 +18,7 @@
         {{ item }}
       </p>
       <div class="home-learning-box row">
-        <div class="home-learning-top col-12 col-md-9">
+        <article class="home-learning-top col-12 col-md-9">
           <p
             class="big-detail"
             v-for="(item, index) in home.json.sloganDetail"
@@ -26,16 +26,16 @@
           >
             {{ item }}
           </p>
-        </div>
+        </article>
         <ul class="home-learning-ul col-12 col-md-3" style="padding-left: 20px">
           <li
             class="language-list"
             v-for="(item, index) in home.json.sloganListOne"
             :key="index"
           >
-            <div class="language-list-detail" @click="getItem(item, home.json)">
+            <p class="language-list-detail" @click="getItem(item, home.json)">
               {{ item.title }}
-            </div>
+            </p>
           </li>
         </ul>
       </div>
@@ -49,12 +49,12 @@
             v-for="(item, index) in home.json.sloganListTwo"
             :key="index"
           >
-            <div class="language-list-detail" @click="getItem(item, home.json)">
+            <p class="language-list-detail" @click="getItem(item, home.json)">
               {{ item.title }}
-            </div>
+            </p>
           </li>
         </ul>
-        <div class="home-learning-top col-12 col-md-9">
+        <article class="home-learning-top col-12 col-md-9">
           <p
             class="big-detail big-detail-p"
             v-for="(item, index) in home.json.sloganIntroduce"
@@ -62,10 +62,10 @@
           >
             {{ item }}
           </p>
-        </div>
+        </article>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>
