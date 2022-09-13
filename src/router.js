@@ -28,36 +28,43 @@ const router = createRouter({
           path: '',
           name: 'home',
           component: HomePage,
+          meta: { title: '同乐中文' },
         },
         {
           path: 'language-learning',
           name: 'languageLearning',
           component: LanguageLearning,
+          meta: { title: '同乐语言学习法' },
         },
         {
           path: 'educational-theory',
           name: 'educationalTheory',
           component: EducationalTheory,
+          meta: { title: '同乐整体教育理论' },
         },
         {
           path: 'educational-practice',
           name: 'educationalPractice',
           component: EducationalPractice,
+          meta: { title: '教育践谈' },
         },
         {
           path: 'public-resources',
           name: 'publicResources',
           component: PublicResources,
+          meta: { title: '公益资源' },
         },
         {
           path: 'created-article',
           name: 'createdArticle',
           component: CreatedArticle,
+          meta: { title: '原创文章' },
         },
         {
           path: 'tongle-book',
           name: 'tongleBook',
           component: TongleBook,
+          meta: { title: '同乐书籍' },
         },
         {
           path: 'language-learning-detail',
@@ -68,6 +75,7 @@ const router = createRouter({
           path: 'Language-learning-detail-two',
           name: 'LanguageLearningDetailTwo',
           component: LanguageLearningDetailTwo,
+          meta: { title: '文章详情' },
         },
         {
           path: '404',

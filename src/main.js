@@ -22,6 +22,9 @@ router.beforeEach(async (to, from) => {
     const url = 'zh-hans' + to.fullPath;
     router.push({ path: url })
   }
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
   document.documentElement.scrollTop = 0;
   if (to.query.file == 'LanguageLearning') {
     localStorage.setItem(
