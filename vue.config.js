@@ -3,7 +3,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   chainWebpack: config => {
     config.plugin('html').tap(args => {
-      args[0].title = '同乐教育';
+      args[0].title = '同乐中文';
       return args;
     })
   },

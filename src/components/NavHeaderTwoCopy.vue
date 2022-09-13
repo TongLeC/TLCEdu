@@ -3,7 +3,11 @@
     <div class="home-container el-menu row">
       <span class="logo-img-box col-sm-2 col-xs-9">
         <a class="navbar-brand" href="/">
-          <img class="logo-img" src="../../public/images/logo3.png" alt="" />
+          <img
+            class="logo-img"
+            src="../../public/images/tonglec-logo.jpg"
+            alt=""
+          />
         </a>
       </span>
       <el-menu

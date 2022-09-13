@@ -2,7 +2,11 @@
   <div class="nav-header">
     <div class="logo-img-box">
       <router-link class="navbar-brand" :to="{ name: 'home' }">
-        <img class="logo-img" src="../../public/images/logo3.png" alt="" />
+        <img
+          class="logo-img"
+          src="../../public/images/tonglec-logo.jpg"
+          alt=""
+        />
       </router-link>
     </div>
     <div class="home-container el-menu">

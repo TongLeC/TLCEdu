@@ -16,7 +16,11 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">
-            <img class="logo-img" src="../../public/images/logo3.png" alt="" />
+            <img
+              class="logo-img"
+              src="../../public/images/tonglec-logo.jpg"
+              alt=""
+            />
           </a>
         </div>
 
@@ -57,7 +61,7 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >同乐教育 <span class="caret"></span
+                >同乐中文 <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
                 <li><a href="/">首页</a></li>
