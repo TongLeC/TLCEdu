@@ -1,14 +1,14 @@
 <!--  首页原创文章  -->
 <template>
-  <div class="free-box" :home="home">
-    <div class="big-title">
+  <main class="free-box" :home="home">
+    <h2 class="big-title">
       {{ $t(home.title) }}
-      <div class="see-more">
+      <p class="see-more">
         <router-link :to="{ name: 'createdArticle' }"
           >{{ $t("msg.seeMore") }} ></router-link
         >
-      </div>
-    </div>
+      </p>
+    </h2>
     <p class="big-slogan">
       {{ home.json.describe }}
     </p>
@@ -20,11 +20,11 @@
       >
         <a class="free-list-detail" :href="item.homeUrl" target="blank">
           <img :src="item.homeImg" :alt="item.homeDetail" />
-          <div class="free-list-title">{{ item.homeDetail }}</div>
+          <p class="free-list-title">{{ item.homeDetail }}</p>
         </a>
       </li>
     </ul>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -68,7 +68,7 @@ export default {
       margin-bottom: 10px;
       border: 2px solid $adorn-color;
       border-radius: 15px;
-      padding: 15px;
+      padding: 15px 15px 0;
       height: 100%;
       img {
         width: 100%;

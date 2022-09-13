@@ -1,14 +1,14 @@
 <!--  首页网上读经机-免费  -->
 <template>
-  <div class="bible-find" :home="home">
-    <div class="big-title">
+  <main class="bible-find" :home="home">
+    <h2 class="big-title">
       {{ $t(home.title) }}
-      <div class="see-more">
+      <p class="see-more">
         <router-link :to="{ name: 'publicResources' }"
           >{{ $t("msg.seeMore") }} ></router-link
         >
-      </div>
-    </div>
+      </p>
+    </h2>
     <p class="big-slogan">
       {{ home.json.describe }}
     </p>
@@ -32,13 +32,13 @@
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div
+          <p
             class="bible-list-title"
             v-for="(content, index) in item.homeDetail"
             :key="index"
           >
             {{ content }}
-          </div>
+          </p>
         </swiper-slide>
       </swiper>
       <swiper
@@ -60,21 +60,20 @@
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
-          <div
+          <p
             class="bible-list-title"
             v-for="(content, index) in item.homeDetail"
             :key="index"
           >
             {{ content }}
-          </div>
+          </p>
         </swiper-slide>
       </swiper>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-// import { reactive } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -159,7 +158,7 @@ export default {
       .bible-list {
         border: 2px solid $adorn-color;
         border-radius: 15px;
-        padding: 15px;
+        padding: 15px 15px 0;
         height: auto;
         .bible-list-detail {
           display: block;

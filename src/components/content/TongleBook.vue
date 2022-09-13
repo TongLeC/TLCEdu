@@ -1,18 +1,18 @@
 <template>
-  <div class="tongle-book home-container">
-    <div class="other-page">
-      <p class="other-page-title">{{ $t("msg.tongleBooks") }}</p>
+  <main class="tongle-book home-container">
+    <section class="other-page">
+      <h1 class="other-page-title">{{ $t("msg.tongleBooks") }}</h1>
       <p class="other-page-slogan">{{ $t("msg.slogan[3]") }}</p>
-    </div>
-    <div
+    </section>
+    <section
       class="tongle-book-content"
       v-for="(item, index) in TongleBookJson.TongleBook"
       :key="index"
     >
-      <div class="big-title">
+      <h2 class="big-title">
         {{ item.grade }}
-      </div>
-      <div class="big-box">
+      </h2>
+      <article class="big-box">
         <p
           class="tongle-book-describe"
           v-for="(describe, y) in item.describe"
@@ -23,7 +23,7 @@
         <div v-if="item.describe != false" class="split-line"></div>
         <ul class="books-box" v-for="(detail, i) in item.book" :key="i">
           <li class="books-detail">
-            <div class="books-title" v-html="detail.name"></div>
+            <p class="books-title" v-html="detail.name"></p>
             <div class="link-box">
               <a
                 v-for="(content, x) in detail.link"
@@ -36,9 +36,9 @@
             </div>
           </li>
         </ul>
-      </div>
-    </div>
-  </div>
+      </article>
+    </section>
+  </main>
 </template>
 
 <script>

@@ -1,15 +1,15 @@
 <!--  首页同乐整体教育理论  -->
 <template>
-  <div class="home-container" :home="home">
-    <div class="home-learning">
-      <div class="big-title">
+  <main class="home-container" :home="home">
+    <section class="home-learning">
+      <h2 class="big-title">
         {{ $t(home.json.sloganTitle) }}
-        <div class="see-more">
+        <p class="see-more">
           <router-link :to="{ name: 'educationalTheory' }"
             >{{ $t("msg.seeMore") }} ></router-link
           >
-        </div>
-      </div>
+        </p>
+      </h2>
       <p
         class="big-slogan"
         v-for="(item, index) in home.json.slogan"
@@ -27,14 +27,14 @@
             v-for="(item, index) in home.json.sloganList"
             :key="index"
           >
-            <div class="language-list-detail" @click="getItem(item, home.json)">
+            <p class="language-list-detail" @click="getItem(item, home.json)">
               {{ item.title }}
-            </div>
+            </p>
           </li>
         </ul>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>

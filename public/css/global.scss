@@ -80,10 +80,10 @@ a:hover {
   padding: 0 12px;
 
   .see-more {
-    height: 100%;
     font-size: 1.4rem;
     color: $main-text-color;
     float: right;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +116,7 @@ a:hover {
       height: 10px;
       width: 60%;
       display: block;
-      margin: -20px auto;
+      margin: -12px auto;
       background: url("../images/bottom-color.png") no-repeat;
       background-size: 100% 100%;
     }

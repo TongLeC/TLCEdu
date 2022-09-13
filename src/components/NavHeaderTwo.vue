@@ -1,6 +1,6 @@
 <template>
-  <div class="nav-header">
-    <div class="logo-img-box">
+  <header class="nav-header">
+    <nav class="logo-img-box">
       <router-link class="navbar-brand" :to="{ name: 'home' }">
         <img
           class="logo-img"
@@ -8,8 +8,8 @@
           alt=""
         />
       </router-link>
-    </div>
-    <div class="home-container el-menu">
+    </nav>
+    <nav class="home-container el-menu">
       <el-menu
         class="el-menu-demo"
         mode="horizontal"
@@ -40,9 +40,9 @@
             >
               {{ list.title }}
             </a>
-            <div @click.stop @click="getItem(list, item)" v-else>
+            <nav @click.stop @click="getItem(list, item)" v-else>
               {{ list.title }}
-            </div>
+            </nav>
           </el-menu-item>
           <el-menu-item :route="{ name: item.href }" :index="'n' + index">
             {{ $t("msg.seeMore") }}
@@ -62,7 +62,7 @@
         </el-menu-item>
         <el-sub-menu class="language-selector" index="language">
           <template #title>
-            <div class="language-selector-a">
+            <section class="language-selector-a">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -76,22 +76,22 @@
                 />
               </svg>
               {{ $t("msg.language") }}
-            </div>
+            </section>
           </template>
           <el-menu-item @click.stop>
-            <div @click="switchSimplified()">
+            <nav @click="switchSimplified()">
               {{ $t("msg.simplifiedChinese") }}
-            </div>
+            </nav>
           </el-menu-item>
           <el-menu-item @click.stop>
-            <div @click="switchTraditional()">
+            <nav @click="switchTraditional()">
               {{ $t("msg.traditionalChinese") }}
-            </div>
+            </nav>
           </el-menu-item>
         </el-sub-menu>
       </el-menu>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -114,7 +114,6 @@ export default {
     switchSimplified() {
       this.$i18n.locale = "zh-hans";
       this.$store.commit("setLanguage", this.$i18n.locale);
-      console.log(this.$i18n.locale);
       this.$router
         .push({ params: { lang: this.$i18n.locale } })
         .catch(() => {});
@@ -122,7 +121,6 @@ export default {
     switchTraditional() {
       this.$i18n.locale = "zh-hant";
       this.$store.commit("setLanguage", this.$i18n.locale);
-      console.log(this.$i18n.locale);
       this.$router
         .push({ params: { lang: this.$i18n.locale } })
         .catch(() => {});

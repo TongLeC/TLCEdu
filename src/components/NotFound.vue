@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <main>
     Not Found 404
     <a href="/" class="return-button">返回首页</a>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-div {
+main {
   font-size: 10rem;
   .return-button {
     display: block;

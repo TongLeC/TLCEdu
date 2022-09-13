@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
+  <main class="app">
     <!-- <nav-header v-show="isShow"></nav-header> -->
     <router-view></router-view>
     <nav-footer v-show="isShow"></nav-footer>
-  </div>
+  </main>
 </template>
 
 <script>

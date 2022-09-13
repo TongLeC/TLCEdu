@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <main class="home-page">
     <div class="home-rotation-map">
       <swiper
         :autoplay="swiper_options.autoplay"
@@ -23,7 +23,7 @@
           />
         </swiper-slide>
       </swiper>
-      <div class="home-transition">
+      <section class="home-transition">
         <router-link
           :to="{ name: 'languageLearning' }"
           style="margin-right: 10px"
@@ -73,22 +73,22 @@
             />
           </svg>
         </router-link>
-      </div>
+      </section>
     </div>
     <div class="home-big-box home-container">
       <home-learning-assembly :home="home[4]"></home-learning-assembly>
       <home-learning-assembly-two :home="home[5]"></home-learning-assembly-two>
     </div>
     <div class="home-video home-container">
-      <div class="home-video-box">
-        <div class="big-title">
+      <section class="home-video-box">
+        <h2 class="big-title">
           {{ $t("msg.educationalPractice") }}
-          <div class="see-more">
+          <p class="see-more">
             <router-link :to="{ name: 'educationalPractice' }"
               >{{ $t("msg.seeMore") }} ></router-link
             >
-          </div>
-        </div>
+          </p>
+        </h2>
         <p class="big-slogan">
           {{ homePageJson.homeVideo.describe }}
         </p>
@@ -98,7 +98,7 @@
             v-for="(item, index) in homePageJson.homeVideo.detail"
             :key="index"
           >
-            <div class="home-list-div">
+            <section class="home-list-div">
               <iframe
                 :src="item.videoUrl"
                 title="YouTube video player"
@@ -106,18 +106,18 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-              <div class="video-describe">{{ item.videoDetail }}</div>
-            </div>
+              <p class="video-describe">{{ item.videoDetail }}</p>
+            </section>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
     <div class="home-public home-container">
       <home-book-assembly-two :home="home[2]"></home-book-assembly-two>
       <home-book-assembly :home="home[0]"></home-book-assembly>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -415,7 +415,7 @@ export default {
             height: 100%;
             border: 2px solid $adorn-color;
             border-radius: 15px;
-            padding: 15px;
+            padding: 15px 15px 0;
           }
           iframe {
             width: 100%;

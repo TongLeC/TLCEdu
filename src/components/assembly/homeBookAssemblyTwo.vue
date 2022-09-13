@@ -1,33 +1,33 @@
 <!--  首页同乐书籍  -->
 <template>
-  <div class="home-find" :home="home">
-    <div class="big-title">
+  <main class="home-find" :home="home">
+    <h2 class="big-title">
       {{ $t(home.title) }}
-      <div class="see-more">
+      <p class="see-more">
         <router-link :to="{ name: 'tongleBook' }"
           >{{ $t("msg.seeMore") }} ></router-link
         >
-      </div>
-    </div>
+      </p>
+    </h2>
     <p class="big-slogan">
       {{ home.json.describe }}
     </p>
     <div class="home-book">
-      <div class="home-public">
-        <div class="home-public-title">
+      <section class="home-public">
+        <h2 class="home-public-title">
           {{ $t("msg.publicTitle") }} {{ $t("msg.publicTitleTwo") }}
-        </div>
+        </h2>
         <p class="book-more">—— 30+ 免费电子书与教材 ——</p>
-      </div>
+      </section>
       <div class="row">
         <div class="img-box col-12 col-md-3">
           <div class="book-img">
             <img :src="home.json.detail.homeImg" />
-            <div>海外中文教育的探索</div>
+            <p>海外中文教育的探索</p>
           </div>
         </div>
 
-        <div class="book-describe-box col-12 col-md-9">
+        <article class="book-describe-box col-12 col-md-9">
           <p
             class="book-describe"
             v-for="(item, index) in home.json.detail.homeDescribe"
@@ -35,10 +35,10 @@
           >
             {{ item }}
           </p>
-        </div>
+        </article>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -98,7 +98,7 @@ export default {
         width: 100%;
         border: 2px solid $adorn-color;
         border-radius: 15px;
-        padding: 15px;
+        padding: 15px 15px 0;
         img {
           width: 100%;
           margin-bottom: 10px;

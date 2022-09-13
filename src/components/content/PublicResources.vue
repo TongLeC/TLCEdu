@@ -1,19 +1,19 @@
 <template>
-  <div class="public-resources-box">
+  <main class="public-resources-box">
     <div class="public-resources home-container">
-      <div class="other-page">
-        <p class="other-page-title">{{ $t("msg.publicWelfareResources") }}</p>
-      </div>
+      <section class="other-page">
+        <h1 class="other-page-title">{{ $t("msg.publicWelfareResources") }}</h1>
+      </section>
       <div class="public-resources-top">
         <div v-if="publicResourcesJson">
-          <div
+          <section
             class="resources-one"
             v-for="(item, index) in publicResourcesJson.resourceOne"
             :key="'one' + index"
           >
-            <div class="big-title" style="font-size: 1.7rem">
+            <h2 class="big-title" style="font-size: 1.7rem">
               {{ $t(item.title) }}
-            </div>
+            </h2>
             <ul class="row">
               <li
                 class="resources-list col-12 col-md-6"
@@ -29,11 +29,11 @@
                 </a>
               </li>
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
