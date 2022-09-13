@@ -11,44 +11,49 @@
           class="el-menu-demo"
           mode="horizontal"
           active-text-color="#fff"
+          :default-active="$route.path"
           router
         >
           <el-sub-menu
-            v-for="(item, index) in NavHeaderJSON.NavHeader"
-            :key="index"
-            :index="item.id"
+            v-for="(item, index1) in NavHeaderJSON.NavHeader"
+            :key="'a' + index1"
+            :index="item.href"
           >
             <template #title>
               <NuxtLink :to="localePath({ name: item.id })">{{
                 $t(item.msg)
               }}</NuxtLink>
             </template>
-            <el-menu-item
-              v-for="(list, i) in item.child"
-              :key="i"
-              :index="'p' + i"
-              style="border-bottom: 1px solid #ccc"
-            >
-              <a
-                :href="list.link"
-                @click.stop
-                target="view_window"
+            <template v-for="(list, i) in item.child">
+              <el-menu-item
+                style="border-bottom: 1px solid #ccc"
                 v-if="item.type == 0"
+                :key="'ab' + i"
+              >
+                <a :href="list.link" @click.stop target="view_window">
+                  {{ list.title }}
+                </a>
+              </el-menu-item>
+              <el-menu-item
+                style="border-bottom: 1px solid #ccc"
+                v-else
+                :index="getUrl(list, item)"
+                :key="'bb' + i"
               >
                 {{ list.title }}
-              </a>
-              <div @click.stop @click="getItem(list, item)" v-else>
-                {{ list.title }}
-              </div>
-            </el-menu-item>
-            <el-menu-item :route="{ name: item.href }" :index="'n' + index">
-              {{ $t("msg.seeMore") }}
+              </el-menu-item>
+            </template>
+            <el-menu-item
+              :index="localePath({ name: item.href })"
+              :key="item.href + index1"
+            >
+              {{ $t("msg.seeMore") }} {{ item.href }}
             </el-menu-item>
           </el-sub-menu>
-          <el-menu-item :route="{ name: 'TongleBook' }" index="100">
+          <el-menu-item :route="localePath({ name: 'TongleBook' })" index="100">
             {{ $t("msg.tongleBooks") }}
           </el-menu-item>
-          <el-menu-item class="select-course">
+          <el-menu-item class="select-course" :index="'asdasd'">
             <a
               href="https://www.tonglec.com/"
               target="blank"
@@ -86,41 +91,30 @@
               </div>
             </el-menu-item>
           </el-sub-menu>
-        </el-menu></ClientOnly
-      >
+        </el-menu>
+      </ClientOnly>
     </div>
   </div>
 </template>
-
+<script setup>
+const { data: NavHeaderJSON } = await useFetch("/api/json/NavHeader");
+const { locale, locales } = useI18n();
+</script>
 <script>
-import NavHeaderJSON from "@/assets/json/NavHeader.json";
 export default {
   name: "NavHeader",
   data() {
     return {
-      NavHeaderJSON,
       isChange: false,
     };
   },
+  created() {},
   methods: {
+    getUrl(list, item) {
+      return `/${this.locale}/detail/${item.id}-${list.id}`;
+    },
     getItem(list, item) {
-      if (item.id == "learn") {
-        this.$router.push({
-          name: "LanguageLearningDetailTwo",
-          query: {
-            id: list.id,
-            file: "LanguageLearning",
-          },
-        });
-      } else if (item.id == "theory") {
-        this.$router.push({
-          name: "LanguageLearningDetailTwo",
-          query: {
-            id: list.id,
-            file: "EducationalTheory",
-          },
-        });
-      }
+      navigateTo(`/${this.locale}/detail/${item.id}-${list.id}`);
     },
     mouseToogleNavItem(e) {
       this.toggleClassName(e.currentTarget, "active");
@@ -157,17 +151,6 @@ export default {
       }, 0);
     },
   },
-  // watch: {
-  //   $route: {
-  //     handler: function (val) {
-  //       if (val.name == "LanguageLearningDetailTwo") {
-  //         $("#home").removeClass("is-active");
-  //       } else if (val.name == "home") {
-  //         $("#home").addClass("is-active");
-  //       }
-  //     },
-  //   },
-  // },
 };
 </script>
 
