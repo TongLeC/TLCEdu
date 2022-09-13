@@ -56,18 +56,14 @@
     </div>
   </main>
 </template>
-
+<script setup>
+const { data: educationalPracticeJson } = await useFetch(
+  "/api/json/EducationalPractice"
+);
+</script>
 <script>
-import educationalPracticeJson from "@/assets/json/EducationalPractice.json";
-
 export default {
   name: "EducationalPractice",
-  data() {
-    return {
-      educationalPracticeJson,
-    };
-  },
-  methods: {},
 };
 </script>
 

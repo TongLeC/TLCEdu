@@ -25,17 +25,8 @@
   </main>
 </template>
 
-<script>
-import createdArticleJson from "@/assets/json/CreatedArticle.json";
-
-export default {
-  name: "CreatedArticle",
-  data() {
-    return {
-      createdArticleJson,
-    };
-  },
-};
+<script setup>
+const { data: createdArticleJson } = await useFetch("/api/json/CreatedArticle");
 </script>
 
 <style scoped lang='scss'>

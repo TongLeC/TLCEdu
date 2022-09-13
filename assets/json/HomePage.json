@@ -22,7 +22,7 @@
     }
   ],
   "homeSloganLearning": {
-    "id": "learn",
+    "id": "Method",
     "sloganTitle": "msg.languageLearning",
     "sloganDetail": [
       "子初学，倚听觉；先语言，字缓作；",
@@ -117,7 +117,7 @@
     ]
   },
   "homeSloganTheory": {
-    "id": "theory",
+    "id": "Theory",
     "sloganTitle": "msg.holisticEducationTheory",
     "slogan": [
       "放眼生命全程 立足中国文化 融贯文史哲科"
