@@ -81,7 +81,15 @@ export default defineNuxtConfig({
     i18n: {
         strategy: 'prefix',
         defaultLocale: 'zh-hans',
-        locales: ['zh-hans', 'zh-hant'],
+        locales: [{
+            code: 'zh-hans',
+            name: '中文简体'
+        },
+        {
+            code: 'zh-hant',
+            name: '中文繁體'
+        }
+        ],
         vueI18n: {
             fallbackLocale: 'zh-hans',
             legacy: false,

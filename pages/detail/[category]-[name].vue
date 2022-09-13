@@ -59,7 +59,6 @@ export default {
       navigateTo(
         `/${this.locale}/detail/${this.category}-${TabsPaneContext.props.name}`
       );
-      console.log(TabsPaneContext);
     },
   },
 };

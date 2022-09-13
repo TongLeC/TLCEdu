@@ -47,10 +47,13 @@
               :index="localePath({ name: item.href })"
               :key="item.href + index1"
             >
-              {{ $t("msg.seeMore") }} {{ item.href }}
+              {{ $t("msg.seeMore") }}
             </el-menu-item>
           </el-sub-menu>
-          <el-menu-item :route="localePath({ name: 'TongleBook' })" index="100">
+          <el-menu-item
+            :route="localePath({ name: 'TongleBook' })"
+            :index="localePath({ name: 'TongleBook' })"
+          >
             {{ $t("msg.tongleBooks") }}
           </el-menu-item>
           <el-menu-item class="select-course" :index="'asdasd'">
@@ -80,15 +83,13 @@
                 {{ $t("msg.language") }}
               </div>
             </template>
-            <el-menu-item @click.stop>
-              <div @click="switchSimplified()">
-                {{ $t("msg.simplifiedChinese") }}
-              </div>
-            </el-menu-item>
-            <el-menu-item @click.stop>
-              <div @click="switchTraditional()">
-                {{ $t("msg.traditionalChinese") }}
-              </div>
+            <el-menu-item
+              v-for="locale in locales"
+              :key="locale.name"
+              :route="switchLocalePath(locale.code)"
+              :index="locale.name"
+            >
+              {{ locale.name }}
             </el-menu-item>
           </el-sub-menu>
         </el-menu>
@@ -99,6 +100,9 @@
 <script setup>
 const { data: NavHeaderJSON } = await useFetch("/api/json/NavHeader");
 const { locale, locales } = useI18n();
+const availableLocales = computed(() => {
+  return locales.value.filter((i) => i.code !== locale.value);
+});
 </script>
 <script>
 export default {

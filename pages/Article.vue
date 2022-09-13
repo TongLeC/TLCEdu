@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import { getCurrentInstance } from "vue";
 import createdArticleJson from "@/assets/json/CreatedArticle.json";
 
 export default {
@@ -34,14 +33,7 @@ export default {
   data() {
     return {
       createdArticleJson,
-      zhFancreatedArticleJson: {},
-      zhcreatedArticleJson: createdArticleJson,
     };
-  },
-  methods: {},
-  mounted() {
-    const { proxy } = getCurrentInstance();
-    this.zhFancreatedArticleJson = proxy.$deepClone(createdArticleJson);
   },
 };
 </script>
