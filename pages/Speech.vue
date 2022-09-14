@@ -4,69 +4,68 @@
       <h1 class="other-page-title">{{ $t("msg.educationalPractice") }}</h1>
       <p class="other-page-slogan">{{ $t("msg.slogan[2]") }}</p>
     </section>
-    <div class="educational-practice-top">
+    <div
+      class="educational-practice-top"
+      v-for="(item, index) in educationalPracticeJson.educationalPracticeOne"
+      :key="index"
+    >
       <section class="practice-top-right">
         <h2 class="big-title">
-          {{ $t("msg.tongleLecture") }}
+          {{ $t(item.title) }}
         </h2>
         <ul class="row">
           <li
             class="practice-list col-sm-4 col-xs-12"
-            v-for="(
-              item, index
-            ) in educationalPracticeJson.educationalPracticeOne"
-            :key="index"
+            v-for="(some, i) in item.detail"
+            :key="i"
           >
-            <iframe
+            <div class="img-box">
+              <img
+                :src="getVideoId(some.videoUrl)"
+                @click="
+                  getVideo(index + '' + i, some.videoUrl, some.videoDetail)
+                "
+                style="object-fit: cover"
+              />
+              <div
+                class="play-btn"
+                @click="
+                  getVideo(index + '' + i, some.videoUrl, some.videoDetail)
+                "
+              ></div>
+              <p class="play-name">{{ some.videoDetail }}</p>
+            </div>
+
+            <!-- <iframe
               style="border-radius: 15px"
-              :src="item.videoUrl"
+              :src="detailLink + '?autoplay=1&rel=0'"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
-            ></iframe>
+            ></iframe> -->
           </li>
         </ul>
       </section>
     </div>
-    <div class="educational-practice-top">
-      <section class="practice-top-right">
-        <h2 class="big-title">
-          {{ $t("msg.educationalPractice") }}
-        </h2>
-        <ul class="row">
-          <li
-            class="practice-list col-sm-4 col-xs-12"
-            v-for="(
-              item, index
-            ) in educationalPracticeJson.educationalPracticeTwo"
-            :key="index"
-          >
-            <iframe
-              style="border-radius: 15px"
-              :src="item.videoUrl"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </li>
-        </ul>
-      </section>
-    </div>
+    <home-video-dialog
+      class="videos-dialog"
+      :showFlag="showFlag"
+      :title="detailName"
+      :src="detailLink"
+      :fullScreenDialog="isFullScreen"
+      @closeVideoDisplay="closeVideoDisplay"
+    ></home-video-dialog>
   </main>
 </template>
 
 <script setup>
-const title = ref("教育践谈");
-const description = ref("My amazing Nuxt app");
-
 useHead({
-  title,
+  title: "教育践谈",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "My amazing Nuxt app",
     },
   ],
 });
@@ -79,9 +78,69 @@ const educationalPracticeJson = ref(EducationalPractice);
 <script>
 export default {
   name: "EducationalPractice",
+  data() {
+    return {
+      videos: {},
+      showFlag: false,
+      detailLink: "",
+      detailName: "",
+      isFullScreen: false,
+    };
+  },
+  mounted() {
+    this.isFullScreen = window.innerWidth < 700;
+    window.onresize = () => {
+      this.isFullScreen = window.innerWidth < 700;
+    };
+  },
+  methods: {
+    get video() {
+      return (index) => {
+        if (this.videos["v" + index] == undefined) {
+          this.videos["v" + index] = true;
+        }
+        return this.videos["v" + index];
+      };
+    },
+    getVideo(index, link, name) {
+      this.videos["v" + index] = false;
+      this.showFlag = true;
+      this.detailLink = link;
+      this.detailName = name;
+      this.$forceUpdate();
+    },
+    closeVideoDisplay() {
+      this.showFlag = false;
+    },
+    getVideoId(url) {
+      const arr = url.split("/");
+      return `//i.ytimg.com/vi/${arr[arr.length - 1]}/hqdefault.jpg`;
+    },
+  },
 };
 </script>
 
+<style>
+.videos-dialog .el-dialog__header {
+  text-align: center;
+}
+.videos-dialog .el-dialog__title {
+  color: white;
+}
+.videos-dialog .el-dialog {
+  width: 75%;
+  border-radius: 15px;
+  background: black;
+}
+.videos-dialog .el-dialog.is-fullscreen {
+  border-radius: 0;
+  background: white;
+  width: 100% !important;
+}
+.videos-dialog .is-fullscreen .el-dialog__title {
+  color: #333 !important;
+}
+</style>
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .educational-practice {
@@ -103,6 +162,39 @@ export default {
         padding: 0;
         .practice-list {
           margin: 10px 0;
+          height: 100%;
+          position: relative;
+          .img-box {
+            // background: black;
+            min-height: 220px;
+            height: 100%;
+            width: 100%;
+            img {
+              border-radius: 15px;
+              min-height: 220px;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .play-btn {
+            height: 72px;
+            width: 72px;
+            left: 50%;
+            top: 50%;
+            margin-left: -36px;
+            margin-top: -36px;
+            position: absolute;
+            background: url("/images/play.png") no-repeat;
+            cursor: pointer;
+          }
+          .play-name {
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 5px 0;
+          }
           iframe {
             width: 100%;
             height: 240px;

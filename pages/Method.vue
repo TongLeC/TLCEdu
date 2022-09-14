@@ -28,15 +28,13 @@ const languageLearningJson = ref(aaa);
 // );
 const { locale } = useI18n();
 const localePath = useLocalePath();
-const title = ref("同乐语言学习法");
-const description = ref("My amazing Nuxt app");
 
 useHead({
-  title,
+  title: "同乐语言学习法",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "同乐语言学习法",
     },
   ],
 });

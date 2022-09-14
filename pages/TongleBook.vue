@@ -52,15 +52,13 @@
 import TongleBook from "/assets/json/TongleBook.json";
 const TongleBookJson = ref(TongleBook);
 // const { data: TongleBookJson } = await useFetch("/api/json/TongleBook");
-const title = ref("同乐书籍");
-const description = ref("My amazing Nuxt app");
 
 useHead({
-  title,
+  title: "同乐书籍",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "同乐书籍",
     },
   ],
 });

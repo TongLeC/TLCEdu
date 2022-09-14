@@ -233,6 +233,7 @@ export default {
       height: 40px;
       border-radius: 15px;
       background: white;
+      color: $main-text-color;
       display: flex;
       align-items: center;
       justify-content: center;

@@ -99,13 +99,19 @@
             :key="index"
           >
             <div class="home-list-div">
-              <iframe
-                :src="item.videoUrl"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+              <img
+                :src="getVideoId(item.videoUrl)"
+                @click="
+                  getVideo(index + '' + index, item.videoUrl, item.videoDetail)
+                "
+                style="object-fit: cover"
+              />
+              <div
+                class="play-btn"
+                @click="
+                  getVideo(index + '' + index, item.videoUrl, item.videoDetail)
+                "
+              ></div>
               <p class="video-describe">
                 {{ $t(`homeVideo.detail[${index}].videoDetail`) }}
               </p>
@@ -113,6 +119,15 @@
           </li>
         </ul>
       </section>
+
+      <home-video-dialog
+        class="videos-dialog"
+        :showFlag="showFlag"
+        :title="detailName"
+        :src="detailLink"
+        :fullScreenDialog="isFullScreen"
+        @closeVideoDisplay="closeVideoDisplay"
+      ></home-video-dialog>
     </div>
     <div class="home-public home-container">
       <home-book-assembly-two :home="home[2]"></home-book-assembly-two>
@@ -183,10 +198,69 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  data() {
+    return {
+      videos: {},
+      showFlag: false,
+      detailLink: "",
+      detailName: "",
+      isFullScreen: false,
+    };
+  },
+  mounted() {
+    this.isFullScreen = window.innerWidth < 700;
+    window.onresize = () => {
+      this.isFullScreen = window.innerWidth < 700;
+    };
+  },
+  methods: {
+    get video() {
+      return (index) => {
+        if (this.videos["v" + index] == undefined) {
+          this.videos["v" + index] = true;
+        }
+        return this.videos["v" + index];
+      };
+    },
+    getVideo(index, link, name) {
+      this.videos["v" + index] = false;
+      this.showFlag = true;
+      this.detailLink = link;
+      this.detailName = name;
+      this.$forceUpdate();
+    },
+    closeVideoDisplay() {
+      this.showFlag = false;
+    },
+    getVideoId(url) {
+      const arr = url.split("/");
+      return `//i.ytimg.com/vi/${arr[arr.length - 1]}/hqdefault.jpg`;
+    },
+  },
 };
-//
 </script>
 
+<style>
+.videos-dialog .el-dialog__header {
+  text-align: center;
+}
+.videos-dialog .el-dialog__title {
+  color: white;
+}
+.videos-dialog .el-dialog {
+  width: 75%;
+  border-radius: 15px;
+  background: black;
+}
+.videos-dialog .el-dialog.is-fullscreen {
+  border-radius: 0;
+  background: white;
+  width: 100% !important;
+}
+.videos-dialog .is-fullscreen .el-dialog__title {
+  color: #333 !important;
+}
+</style>
 <style scoped lang='scss'>
 @media screen and (max-width: 768px) {
   .home-transition {
@@ -274,11 +348,31 @@ export default {
         box-shadow: 2px 2px 10px $shadow-color;
         .home-list {
           padding: 1rem;
+          position: relative;
           .home-list-div {
-            height: 100%;
             border: 2px solid $adorn-color;
             border-radius: 15px;
             padding: 15px 15px 0;
+            min-height: 220px;
+            height: 100%;
+            width: 100%;
+            img {
+              border-radius: 15px;
+              min-height: 220px;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .play-btn {
+            height: 72px;
+            width: 72px;
+            left: 50%;
+            top: 50%;
+            margin-left: -36px;
+            margin-top: -36px;
+            position: absolute;
+            background: url("/images/play.png") no-repeat;
+            cursor: pointer;
           }
           iframe {
             width: 100%;

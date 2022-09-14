@@ -43,15 +43,13 @@
 // );
 import aaa from "/assets/json/PublicResources.json";
 const publicResourcesJson = ref(aaa);
-const title = ref("公益资源");
-const description = ref("My amazing Nuxt app");
 
 useHead({
-  title,
+  title: "公益资源",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "公益资源",
     },
   ],
 });
