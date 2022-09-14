@@ -53,7 +53,7 @@
       :showFlag="showFlag"
       :title="detailName"
       :src="detailLink"
-      :fullScreenDialog="isFullScreen"
+      :fullScreenDialog="false"
       @closeVideoDisplay="closeVideoDisplay"
     ></home-video-dialog>
   </main>
@@ -74,6 +74,24 @@ useHead({
 // );
 import EducationalPractice from "/assets/json/EducationalPractice.json";
 const educationalPracticeJson = ref(EducationalPractice);
+
+const showFlag = ref(false);
+const detailLink = ref("");
+const detailName = ref("");
+const instance = getCurrentInstance();
+const getVideo = function (index, link, name) {
+  showFlag.value = true;
+  detailLink.value = link;
+  detailName.value = name;
+  instance.proxy.$forceUpdate();
+};
+const closeVideoDisplay = function () {
+  showFlag.value = false;
+};
+const getVideoId = function (url) {
+  const arr = url.split("/");
+  return `//i.ytimg.com/vi/${arr[arr.length - 1]}/hqdefault.jpg`;
+};
 </script>
 <script>
 export default {
@@ -87,36 +105,7 @@ export default {
       isFullScreen: false,
     };
   },
-  mounted() {
-    this.isFullScreen = window.innerWidth < 700;
-    window.onresize = () => {
-      this.isFullScreen = window.innerWidth < 700;
-    };
-  },
-  methods: {
-    get video() {
-      return (index) => {
-        if (this.videos["v" + index] == undefined) {
-          this.videos["v" + index] = true;
-        }
-        return this.videos["v" + index];
-      };
-    },
-    getVideo(index, link, name) {
-      this.videos["v" + index] = false;
-      this.showFlag = true;
-      this.detailLink = link;
-      this.detailName = name;
-      this.$forceUpdate();
-    },
-    closeVideoDisplay() {
-      this.showFlag = false;
-    },
-    getVideoId(url) {
-      const arr = url.split("/");
-      return `//i.ytimg.com/vi/${arr[arr.length - 1]}/hqdefault.jpg`;
-    },
-  },
+  mounted() {},
 };
 </script>
 
@@ -174,6 +163,7 @@ export default {
               min-height: 220px;
               height: 100%;
               width: 100%;
+              cursor: pointer;
             }
           }
           .play-btn {
