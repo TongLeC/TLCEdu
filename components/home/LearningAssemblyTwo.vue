@@ -26,8 +26,9 @@
             class="language-list"
             v-for="(item, index) in home.json.sloganList"
             :key="index"
+            @click="getItem(item, home.json)"
           >
-            <p class="language-list-detail" @click="getItem(item, home.json)">
+            <p class="language-list-detail">
               {{ item.title }}
             </p>
           </li>

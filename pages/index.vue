@@ -99,19 +99,29 @@
             :key="index"
           >
             <div class="home-list-div">
-              <img
-                :src="getVideoId(item.videoUrl)"
-                @click="
-                  getVideo(index + '' + index, item.videoUrl, item.videoDetail)
-                "
-                style="object-fit: cover"
-              />
-              <div
-                class="play-btn"
-                @click="
-                  getVideo(index + '' + index, item.videoUrl, item.videoDetail)
-                "
-              ></div>
+              <div class="home-list-img">
+                <img
+                  :src="getVideoId(item.videoUrl)"
+                  @click="
+                    getVideo(
+                      index + '' + index,
+                      item.videoUrl,
+                      item.videoDetail
+                    )
+                  "
+                  style="object-fit: cover"
+                />
+                <div
+                  class="play-btn"
+                  @click="
+                    getVideo(
+                      index + '' + index,
+                      item.videoUrl,
+                      item.videoDetail
+                    )
+                  "
+                ></div>
+              </div>
               <p class="video-describe">
                 {{ $t(`homeVideo.detail[${index}].videoDetail`) }}
               </p>
@@ -125,7 +135,7 @@
         :showFlag="showFlag"
         :title="detailName"
         :src="detailLink"
-        :fullScreenDialog="isFullScreen"
+        :fullScreenDialog="false"
         @closeVideoDisplay="closeVideoDisplay"
       ></home-video-dialog>
     </div>
@@ -182,6 +192,24 @@ const home = [
     json: HomePage.value.homeSloganTheory,
   },
 ];
+
+const showFlag = ref(false);
+const detailLink = ref("");
+const detailName = ref("");
+const instance = getCurrentInstance();
+const getVideo = function (index, link, name) {
+  showFlag.value = true;
+  detailLink.value = link;
+  detailName.value = name;
+  instance.proxy.$forceUpdate();
+};
+const closeVideoDisplay = function () {
+  showFlag.value = false;
+};
+const getVideoId = function (url) {
+  const arr = url.split("/");
+  return `//i.ytimg.com/vi/${arr[arr.length - 1]}/hqdefault.jpg`;
+};
 </script>
 
 <script>
@@ -199,44 +227,9 @@ export default {
     SwiperSlide,
   },
   data() {
-    return {
-      videos: {},
-      showFlag: false,
-      detailLink: "",
-      detailName: "",
-      isFullScreen: false,
-    };
+    return {};
   },
-  mounted() {
-    this.isFullScreen = window.innerWidth < 700;
-    window.onresize = () => {
-      this.isFullScreen = window.innerWidth < 700;
-    };
-  },
-  methods: {
-    get video() {
-      return (index) => {
-        if (this.videos["v" + index] == undefined) {
-          this.videos["v" + index] = true;
-        }
-        return this.videos["v" + index];
-      };
-    },
-    getVideo(index, link, name) {
-      this.videos["v" + index] = false;
-      this.showFlag = true;
-      this.detailLink = link;
-      this.detailName = name;
-      this.$forceUpdate();
-    },
-    closeVideoDisplay() {
-      this.showFlag = false;
-    },
-    getVideoId(url) {
-      const arr = url.split("/");
-      return `//i.ytimg.com/vi/${arr[arr.length - 1]}/hqdefault.jpg`;
-    },
-  },
+  mounted() {},
 };
 </script>
 
@@ -347,20 +340,20 @@ export default {
         border-radius: 15px;
         box-shadow: 2px 2px 10px $shadow-color;
         .home-list {
-          padding: 1rem;
-          position: relative;
+          padding: 10px;
+          .home-list-img {
+            position: relative;
+          }
           .home-list-div {
             border: 2px solid $adorn-color;
             border-radius: 15px;
             padding: 15px 15px 0;
-            min-height: 220px;
             height: 100%;
             width: 100%;
             img {
               border-radius: 15px;
-              min-height: 220px;
-              height: 100%;
               width: 100%;
+              cursor: pointer;
             }
           }
           .play-btn {
