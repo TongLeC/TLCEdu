@@ -70,9 +70,11 @@ useHead({
     },
   ],
 });
-const { data: educationalPracticeJson } = await useFetch(
-  "/api/json/EducationalPractice"
-);
+// const { data: educationalPracticeJson } = await useFetch(
+//   "/api/json/EducationalPractice"
+// );
+import EducationalPractice from "/assets/json/EducationalPractice.json";
+const educationalPracticeJson = ref(EducationalPractice);
 </script>
 <script>
 export default {

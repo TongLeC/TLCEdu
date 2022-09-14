@@ -69,6 +69,7 @@
 </template>
 <script setup>
 const { locale } = useI18n();
+const localePath = useLocalePath();
 </script>
 
 <script>
@@ -82,7 +83,7 @@ export default {
   },
   methods: {
     getItem(list, item) {
-      navigateTo(`/${this.locale}/detail/${item.id}-${list.id}`);
+      navigateTo(this.localePath(`/detail/${item.id}-${list.id}`));
     },
   },
 };

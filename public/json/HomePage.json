@@ -2,7 +2,7 @@
   "rotationMap": [
     {
       "type": "0",
-      "mapUrl": "/images/banner12.png",
+      "mapUrl": "/images/banner12.jpg",
       "mapDetail": "茶艺课"
     },
     {
@@ -22,27 +22,21 @@
     }
   ],
   "homeSloganLearning": {
-    "id": "learn",
+    "id": "Method",
     "sloganTitle": "msg.languageLearning",
     "sloganDetail": [
-      "子初学,倚听觉;",
-      "先语言,字缓作;",
-      "诵经典,明圣说;",
-      "广听书,知识阔;",
-      "整体练,感知多;",
-      "文史哲,根基拓;",
-      "音形变,意带活;",
-      "三五载,成果硕。"
+      "子初学，倚听觉；先语言，字缓作；",
+      "诵经典，明圣说；广听书，知识阔；",
+      "整体练，感知多；文史哲，根基拓；",
+      "音形变，意带活；三五载，成果硕。"
     ],
     "slogan": [
-      "十数载理论探索",
-      "多年第一线教学实践",
-      "最领先、高效的语言学习方法"
+      "十数载理论探索,多年第一线教学实践,最领先、高效的语言学习方法。"
     ],
     "sloganIntroduce": [
       "同乐中文首创“先语言文化，后识字，感知式学习，整体吸收，螺旋式上升”等崭新的、自然高效的学习理念和方法。从引导孩子对中国文化的兴趣入手，遵循孩子智力发育和语言学习规律，精心创作学习材料，安排学习次序，达到三年一小成、五年一大成、十年精且纯的教学目标。"
     ],
-    "sloganList": [
+    "sloganListOne": [
       {
         "id": "a41erf56s",
         "title": "从“根”上学中文，让你意想不到的效果",
@@ -70,7 +64,9 @@
           "关于这个问题，我们会在以后的章节中详细讲述如何轻松而又自然高效地进行“听”和“说”训练。"
         ],
         "imgUrl": "/images/detail-flower-two.png"
-      },
+      }
+    ],
+    "sloganListTwo": [
       {
         "id": "45332",
         "title": "评书带给孩子超乎想象的惊喜",
@@ -121,14 +117,12 @@
     ]
   },
   "homeSloganTheory": {
-    "id": "theory",
+    "id": "Theory",
     "sloganTitle": "msg.holisticEducationTheory",
     "slogan": [
       "放眼生命全程 立足中国文化 融贯文史哲科"
     ],
-    "sloganIntroduce": [
-      "同乐中文教育放眼个体生命全程，以整体提升孩子的生命、身心状态为最终目标。立足源远流长、历久弥新的经典文化，教学知识面覆盖文史哲科，教育理念科学创新，不仅深耕语言教学，更致力于将良好的价值观传递给下一代。"
-    ],
+    "sloganIntroduce": "同乐中文教育放眼个体生命全程，以整体提升孩子的生命、身心状态为最终目标。立足源远流长、历久弥新的经典文化，教学知识面覆盖文史哲科，教育理念科学创新，不仅深耕语言教学，更致力于将良好的价值观传递给下一代。",
     "sloganList": [
       {
         "id": "1",
@@ -208,66 +202,6 @@
       {
         "videoUrl": "https://www.youtube.com/embed/0YMzqOGmBdY",
         "videoDetail": "循序渐进学中文"
-      }
-    ]
-  },
-  "homeFind": {
-    "describe": "中国文化历经千年，典籍浩如烟海，其根本则是经典。同乐中文寻根系列书籍，收录了诸子百家锦言，旨在回归民族的根基，传播永恒的智慧，关怀无价的生命。",
-    "detail": [
-      {
-        "homeImg": "/images/home-find1.jpg",
-        "homeUrl": "https://drive.google.com/file/d/1joiP98jwPm-rgIJ5dxUGjWywt72wnTEQ/view",
-        "homeDetail": [
-          "《海外中文教育的探索》"
-        ]
-      },
-      {
-        "homeImg": "/images/home-find2.png",
-        "homeUrl": "https://drive.google.com/file/d/1JjH39eFWhFpsccerd6Vt8RpLhi6NNmVR/view",
-        "homeDetail": [
-          "中文寻根(一)",
-          "老子"
-        ]
-      },
-      {
-        "homeImg": "/images/home-find3.png",
-        "homeUrl": "https://drive.google.com/file/d/1Nu0M8KYlWt0vtEBbmS-DGBao-mSfD1mz/view",
-        "homeDetail": [
-          "中文寻根(二)",
-          "大学·中庸"
-        ]
-      },
-      {
-        "homeImg": "/images/home-find4.png",
-        "homeUrl": "https://drive.google.com/file/d/1FwgRaSzSsH82LztbtiI1vebROUHcb764/view",
-        "homeDetail": [
-          "中文寻根(二)",
-          "大学·中庸名句"
-        ]
-      },
-      {
-        "homeImg": "/images/home-find5.png",
-        "homeUrl": "https://drive.google.com/file/d/1PZJZn70jHVBp5vLjEY_e-66PJ7yMSDAi/view",
-        "homeDetail": [
-          "中文寻根(三)",
-          "论语名句选"
-        ]
-      },
-      {
-        "homeImg": "/images/home-find6.png",
-        "homeUrl": "https://drive.google.com/file/d/17a84j0q53Z9Trr6CSIkIUcJ9jUhFxnR1/view",
-        "homeDetail": [
-          "中文寻根(四)",
-          "孟庄荀列管墨名言"
-        ]
-      },
-      {
-        "homeImg": "/images/home-find7.png",
-        "homeUrl": "https://drive.google.com/file/d/1_2D14f3WeFLt8GexLVS00yfTAGPJ5PBh/view",
-        "homeDetail": [
-          "中文寻根(五)",
-          "经典拾贝"
-        ]
       }
     ]
   },
@@ -352,30 +286,6 @@
       }
     ]
   },
-  "homeFree": [
-    {
-      "homeImg": "/images/music1.jpg",
-      "homeUrl": "https://youtu.be/9Y6m3E0XZWQ",
-      "homeDetail": [
-        "宝宝是小小音乐家"
-      ]
-    },
-    {
-      "homeImg": "/images/music2.jpg",
-      "homeUrl": "https://youtu.be/y4kgkUn4uLQ",
-      "homeDetail": [
-        "认识中国古乐之音阶",
-        "宫商角徵羽"
-      ]
-    },
-    {
-      "homeImg": "/images/music3.jpg",
-      "homeUrl": "https://youtu.be/4uOsZA2N-VE",
-      "homeDetail": [
-        "老北京的纯正味道"
-      ]
-    }
-  ],
   "homeArticle": {
     "describe": "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧。",
     "detail": [

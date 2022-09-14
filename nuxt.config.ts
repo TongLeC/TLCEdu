@@ -66,11 +66,30 @@ const zh_hans = {
     ],
   }
 }
+// 语言
+const locales = [{
+  code: 'zh-hans',
+  name: '中文简体'
+},
+{
+  code: 'zh-hant',
+  name: '中文繁體'
+}
+];
+const url = [];
+locales.forEach(locale => {
+  LanguageLearning.languageLearning.forEach(element => {
+    url.push(`/${locale.code}/detail/Method-${element.id}`)
+  });
+  EducationalTheory.educationalTheory.forEach(element => {
+    url.push(`/${locale.code}/detail/Theory-${element.id}`)
+  })
+})
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   nitro: {
     prerender: {
-      routes: []
+      routes: url
     }
   },
   css: ['~/assets/scss/global.scss'],
@@ -81,15 +100,7 @@ export default defineNuxtConfig({
   i18n: {
     strategy: 'prefix',
     defaultLocale: 'zh-hans',
-    locales: [{
-      code: 'zh-hans',
-      name: '中文简体'
-    },
-    {
-      code: 'zh-hant',
-      name: '中文繁體'
-    }
-    ],
+    locales: locales,
     vueI18n: {
       fallbackLocale: 'zh-hans',
       legacy: false,

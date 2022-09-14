@@ -7,19 +7,24 @@
       @tab-click="tabChange"
     >
       <el-tab-pane
-        :label="item.title"
         v-for="(item, index) in pageData"
-        :key="index"
+        :key="'a' + index"
         :name="item.id"
-      >
-        <section class="language-learning-detail">
-          <h3 class="detail-title">{{ item.title }}</h3>
+        ><template #label>
+          <span>
+            {{ $t(`${langKey}[${index}].title`) }}
+          </span>
+        </template>
+        <section class="language-learning-detail" v-if="item.id == activeTab">
+          <h3 class="detail-title">
+            {{ $t(`${langKey}[${index}].title`) }}
+          </h3>
           <article class="detail-content-box">
             <p
               class="detail-content"
-              v-for="(item, index) in item.detail"
-              :key="index"
-              v-html="item"
+              v-for="(item1, index1) in item.detail"
+              :key="'b' + index1"
+              v-html="$t(`${langKey}[${index}].detail[${index1}]`)"
             ></p>
           </article>
           <img class="detail-img" :src="item.imgUrl" alt="" />
@@ -30,36 +35,37 @@
 </template>
 
 <script setup>
+import LanguageLearning from "/assets/json/LanguageLearning.json";
+const pageData1 = ref(LanguageLearning);
+import EducationalTheory from "/assets/json/EducationalTheory.json";
+const pageData2 = ref(EducationalTheory);
 const route = useRoute();
 const { locale, locales } = useI18n();
-const { data: pageData1 } = await useFetch("/api/json/LanguageLearning");
-const { data: pageData2 } = await useFetch("/api/json/EducationalTheory");
+const localePath = useLocalePath();
 const category = route.params.category;
 let activeTab = route.params.name;
+let pageData = [];
+let langKey = "";
+if (category == "Method") {
+  pageData = pageData1.value.languageLearning;
+  langKey = "languageLearning";
+} else if (category == "Theory") {
+  pageData = pageData2.value.educationalTheory;
+  langKey = "educationalTheory";
+}
+const tabChange = function (TabsPaneContext) {
+  navigateTo(localePath(`/detail/${category}-${TabsPaneContext.props.name}`));
+  window.scrollTo({ top: 0 });
+};
 </script>
 
 <script>
 export default {
-  name: "LanguageLearningDetailTwo",
+  name: "detail",
   data() {
     return {
       tabPosition: "left",
-      pageData: [],
     };
-  },
-  mounted() {
-    if (this.category === "Method") {
-      this.pageData = this.pageData1.languageLearning;
-    } else if (this.category === "Theory") {
-      this.pageData = this.pageData2.educationalTheory;
-    }
-  },
-  methods: {
-    tabChange(TabsPaneContext) {
-      navigateTo(
-        `/${this.locale}/detail/${this.category}-${TabsPaneContext.props.name}`
-      );
-    },
   },
 };
 </script>

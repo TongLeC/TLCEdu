@@ -12,7 +12,7 @@
           :key="index"
         >
           <p class="language-list-detail" @click="getItem(item)">
-            {{ item.title }}
+            {{ $t(`languageLearning[${index}].title`) }}
             <span class="bookmark"></span>
           </p>
         </li>
@@ -21,10 +21,13 @@
   </main>
 </template>
 <script setup>
-const { data: languageLearningJson } = await useFetch(
-  "/api/json/LanguageLearning"
-);
+import aaa from "/assets/json/LanguageLearning.json";
+const languageLearningJson = ref(aaa);
+// const { data: languageLearningJson } = await useFetch(
+//   "/api/json/LanguageLearning"
+// );
 const { locale } = useI18n();
+const localePath = useLocalePath();
 const title = ref("同乐语言学习法");
 const description = ref("My amazing Nuxt app");
 
@@ -43,7 +46,7 @@ export default {
   name: "LanguageLearning",
   methods: {
     getItem(item) {
-      navigateTo(`/${this.locale}/detail/Method-${item.id}`);
+      navigateTo(this.localePath(`/detail/Method-${item.id}`));
     },
   },
 };

@@ -30,13 +30,9 @@
 <script>
 export default {
   name: "homeFreeAssembly",
-  data() {
-    return {};
-  },
   props: {
     home: { type: Object },
   },
-  methods: {},
 };
 </script>
 

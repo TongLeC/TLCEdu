@@ -42,19 +42,10 @@
 </template>
 
 <script>
-import Article from "~~/pages/Article.vue";
 export default {
   name: "homeBookAssemblyTwo",
-  data() {
-    return {};
-  },
-  components: { Article },
   props: {
     home: { type: Object },
-  },
-  methods: {},
-  setup() {
-    return {};
   },
 };
 </script>

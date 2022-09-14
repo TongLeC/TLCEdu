@@ -90,7 +90,7 @@
           </p>
         </h2>
         <p class="big-slogan">
-          {{ HomePage.homeVideo.describe }}
+          {{ $t("homeVideo.describe") }}
         </p>
         <ul class="row">
           <li
@@ -106,7 +106,9 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-              <p class="video-describe">{{ item.videoDetail }}</p>
+              <p class="video-describe">
+                {{ $t(`homeVideo.detail[${index}].videoDetail`) }}
+              </p>
             </div>
           </li>
         </ul>
@@ -120,7 +122,9 @@
   </main>
 </template>
 <script setup>
-const { data: HomePage } = await useFetch("/api/json/HomePage");
+import aaa from "/assets/json/HomePage.json";
+const HomePage = ref(aaa);
+// const { data: HomePage } = await useFetch("/api/json/HomePage");
 const swiper_options = reactive({
   autoplay: {
     disableOnInteraction: false,

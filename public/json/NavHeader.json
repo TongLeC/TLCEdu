@@ -2,8 +2,8 @@
   "NavHeader": [
     {
       "type": "1",
-      "id": "learn",
-      "href": "/languageLearning",
+      "id": "Method",
+      "href": "Method",
       "msg": "msg.languageLearning",
       "child": [
         {
@@ -66,8 +66,8 @@
     },
     {
       "type": "1",
-      "id": "theory",
-      "href": "/educationalTheory",
+      "id": "Theory",
+      "href": "Theory",
       "msg": "msg.holisticEducationTheory",
       "child": [
         {
@@ -174,8 +174,8 @@
     },
     {
       "type": "0",
-      "id": "f45dsfg",
-      "href": "/educationalPractice",
+      "id": "Speech",
+      "href": "Speech",
       "msg": "msg.educationalPractice",
       "child": [
         {
@@ -206,8 +206,8 @@
     },
     {
       "type": "0",
-      "id": "4vg5dsf4g",
-      "href": "/publicResources",
+      "id": "Resources",
+      "href": "Resources",
       "msg": "msg.publicWelfareResources",
       "child": [
         {
@@ -238,8 +238,8 @@
     },
     {
       "type": "0",
-      "id": "4f5ds",
-      "href": "/createdArticle",
+      "id": "Article",
+      "href": "Article",
       "msg": "msg.originalArticle",
       "child": [
         {

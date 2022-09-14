@@ -16,7 +16,7 @@
             :href="item.articleLink"
             target="blank"
           >
-            {{ item.articleTitle }}
+            {{ $t(`CreatedArticle[${index}].articleTitle`) }}
             <span class="bookmark"></span>
           </a>
         </li>
@@ -26,7 +26,27 @@
 </template>
 
 <script setup>
-const { data: createdArticleJson } = await useFetch("/api/json/CreatedArticle");
+let createdArticleJson;
+if (import.meta.env.SSR) {
+  const { data: createdArticleJson1 } = await useFetch(
+    "/api/json/CreatedArticle",
+    {
+      server: true,
+    }
+  );
+  createdArticleJson = createdArticleJson1;
+} else {
+  const { data: createdArticleJson1 } = await useFetch(
+    "/json/CreatedArticle.json",
+    {
+      server: false,
+      default: () => {
+        return { CreatedArticle: [] };
+      },
+    }
+  );
+  createdArticleJson = createdArticleJson1;
+}
 const title = ref("原创文章");
 const description = ref("My amazing Nuxt app");
 
@@ -43,11 +63,6 @@ useHead({
 <script>
 export default {
   name: "CreatedArticle",
-  data() {
-    return {
-      createdArticleJson,
-    };
-  },
 };
 </script>
 

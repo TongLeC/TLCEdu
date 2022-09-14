@@ -10,7 +10,7 @@
       :key="index"
     >
       <h2 class="big-title">
-        {{ item.grade }}
+        {{ $t(`TongleBook[${index}].grade`) }}
       </h2>
       <article class="big-box">
         <p
@@ -18,12 +18,15 @@
           v-for="(describe, y) in item.describe"
           :key="y"
         >
-          {{ describe }}
+          {{ $t(`TongleBook[${index}].describe[${y}]`) }}
         </p>
         <div v-if="item.describe != false" class="split-line"></div>
         <ul class="books-box" v-for="(detail, i) in item.book" :key="i">
           <li class="books-detail">
-            <p class="books-title" v-html="detail.name"></p>
+            <p
+              class="books-title"
+              v-html="$t(`TongleBook[${index}].book[${i}].name`)"
+            ></p>
             <div class="link-box">
               <a
                 v-for="(content, x) in detail.link"
@@ -31,7 +34,11 @@
                 :href="content.linkAddress"
                 target="blank"
               >
-                <button class="books-link">{{ content.linkTitle }}</button>
+                <button class="books-link">
+                  {{
+                    $t(`TongleBook[${index}].book[${i}].link[${x}].linkTitle`)
+                  }}
+                </button>
               </a>
             </div>
           </li>
@@ -42,6 +49,9 @@
 </template>
 
 <script setup>
+import TongleBook from "/assets/json/TongleBook.json";
+const TongleBookJson = ref(TongleBook);
+// const { data: TongleBookJson } = await useFetch("/api/json/TongleBook");
 const title = ref("同乐书籍");
 const description = ref("My amazing Nuxt app");
 
@@ -54,7 +64,6 @@ useHead({
     },
   ],
 });
-const { data: TongleBookJson } = await useFetch("/api/json/TongleBook");
 </script>
 <script>
 export default {

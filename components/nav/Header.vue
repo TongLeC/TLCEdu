@@ -37,7 +37,7 @@
               <el-menu-item
                 style="border-bottom: 1px solid #ccc"
                 v-else
-                :index="getUrl(list, item)"
+                :index="localePath(`/detail/${item.id}-${list.id}`)"
                 :key="'bb' + i"
               >
                 {{ list.title }}
@@ -98,7 +98,10 @@
   </header>
 </template>
 <script setup>
-const { data: NavHeaderJSON } = await useFetch("/api/json/NavHeader");
+// const { data: NavHeaderJSON } = await useFetch("/api/json/NavHeader");
+import NavHeader from "/assets/json/NavHeader.json";
+const NavHeaderJSON = ref(NavHeader);
+const localePath = useLocalePath();
 const { locale, locales } = useI18n();
 const availableLocales = computed(() => {
   return locales.value.filter((i) => i.code !== locale.value);
@@ -112,13 +115,9 @@ export default {
       isChange: false,
     };
   },
-  created() {},
   methods: {
-    getUrl(list, item) {
-      return `/${this.locale}/detail/${item.id}-${list.id}`;
-    },
     getItem(list, item) {
-      navigateTo(`/${this.locale}/detail/${item.id}-${list.id}`);
+      navigateTo(this.localePath(`/detail/detail-${item.id}-${list.id}`));
     },
     mouseToogleNavItem(e) {
       this.toggleClassName(e.currentTarget, "active");

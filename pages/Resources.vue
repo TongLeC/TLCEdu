@@ -25,7 +25,8 @@
                   class="resources-list-detail"
                   target="blank"
                 >
-                  {{ i + 1 }}. {{ detail.linkTitle }}
+                  {{ i + 1 }}.
+                  {{ $t(`resourceOne[${index}].detailLink[${i}].linkTitle`) }}
                 </a>
               </li>
             </ul>
@@ -37,9 +38,11 @@
 </template>
 
 <script setup>
-const { data: publicResourcesJson } = await useFetch(
-  "/api/json/PublicResources"
-);
+// const { data: publicResourcesJson } = await useFetch(
+//   "/api/json/PublicResources"
+// );
+import aaa from "/assets/json/PublicResources.json";
+const publicResourcesJson = ref(aaa);
 const title = ref("公益资源");
 const description = ref("My amazing Nuxt app");
 
