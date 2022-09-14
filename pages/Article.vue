@@ -26,29 +26,8 @@
 </template>
 
 <script setup>
-let createdArticleJson;
-if (import.meta.env.SSR) {
-  const { data: createdArticleJson1 } = await useFetch(
-    "/api/json/CreatedArticle",
-    {
-      server: true,
-    }
-  );
-  createdArticleJson = createdArticleJson1;
-} else {
-  const { data: createdArticleJson1 } = await useFetch(
-    "/json/CreatedArticle.json",
-    {
-      server: false,
-      default: () => {
-        return { CreatedArticle: [] };
-      },
-    }
-  );
-  createdArticleJson = createdArticleJson1;
-}
-const title = ref("原创文章");
-const description = ref("My amazing Nuxt app");
+import aaa from "/assets/json/CreatedArticle.json";
+const createdArticleJson = ref(aaa);
 
 useHead({
   title: "原创文章",
