@@ -1,19 +1,19 @@
 <template>
   <header class="nav-header">
-    <nav class="logo-img-box">
-      <NuxtLink class="navbar-brand" :to="localePath({ name: 'index' })">
-        <img class="logo-img" src="/images/tonglec-logo.jpg" alt="" />
-      </NuxtLink>
-    </nav>
     <nav class="home-container el-menu">
       <ClientOnly>
         <el-menu
           class="el-menu-demo"
           mode="horizontal"
-          active-text-color="#fff"
+          active-text-color="#000"
           :default-active="$route.path"
           router
         >
+          <el-menu-item class="logo-img-box">
+            <NuxtLink class="navbar-brand" :to="localePath({ name: 'index' })">
+              <img class="logo-img" src="/images/tonglec-logo.jpg" alt="" />
+            </NuxtLink>
+          </el-menu-item>
           <el-sub-menu
             v-for="(item, index1) in NavHeaderJSON.NavHeader"
             :key="'a' + index1"
@@ -192,7 +192,6 @@ export default {
   position: fixed;
   top: 0;
   z-index: 9999;
-  display: flex;
   background: #fff;
   .el-menu {
     border: 0;
@@ -203,10 +202,21 @@ export default {
     display: flex;
     align-self: center;
     justify-content: center;
-    margin-left: 15px;
+    margin-left: 5px;
+    a {
+      height: 70px;
+      line-height: 68px;
+      vertical-align: middle;
+      img {
+        width: 230px;
+        vertical-align: middle;
+      }
+    }
+    &:hover {
+      background: white !important;
+    }
   }
   .logo-img {
-    height: 3rem;
     object-fit: cover;
   }
   .course-btn {
@@ -226,7 +236,8 @@ export default {
   .language-selector {
     width: 150px;
     height: 70px;
-    &-a {
+    color: black;
+    > &-a {
       margin: 0 auto;
       border: 1px solid $main-text-color;
       width: 100%;
@@ -237,6 +248,9 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      svg {
+        margin-right: 5px;
+      }
     }
     .icon {
       height: 20px;
