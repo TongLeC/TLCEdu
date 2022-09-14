@@ -25,15 +25,13 @@ const { data: languageLearningJson } = await useFetch(
   "/api/json/LanguageLearning"
 );
 const { locale } = useI18n();
-const title = ref("同乐语言学习法");
-const description = ref("My amazing Nuxt app");
 
 useHead({
-  title,
+  title: "同乐语言学习法",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "同乐语言学习法",
     },
   ],
 });

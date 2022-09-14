@@ -6,15 +6,12 @@
 </template>
 
 <script setup>
-const title = ref("404");
-const description = ref("My amazing Nuxt app");
-
 useHead({
-  title,
+  title: "404",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "My amazing Nuxt app",
     },
   ],
 });

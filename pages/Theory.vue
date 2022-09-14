@@ -22,15 +22,12 @@
 </template>
 
 <script setup>
-const title = ref("同乐整体教育理论");
-const description = ref("My amazing Nuxt app");
-
 useHead({
-  title,
+  title: "同乐整体教育理论",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "同乐整体教育理论",
     },
   ],
 });

@@ -27,15 +27,13 @@
 
 <script setup>
 const { data: createdArticleJson } = await useFetch("/api/json/CreatedArticle");
-const title = ref("原创文章");
-const description = ref("My amazing Nuxt app");
 
 useHead({
-  title,
+  title: "原创文章",
   meta: [
     {
       name: "description",
-      content: description,
+      content: "My amazing Nuxt app",
     },
   ],
 });
