@@ -24,7 +24,7 @@ jobs:
       - name: Move public to docs
         run: |
           mkdir docs
-          mv .ouput/public/* docs/
+          cp -R .output/public/* docs/
       - name: Push results to origin
         run: |
           git config --global user.name 'TongLeC'
