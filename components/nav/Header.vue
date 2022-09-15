@@ -179,6 +179,9 @@ export default {
 .language-selector .el-sub-menu__title {
   padding: 0 !important;
 }
+.language-selector .el-icon svg {
+  display: none;
+}
 .el-sub-menu__title * {
   vertical-align: middle !important;
 }
