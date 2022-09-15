@@ -16,7 +16,7 @@
       <swiper
         v-if="showSwiper"
         :slidesPerView="4"
-        :spaceBetween="30"
+        :spaceBetween="20"
         :slidesPerGroup="4"
         :loop="true"
         :loopFillGroupWithBlank="true"
@@ -50,7 +50,7 @@
       <swiper
         v-else
         :slidesPerView="1"
-        :spaceBetween="30"
+        :spaceBetween="20"
         :slidesPerGroup="1"
         :loop="true"
         :loopFillGroupWithBlank="true"

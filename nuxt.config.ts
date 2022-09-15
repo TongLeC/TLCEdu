@@ -75,11 +75,13 @@ const zh_hans = {
 // 语言
 const locales = [{
   code: 'zh-hans',
-  name: '中文简体'
+  name: '中文简体',
+  iso: 'zh-Hans'
 },
 {
   code: 'zh-hant',
-  name: '中文繁體'
+  name: '中文繁體',
+  iso: 'zh-Hant'
 }
 ];
 const url = [];
@@ -100,7 +102,7 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/scss/global.scss'],
   modules: [
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n', '@funken-studio/sitemap-nuxt-3'
   ],
   buildModules: [
     ['@nuxt-modules/compression', {
@@ -109,6 +111,7 @@ export default defineNuxtConfig({
   ],
   target: 'static',
   i18n: {
+    baseUrl: 'https://tonglec.org',
     strategy: 'prefix',
     defaultLocale: 'zh-hans',
     locales: locales,
@@ -148,5 +151,34 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['swiper'],
+  }, sitemap: {
+    // options
+    hostname: 'https://tonglec.org',
+    sitemaps: [
+      {
+        path: '/sitemap-detail.xml',
+        routes: url,
+        exclude: ['/**'],
+        i18n: true,
+        defaults: {
+          changefreq: 'weekly',
+          priority: 0.7,
+          lastmod: new Date().toISOString(),
+        },
+      },
+      {
+        path: '/sitemap-main.xml',
+        exclude: [
+          '/Article', '/Method', '/Resources', '/Speech', '/Theory', '/TongleBook', '/',
+        ],
+        i18n: true,
+        defaults: {
+          changefreq: 'weekly',
+          priority: 1,
+          lastmod: new Date().toISOString(),
+        },
+      }
+    ],
+    i18n: true,
   },
 })

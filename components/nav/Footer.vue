@@ -1,6 +1,6 @@
 <template>
-  <main class="nav-footer">
-    <footer class="home-container">
+  <footer class="nav-footer">
+    <div class="home-container">
       <div class="nav-footer-top row">
         <!-- <a class="nav-footer-brand" href="/">
           <img class="logo-img" src="/images/logo3.png" alt="" />
@@ -17,8 +17,8 @@
         {{ $t("msg.bottomAddress1") }} | {{ $t("msg.bottomAddress2") }} |
         {{ $t("msg.bottomAddress3") }}
       </small>
-    </footer>
-  </main>
+    </div>
+  </footer>
 </template>
 
 <script>

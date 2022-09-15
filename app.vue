@@ -6,6 +6,14 @@
   </main>
 </template>
 <script setup>
+const i18nHead = useLocaleHead({ addSeoAttributes: true });
+useHead({
+  htmlAttrs: {
+    lang: i18nHead.value.htmlAttrs.lang,
+  },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])],
+});
 import { ID_INJECTION_KEY } from "element-plus";
 provide(ID_INJECTION_KEY, {
   prefix: 100,

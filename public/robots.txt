@@ -11,4 +11,4 @@ Disallow: /fonts
 
 
 #Sitemaps
-Sitemap: https://www.tonglec.org/sitemap.xml
+Sitemap: https://www.tonglec.org/sitemapindex.xml
