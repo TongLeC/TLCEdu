@@ -7,15 +7,15 @@
         </a> -->
         <p class="col-12 col-md-3"></p>
         <p class="nav-footer-p col-12 col-md-6">
-          同于自性，颐养天真。有教无类，乐学致远。
+          {{ $t("msg.bottom") }}
         </p>
         <div class="nav-footer-erweima col-12 col-md-3">
           <img class="erweima-img" src="/images/erweima-image.png" alt="" />
         </div>
       </div>
       <small class="nav-footer-bottom">
-        版权所有©同乐文化科技有限公司 | 地址: 14200 SE 13th Pl, Bellevue, WA
-        98007 | 欢迎关注同乐公众号
+        {{ $t("msg.bottomAddress1") }} | {{ $t("msg.bottomAddress2") }} |
+        {{ $t("msg.bottomAddress3") }}
       </small>
     </footer>
   </main>

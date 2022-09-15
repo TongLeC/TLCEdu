@@ -56,6 +56,12 @@ const zh_hans = {
     chineseClassicStories: "中华经典故事",
     publicTitle: "不忘初心·方得始终",
     publicTitleTwo: "公益分享",
+    experienceCourses: "体验课程",
+    freeBook: "30+ 免费电子书与教材",
+    bottom: "同于自性，颐养天真。有教无类，乐学致远。",
+    bottomAddress1: "版权所有©同乐文化科技有限公司",
+    bottomAddress2: "地址: 14200 SE 13th Pl, Bellevue, WA 98007",
+    bottomAddress3: "欢迎关注同乐公众号",
     slogan: [
       "十数载理论探索,多年第一线教学实践,最领先、高效的语言学习方法。",
       "放眼生命全程 立足中国文化 融贯文史哲科",
@@ -128,11 +134,11 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: '首页',
+      title: '同乐中文教育',
       meta: [
         {
           name: "description",
-          content: "111111111111",
+          content: "首页是网站所有内容的指引，包括同乐语言学习法，同乐整体教育理论，教育践谈，公益资源，原创文章，同乐书籍等",
         },
       ],
       script: [

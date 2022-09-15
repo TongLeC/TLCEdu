@@ -109,6 +109,7 @@
                       item.videoDetail
                     )
                   "
+                  :alt="$t(`homeVideo.detail[${index}].videoDetail`)"
                   style="object-fit: cover"
                 />
                 <div

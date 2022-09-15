@@ -11,7 +11,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "My amazing Nuxt app",
+      content: "404页面",
     },
   ],
 });

@@ -27,7 +27,6 @@
               v-html="$t(`${langKey}[${index}].detail[${index1}]`)"
             ></p>
           </article>
-          <img class="detail-img" :src="item.imgUrl" alt="" />
         </section>
       </el-tab-pane>
     </el-tabs>
@@ -44,6 +43,7 @@ const { locale, locales } = useI18n();
 const localePath = useLocalePath();
 const category = route.params.category;
 let activeTab = route.params.name;
+let pageTitle = "";
 let pageData = [];
 let langKey = "";
 if (category == "Method") {
@@ -57,6 +57,22 @@ const tabChange = function (TabsPaneContext) {
   navigateTo(localePath(`/detail/${category}-${TabsPaneContext.props.name}`));
   window.scrollTo({ top: 0 });
 };
+
+pageData.forEach((e) => {
+  if (e.id == activeTab) {
+    pageTitle = e.title;
+  }
+});
+
+useHead({
+  title: `${category}-${pageTitle}`,
+  meta: [
+    {
+      name: "description",
+      content: `${category}-${pageTitle}`,
+    },
+  ],
+});
 </script>
 
 <script>
@@ -126,7 +142,7 @@ export default {
     box-shadow: 2px 2px 10px $shadow-color;
     margin: 0 0 5px 0 !important;
     background: #fff;
-    padding: 10px 2rem 0;
+    padding: 10px 2rem;
     border-radius: 15px;
     .detail-title {
       font-size: 1.9rem;
@@ -142,13 +158,6 @@ export default {
         font-size: 1.4rem;
         line-height: 3rem;
       }
-    }
-    .detail-img {
-      width: 18rem;
-      object-fit: cover;
-      opacity: 0.5;
-      z-index: -1;
-      // float: right;
     }
   }
 }

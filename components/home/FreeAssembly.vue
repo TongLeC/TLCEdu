@@ -19,7 +19,10 @@
         :key="index"
       >
         <a class="free-list-detail" :href="item.homeUrl" target="blank">
-          <img :src="item.homeImg" :alt="item.homeDetail" />
+          <img
+            :src="item.homeImg"
+            :alt="$t(`homeArticle.detail[${index}].homeDetail`)"
+          />
           <p class="free-list-title">
             {{ $t(`homeArticle.detail[${index}].homeDetail`) }}
           </p>
