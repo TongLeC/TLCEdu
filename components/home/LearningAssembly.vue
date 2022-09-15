@@ -123,12 +123,13 @@ export default {
   width: 75%;
   margin: 0 auto;
   position: relative;
-  padding: 70px 0 50px;
+  padding: 70px 0 40px;
   .big-slogan {
     margin-bottom: 10px;
   }
   &-box {
     padding: 10px 0;
+    margin: 0;
     .home-learning-top {
       background: #fff;
       border-radius: 15px;

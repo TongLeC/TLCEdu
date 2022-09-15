@@ -399,6 +399,7 @@ export default {
         background: #fff;
         border-radius: 15px;
         box-shadow: 2px 2px 10px $shadow-color;
+        margin: 0;
         .home-list {
           padding: 10px;
           .home-list-img {

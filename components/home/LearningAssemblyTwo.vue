@@ -93,6 +93,7 @@ export default {
   position: relative;
   padding: 0 0 50px;
   &-box {
+    margin: 0;
     padding: 0;
     .home-learning-top {
       background: #fff;
