@@ -68,7 +68,7 @@
           </el-menu-item>
           <el-menu-item class="select-course" index="">
             <a
-              href="https://www.tonglec.com/"
+              href="https://www.tongleclass.com/"
               target="blank"
               class="course-btn tlc-btn tlc-btn-secondary r-10"
             >
