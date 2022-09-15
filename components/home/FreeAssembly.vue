@@ -50,20 +50,23 @@ export default {
 .free-box {
   width: 75%;
   margin: 4rem auto 0;
+  padding-bottom: 40px;
+  .big-slogan {
+    margin-bottom: 20px;
+  }
   .free-top-right {
-    padding: 0;
     background: #fff;
     border-radius: 15px;
     box-shadow: 2px 2px 10px $shadow-color;
-    padding: 25px 25px 10px;
+    padding: 10px 10px 10px;
+    margin: 0;
     .free-list {
-      margin-bottom: 15px;
+      padding: 10px;
     }
     .free-list-detail {
       display: block;
       width: 100%;
       object-fit: cover;
-      margin-bottom: 10px;
       border: 2px solid $adorn-color;
       border-radius: 15px;
       padding: 15px 15px 0;

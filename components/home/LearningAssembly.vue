@@ -32,11 +32,12 @@
             class="language-list"
             v-for="(item, index) in home.json.sloganListOne"
             :key="index"
-            @click="getItem(item, home.json)"
           >
-            <p class="language-list-detail">
-              {{ $t(`homeSloganLearning.sloganListOne[${index}].title`) }}
-            </p>
+            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+              <p class="language-list-detail">
+                {{ $t(`homeSloganLearning.sloganListOne[${index}].title`) }}
+              </p>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -51,9 +52,11 @@
             :key="index"
             @click="getItem(item, home.json)"
           >
-            <p class="language-list-detail">
-              {{ $t(`homeSloganLearning.sloganListTwo[${index}].title`) }}
-            </p>
+            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+              <p class="language-list-detail">
+                {{ $t(`homeSloganLearning.sloganListTwo[${index}].title`) }}
+              </p>
+            </NuxtLink>
           </li>
         </ul>
         <article class="home-learning-top col-12 col-md-9">
@@ -121,8 +124,11 @@ export default {
   margin: 0 auto;
   position: relative;
   padding: 70px 0 20px;
+  .big-slogan {
+    margin-bottom: 10px;
+  }
   &-box {
-    padding: 12px 0;
+    padding: 10px 0;
     .home-learning-top {
       background: #fff;
       border-radius: 15px;
@@ -132,13 +138,15 @@ export default {
     .home-learning-ul {
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
     }
     .language-list {
+      flex: 1;
       background: $main-color;
       box-shadow: 2px 2px 10px $shadow-color;
       color: #fff;
       border-radius: 15px;
-      padding: 25px;
       text-align: left;
       cursor: pointer;
       &:last-child {
@@ -148,6 +156,14 @@ export default {
         color: $main-color;
         background: $bg-main-color;
         transition: all 0.4s ease 0s;
+      }
+      &-detail {
+        color: white;
+      }
+      > a {
+        width: 100%;
+        display: inline-block;
+        padding: 25px;
       }
     }
     p:last-child {

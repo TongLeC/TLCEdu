@@ -127,7 +127,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .bible-list-box .swiper-button-prev {
   position: absolute;
   left: -2px !important;
@@ -135,6 +135,23 @@ export default {
 .bible-list-box .swiper-button-next {
   position: absolute;
   right: -2px !important;
+}
+.bible-list {
+  border: 2px solid $adorn-color;
+  border-radius: 15px;
+  padding: 20px 20px 0;
+  .bible-list-detail {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+  .bible-list-title {
+    margin-top: 5px;
+  }
 }
 </style>
 <style scoped lang='scss'>
@@ -150,31 +167,13 @@ export default {
     background: #fff;
     border-radius: 15px;
     box-shadow: 2px 2px 10px $shadow-color;
-    padding: 30px 20px;
-    .bible-list-box {
-      padding: 0 1.5rem;
-      height: 100%;
-      .bible-list {
-        border: 2px solid $adorn-color;
-        border-radius: 15px;
-        padding: 15px 15px 0;
-        height: auto;
-        .bible-list-detail {
-          display: block;
-          width: 100%;
-          object-fit: cover;
-          img {
-            width: 100%;
-            border-radius: 15px;
-          }
-        }
-        .bible-list-title {
-          margin-top: 5px;
-        }
-      }
-      .bible-list-detail:hover img {
-        transition: all 0.4s ease 0s;
-      }
+    padding: 40px 10px;
+  }
+  .bible-list-box {
+    padding: 0 30px;
+    height: 100%;
+    .bible-list-detail:hover img {
+      transition: all 0.4s ease 0s;
     }
   }
   :deep(.swiper-pagination) {

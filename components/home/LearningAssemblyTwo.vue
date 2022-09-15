@@ -15,22 +15,23 @@
         v-for="(item, index) in home.json.slogan"
         :key="index"
       >
-        {{ item }}
+        {{ $t(`homeSloganTheory.slogan[${index}]`) }}
       </p>
       <div class="home-learning-box row">
         <p class="home-learning-top big-detail-p col-12 col-md-9">
-          {{ home.json.sloganIntroduce }}
+          {{ $t(`homeSloganTheory.sloganIntroduce`) }}
         </p>
         <ul class="home-learning-ul col-12 col-md-3" style="padding-left: 20px">
           <li
             class="language-list"
             v-for="(item, index) in home.json.sloganList"
             :key="index"
-            @click="getItem(item, home.json)"
           >
-            <p class="language-list-detail">
-              {{ item.title }}
-            </p>
+            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+              <p class="language-list-detail">
+                {{ $t(`homeSloganTheory.sloganList[${index}].title`) }}
+              </p>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -92,7 +93,7 @@ export default {
   position: relative;
   padding: 70px 0 20px;
   &-box {
-    padding: 12px 0;
+    padding: 0;
     .home-learning-top {
       background: #fff;
       border-radius: 15px;
@@ -101,17 +102,20 @@ export default {
       display: flex;
       align-items: center;
       line-height: 60px;
+      margin: 0;
     }
     .home-learning-ul {
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
     }
     .language-list {
+      flex: 1;
       background: $main-color;
       box-shadow: 2px 2px 10px $shadow-color;
       color: #fff;
       border-radius: 15px;
-      padding: 25px;
       text-align: left;
       cursor: pointer;
       margin-bottom: 20px;
@@ -119,6 +123,17 @@ export default {
         color: $main-color;
         background: $bg-main-color;
         transition: all 0.4s ease 0s;
+      }
+      > a {
+        display: inline-block;
+        width: 100%;
+        padding: 25px;
+      }
+      &-detail {
+        color: white;
+      }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
     p:last-child {

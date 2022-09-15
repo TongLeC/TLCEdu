@@ -30,7 +30,12 @@
                 v-if="item.type == 0"
                 :key="'ab' + i"
               >
-                <a :href="list.link" @click.stop target="view_window">
+                <a
+                  :href="list.link"
+                  @click.stop
+                  target="view_window"
+                  class="hearder-nav-a"
+                >
                   {{ $t(`NavHeader[${index1}].child[${i}].title`) }}
                 </a>
               </el-menu-item>
@@ -40,7 +45,10 @@
                 :index="localePath(`/detail/${item.id}-${list.id}`)"
                 :key="'bb' + i"
               >
-                <NuxtLink :to="localePath(`/detail/${item.id}-${list.id}`)">
+                <NuxtLink
+                  :to="localePath(`/detail/${item.id}-${list.id}`)"
+                  class="hearder-nav-a"
+                >
                   {{ $t(`NavHeader[${index1}].child[${i}].title`) }}
                 </NuxtLink>
               </el-menu-item>
@@ -159,7 +167,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .el-menu-item:hover,
 .el-sub-menu__title:hover {
   background: #2b85c3 !important;
@@ -187,6 +195,14 @@ export default {
 }
 .select-course.el-menu-item:hover {
   background: #fff !important;
+}
+.hearder-nav-a {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  &:hover {
+    color: white !important;
+  }
 }
 </style>
 <style scoped lang='scss'>

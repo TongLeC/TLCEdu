@@ -294,6 +294,8 @@ export default {
       }
     }
     .home-transition {
+      display: flex;
+      justify-content: space-around;
       width: 48%;
       font-size: 1.5rem;
       background: $sub-color;
@@ -333,8 +335,11 @@ export default {
     .home-video-box {
       margin: 0 auto;
       width: 75%;
+      .big-slogan {
+        margin-bottom: 20px;
+      }
       ul {
-        padding: 15px 20px;
+        padding: 15px 15px;
         font-size: 1.4rem;
         background: #fff;
         border-radius: 15px;

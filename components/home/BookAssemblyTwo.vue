@@ -75,7 +75,7 @@ export default {
     padding: 30px 40px;
     font-size: 1.4rem;
     .book-describe-box {
-      padding-top: 1rem;
+      padding-top: 4px;
       .book-describe {
         text-align: left;
         text-indent: 2em;
