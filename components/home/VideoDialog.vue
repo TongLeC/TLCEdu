@@ -1,24 +1,26 @@
 <template>
   <main class="video-display">
-    <el-dialog
-      class="display-dialog"
-      :title="title"
-      v-model="dialogVisible"
-      @close="suspendVideo"
-      :fullscreen="fullScreenDialog"
-    >
-      <iframe
-        v-if="dialogVisible"
-        id="player"
-        class="video-row-item"
-        style="border-radius: 15px"
-        height="100%"
-        width="100%"
-        frameborder="0"
-        :src="src + '?autoplay=1&rel=0'"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
-      ></iframe>
-    </el-dialog>
+    <ClientOnly>
+      <el-dialog
+        class="display-dialog"
+        :title="title"
+        v-model="dialogVisible"
+        @close="suspendVideo"
+        :fullscreen="fullScreenDialog"
+      >
+        <iframe
+          v-if="dialogVisible"
+          id="player"
+          class="video-row-item"
+          style="border-radius: 15px"
+          height="100%"
+          width="100%"
+          frameborder="0"
+          :src="src + '?autoplay=1&rel=0'"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
+        ></iframe>
+      </el-dialog>
+    </ClientOnly>
   </main>
 </template>
 <script>
