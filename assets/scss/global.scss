@@ -1,5 +1,6 @@
 @import 'element-plus/dist/index.css';
 @import "bootstrap/scss/bootstrap";
+@import "/assets/fonts/fonts.css";
 
 html,
 body {
@@ -120,7 +121,7 @@ a:hover {
       width: 60%;
       display: block;
       margin: -12px auto;
-      background: url("../images/bottom-color.png") no-repeat;
+      background: url("/images/bottom-color.png") no-repeat;
       background-size: 100% 100%;
     }
   }

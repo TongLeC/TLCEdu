@@ -57,12 +57,13 @@ const tabChange = function (TabsPaneContext) {
   navigateTo(localePath(`/detail/${category}-${TabsPaneContext.props.name}`));
   window.scrollTo({ top: 0 });
 };
-
-pageData.forEach((e) => {
-  if (e.id == activeTab) {
-    pageTitle = e.title;
-  }
-});
+let articleData = [];
+articleData = pageData.filter((e) => e.id == activeTab);
+if (articleData.length > 0) {
+  pageTitle = articleData[0].title;
+} else {
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+}
 
 useHead({
   title: `${category}-${pageTitle}`,
