@@ -17,12 +17,16 @@
         <h2 class="home-public-title">
           {{ $t("msg.publicTitle") }} {{ $t("msg.publicTitleTwo") }}
         </h2>
-        <p class="book-more">—— 30+ 免费电子书与教材 ——</p>
+        <p class="book-more">
+          <router-link :to="localePath({ name: 'TongleBook' })"
+            >—— {{ $t("msg.freeBook") }} ——</router-link
+          >
+        </p>
       </section>
       <div class="row">
         <div class="img-box col-12 col-md-3">
           <div class="book-img">
-            <img :src="home.json.detail.homeImg" />
+            <img :src="home.json.detail.homeImg" alt="海外中文教育的探索" />
             <p>海外中文教育的探索</p>
           </div>
         </div>
@@ -67,6 +71,9 @@ export default {
   }
   .book-more {
     font-size: 1.5rem;
+    a:hover {
+      color: $main-color;
+    }
   }
   .home-book {
     background: #fff;

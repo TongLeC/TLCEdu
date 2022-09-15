@@ -25,6 +25,11 @@
                 @click="
                   getVideo(index + '' + i, some.videoUrl, some.videoDetail)
                 "
+                :alt="
+                  $t(
+                    `educationalPracticeOne[${index}].detail[${i}].videoDetail`
+                  )
+                "
                 style="object-fit: cover"
               />
               <div
@@ -33,7 +38,13 @@
                   getVideo(index + '' + i, some.videoUrl, some.videoDetail)
                 "
               ></div>
-              <p class="play-name">{{ some.videoDetail }}</p>
+              <p class="play-name">
+                {{
+                  $t(
+                    `educationalPracticeOne[${index}].detail[${i}].videoDetail`
+                  )
+                }}
+              </p>
             </div>
 
             <!-- <iframe
@@ -61,11 +72,12 @@
 
 <script setup>
 useHead({
-  title: "教育践谈",
+  title: "根据一线教育经验，形成的教育践谈、教育讲座",
   meta: [
     {
       name: "description",
-      content: "My amazing Nuxt app",
+      content:
+        "教育是一门实践的艺术，实践创造出科学高效的中文学习理念。这里有教学经验、育儿经验的分享，也有孩子们学习成长的点点滴滴。",
     },
   ],
 });

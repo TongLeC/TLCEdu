@@ -64,7 +64,7 @@
               target="blank"
               class="course-btn tlc-btn tlc-btn-secondary r-10"
             >
-              体验课程
+              {{ $t("msg.experienceCourses") }}
             </a>
           </el-menu-item>
           <el-sub-menu class="language-selector" index="language">

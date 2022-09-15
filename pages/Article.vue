@@ -30,11 +30,12 @@ import aaa from "/assets/json/CreatedArticle.json";
 const createdArticleJson = ref(aaa);
 
 useHead({
-  title: "原创文章",
+  title: "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧",
   meta: [
     {
       name: "description",
-      content: "My amazing Nuxt app",
+      content:
+        "对汉字的解读，不仅是理解字义，更是通达汉字背后的“道”。文与武、朋与友、仙与俗，简单的文字背后，蕴含着深刻的“道”",
     },
   ],
 });

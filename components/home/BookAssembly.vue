@@ -30,15 +30,21 @@
           :key="'bi' + index"
         >
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
-            <img :src="item.homeImg" :alt="item.homeDetail" />
+            <img
+              :src="item.homeImg"
+              :alt="
+                $t(`homeBible.detail[${index}].homeDetail[${0}]`) +
+                $t(`homeBible.detail[${index}].homeDetail[${1}]`)
+              "
+            />
+            <p
+              class="bible-list-title"
+              v-for="(content, index2) in item.homeDetail"
+              :key="'bi2' + index2"
+            >
+              {{ $t(`homeBible.detail[${index}].homeDetail[${index2}]`) }}
+            </p>
           </a>
-          <p
-            class="bible-list-title"
-            v-for="(content, index2) in item.homeDetail"
-            :key="'bi2' + index2"
-          >
-            {{ $t(`homeBible.detail[${index}].homeDetail[${index2}]`) }}
-          </p>
         </swiper-slide>
       </swiper>
       <swiper
@@ -59,14 +65,14 @@
         >
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
+            <p
+              class="bible-list-title"
+              v-for="(content, index2) in item.homeDetail"
+              :key="'bi4' + index2"
+            >
+              {{ $t(`homeBible.detail[${index}].homeDetail[${index2}]`) }}
+            </p>
           </a>
-          <p
-            class="bible-list-title"
-            v-for="(content, index2) in item.homeDetail"
-            :key="'bi4' + index2"
-          >
-            {{ $t(`homeBible.detail[${index}].homeDetail[${index2}]`) }}
-          </p>
         </swiper-slide>
       </swiper>
     </div>
