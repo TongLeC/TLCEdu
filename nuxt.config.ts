@@ -111,7 +111,7 @@ export default defineNuxtConfig({
   ],
   target: 'static',
   i18n: {
-    baseUrl: 'https://tonglec.org',
+    baseUrl: 'https://www.tonglec.org',
     strategy: 'prefix',
     defaultLocale: 'zh-hans',
     locales: locales,
@@ -153,7 +153,7 @@ export default defineNuxtConfig({
     transpile: ['swiper'],
   }, sitemap: {
     // options
-    hostname: 'https://tonglec.org',
+    hostname: 'https://www.tonglec.org',
     sitemaps: [
       {
         path: '/sitemap-detail.xml',

@@ -8,19 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install vue cli for build
+      - name: Install NPM Moudles
         run: npm install
-      - name: Build project
+      - name: Generate project
         run: |
           npm run generate
-          echo 'tonglec.org' > docs/CNAME
       - name: Remove docs
         run: |
-          rm -f docs/
+          rm -rf docs/
       - name: Move public to docs
         run: |
           mkdir docs
-          mv .ouput/public/ docs/
+          cp -R .output/public/* docs/
+          echo 'tonglec.org' > docs/CNAME
       - name: Push results to origin
         run: |
           git config --global user.name 'TongLeC'
