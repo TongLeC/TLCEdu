@@ -123,7 +123,7 @@ export default {
   width: 75%;
   margin: 0 auto;
   position: relative;
-  padding: 70px 0 20px;
+  padding: 70px 0 50px;
   .big-slogan {
     margin-bottom: 10px;
   }

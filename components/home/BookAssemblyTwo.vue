@@ -59,7 +59,7 @@ export default {
 .home-find {
   width: 75%;
   margin: 0 auto;
-  padding: 40px 0 0;
+  padding: 0 0 50px;
   .home-public-title {
     color: $adorn-color;
     font-size: 2.2rem;

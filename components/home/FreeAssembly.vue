@@ -49,8 +49,8 @@ export default {
 }
 .free-box {
   width: 75%;
-  margin: 4rem auto 0;
-  padding-bottom: 40px;
+  margin: 0 auto;
+  padding: 0 0 50px;
   .big-slogan {
     margin-bottom: 20px;
   }

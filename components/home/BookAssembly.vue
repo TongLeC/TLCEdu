@@ -162,12 +162,13 @@ export default {
 }
 .bible-find {
   width: 75%;
-  margin: 80px auto 0;
+  margin: 0 auto;
+  padding: 0 0 50px;
   .list-box {
     background: #fff;
     border-radius: 15px;
     box-shadow: 2px 2px 10px $shadow-color;
-    padding: 40px 10px;
+    padding: 20px 10px;
   }
   .bible-list-box {
     padding: 0 30px;

@@ -91,7 +91,7 @@ export default {
   width: 75%;
   margin: 0 auto;
   position: relative;
-  padding: 70px 0 20px;
+  padding: 0 0 50px;
   &-box {
     padding: 0;
     .home-learning-top {

@@ -37,15 +37,15 @@
             viewBox="0 0 40.73 25.04"
           >
             <polygon
-              class="e7012c15-b97e-4beb-b68f-77e9c6a73f7b"
+              class="svg-arrow-1"
               points="2.37 25.04 0 22.67 10.16 12.51 0 2.37 2.37 0 14.89 12.51 2.37 25.04"
             />
             <polygon
-              class="f318b36b-2f3d-4370-9f30-e11dbe5b7d64"
+              class="svg-arrow-2"
               points="15.27 25.04 12.9 22.67 23.06 12.51 12.9 2.37 15.27 0 27.79 12.51 15.27 25.04"
             />
             <polygon
-              class="acfbcbba-992b-444a-97c4-531c4f40c44c"
+              class="svg-arrow-3"
               points="28.2 25.04 25.84 22.67 35.99 12.51 25.84 2.37 28.2 0 40.73 12.51 28.2 25.04"
             />
           </svg>
@@ -60,15 +60,15 @@
             viewBox="0 0 40.73 25.04"
           >
             <polygon
-              class="e7012c15-b97e-4beb-b68f-77e9c6a73f7b"
+              class="svg-arrow-1"
               points="2.37 25.04 0 22.67 10.16 12.51 0 2.37 2.37 0 14.89 12.51 2.37 25.04"
             />
             <polygon
-              class="f318b36b-2f3d-4370-9f30-e11dbe5b7d64"
+              class="svg-arrow-2"
               points="15.27 25.04 12.9 22.67 23.06 12.51 12.9 2.37 15.27 0 27.79 12.51 15.27 25.04"
             />
             <polygon
-              class="acfbcbba-992b-444a-97c4-531c4f40c44c"
+              class="svg-arrow-3"
               points="28.2 25.04 25.84 22.67 35.99 12.51 25.84 2.37 28.2 0 40.73 12.51 28.2 25.04"
             />
           </svg>
@@ -279,6 +279,48 @@ export default {
     }
   }
 }
+@keyframes arrow-run-1 {
+  75% {
+    fill: #d0e8f5;
+  }
+  50% {
+    fill: #9ac5e2;
+  }
+  25% {
+    fill: #6dabdd;
+  }
+  0% {
+    fill: #d0e8f5;
+  }
+}
+@keyframes arrow-run-2 {
+  75% {
+    fill: #9ac5e2;
+  }
+  50% {
+    fill: #6dabdd;
+  }
+  25% {
+    fill: #d0e8f5;
+  }
+  0% {
+    fill: #9ac5e2;
+  }
+}
+@keyframes arrow-run-3 {
+  75% {
+    fill: #6dabdd;
+  }
+  50% {
+    fill: #d0e8f5;
+  }
+  25% {
+    fill: #9ac5e2;
+  }
+  0% {
+    fill: #6dabdd;
+  }
+}
 .home-page {
   background: $sub-color;
   padding: 70px 0 0;
@@ -299,7 +341,7 @@ export default {
       width: 48%;
       font-size: 1.5rem;
       background: $sub-color;
-      border-radius: 30px 30px 0 0;
+      border-radius: 15px 15px 0 0;
       position: absolute;
       right: 27%;
       bottom: -5%;
@@ -308,14 +350,26 @@ export default {
       a:hover {
         color: $main-color;
         transition: all 0.4s ease 0s;
+        .svg-arrow-1 {
+          transition-duration: 0;
+          animation: arrow-run-1 1s infinite;
+        }
+        .svg-arrow-2 {
+          transition-duration: 0;
+          animation: arrow-run-2 1s infinite;
+        }
+        .svg-arrow-3 {
+          transition-duration: 0;
+          animation: arrow-run-3 1s infinite;
+        }
       }
-      .e7012c15-b97e-4beb-b68f-77e9c6a73f7b {
+      .svg-arrow-1 {
         fill: #d0e8f5;
       }
-      .f318b36b-2f3d-4370-9f30-e11dbe5b7d64 {
+      .svg-arrow-2 {
         fill: #9ac5e2;
       }
-      .acfbcbba-992b-444a-97c4-531c4f40c44c {
+      .svg-arrow-3 {
         fill: #6dabdd;
       }
       .home-transition-svg {
@@ -331,7 +385,7 @@ export default {
   }
   .home-video {
     position: relative;
-    padding: 40px 0;
+    padding: 0 0 50px;
     .home-video-box {
       margin: 0 auto;
       width: 75%;
