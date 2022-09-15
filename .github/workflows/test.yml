@@ -1,7 +1,7 @@
 name: Application CI
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "Feature/48-nuxt-tlcedu-fix" ]
 
 jobs:
   build-project:
