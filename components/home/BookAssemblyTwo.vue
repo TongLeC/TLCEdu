@@ -10,7 +10,7 @@
       </p>
     </h2>
     <p class="big-slogan">
-      {{ home.json.describe }}
+      {{ $t("homeBook.describe") }}
     </p>
     <div class="home-book">
       <section class="home-public">
@@ -33,7 +33,7 @@
             v-for="(item, index) in home.json.detail.homeDescribe"
             :key="index"
           >
-            {{ item }}
+            {{ $t(`homeBook.detail.homeDescribe[${index}]`) }}
           </p>
         </article>
       </div>

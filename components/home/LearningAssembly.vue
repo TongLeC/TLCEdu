@@ -15,7 +15,7 @@
         v-for="(item, index) in home.json.slogan"
         :key="index"
       >
-        {{ item }}
+        {{ $t(`homeSloganLearning.slogan[${index}]`) }}
       </p>
       <div class="home-learning-box row">
         <article class="home-learning-top col-12 col-md-9">
@@ -24,7 +24,7 @@
             v-for="(item, index) in home.json.sloganDetail"
             :key="index"
           >
-            {{ item }}
+            {{ $t(`homeSloganLearning.sloganDetail[${index}]`) }}
           </p>
         </article>
         <ul class="home-learning-ul col-12 col-md-3" style="padding-left: 20px">
@@ -35,7 +35,7 @@
             @click="getItem(item, home.json)"
           >
             <p class="language-list-detail">
-              {{ item.title }}
+              {{ $t(`homeSloganLearning.sloganListOne[${index}].title`) }}
             </p>
           </li>
         </ul>
@@ -52,7 +52,7 @@
             @click="getItem(item, home.json)"
           >
             <p class="language-list-detail">
-              {{ item.title }}
+              {{ $t(`homeSloganLearning.sloganListTwo[${index}].title`) }}
             </p>
           </li>
         </ul>
@@ -62,7 +62,7 @@
             v-for="(item, index) in home.json.sloganIntroduce"
             :key="index"
           >
-            {{ item }}
+            {{ $t(`homeSloganLearning.sloganIntroduce[${index}]`) }}
           </p>
         </article>
       </div>

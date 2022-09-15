@@ -10,7 +10,7 @@
       </p>
     </h2>
     <p class="big-slogan">
-      {{ home.json.describe }}
+      {{ $t("homeArticle.describe") }}
     </p>
     <ul class="free-top-right row">
       <li
@@ -20,7 +20,9 @@
       >
         <a class="free-list-detail" :href="item.homeUrl" target="blank">
           <img :src="item.homeImg" :alt="item.homeDetail" />
-          <p class="free-list-title">{{ item.homeDetail }}</p>
+          <p class="free-list-title">
+            {{ $t(`homeArticle.detail[${index}].homeDetail`) }}
+          </p>
         </a>
       </li>
     </ul>

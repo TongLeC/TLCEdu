@@ -10,7 +10,7 @@
       </p>
     </h2>
     <p class="big-slogan">
-      {{ home.json.describe }}
+      {{ $t("homeBible.describe") }}
     </p>
     <div class="list-box">
       <swiper
@@ -27,17 +27,17 @@
         <swiper-slide
           class="bible-list"
           v-for="(item, index) in home.json.detail"
-          :key="index"
+          :key="'bi' + index"
         >
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
           <p
             class="bible-list-title"
-            v-for="(content, index) in item.homeDetail"
-            :key="index"
+            v-for="(content, index2) in item.homeDetail"
+            :key="'bi2' + index2"
           >
-            {{ content }}
+            {{ $t(`homeBible.detail[${index}].homeDetail[${index2}]`) }}
           </p>
         </swiper-slide>
       </swiper>
@@ -55,17 +55,17 @@
         <swiper-slide
           class="bible-list"
           v-for="(item, index) in home.json.detail"
-          :key="index"
+          :key="'bi3' + index"
         >
           <a class="bible-list-detail" target="blank" :href="item.homeUrl">
             <img :src="item.homeImg" :alt="item.homeDetail" />
           </a>
           <p
             class="bible-list-title"
-            v-for="(content, index) in item.homeDetail"
-            :key="index"
+            v-for="(content, index2) in item.homeDetail"
+            :key="'bi4' + index2"
           >
-            {{ content }}
+            {{ $t(`homeBible.detail[${index}].homeDetail[${index2}]`) }}
           </p>
         </swiper-slide>
       </swiper>

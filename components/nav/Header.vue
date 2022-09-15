@@ -31,7 +31,7 @@
                 :key="'ab' + i"
               >
                 <a :href="list.link" @click.stop target="view_window">
-                  {{ list.title }}
+                  {{ $t(`NavHeader[${index1}].child[${i}].title`) }}
                 </a>
               </el-menu-item>
               <el-menu-item
@@ -40,7 +40,9 @@
                 :index="localePath(`/detail/${item.id}-${list.id}`)"
                 :key="'bb' + i"
               >
-                {{ list.title }}
+                <NuxtLink :to="localePath(`/detail/${item.id}-${list.id}`)">
+                  {{ $t(`NavHeader[${index1}].child[${i}].title`) }}
+                </NuxtLink>
               </el-menu-item>
             </template>
             <el-menu-item

@@ -96,6 +96,11 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n'
   ],
+  buildModules: [
+    ['@nuxt-modules/compression', {
+      algorithm: 'gzip',
+    }]
+  ],
   target: 'static',
   i18n: {
     strategy: 'prefix',
