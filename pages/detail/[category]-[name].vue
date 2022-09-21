@@ -38,6 +38,8 @@ import LanguageLearning from "/assets/json/LanguageLearning.json";
 const pageData1 = ref(LanguageLearning);
 import EducationalTheory from "/assets/json/EducationalTheory.json";
 const pageData2 = ref(EducationalTheory);
+import CreatedArticle from "/assets/json/CreatedArticle.json";
+const pageData3 = ref(CreatedArticle);
 const route = useRoute();
 const { locale, locales } = useI18n();
 const localePath = useLocalePath();
@@ -52,6 +54,9 @@ if (category == "Method") {
 } else if (category == "Theory") {
   pageData = pageData2.value.educationalTheory;
   langKey = "educationalTheory";
+} else if (category == "Article") {
+  pageData = pageData3.value.someArticles;
+  langKey = "someArticles";
 }
 const tabChange = function (TabsPaneContext) {
   navigateTo(localePath(`/detail/${category}-${TabsPaneContext.props.name}`));
