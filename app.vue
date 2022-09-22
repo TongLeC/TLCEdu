@@ -3,6 +3,7 @@
     <nav-header />
     <NuxtPage />
     <nav-footer />
+    <div class="footer-box"></div>
     <a
       href="https://www.tongleclass.com/"
       target="blank"
@@ -10,6 +11,15 @@
     >
       <svg-course-svg></svg-course-svg>
     </a>
+    <div class="phone-course-box">
+      <a
+        href="https://www.tongleclass.com/"
+        target="blank"
+        class="phone-course-btn"
+      >
+        {{ $t("msg.experienceCourses") }}
+      </a>
+    </div>
   </main>
 </template>
 <script setup>
@@ -31,7 +41,11 @@ provide(ID_INJECTION_KEY, {
 <style lang="scss">
 @media screen and (max-width: 768px) {
   .main-course-btn {
-    bottom: 5px !important;
+    display: none;
+  }
+  .phone-course-box,
+  .footer-box {
+    display: block !important;
   }
 }
 #app {
@@ -54,5 +68,29 @@ provide(ID_INJECTION_KEY, {
   right: 5px;
   bottom: 50%;
   z-index: 999;
+}
+.footer-box {
+  width: 100%;
+  height: 64px;
+  display: none;
+}
+.phone-course-box {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  // text-align: center;
+  // padding: 20px;
+  // background: $bg-main-color;
+}
+.phone-course-btn {
+  display: block;
+  padding: 17px 25px;
+  font-size: 20px;
+  // border-radius: 15px;
+  color: $main-color;
+  background: $bg-main-color;
 }
 </style>
