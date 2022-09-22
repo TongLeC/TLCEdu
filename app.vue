@@ -8,7 +8,7 @@
       target="blank"
       class="main-course-btn"
     >
-      {{ $t("msg.experienceCourses") }}
+      <svg-course-svg></svg-course-svg>
     </a>
   </main>
 </template>
@@ -27,14 +27,11 @@ provide(ID_INJECTION_KEY, {
   current: 0,
 });
 </script>
+
 <style lang="scss">
 @media screen and (max-width: 768px) {
   .main-course-btn {
-    writing-mode: horizontal-tb !important;
-    border-radius: 15px;
-    right: 5px;
     bottom: 5px !important;
-    box-shadow: 0 0 5px $shadow-color;
   }
 }
 #app {
@@ -53,11 +50,6 @@ provide(ID_INJECTION_KEY, {
   min-height: 100vh;
 }
 .main-course-btn {
-  writing-mode: vertical-rl;
-  background: #ea4335;
-  color: #fff;
-  padding: 10px;
-  border-radius: 15px;
   position: fixed;
   right: 5px;
   bottom: 50%;
