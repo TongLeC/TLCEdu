@@ -237,34 +237,91 @@
       ]
     },
     {
-      "type": "0",
+      "type": "1",
       "id": "Article",
       "href": "Article",
       "msg": "msg.originalArticle",
       "child": [
         {
+          "id": "e4f8s6f5",
           "title": "文以载道：“文”",
-          "link": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741171&idx=1&sn=01f1229d7c349da07e529d728557ced0&scene=21#wechat_redirect"
+          "detail": [
+            "<p style='text-align: center'>“文以载道”的艺术命题是宋代周敦颐提出来的。</p>",
+            "<p style='text-align: center'>中国哲学说</p>",
+            "<p style='text-align: center; color: #021eaa'>“道生一，一生二，二生三，三生万物”《老子》</p>",
+            "<p style='text-align: center'>或者</p>",
+            "<p style='text-align: center; color: #021eaa'>“无极生太极，太极生两仪，两仪生四象，四象生八卦，八八六十四卦衍生万物。”</p>",
+            "我们来看看<strong style='font-size: 2rem'>“文”</strong>字的写法：一点、一横、一交叉。是不是就如“道生一，一生二”，或者“无极生太极，太极生两仪”的变化？ 其中两仪相交的，由此而衍生万物。文字结构和各种组合也同样承载了我们的文化和智慧。"
+          ]
         },
         {
+          "id": "f1sd5415rd",
           "title": "文以载道：“语言”",
-          "link": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741173&idx=1&sn=db49dc04df2d053d17dd05b2e0e2188d&scene=21#wechat_redirect"
+          "detail": [
+            "我们现在一般将<strong style='font-size: 2rem'>语言</strong>当作一个词用，其实语和言是有差别的。基本每个汉字都有它自己独特的意思。如果一个字能表达的，为什么要用两字呢？",
+            "<strong style='font-size: 2rem'>语</strong>是指比较随意的话音。<strong style='font-size: 2rem'>言</strong>就不是随便说话，聊天；而是比较深思熟虑的文章；或是条理有章法的讲话。让我们来看看语和言组的词：",
+            "<p style='text-align: center; color: #021eaa'>鸟<strong>语</strong>花香</p>",
+            "<p style='text-align: center; color: #021eaa'><strong>语</strong>无伦次</p>",
+            "<p style='text-align: center; color: #021eaa'><strong>语</strong>焉不详</p>",
+            "<p style='text-align: center; color: #021eaa'>沉吟不<strong>语</strong></p>",
+            "<p style='text-align: center; color: #021eaa'>牙牙学<strong>语</strong></p>",
+            "<p style='text-align: center; color: #021eaa'>燕<strong>语</strong>莺声</p>",
+            "<p style='text-align: center; color: #021eaa'><strong>言</strong>之有理</p>",
+            "<p style='text-align: center; color: #021eaa'>一<strong>言</strong>既出</p>",
+            "<p style='text-align: center; color: #021eaa'>万<strong>言</strong>书</p>",
+            "<p style='text-align: center; color: #021eaa'>一<strong>言</strong>堂</p>",
+            "<p style='text-align: center; color: #021eaa'>一家之<strong>言</strong></p>",
+            "<p style='text-align: center; color: #021eaa'>忠<strong>言</strong>逆耳</p>",
+            "<p style='text-align: center; color: #021eaa'>一<strong>言</strong>九鼎</p>",
+            "我们小学学的是语文。：)"
+          ]
         },
         {
-          "title": "文以载道：“仁”",
-          "link": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741175&idx=1&sn=62aeffe924d11ca5557bf2d1b73f797b&scene=21#wechat_redirect"
+          "id": "dg25df8a6",
+          "title": "文以载道：“仁” ",
+          "detail": [
+            "<strong style='font-size: 2rem'>“仁”</strong>在中国古代代表一种含义极广的道德范畴。各种含义和引申不下二十种。其根本意思就是指宇宙中能让事物有序发展的信息。就像果仁的仁，最主要的特性就是能生长和有序发展，有好生之德。",
+            "仁的构字右边是二，果仁也是阴阳两瓣，能化育生长。",
+            "孔子把“仁”作为最高的道德原则、道德标准和道德境界。让周围的人和事物都能得到良好的发展，就是仁德。这正如《道德经》所说的“生而不有，为而不恃，功成而弗居。”",
+            "母亲对孩子的爱就充分体现了这种仁德。祝天下母亲节日快乐！"
+          ]
         },
         {
-          "title": "文以载道：“我”",
-          "link": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741179&idx=1&sn=26979dae6f9641826f81b735508dab1c&scene=21#wechat_redirect"
+          "id": "4dcs5efr8t9",
+          "title": "文以载道：“我” ",
+          "detail": [
+            "<strong style='font-size: 2rem'>我</strong>字的结构很巧妙。如果将它左右分开，就是两个照着镜子的“戈”。 一般人常常有两个相互打架的自我。",
+            "但如果将<strong style='font-size: 2rem'>我</strong>上下分开，是”找一”。找一就是完善自我的过程，既是理又是法。认知合一无碍，就有智慧；知行合一，就有执行力；形神合一，就能气血流通。",
+            "由下而上代表逆求，又蕴含着道家“顺成人，逆成仙”的思想。最后让我们看看《老子》中的一：",
+            "<p style='text-align: center; color: #021eaa'>天得一以清，</p>",
+            "<p style='text-align: center; color: #021eaa'>地得一以宁，</p>",
+            "<p style='text-align: center; color: #021eaa'>神得一以灵，</p>",
+            "<p style='text-align: center; color: #021eaa'>谷得一以盈，</p>",
+            "<p style='text-align: center; color: #021eaa'>万物得一以生，</p>",
+            "<p style='text-align: center; color: #021eaa'>侯王得一以为天下贞。</p>"
+          ]
         },
         {
-          "title": "文以载道：“比”",
-          "link": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741186&idx=1&sn=4b5270b1fd30f161df6bb9e27ca07db5&scene=21#wechat_redirect"
+          "id": "q9r63w",
+          "title": "文以载道：“比” ",
+          "detail": [
+            "<strong style='font-size: 2rem'>“比”</strong>字由两个匕字组成。有言道“比字两把刀，伤人又伤己”。提出了攀比的危险。",
+            "如果通过切磋，比试来找出自己不足，而去完善自我，这是好事。“子曰：三人行，必有我师焉。”",
+            "但如果想着要盖过别人的心态去比试，那就错了。好与不好全在一念之间。",
+            " 说到这里，想起西游记中降伏黑熊怪的一段。孙悟空在半道中打死了前去参加黑熊怪“佛衣会”的凌虚子，然后建议观音菩萨变作凌虚子去见黑熊怪。菩萨以心会意，以意会身，变得丝毫不差。悟空看了，拍手道：“妙啊!妙啊!是妖精菩萨，还是菩萨妖精？”菩萨笑道：“悟空，菩萨、妖精，<strong>总是一念</strong>。” 悟空心下顿悟。"
+          ]
         },
         {
-          "title": "文以载道：“武”",
-          "link": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741188&idx=1&sn=ab2ae22b434aab7be42d2f3839ebe855&scene=21#wechat_redirect"
+          "id": "1c4ds5f65",
+          "title": "文以载道：“武” ",
+          "detail": [
+            "“止戈为<strong style='font-size: 2rem'>武</strong>”, 《孙子兵法》云：“百战百胜，非善之善者也；不战而屈人之兵，善之善者也。” 小到个人，大到国家， 打往往都不是最好的选择。现代很多军事和政治战略都用上了不战而屈人之兵的思想，如威慑，预防性外交，合作安全等。其实我们祖宗造字时就已经将极高的哲学智慧融在了字当中。",
+            "最后，让我们在再来欣赏一下杜甫威武的《前出塞》",
+            "<p style='text-align: center'>挽弓当挽强，用箭当用长。</p>",
+            "<p style='text-align: center'>射人先射马，擒贼先擒王。</p>",
+            "<p style='text-align: center'>杀人亦有限，列国自有疆。</p>",
+            "<p style='text-align: center'>苟能制侵陵，岂在多杀伤！</p>"
+          ]
         }
       ]
     }
