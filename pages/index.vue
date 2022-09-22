@@ -145,9 +145,6 @@
       <home-book-assembly :home="home[0]"></home-book-assembly>
       <home-free-assembly :home="home[1]"></home-free-assembly>
     </div>
-    <a href="https://www.tongleclass.com/" target="blank" class="course-btn">
-      {{ $t("msg.experienceCourses") }}
-    </a>
   </main>
 </template>
 <script setup>
@@ -275,13 +272,6 @@ export default {
   .home-video-box {
     width: 90% !important;
   }
-  .course-btn {
-    writing-mode: horizontal-tb !important;
-    border-radius: 15px;
-    right: 5px;
-    bottom: 5px !important;
-    box-shadow: 0 0 5px $shadow-color;
-  }
 }
 @media screen and (max-width: 1140px) {
   .home-video {
@@ -331,17 +321,6 @@ export default {
   0% {
     fill: #6dabdd;
   }
-}
-.course-btn {
-  writing-mode: vertical-rl;
-  background: #ea4335;
-  color: #fff;
-  padding: 10px;
-  border-radius: 15px;
-  position: fixed;
-  right: 5px;
-  bottom: 50%;
-  z-index: 999;
 }
 .home-page {
   background: $sub-color;

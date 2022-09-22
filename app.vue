@@ -3,6 +3,13 @@
     <nav-header />
     <NuxtPage />
     <nav-footer />
+    <a
+      href="https://www.tongleclass.com/"
+      target="blank"
+      class="main-course-btn"
+    >
+      {{ $t("msg.experienceCourses") }}
+    </a>
   </main>
 </template>
 <script setup>
@@ -21,6 +28,15 @@ provide(ID_INJECTION_KEY, {
 });
 </script>
 <style lang="scss">
+@media screen and (max-width: 768px) {
+  .main-course-btn {
+    writing-mode: horizontal-tb !important;
+    border-radius: 15px;
+    right: 5px;
+    bottom: 5px !important;
+    box-shadow: 0 0 5px $shadow-color;
+  }
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,5 +51,16 @@ provide(ID_INJECTION_KEY, {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.main-course-btn {
+  writing-mode: vertical-rl;
+  background: #ea4335;
+  color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  position: fixed;
+  right: 5px;
+  bottom: 50%;
+  z-index: 999;
 }
 </style>
