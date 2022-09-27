@@ -11,15 +11,15 @@
     >
       <svg-course-svg></svg-course-svg>
     </a>
-    <div class="phone-course-box">
-      <a
-        href="https://www.tongleclass.com/"
-        target="blank"
-        class="phone-course-btn"
-      >
-        {{ $t("msg.experienceCourses") }}
-      </a>
-    </div>
+    <!-- <div class="phone-course-box"> -->
+    <a
+      href="https://www.tongleclass.com/"
+      target="blank"
+      class="phone-course-btn"
+    >
+      <svg-phone-svg></svg-phone-svg>
+    </a>
+    <!-- </div> -->
   </main>
 </template>
 <script setup>
@@ -43,7 +43,7 @@ provide(ID_INJECTION_KEY, {
   .main-course-btn {
     display: none;
   }
-  .phone-course-box,
+  .phone-course-btn,
   .footer-box {
     display: block !important;
   }
@@ -74,23 +74,11 @@ provide(ID_INJECTION_KEY, {
   height: 64px;
   display: none;
 }
-.phone-course-box {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  // text-align: center;
-  // padding: 20px;
-  // background: $bg-main-color;
-}
 .phone-course-btn {
-  display: block;
-  padding: 17px 25px;
-  font-size: 20px;
-  // border-radius: 15px;
-  color: $main-color;
-  background: $bg-main-color;
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
 }
 </style>
