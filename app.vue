@@ -11,7 +11,6 @@
     >
       <svg-course-svg></svg-course-svg>
     </a>
-    <!-- <div class="phone-course-box"> -->
     <a
       href="https://www.tongleclass.com/"
       target="blank"
@@ -19,7 +18,6 @@
     >
       <svg-phone-svg></svg-phone-svg>
     </a>
-    <!-- </div> -->
   </main>
 </template>
 <script setup>
@@ -71,8 +69,9 @@ provide(ID_INJECTION_KEY, {
 }
 .footer-box {
   width: 100%;
-  height: 64px;
+  height: 70px;
   display: none;
+  background: $main-color;
 }
 .phone-course-btn {
   display: none;
