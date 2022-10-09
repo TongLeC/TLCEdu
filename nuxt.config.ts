@@ -137,12 +137,16 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: '同乐中文教育',
+      title: '同乐中文(TongLe Chinese)-值得您信赖的海外高端中文教育品牌！',
       meta: [
         {
           name: "description",
-          content: "首页是网站所有内容的指引，包括同乐语言学习法，同乐整体教育理论，教育践谈，公益资源，原创文章，同乐书籍等",
+          content: "同乐中文学校（TongLe Chinese School）位于美国西雅图（Seattle）,致力于提供最优质的中文教育资源,开发了一套系统的中文学习方法,教学知识面包括拼音（Pinyin）、汉字（Chinese character）、阅读（reading）、写作（writing）、中国文化（Chinese culture）、国学经典（Chinese classics）、演讲（speech）、AP、HSK等。",
         },
+        {
+          name: "keywords",
+          content: "西雅图,同乐中文,优质,中文教育,中文学习,教学知识面广,拼音（Pinyin）,汉字（Chinese character）,阅读（reading）,写作（writing）,中国文化（Chinese culture）,国学经典（Chinese classics）,演讲（speech）,AP,HSK"
+        }
       ],
       script: [
         { src: '/jquery-3.5.1/jquery-3.5.1.min.js' }

@@ -30,12 +30,16 @@ import aaa from "/assets/json/CreatedArticle.json";
 const createdArticleJson = ref(aaa);
 
 useHead({
-  title: "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧",
+  title: "同乐中文带你了解汉字的背后的秘密，意想不到的有趣！",
   meta: [
     {
       name: "description",
       content:
-        "对汉字的解读，不仅是理解字义，更是通达汉字背后的“道”。文与武、朋与友、仙与俗，简单的文字背后，蕴含着深刻的“道”",
+        "学习汉字（Chinese character）,不只是记忆、书写、朗读,更要明白其背后的文化内涵（cultural connotation）。文与武、朋与友、仙与俗,一个个简单的汉字背后,都蕴含着深刻的文化与智慧。",
+    },
+    {
+      name: "keywords",
+      content: "西雅图,同乐中文,汉字,文化内涵,智慧",
     },
   ],
 });

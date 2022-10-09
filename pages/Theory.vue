@@ -29,12 +29,17 @@ const educationalTheoryJson = ref(EducationalTheory);
 // );
 
 useHead({
-  title: "同乐整体教育理论，放眼生命全程，立足中国文化，融贯文史哲科",
+  title: "同乐中文(TongLe Chinese)-革新式教育理念，更高更远我们做得到！",
   meta: [
     {
       name: "description",
       content:
-        "诵读经典对学习中文帮助很大，经典有高度的思想价值，引导正确的价值观。读经典的起跑线在哪里并不重要，家长有了意识之后，随时随地可以开始。诵读时，正心诚意，放声朗读，不用物质奖励来引导孩子读经，才能真正享受经典带来的快乐，学以致用、活学活用。",
+        "同乐中文教育放眼个体生命全程,以整体提升孩子的生命、身心状态为最终目标。立足中国经典与文化（Chinese classics and culture）,教学知识面广,覆盖文学（literature）、历史（history）、哲学（philosophy）、科学（science）,教育理念科学创新,不仅致力于语言学习（Language learning）,更将良好的价值观传递给下一代。",
+    },
+    {
+      name: "keywords",
+      content:
+        "西雅图,同乐中文,生命全程,整体提升,经典与文化,教学知识面广,文学（literature）,历史（history）,哲学（philosophy）,科学（science）,教育理念,语言学习,价值观",
     },
   ],
 });
