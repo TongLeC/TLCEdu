@@ -131,6 +131,9 @@ locales.forEach(locale => {
   EducationalTheory.educationalTheory.forEach(element => {
     url.push(`/${locale.code}/detail/Theory-${element.id}`)
   })
+  CreatedArticle.someArticles.forEach(element => {
+    url.push(`/${locale.code}/detail/Article-${element.id}`)
+  })
 })
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
