@@ -8,17 +8,21 @@
       <ul class="language-right row">
         <li
           class="language-list col-sm-4 col-xs-12"
-          v-for="(item, index) in createdArticleJson.CreatedArticle"
+          v-for="(item, index) in createdArticleJson.someArticles"
           :key="index"
         >
-          <a
+          <!-- <a
             class="language-list-detail"
             :href="item.articleLink"
             target="blank"
           >
             {{ $t(`CreatedArticle[${index}].articleTitle`) }}
             <span class="bookmark"></span>
-          </a>
+          </a> -->
+          <p class="language-list-detail" @click="getItem(item)">
+            {{ $t(`someArticles[${index}].title`) }}
+            <span class="bookmark"></span>
+          </p>
         </li>
       </ul>
     </div>
@@ -28,6 +32,7 @@
 <script setup>
 import aaa from "/assets/json/CreatedArticle.json";
 const createdArticleJson = ref(aaa);
+const localePath = useLocalePath();
 
 useHead({
   title: "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧",
@@ -43,6 +48,11 @@ useHead({
 <script>
 export default {
   name: "CreatedArticle",
+  methods: {
+    getItem(item) {
+      navigateTo(this.localePath(`/detail/Article-${item.id}`));
+    },
+  },
 };
 </script>
 

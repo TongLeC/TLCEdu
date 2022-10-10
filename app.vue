@@ -3,6 +3,21 @@
     <nav-header />
     <NuxtPage />
     <nav-footer />
+    <div class="footer-box"></div>
+    <a
+      href="https://www.tongleclass.com/"
+      target="blank"
+      class="main-course-btn"
+    >
+      <svg-course-svg></svg-course-svg>
+    </a>
+    <a
+      href="https://www.tongleclass.com/"
+      target="blank"
+      class="phone-course-btn"
+    >
+      <svg-phone-svg></svg-phone-svg>
+    </a>
   </main>
 </template>
 <script setup>
@@ -20,7 +35,17 @@ provide(ID_INJECTION_KEY, {
   current: 0,
 });
 </script>
+
 <style lang="scss">
+@media screen and (max-width: 768px) {
+  .main-course-btn {
+    display: none;
+  }
+  .phone-course-btn,
+  .footer-box {
+    display: block !important;
+  }
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,5 +60,24 @@ provide(ID_INJECTION_KEY, {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.main-course-btn {
+  position: fixed;
+  right: 5px;
+  bottom: 50%;
+  z-index: 999;
+}
+.footer-box {
+  width: 100%;
+  height: 70px;
+  display: none;
+  background: $main-color;
+}
+.phone-course-btn {
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
 }
 </style>
