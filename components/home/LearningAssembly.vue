@@ -33,7 +33,15 @@
             v-for="(item, index) in home.json.sloganListOne"
             :key="index"
           >
-            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+            <NuxtLink
+              :to="
+                localePath(
+                  `/detail/${home.json.id}-${$baseUtils.getTitleFormat(
+                    item.title
+                  )}`
+                )
+              "
+            >
               <p class="language-list-detail">
                 {{ $t(`homeSloganLearning.sloganListOne[${index}].title`) }}
               </p>
@@ -50,9 +58,16 @@
             class="language-list"
             v-for="(item, index) in home.json.sloganListTwo"
             :key="index"
-            @click="getItem(item, home.json)"
           >
-            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+            <NuxtLink
+              :to="
+                localePath(
+                  `/detail/${home.json.id}-${$baseUtils.getTitleFormat(
+                    item.title
+                  )}`
+                )
+              "
+            >
               <p class="language-list-detail">
                 {{ $t(`homeSloganLearning.sloganListTwo[${index}].title`) }}
               </p>
@@ -75,6 +90,7 @@
 <script setup>
 const { locale } = useI18n();
 const localePath = useLocalePath();
+const { $baseUtils } = useNuxtApp();
 </script>
 
 <script>
@@ -85,11 +101,6 @@ export default {
   },
   props: {
     home: { type: Object },
-  },
-  methods: {
-    getItem(list, item) {
-      navigateTo(this.localePath(`/detail/${item.id}-${list.id}`));
-    },
   },
 };
 </script>

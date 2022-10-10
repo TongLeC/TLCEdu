@@ -29,7 +29,11 @@
         </a> -->
         <NuxtLink
           class="free-list-detail"
-          :to="localePath(`/detail/${home.json.id}-${item.id}`)"
+          :to="
+            localePath(
+              `/detail/${home.json.id}-${$baseUtils.getTitleFormat(item.title)}`
+            )
+          "
         >
           <img
             :src="item.homeImg"
@@ -46,6 +50,7 @@
 
 <script setup>
 const localePath = useLocalePath();
+const { $baseUtils } = useNuxtApp();
 </script>
 <script>
 export default {

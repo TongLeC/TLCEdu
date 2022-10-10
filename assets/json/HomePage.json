@@ -22,7 +22,7 @@
     }
   ],
   "homeSloganLearning": {
-    "id": "Method",
+    "id": "studymethod",
     "sloganTitle": "msg.languageLearning",
     "sloganDetail": [
       "子初学，倚听觉；先语言，字缓作；",
@@ -113,7 +113,7 @@
     ]
   },
   "homeSloganTheory": {
-    "id": "Theory",
+    "id": "theory",
     "sloganTitle": "msg.holisticEducationTheory",
     "slogan": [
       "放眼生命全程 立足中国文化 融贯文史哲科"
@@ -279,7 +279,7 @@
     ]
   },
   "homeArticle": {
-    "id": "Article",
+    "id": "article",
     "describe": "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧。",
     "articleList": [
       {

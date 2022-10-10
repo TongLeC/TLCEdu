@@ -87,13 +87,13 @@ const locales = [{
 const url = [];
 locales.forEach(locale => {
   LanguageLearning.languageLearning.forEach(element => {
-    url.push(`/${locale.code}/detail/Method-${element.id}`)
+    url.push(`/${locale.code}/detail/studymethod-${element.id}`)
   });
   EducationalTheory.educationalTheory.forEach(element => {
-    url.push(`/${locale.code}/detail/Theory-${element.id}`)
+    url.push(`/${locale.code}/detail/theory-${element.id}`)
   })
   CreatedArticle.someArticles.forEach(element => {
-    url.push(`/${locale.code}/detail/Article-${element.id}`)
+    url.push(`/${locale.code}/detail/article-${element.id}`)
   })
 })
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -172,7 +172,7 @@ export default defineNuxtConfig({
       {
         path: '/sitemap-main.xml',
         exclude: [
-          '/Article', '/Method', '/Resources', '/Speech', '/Theory', '/TongleBook', '/',
+          '/Article', '/studymethod', '/Resources', '/Speech', '/Theory', '/TongleBook', '/',
         ],
         i18n: true,
         defaults: {

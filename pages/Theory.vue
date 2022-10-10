@@ -46,7 +46,7 @@ export default {
   name: "EducationalTheory",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/Theory-${item.id}`));
+      navigateTo(this.localePath(`/detail/theory-${item.id}`));
     },
   },
 };

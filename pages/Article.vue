@@ -50,7 +50,7 @@ export default {
   name: "CreatedArticle",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/Article-${item.id}`));
+      navigateTo(this.localePath(`/detail/article-${item.id}`));
     },
   },
 };

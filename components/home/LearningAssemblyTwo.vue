@@ -27,7 +27,15 @@
             v-for="(item, index) in home.json.sloganList"
             :key="index"
           >
-            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+            <NuxtLink
+              :to="
+                localePath(
+                  `/detail/${home.json.id}-${$baseUtils.getTitleFormat(
+                    item.title
+                  )}`
+                )
+              "
+            >
               <p class="language-list-detail">
                 {{ $t(`homeSloganTheory.sloganList[${index}].title`) }}
               </p>
@@ -42,6 +50,7 @@
 <script setup>
 const { locale } = useI18n();
 const localePath = useLocalePath();
+const { $baseUtils } = useNuxtApp();
 </script>
 
 <script>

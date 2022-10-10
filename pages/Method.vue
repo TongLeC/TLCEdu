@@ -46,7 +46,7 @@ export default {
   name: "LanguageLearning",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/Method-${item.id}`));
+      navigateTo(this.localePath(`/detail/studymethod-${item.id}`));
     },
   },
 };

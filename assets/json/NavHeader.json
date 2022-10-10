@@ -2,7 +2,7 @@
   "NavHeader": [
     {
       "type": "1",
-      "id": "Method",
+      "id": "studymethod",
       "href": "Method",
       "msg": "msg.languageLearning",
       "child": [
@@ -66,7 +66,7 @@
     },
     {
       "type": "1",
-      "id": "Theory",
+      "id": "theory",
       "href": "Theory",
       "msg": "msg.holisticEducationTheory",
       "child": [
@@ -238,7 +238,7 @@
     },
     {
       "type": "1",
-      "id": "Article",
+      "id": "article",
       "href": "Article",
       "msg": "msg.originalArticle",
       "child": [

@@ -9,13 +9,20 @@
       <el-tab-pane
         v-for="(item, index) in pageData"
         :key="'a' + index"
-        :name="item.id"
+        :name="$baseUtils.getTitleFormat(item.title)"
         ><template #label>
           <span>
             {{ $t(`${langKey}[${index}].title`) }}
           </span>
         </template>
-        <section class="language-learning-detail" v-if="item.id == activeTab">
+        <section
+          class="language-learning-detail"
+          v-if="
+            item.id == activeTab ||
+            $baseUtils.getTitleFormat(item.title) ==
+              $baseUtils.getTitleFormat(activeTab)
+          "
+        >
           <h3 class="detail-title">
             {{ $t(`${langKey}[${index}].title`) }}
           </h3>
@@ -41,20 +48,21 @@ const pageData2 = ref(EducationalTheory);
 import CreatedArticle from "/assets/json/CreatedArticle.json";
 const pageData3 = ref(CreatedArticle);
 const route = useRoute();
+const { $baseUtils } = useNuxtApp();
 const { locale, locales } = useI18n();
 const localePath = useLocalePath();
-const category = route.params.category;
-let activeTab = route.params.name;
+const category = route.params.category.toLowerCase();
+let activeTab = $baseUtils.getTitleFormat(route.params.name);
 let pageTitle = "";
 let pageData = [];
 let langKey = "";
-if (category == "Method") {
+if (category == "studymethod") {
   pageData = pageData1.value.languageLearning;
   langKey = "languageLearning";
-} else if (category == "Theory") {
+} else if (category == "theory") {
   pageData = pageData2.value.educationalTheory;
   langKey = "educationalTheory";
-} else if (category == "Article") {
+} else if (category == "article") {
   pageData = pageData3.value.someArticles;
   langKey = "someArticles";
 }
@@ -63,9 +71,13 @@ const tabChange = function (TabsPaneContext) {
   window.scrollTo({ top: 0 });
 };
 let articleData = [];
-articleData = pageData.filter((e) => e.id == activeTab);
+articleData = pageData.filter(
+  (e) =>
+    e.id == activeTab ||
+    $baseUtils.getTitleFormat(e.title) == $baseUtils.getTitleFormat(activeTab)
+);
 if (articleData.length > 0) {
-  pageTitle = articleData[0].title;
+  pageTitle = $baseUtils.getTitleFormat(articleData[0].title);
 } else {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
