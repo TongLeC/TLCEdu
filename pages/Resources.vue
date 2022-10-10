@@ -43,19 +43,18 @@
 // );
 import aaa from "/assets/json/PublicResources.json";
 const publicResourcesJson = ref(aaa);
+const { t } = useI18n();
 
 useHead({
-  title: "同乐中文|中文爱好者福利，为海外孩子提供最优质的中文教育资源",
+  title: t("msg.SeoContent.resources.title"),
   meta: [
     {
       name: "description",
-      content:
-        "海外华人孩子学习中文的时间有限,所以要选取最有价值的内容给他们。免费下载同乐“中文寻根系列”的电子书、读经机,包含《道德经》（Dao De Jing）、《论语》（The Analects of Confucius）、《大学》、《中庸》、《孟子》等经典。音乐资源选择最经典的曲目,可用于胎教、音乐熏陶。随时随地与经典之声相伴,不知不觉圣贤智慧浸润心田。",
+      content: t("msg.SeoContent.resources.description"),
     },
     {
       name: "keywords",
-      content:
-        "西雅图,同乐中文,最有价值的,中文寻根,经典,《道德经》（Dao De Jing）,《论语》（The Analects of Confucius）,《大学》,《中庸》,《孟子》,音乐资源,胎教,熏陶,圣贤智慧",
+      content: t("msg.SeoContent.resources.keywords"),
     },
   ],
 });

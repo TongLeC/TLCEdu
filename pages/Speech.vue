@@ -71,18 +71,17 @@
 </template>
 
 <script setup>
+const { t } = useI18n();
 useHead({
-  title: "同乐中文|办学6年，培养了一大批热爱中国文化的优秀学生！",
+  title: t("msg.SeoContent.speech.title"),
   meta: [
     {
       name: "description",
-      content:
-        "教育是一门实践的艺术,实践创造出科学高效的中文学习理念（Chinese Learning Concept）。同乐开办教育讲座、教育践谈,分享5-15岁海外华裔孩子的中文教育（Chinese language education）经验、育儿经验、孩子成长经验,用优秀的中国语言文化（Chinese language and culture）帮助孩子们少走弯路,高效学中文。",
+      content: t("msg.SeoContent.speech.description"),
     },
     {
       name: "keywords",
-      content:
-        "西雅图,同乐中文,教育实践,中文学习理念,教育讲座,教育践谈,教学经验,育儿经验,成长趣事,中国语言文化,少走弯路,高效学习",
+      content: t("msg.SeoContent.speech.keywords"),
     },
   ],
 });

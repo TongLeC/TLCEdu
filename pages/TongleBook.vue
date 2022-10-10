@@ -51,20 +51,19 @@
 <script setup>
 import TongleBook from "/assets/json/TongleBook.json";
 const TongleBookJson = ref(TongleBook);
+const { t } = useI18n();
 // const { data: TongleBookJson } = await useFetch("/api/json/TongleBook");
 
 useHead({
-  title: "同乐中文精选教学材料，自主研发教材,让中文学习变得轻松！",
+  title: t("msg.SeoContent.tongleBook.title"),
   meta: [
     {
       name: "description",
-      content:
-        "同乐中文根据多年一线教育经验,自主研发教材（Chinese textbooks）,中文寻根经典教材,深入中华文明的根基；文化教材丰富多彩,包罗万象：成语、俗语、谚语、歇后语,人文、自然地理,历史,节日节气,民俗……每个年级还有相应的阅读理解、字里藏意、古诗词、语文常识、朗诵作品精选等教材。",
+      content: t("msg.SeoContent.tongleBook.description"),
     },
     {
       name: "keywords",
-      content:
-        "西雅图,同乐中文,自主研发教材,中文寻根经典教材,文化教材,阅读理解,字里藏意,古诗词,语文常识,朗诵作品精选",
+      content: t("msg.SeoContent.tongleBook.keywords"),
     },
   ],
 });

@@ -24,27 +24,25 @@
 <script setup>
 import EducationalTheory from "/assets/json/EducationalTheory.json";
 const educationalTheoryJson = ref(EducationalTheory);
+const { locale, t } = useI18n();
+const localePath = useLocalePath();
 // const { data: educationalTheoryJson } = await useFetch(
 //   "/api/json/EducationalTheory"
 // );
 
 useHead({
-  title: "同乐中文(TongLe Chinese)-革新式教育理念，更高更远我们做得到！",
+  title: t("msg.SeoContent.theory.title"),
   meta: [
     {
       name: "description",
-      content:
-        "同乐中文教育放眼个体生命全程,以整体提升孩子的生命、身心状态为最终目标。立足中国经典与文化（Chinese classics and culture）,教学知识面广,覆盖文学（literature）、历史（history）、哲学（philosophy）、科学（science）,教育理念科学创新,不仅致力于语言学习（Language learning）,更将良好的价值观传递给下一代。",
+      content: t("msg.SeoContent.theory.description"),
     },
     {
       name: "keywords",
-      content:
-        "西雅图,同乐中文,生命全程,整体提升,经典与文化,教学知识面广,文学（literature）,历史（history）,哲学（philosophy）,科学（science）,教育理念,语言学习,价值观",
+      content: t("msg.SeoContent.theory.keywords"),
     },
   ],
 });
-const { locale } = useI18n();
-const localePath = useLocalePath();
 </script>
 <script>
 export default {

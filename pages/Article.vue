@@ -28,18 +28,18 @@
 <script setup>
 import aaa from "/assets/json/CreatedArticle.json";
 const createdArticleJson = ref(aaa);
+const { t } = useI18n();
 
 useHead({
-  title: "同乐中文带你了解汉字的背后的秘密，意想不到的有趣！",
+  title: t("msg.SeoContent.article.title"),
   meta: [
     {
       name: "description",
-      content:
-        "学习汉字（Chinese character）,不只是记忆、书写、朗读,更要明白其背后的文化内涵（cultural connotation）。文与武、朋与友、仙与俗,一个个简单的汉字背后,都蕴含着深刻的文化与智慧。",
+      content: t("msg.SeoContent.article.description"),
     },
     {
       name: "keywords",
-      content: "西雅图,同乐中文,汉字,文化内涵,智慧",
+      content: t("msg.SeoContent.article.keywords"),
     },
   ],
 });

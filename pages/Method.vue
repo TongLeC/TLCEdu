@@ -26,21 +26,19 @@ const languageLearningJson = ref(aaa);
 // const { data: languageLearningJson } = await useFetch(
 //   "/api/json/LanguageLearning"
 // );
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const localePath = useLocalePath();
 
 useHead({
-  title: "同乐中文|海外华人孩子学习中文最高效的方法是什么？",
+  title: t("msg.SeoContent.method.title"),
   meta: [
     {
       name: "description",
-      content:
-        "同乐中文基于多年一线教学经验,首创“先语言文化后识字（Chinese character）,感知式学习,整体吸收,螺旋式上升”等崭新的、自然高效的学习理念和方法（The Most Effective Language Learning Method）。从引导孩子对中国文化（Chinese culture）的兴趣入手,遵循孩子智力发育和语言学习规律,精心创作学习材料,安排学习次序,达到三年一小成、五年一大成、十年精且纯的教学目标。",
+      content: t("msg.SeoContent.method.description"),
     },
     {
       name: "keywords",
-      content:
-        "西雅图,同乐中文,一线教学经验,语言文化,识字,感知学习,整体吸收,崭新,自然高效,理念,方法,中国文化,兴趣,学习材料,学习次序,三年小成,五年大成,十年精纯,教学目标",
+      content: t("msg.SeoContent.method.keywords"),
     },
   ],
 });
