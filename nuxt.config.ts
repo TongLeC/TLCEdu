@@ -8,6 +8,7 @@ import LanguageLearning from './assets/json/LanguageLearning.json'
 import NavHeader from './assets/json/NavHeader.json'
 import PublicResources from './assets/json/PublicResources.json'
 import TongleBook from './assets/json/TongleBook.json'
+import base from './service/base';
 const restore = OpenCC.Converter({ from: "cn", to: "hk" });
 function deepClone(target) {
   if (typeof target === "object" && target) {
@@ -87,13 +88,13 @@ const locales = [{
 const url = [];
 locales.forEach(locale => {
   LanguageLearning.languageLearning.forEach(element => {
-    url.push(`/${locale.code}/detail/studymethod-${element.id}`)
+    url.push(`/${locale.code}/detail/studymethod-${base.getTitleFormat(element.title)}`)
   });
   EducationalTheory.educationalTheory.forEach(element => {
-    url.push(`/${locale.code}/detail/theory-${element.id}`)
+    url.push(`/${locale.code}/detail/theory-${base.getTitleFormat(element.title)}`)
   })
   CreatedArticle.someArticles.forEach(element => {
-    url.push(`/${locale.code}/detail/article-${element.id}`)
+    url.push(`/${locale.code}/detail/article-${base.getTitleFormat(element.title)}`)
   })
 })
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
