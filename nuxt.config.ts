@@ -84,13 +84,13 @@ const locales = [{
   iso: 'zh-Hant'
 }
 ];
-const url = [];
+const url = ['/404'];
 locales.forEach(locale => {
   LanguageLearning.languageLearning.forEach(element => {
-    url.push(`/${locale.code}/detail/Method-${element.id}`)
+    url.push(`/${locale.code}/detail/Method-${element.id}/`)
   });
   EducationalTheory.educationalTheory.forEach(element => {
-    url.push(`/${locale.code}/detail/Theory-${element.id}`)
+    url.push(`/${locale.code}/detail/Theory-${element.id}/`)
   })
 })
 // https://v3.nuxtjs.org/api/configuration/nuxt.config

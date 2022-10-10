@@ -1,0 +1,31 @@
+name: Application CI
+on:
+  push:
+    branches: [ "Fix/68.404-Page-missing" ]
+
+jobs:
+  build-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install NPM Modules
+        run: npm install
+      - name: Generate project
+        run: |
+          npm run generate
+      - name: Remove docs
+        run: |
+          rm -rf docs/
+      - name: Move public to docs
+        run: |
+          mkdir docs
+          cp -R .output/public/* docs/
+          mv docs/404/index.html docs/404.html
+          echo 'tonglec.org' > docs/CNAME
+      - name: Push results to origin
+        run: |
+          git config --global user.name 'TongLeC'
+          git config --global user.email 'TongLeChinese@tonglec.org'
+          git add docs
+          git commit -m "Build /docs for static serve"
+          git push
