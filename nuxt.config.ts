@@ -75,8 +75,8 @@ const zh_hans = {
     SeoContent: {
       home: {
         title: "同乐中文(TongLe Chinese)-值得您信赖的海外高端中文教育品牌！",
-        description: "同乐中文学校（TongLe Chinese School）位于美国西雅图（Seattle）,致力于提供最优质的中文教育资源,开发了一套系统的中文学习方法,教学知识面包括拼音（Pinyin）、汉字（Chinese character）、阅读（reading）、写作（writing）、中国文化（Chinese culture）、国学经典（Chinese classics）、演讲（speech）、AP、HSK等。",
-        keywords: "西雅图,同乐中文,优质,中文教育,中文学习,教学知识面广,拼音（Pinyin）,汉字（Chinese character）,阅读（reading）,写作（writing）,中国文化（Chinese culture）,国学经典（Chinese classics）,演讲（speech）,AP,HSK"
+        description: "同乐中文学校（TongLe Chinese School）位于美国西雅图（Seattle）,致力于提供最优质的中文教育资源,开发了一套系统的中文学习方法。提供线上与线下中文课，包括AP、HSK备考；内容有拼音（Pinyin）、汉字（Chinese character）、阅读（reading）、写作（writing）、中国文化（Chinese culture）、国学经典（Chinese classics）、演讲（speech）等。",
+        keywords: "西雅图,同乐中文,优质,online, on-site,中文班,中文课,AP,HSK,拼音（Pinyin）,汉字（Chinese character）,阅读（reading）,写作（writing）,中国文化（Chinese culture）,国学经典（Chinese classics）,演讲（speech）"
       },
       method: {
         title: "同乐中文-海外华人孩子学习中文最高效的方法是什么？",
@@ -84,7 +84,7 @@ const zh_hans = {
         keywords: "西雅图,同乐中文,一线教学经验,语言文化,识字,感知学习,整体吸收,崭新,自然高效,理念,方法,中国文化,兴趣,学习材料,学习次序,三年小成,五年大成,十年精纯,教学目标",
       },
       theory: {
-        title: "同乐中文(TongLe Chinese)-革新式教育理念，更高更远我们做得到！",
+        title: "同乐中文(TongLe Chinese)-革新式教育理念，乐学致远！",
         description: "同乐中文教育放眼个体生命全程,以整体提升孩子的生命、身心状态为最终目标。立足中国经典与文化（Chinese classics and culture）,教学知识面广,覆盖文学（literature）、历史（history）、哲学（philosophy）、科学（science）,教育理念科学创新,不仅致力于语言学习（Language learning）,更将良好的价值观传递给下一代。",
         keywords: "西雅图,同乐中文,生命全程,整体提升,经典与文化,教学知识面广,文学（literature）,历史（history）,哲学（philosophy）,科学（science）,教育理念,语言学习,价值观",
       },
