@@ -1,18 +1,26 @@
 <template>
   <main class="language-learning home-container">
     <section class="other-page">
-      <h1 class="other-page-title">{{ $t("msg.languageLearning") }}</h1>
-      <p class="other-page-slogan">{{ $t("msg.slogan[0]") }}</p>
+      <h1 class="other-page-title">{{ $t("msg.originalArticle") }}</h1>
+      <p class="other-page-slogan">{{ $t("msg.slogan[5]") }}</p>
     </section>
     <div class="language-learning-box">
       <ul class="language-right row">
         <li
           class="language-list col-sm-4 col-xs-12"
-          v-for="(item, index) in languageLearningJson.languageLearning"
+          v-for="(item, index) in createdArticleJson.someArticles"
           :key="index"
         >
+          <!-- <a
+            class="language-list-detail"
+            :href="item.articleLink"
+            target="blank"
+          >
+            {{ $t(`CreatedArticle[${index}].articleTitle`) }}
+            <span class="bookmark"></span>
+          </a> -->
           <p class="language-list-detail" @click="getItem(item)">
-            {{ $t(`languageLearning[${index}].title`) }}
+            {{ $t(`someArticles[${index}].title`) }}
             <span class="bookmark"></span>
           </p>
         </li>
@@ -20,33 +28,32 @@
     </div>
   </main>
 </template>
+
 <script setup>
-import aaa from "/assets/json/LanguageLearning.json";
-const languageLearningJson = ref(aaa);
-// const { data: languageLearningJson } = await useFetch(
-//   "/api/json/LanguageLearning"
-// );
-const { locale } = useI18n();
+import aaa from "/assets/json/CreatedArticle.json";
+const createdArticleJson = ref(aaa);
+const { $baseUtils } = useNuxtApp();
 const localePath = useLocalePath();
 
 useHead({
-  title:
-    "同乐语言学习法，十数载理论探索，多年第一线教学实践，最领先、高效的语言学习方法",
+  title: "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧",
   meta: [
     {
       name: "description",
       content:
-        "学习中文语言时，听说读写是有规律的。要抓住学习中文的最佳时机，选择合适的评书，利用边角料时间去听，用深度的评书语言培养中文理解能力；还要坚持放声诵读，拒绝哑巴中文；汉字也是可以创新识字、灵活讲解的；最后，学习中文的眼光要长远，去理解语言背后的文化。",
+        "对汉字的解读，不仅是理解字义，更是通达汉字背后的“道”。文与武、朋与友、仙与俗，简单的文字背后，蕴含着深刻的“道”",
     },
   ],
 });
 </script>
 <script>
 export default {
-  name: "LanguageLearning",
+  name: "CreatedArticle",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/studymethod-${item.id}`));
+      navigateTo(
+        this.localePath(`/detail/${this.$baseUtils.getTitleFormat(item.title)}`)
+      );
     },
   },
 };

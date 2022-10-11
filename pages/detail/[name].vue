@@ -42,32 +42,45 @@
 
 <script setup>
 import LanguageLearning from "/assets/json/LanguageLearning.json";
-const pageData1 = ref(LanguageLearning);
 import EducationalTheory from "/assets/json/EducationalTheory.json";
-const pageData2 = ref(EducationalTheory);
 import CreatedArticle from "/assets/json/CreatedArticle.json";
-const pageData3 = ref(CreatedArticle);
+const pageDataArray = [
+  {
+    data: LanguageLearning.languageLearning,
+    langKey: "languageLearning",
+  },
+  {
+    data: EducationalTheory.educationalTheory,
+    langKey: "educationalTheory",
+  },
+  {
+    data: CreatedArticle.someArticles,
+    langKey: "someArticles",
+  },
+];
 const route = useRoute();
 const { $baseUtils } = useNuxtApp();
 const { locale, locales } = useI18n();
 const localePath = useLocalePath();
-const category = route.params.category.toLowerCase();
 let activeTab = $baseUtils.getTitleFormat(route.params.name);
 let pageTitle = "";
 let pageData = [];
 let langKey = "";
-if (category == "studymethod") {
-  pageData = pageData1.value.languageLearning;
-  langKey = "languageLearning";
-} else if (category == "theory") {
-  pageData = pageData2.value.educationalTheory;
-  langKey = "educationalTheory";
-} else if (category == "article") {
-  pageData = pageData3.value.someArticles;
-  langKey = "someArticles";
+
+const temp = pageDataArray.filter((e) =>
+  e.data.some(
+    (e2) =>
+      e2.id == activeTab ||
+      $baseUtils.getTitleFormat(e2.title) ==
+        $baseUtils.getTitleFormat(activeTab)
+  )
+);
+if (temp.length == 1) {
+  pageData = temp[0].data;
+  langKey = temp[0].langKey;
 }
 const tabChange = function (TabsPaneContext) {
-  navigateTo(localePath(`/detail/${category}-${TabsPaneContext.props.name}`));
+  navigateTo(localePath(`/detail/${TabsPaneContext.props.name}`));
   window.scrollTo({ top: 0 });
 };
 let articleData = [];
@@ -83,11 +96,11 @@ if (articleData.length > 0) {
 }
 
 useHead({
-  title: `${category}-${pageTitle}`,
+  title: `${pageTitle}`,
   meta: [
     {
       name: "description",
-      content: `${category}-${pageTitle}`,
+      content: `${pageTitle}`,
     },
   ],
 });

@@ -43,20 +43,14 @@
                 style="border-bottom: 1px solid #ccc"
                 v-else
                 :index="
-                  localePath(
-                    `/detail/${item.id}-${$baseUtils.getTitleFormat(
-                      list.title
-                    )}`
-                  )
+                  localePath(`/detail/${$baseUtils.getTitleFormat(list.title)}`)
                 "
                 :key="'bb' + i"
               >
                 <NuxtLink
                   :to="
                     localePath(
-                      `/detail/${item.id}-${$baseUtils.getTitleFormat(
-                        list.title
-                      )}`
+                      `/detail/${$baseUtils.getTitleFormat(list.title)}`
                     )
                   "
                   class="hearder-nav-a"
@@ -73,8 +67,8 @@
             </el-menu-item>
           </el-sub-menu>
           <el-menu-item
-            :route="localePath({ name: 'TongleBook' })"
-            :index="localePath({ name: 'TongleBook' })"
+            :route="localePath({ name: 'TongLe-Books' })"
+            :index="localePath({ name: 'TongLe-Books' })"
           >
             {{ $t("msg.tongleBooks") }}
           </el-menu-item>

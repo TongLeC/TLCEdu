@@ -3,7 +3,7 @@
     {
       "type": "1",
       "id": "studymethod",
-      "href": "Method",
+      "href": "TongLe-Language-Learning-Method",
       "msg": "msg.languageLearning",
       "child": [
         {
@@ -67,7 +67,7 @@
     {
       "type": "1",
       "id": "theory",
-      "href": "Theory",
+      "href": "Tongle-Holistic-Education-Theory",
       "msg": "msg.holisticEducationTheory",
       "child": [
         {
@@ -175,7 +175,7 @@
     {
       "type": "0",
       "id": "Speech",
-      "href": "Speech",
+      "href": "Practice-and-Sharing",
       "msg": "msg.educationalPractice",
       "child": [
         {
@@ -207,7 +207,7 @@
     {
       "type": "0",
       "id": "Resources",
-      "href": "Resources",
+      "href": "Free-Resources",
       "msg": "msg.publicWelfareResources",
       "child": [
         {
@@ -239,7 +239,7 @@
     {
       "type": "1",
       "id": "article",
-      "href": "Article",
+      "href": "TongLe-Articles",
       "msg": "msg.originalArticle",
       "child": [
         {

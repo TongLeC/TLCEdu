@@ -5,7 +5,8 @@
       <h2 class="big-title">
         {{ $t(home.json.sloganTitle) }}
         <p class="see-more">
-          <router-link :to="localePath({ name: 'Method' })"
+          <router-link
+            :to="localePath({ name: 'TongLe-Language-Learning-Method' })"
             >{{ $t("msg.seeMore") }} ></router-link
           >
         </p>
@@ -35,11 +36,7 @@
           >
             <NuxtLink
               :to="
-                localePath(
-                  `/detail/${home.json.id}-${$baseUtils.getTitleFormat(
-                    item.title
-                  )}`
-                )
+                localePath(`/detail/${$baseUtils.getTitleFormat(item.title)}`)
               "
             >
               <p class="language-list-detail">
@@ -61,11 +58,7 @@
           >
             <NuxtLink
               :to="
-                localePath(
-                  `/detail/${home.json.id}-${$baseUtils.getTitleFormat(
-                    item.title
-                  )}`
-                )
+                localePath(`/detail/${$baseUtils.getTitleFormat(item.title)}`)
               "
             >
               <p class="language-list-detail">

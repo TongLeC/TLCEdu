@@ -1,26 +1,18 @@
 <template>
   <main class="language-learning home-container">
     <section class="other-page">
-      <h1 class="other-page-title">{{ $t("msg.originalArticle") }}</h1>
-      <p class="other-page-slogan">{{ $t("msg.slogan[5]") }}</p>
+      <h1 class="other-page-title">{{ $t("msg.holisticEducationTheory") }}</h1>
+      <p class="other-page-slogan">{{ $t("msg.slogan[1]") }}</p>
     </section>
     <div class="language-learning-box">
       <ul class="language-right row">
         <li
           class="language-list col-sm-4 col-xs-12"
-          v-for="(item, index) in createdArticleJson.someArticles"
+          v-for="(item, index) in educationalTheoryJson.educationalTheory"
           :key="index"
         >
-          <!-- <a
-            class="language-list-detail"
-            :href="item.articleLink"
-            target="blank"
-          >
-            {{ $t(`CreatedArticle[${index}].articleTitle`) }}
-            <span class="bookmark"></span>
-          </a> -->
           <p class="language-list-detail" @click="getItem(item)">
-            {{ $t(`someArticles[${index}].title`) }}
+            {{ $t(`educationalTheory[${index}].title`) }}
             <span class="bookmark"></span>
           </p>
         </li>
@@ -30,27 +22,34 @@
 </template>
 
 <script setup>
-import aaa from "/assets/json/CreatedArticle.json";
-const createdArticleJson = ref(aaa);
-const localePath = useLocalePath();
+import EducationalTheory from "/assets/json/EducationalTheory.json";
+const educationalTheoryJson = ref(EducationalTheory);
+// const { data: educationalTheoryJson } = await useFetch(
+//   "/api/json/EducationalTheory"
+// );
 
 useHead({
-  title: "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧",
+  title: "同乐整体教育理论，放眼生命全程，立足中国文化，融贯文史哲科",
   meta: [
     {
       name: "description",
       content:
-        "对汉字的解读，不仅是理解字义，更是通达汉字背后的“道”。文与武、朋与友、仙与俗，简单的文字背后，蕴含着深刻的“道”",
+        "诵读经典对学习中文帮助很大，经典有高度的思想价值，引导正确的价值观。读经典的起跑线在哪里并不重要，家长有了意识之后，随时随地可以开始。诵读时，正心诚意，放声朗读，不用物质奖励来引导孩子读经，才能真正享受经典带来的快乐，学以致用、活学活用。",
     },
   ],
 });
+const { locale } = useI18n();
+const { $baseUtils } = useNuxtApp();
+const localePath = useLocalePath();
 </script>
 <script>
 export default {
-  name: "CreatedArticle",
+  name: "EducationalTheory",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/article-${item.id}`));
+      navigateTo(
+        this.localePath(`/detail/${this.$baseUtils.getTitleFormat(item.title)}`)
+      );
     },
   },
 };
@@ -77,9 +76,9 @@ export default {
         margin: 20px 0;
         .language-list-detail {
           height: 100%;
-          padding: 15px 30px;
-          background: #fff;
+          padding: 15px 20px;
           display: flex;
+          background: #fff;
           align-items: center;
           justify-content: center;
           cursor: pointer;

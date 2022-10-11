@@ -5,7 +5,8 @@
       <h2 class="big-title">
         {{ $t(home.json.sloganTitle) }}
         <p class="see-more">
-          <router-link :to="localePath({ name: 'Theory' })"
+          <router-link
+            :to="localePath({ name: 'Tongle-Holistic-Education-Theory' })"
             >{{ $t("msg.seeMore") }} ></router-link
           >
         </p>
@@ -29,11 +30,7 @@
           >
             <NuxtLink
               :to="
-                localePath(
-                  `/detail/${home.json.id}-${$baseUtils.getTitleFormat(
-                    item.title
-                  )}`
-                )
+                localePath(`/detail/${$baseUtils.getTitleFormat(item.title)}`)
               "
             >
               <p class="language-list-detail">
@@ -64,7 +61,9 @@ export default {
   },
   methods: {
     getItem(list, item) {
-      navigateTo(this.localePath(`/detail/${item.id}-${list.id}`));
+      navigateTo(
+        this.localePath(`/detail/${$baseUtils.getTitleFormat(list.title)}`)
+      );
     },
   },
 };

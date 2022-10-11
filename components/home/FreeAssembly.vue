@@ -4,7 +4,7 @@
     <h2 class="big-title">
       {{ $t(home.title) }}
       <p class="see-more">
-        <router-link :to="localePath({ name: 'Article' })"
+        <router-link :to="localePath({ name: 'TongLe-Articles' })"
           >{{ $t("msg.seeMore") }} ></router-link
         >
       </p>
@@ -29,11 +29,7 @@
         </a> -->
         <NuxtLink
           class="free-list-detail"
-          :to="
-            localePath(
-              `/detail/${home.json.id}-${$baseUtils.getTitleFormat(item.title)}`
-            )
-          "
+          :to="localePath(`/detail/${$baseUtils.getTitleFormat(item.title)}`)"
         >
           <img
             :src="item.homeImg"
@@ -60,7 +56,9 @@ export default {
   },
   methods: {
     getItem(list, item) {
-      navigateTo(this.localePath(`/detail/${item.id}-${list.id}`));
+      navigateTo(
+        this.localePath(`/detail/${$baseUtils.getTitleFormat(list.title)}`)
+      );
     },
   },
 };
