@@ -44,7 +44,6 @@ useHead({
   ],
 });
 const { $baseUtils } = useNuxtApp();
-const localePath = useLocalePath();
 </script>
 <script>
 export default {
