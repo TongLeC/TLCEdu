@@ -43,14 +43,18 @@
 // );
 import aaa from "/assets/json/PublicResources.json";
 const publicResourcesJson = ref(aaa);
+const { t } = useI18n();
 
 useHead({
-  title: "公益资源，包括免费的书籍、读经机、音乐资源、中华经典故事",
+  title: t("msg.SeoContent.resources.title"),
   meta: [
     {
       name: "description",
-      content:
-        "免费下载的书籍、读经机，可以配套使用，是同乐“中文寻根系列”，包含《老子》《大学》《中庸》《论语》等；音乐资源可用作胎教、音乐熏陶；小孩子耳根灵敏，随时随地与经典之声相伴，不知不觉圣贤智慧浸润心田。",
+      content: t("msg.SeoContent.resources.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.resources.keywords"),
     },
   ],
 });

@@ -26,17 +26,19 @@ const languageLearningJson = ref(aaa);
 // const { data: languageLearningJson } = await useFetch(
 //   "/api/json/LanguageLearning"
 // );
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const localePath = useLocalePath();
 
 useHead({
-  title:
-    "同乐语言学习法，十数载理论探索，多年第一线教学实践，最领先、高效的语言学习方法",
+  title: t("msg.SeoContent.method.title"),
   meta: [
     {
       name: "description",
-      content:
-        "学习中文语言时，听说读写是有规律的。要抓住学习中文的最佳时机，选择合适的评书，利用边角料时间去听，用深度的评书语言培养中文理解能力；还要坚持放声诵读，拒绝哑巴中文；汉字也是可以创新识字、灵活讲解的；最后，学习中文的眼光要长远，去理解语言背后的文化。",
+      content: t("msg.SeoContent.method.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.method.keywords"),
     },
   ],
 });

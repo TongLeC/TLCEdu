@@ -51,15 +51,19 @@
 <script setup>
 import TongleBook from "/assets/json/TongleBook.json";
 const TongleBookJson = ref(TongleBook);
+const { t } = useI18n();
 // const { data: TongleBookJson } = await useFetch("/api/json/TongleBook");
 
 useHead({
-  title: "同乐自主研发的教材",
+  title: t("msg.SeoContent.tongleBook.title"),
   meta: [
     {
       name: "description",
-      content:
-        "同乐书籍按照班级分类，每个年级都包含：中文寻根系列，文化系列（文化短语，地理文化，历史文化，中国人的一年，民俗文化），字里藏意，腹有诗书，阅读理解，朗诵作品精选。",
+      content: t("msg.SeoContent.tongleBook.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.tongleBook.keywords"),
     },
   ],
 });

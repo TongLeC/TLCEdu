@@ -32,15 +32,19 @@
 <script setup>
 import aaa from "/assets/json/CreatedArticle.json";
 const createdArticleJson = ref(aaa);
+const { t } = useI18n();
 const localePath = useLocalePath();
 
 useHead({
-  title: "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧",
+  title: t("msg.SeoContent.article.title"),
   meta: [
     {
       name: "description",
-      content:
-        "对汉字的解读，不仅是理解字义，更是通达汉字背后的“道”。文与武、朋与友、仙与俗，简单的文字背后，蕴含着深刻的“道”",
+      content: t("msg.SeoContent.article.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.article.keywords"),
     },
   ],
 });

@@ -71,11 +71,11 @@ if (articleData.length > 0) {
 }
 
 useHead({
-  title: `${category}-${pageTitle}`,
+  title: `${pageTitle}`,
   meta: [
     {
       name: "description",
-      content: `${category}-${pageTitle}`,
+      content: `${pageTitle}`,
     },
   ],
 });

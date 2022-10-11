@@ -150,7 +150,22 @@
 <script setup>
 import aaa from "/assets/json/HomePage.json";
 const HomePage = ref(aaa);
+const { t } = useI18n();
 // const { data: HomePage } = await useFetch("/api/json/HomePage");
+useHead({
+  title: t("msg.SeoContent.home.title"),
+  meta: [
+    {
+      name: "description",
+      content: t("msg.SeoContent.home.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.home.keywords"),
+    },
+  ],
+});
+
 const swiper_options = reactive({
   autoplay: {
     disableOnInteraction: false,
