@@ -22,6 +22,15 @@
 </template>
 <script setup>
 const i18nHead = useLocaleHead({ addSeoAttributes: true });
+let replaceHref = "";
+i18nHead.value.link.forEach((e) => {
+  if (e.hid == "i18n-xd") {
+    replaceHref = e.href;
+  }
+  if (e.hid == "i18n-can") {
+    e.href = replaceHref;
+  }
+});
 useHead({
   htmlAttrs: {
     lang: i18nHead.value.htmlAttrs.lang,
