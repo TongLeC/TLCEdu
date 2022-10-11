@@ -43,7 +43,6 @@ useHead({
     },
   ],
 });
-const { locale } = useI18n();
 const { $baseUtils } = useNuxtApp();
 const localePath = useLocalePath();
 </script>
