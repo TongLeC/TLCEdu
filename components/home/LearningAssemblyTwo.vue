@@ -5,7 +5,8 @@
       <h2 class="big-title">
         {{ $t(home.json.sloganTitle) }}
         <p class="see-more">
-          <router-link :to="localePath({ name: 'Theory' })"
+          <router-link
+            :to="localePath({ name: 'Tongle-Holistic-Education-Theory' })"
             >{{ $t("msg.seeMore") }} ></router-link
           >
         </p>
@@ -27,7 +28,11 @@
             v-for="(item, index) in home.json.sloganList"
             :key="index"
           >
-            <NuxtLink :to="localePath(`/detail/${home.json.id}-${item.id}`)">
+            <NuxtLink
+              :to="
+                localePath(`/detail/${$baseUtils.getTitleFormat(item.title)}`)
+              "
+            >
               <p class="language-list-detail">
                 {{ $t(`homeSloganTheory.sloganList[${index}].title`) }}
               </p>
@@ -42,6 +47,7 @@
 <script setup>
 const { locale } = useI18n();
 const localePath = useLocalePath();
+const { $baseUtils } = useNuxtApp();
 </script>
 
 <script>
@@ -55,7 +61,9 @@ export default {
   },
   methods: {
     getItem(list, item) {
-      navigateTo(this.localePath(`/detail/${item.id}-${list.id}`));
+      navigateTo(
+        this.localePath(`/detail/${$baseUtils.getTitleFormat(list.title)}`)
+      );
     },
   },
 };

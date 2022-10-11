@@ -22,7 +22,7 @@
     }
   ],
   "homeSloganLearning": {
-    "id": "Method",
+    "id": "studymethod",
     "sloganTitle": "msg.languageLearning",
     "sloganDetail": [
       "子初学，倚听觉；先语言，字缓作；",
@@ -113,7 +113,7 @@
     ]
   },
   "homeSloganTheory": {
-    "id": "Theory",
+    "id": "theory",
     "sloganTitle": "msg.holisticEducationTheory",
     "slogan": [
       "放眼生命全程 立足中国文化 融贯文史哲科"
@@ -279,32 +279,96 @@
     ]
   },
   "homeArticle": {
+    "id": "article",
     "describe": "秉持着“文以载道”的原则，通过趣味解说汉字，传递中国古代的文化和智慧。",
-    "detail": [
+    "articleList": [
       {
-        "homeDetail": "戏说文字：正",
+        "id": "c1v0e9fr",
+        "title": "戏说文字：正 ",
         "homeImg": "/images/article1.png",
-        "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650743896&idx=1&sn=7b7b5daee048197b22f1751ac2fce620&chksm=8763763cb014ff2a11c1330735b089f0841b609fbbb71cac6a153dd6efdce99e2e52ca83fbcb&scene=21#wechat_redirect"
+        "detail": [
+          "“止于一”就是<strong style='font-size: 2rem'>“正”</strong>。",
+          "汉字的魅力在于，它像一幅画，从不同的角度看和解读，会有不同的故事。以前说“我”字的时候（点这里看以前的<a href='https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741179&idx=1&sn=26979dae6f9641826f81b735508dab1c&chksm=87634bdfb014c2c9a2db6c0e2b61d072248210ff5474b79e81bd246f0de0735de744ff90df8b&scene=21#wechat_redirect' target='blank'>《文以载道“我”》</a>），如果左右分开看，“我”是两个“戈”，是“打架的自我”。如果从上下来看，“找一”就是我，变成“统一的自我”。再来讲“正”字，在同乐学习的孩子都知道，“止”原来是脚趾的意思，“走到一”的位置就是“正”。",
+          "曾经有群友问如何修身。当时我回答说，最简单的方法就是常怀“正念”。那什么是正念呢？真、善、美是不是真念？是的，这也是正念。但是要从根本来看，那就要看“正”的本意。<strong>“正”就是不偏不倚，止于一就是“正”，合于中就是“正”。</strong>",
+          "我们说过中国的根文化就是中道文化。《中庸》就是其中一本主要的著作。<strong>有人说《中庸》就是墙头草两边倒，其实恰恰相反，中庸就是为人做事要不偏不倚，两边不倒，恰到好处。</strong>中庸包括“中”和“和”两个方面。以后，我们可以在另外的篇章详细讲解。",
+          "比如说，打乒乓球既不能太大力而打出台面，也不能太小力而落网。那是不是打到对方桌面正中就是“中”呢？这个要看你是什么目的，如果你是在比赛，那么打到对方的边边角角，别人接不到的地方，那才是恰到好处。",
+          "其实想一想，我们工作、生活、运动，哪一样不是在找这个<strong>“恰到好处”</strong>呢？反复地练习弹琴，就是为了找到音符、轻重、快慢节奏中的恰到好处。制造芯片用的光刻机，要调到恰到好处，才能够精准地刻出所需要的芯片。炒菜火候、配料调得恰到好处那就是和味。股票买卖的时机，把握得准确，也是中庸之道。",
+          "<strong>行、住、坐、卧，找到这个恰到好处，那就做得好，做得顺利，这就是合于“正”，即中庸之道。</strong>"
+        ]
       },
       {
-        "homeDetail": "文以载道：“息”",
+        "id": "1b2v1np",
+        "title": "文以载道：“息” ",
         "homeImg": "/images/article6.png",
-        "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650744780&idx=1&sn=1ad87997e157dc19c624557f49347f25&chksm=876375a8b014fcbede1e968da64e12e9af1c86257e35aad4107b256cd02e050008dc2d13d036&token=885847066&lang=zh_CN#wechat_redirect"
+        "detail": [
+          "“心”上头一个“自”就是<strong style='font-size: 2rem'>“息”</strong>。“心”逆向返回自身，不再攀缘外物，精神就得到放松休<strong style='font-size: 2rem'>“息”</strong>。",
+          "<strong>其实我们平时说的“休息”是包括身、心两个方面的。</strong>“休”就是人像木头一样不动，这是指身体而言。<strong>“息”是就精神方面而言，不要胡思乱想。</strong>我们平时的睡觉就是很好的休息。还有打坐、冥想等也都是保持姿势不动，精神安静。",
+          "另外，“息”字在过去还有生长的意思，《易经》中有“消息”之说，阳进阴退为“息”，阳退阴进为“消”。“消息”就是一进一退，是指一个事物积极与消极态势的整体状况。<strong>经常做到精神内守，阳气就生发，整体生机就旺盛。</strong>",
+          "我们看看“息”字的<strong>引申意义</strong>：",
+          "1. <strong>停止。</strong>心返回自身，不再有杂念，所以就有了停止的引申意。",
+          "a. 如：休～。歇～。～事宁人。～止。平～。偃旗～鼓。",
+          "b. 呼与吸之间的停顿也叫“息”：气～。鼻～。传统健身中的调“息”就包含了很多精妙内容。在此不展开叙述。",
+          "2. <strong>生长。</strong>",
+          "a. 繁殖，滋生：休养生～。滋～。",
+          "b. 音信：消～。",
+          "c. 儿女：子～。",
+          "d. 利钱：利～。月～。",
+          "引用李道纯一段话作为结尾：",
+          "<strong style='text-align: center; color: #021eaa'>“息缘返观禅之机；</strong>",
+          "<strong style='text-align: center; color: #021eaa'>息心明理儒之极；</strong>",
+          "<strong style='text-align: center; color: #021eaa'>息气凝神道之玄，</strong>",
+          "<strong style='text-align: center; color: #021eaa'>三息相需无不克。”</strong>"
+        ]
       },
       {
-        "homeDetail": "文以载道：“儒”",
+        "id": "xc2vfs41v0",
+        "title": "文以载道：“儒” ",
         "homeImg": "/images/article5.png",
-        "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741453&idx=1&sn=c503c09ecc3f62aec8482a7eb3f74b86&chksm=876348a9b014c1bff9a3a90043dcb038726ae6b8d710198deb9ed4bbf8fe4cf31321632313a5&scene=21#wechat_redirect"
+        "detail": [
+          "<strong style='font-size: 2rem'>“儒”</strong>者，人之所需也。人需要什么呢？解释很多，我们认为人的类本质是精神活动，最重要的需求就是优化精神活动。",
+          "在学校里学习各种知识和技能，可以帮助得到好工作，赚更多钱财，得更大权力，找好的对象等等。这些是重要，但并不是人的终极所需。因为得到了这些之后，并不能保证得到快乐。我们看到的是，有权、有钱的人往往要应付更多的假话和诱惑，再好的伴侣也不能替代自己去面对生活和社会中的各种挑战。何况世界变幻无常，贫富、强弱、得失、爱恨的距离都只是一线之差。",
+          "<img style='width: 50%;margin: 1.5rem auto;display:block;' src='/images/article643.jpg' alt='儒字图'>",
+          " “儒” 学的出发点和落脚点都是人，在于帮助人提高内在修持，从而达到平和喜乐，宠辱不惊，八风不动。孔子非常欣赏颜回 “一箪食，一瓢饮，在陋巷，人不堪其忧， 回也不改其乐。贤哉回也！” 相对于自然科学来说，儒学可以说是人的科学。相对于技来说，这种学问也就是大学问。经典就是讲大学问的著作。那什么是大学问呢？《大学》开宗明义地讲<strong>“大学之道，在明明德，在亲民，在止于至善。”</strong>",
+          "<strong>什么是“明明德”？</strong>“明德”就是上天赋予人自然本性的运作规律。也就是《中庸》开篇所言“天命之谓性，率性之谓道，∙∙∙∙∙∙∙道也者，不可须臾离也，可离非道也。”当中所说的性。顺应这个天性的规律就是自然生机之道。什么规律呢？《中庸》接着解释道 “喜怒哀乐之未发，谓之中；发而皆中节，谓之和；中也者，天下之大本也；和也者，天下之达道也。致中和，天地位焉，万物育焉”。“中”是指人的各种情绪（如喜怒哀乐等）还都没有产生时的那种精神境界。人的意识里有各种活动，当意识里边什么活动都没有，没有具体思维，也没有情绪之时的状态就叫作“中”。“发而皆中节，谓之和”，当人受到外界刺激之后，和外界发生作用、联系，在其过程中，做到恰到好处，即是“皆中节”，“无过无不及”，这就叫做 “和”。儒家认为，人的精神活动如能时时保持在“中”或者“和”这两种状态，就符合要求了，就是“明明德”。能如此，在外，可以圆通处世；在内，则可以“志和气达”。",
+          "<strong>什么是“在亲民”？</strong>就是要有益于周围的人。人是社会的人，自己周围的人好起来了，自己做事也会更顺利。家和万事兴就是这个道理。儒家讲究 “穷则独善其身”，可以仪表人群；“达则兼善天下”。或穷或达，均有补于世道，为人所必需。这就是《大学》后来所说的修身、齐家、治国、平天下。先从修养自身开始，随着能力的增大，将“亲民” 的圈子慢慢放大，最终达到 “内圣而外王”。这个王不是当作君王，国王来讲，而是当作“旺”讲。意思是：里面是圣人境界，外面生命力非常旺盛，能为人类作出重大贡献。比如说孔子教书育人，为万世之师表就是其中一例。",
+          "<strong>什么是“止于至善”？</strong>就是要达到大善德。善有三个层次，开始是行为善，如扶危解厄，济世利民；进而是心意善，使自己念念向善，祝福他人得福，此时还需有意为之；最终是达到“至善”，此时心中全无善念，但动心起念，所作所发，觉时梦中，无一不善。真正达到“不守规矩而不逾规矩”。孔子说自己“七十而从心所欲，不逾矩” 就是这种 “至善” 的境界。有了这种善的境界，生机就旺，就合于生生不息的道，也是人之终极所需！"
+        ]
       },
       {
-        "homeDetail": "文以载道：“朋友”",
+        "id": "2vfb1m5",
+        "title": "文以载道：“朋友” ",
         "homeImg": "/images/article3.png",
-        "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741193&idx=1&sn=95948ef2a1aafe023b4404d7714a2d90&scene=21#wechat_redirect"
+        "detail": [
+          "两月相照为<strong style='font-size: 2rem'>朋</strong>, 四手相携为<strong style='font-size: 2rem'>友</strong>。",
+          "月自古就被引喻为心，《指月录》就有“心月孤悬，光吞万象”之说。西游记的菩提祖师住在斜月三星洞。当然我们最熟悉的还有《月亮代表我的心》。两月相照就是心心相印。而友字就如两双握在一起的手。可见朋友是要内心相通，外在相助。让我们重温一下来自谭咏麟怀旧的老歌《朋友》。",
+          "<p style='text-align: center; color: #021eaa'>繁星流动 和你同路</p>",
+          "<p style='text-align: center; color: #021eaa'>从不相识开始心接近</p>",
+          "<p style='text-align: center; color: #021eaa'>默默以真挚待人</p>",
+          "<p style='text-align: center; color: #021eaa'>人生如梦 朋友如雾</p>",
+          "<p style='text-align: center; color: #021eaa'>难得知心几经风暴</p>",
+          "<p style='text-align: center; color: #021eaa'>为着我不退半步 正是你</p>",
+          "<p style='text-align: center; color: #021eaa'>遥遥晚空点点星光息息相关</p>",
+          "<p style='text-align: center; color: #021eaa'>你我那怕荆棘铺满路</p>",
+          "<p style='text-align: center; color: #021eaa'>替我解开心中的孤单 是谁明白我</p>",
+          "<p style='text-align: center; color: #021eaa'>情同两手一起开心一起悲伤</p>",
+          "<p style='text-align: center; color: #021eaa'>彼此分担总不分我或你</p>",
+          "<p style='text-align: center; color: #021eaa'>你为了我　我为了你</p>",
+          "<p style='text-align: center; color: #021eaa'>共赴患难绝望里紧握你手 朋友</p>"
+        ]
       },
       {
-        "homeDetail": "文以载道：“仙”与“俗”",
+        "id": "1cvx23vs56",
+        "title": "文以载道：“仙”与“俗” ",
         "homeImg": "/images/article4.png",
-        "homeUrl": "https://mp.weixin.qq.com/s?__biz=MzA3NTkzMzQ1MQ==&mid=2650741246&idx=1&sn=b16339f2a548baf4f01d3c6f77dc2d24&scene=21#wechat_redirect"
+        "detail": [
+          "<strong style='font-size: 2rem'>“仙”</strong>与<strong style='font-size: 2rem'>“俗”</strong>， 都是会意字，从单人旁。仙与俗都是人，但是他们的区别有如山和谷。就是有高低之别。是什么高低呢？主要是指意识境界的高低。所以儒家讲究存心养性，道家家讲究修心练性，佛家讲究明心见性。同样，中国的很多武术门派都拜达摩为祖师，经常看到的一幅对联就是”达摩西来一字无，全凭心意用功夫“。万法归宗，其本质都是要在动心起念处进行修养。佛家讲究当下，当下一念做好，那你这一刻就是佛。将每一个当下做好，那就成佛。",
+          "最后，让我们看看英文中我非常喜欢的一段描述：",
+          "<span style='color: #021eaa'>“Watch your thoughts, they become words;</span>",
+          "<span style='color: #021eaa'>watch your words, they become actions;</span>",
+          "<span style='color: #021eaa'>watch your actions, they become habits;</span>",
+          "<span style='color: #021eaa'>watch your habits, they become character;</span>",
+          "<span style='color: #021eaa'>watch your character, for it becomes your destiny.”</span>"
+        ]
       }
     ]
   }
