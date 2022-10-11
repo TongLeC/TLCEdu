@@ -71,13 +71,17 @@
 </template>
 
 <script setup>
+const { t } = useI18n();
 useHead({
-  title: "根据一线教育经验，形成的教育践谈、教育讲座",
+  title: t("msg.SeoContent.speech.title"),
   meta: [
     {
       name: "description",
-      content:
-        "教育是一门实践的艺术，实践创造出科学高效的中文学习理念。这里有教学经验、育儿经验的分享，也有孩子们学习成长的点点滴滴。",
+      content: t("msg.SeoContent.speech.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.speech.keywords"),
     },
   ],
 });

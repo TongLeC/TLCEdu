@@ -24,17 +24,22 @@
 <script setup>
 import EducationalTheory from "/assets/json/EducationalTheory.json";
 const educationalTheoryJson = ref(EducationalTheory);
+const { locale, t } = useI18n();
+const localePath = useLocalePath();
 // const { data: educationalTheoryJson } = await useFetch(
 //   "/api/json/EducationalTheory"
 // );
 
 useHead({
-  title: "同乐整体教育理论，放眼生命全程，立足中国文化，融贯文史哲科",
+  title: t("msg.SeoContent.theory.title"),
   meta: [
     {
       name: "description",
-      content:
-        "诵读经典对学习中文帮助很大，经典有高度的思想价值，引导正确的价值观。读经典的起跑线在哪里并不重要，家长有了意识之后，随时随地可以开始。诵读时，正心诚意，放声朗读，不用物质奖励来引导孩子读经，才能真正享受经典带来的快乐，学以致用、活学活用。",
+      content: t("msg.SeoContent.theory.description"),
+    },
+    {
+      name: "keywords",
+      content: t("msg.SeoContent.theory.keywords"),
     },
   ],
 });
