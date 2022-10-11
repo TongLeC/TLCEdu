@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir docs
           cp -R .output/public/* docs/
-          echo 'tonglec.org' > docs/CNAME
+          echo -e 'www.tonglec.org\ntonglec.org' > CNAME
       - name: Push results to origin
         run: |
           git config --global user.name 'TongLeC'
