@@ -4,7 +4,7 @@
     <h2 class="big-title">
       {{ $t(home.title) }}
       <p class="see-more">
-        <router-link :to="localePath({ name: 'TongleBook' })"
+        <router-link :to="localePath({ name: 'TongLe-Books' })"
           >{{ $t("msg.seeMore") }} ></router-link
         >
       </p>
@@ -18,7 +18,7 @@
           {{ $t("msg.publicTitle") }} {{ $t("msg.publicTitleTwo") }}
         </h2>
         <p class="book-more">
-          <router-link :to="localePath({ name: 'TongleBook' })"
+          <router-link :to="localePath({ name: 'TongLe-Books' })"
             >—— {{ $t("msg.freeBook") }} ——</router-link
           >
         </p>

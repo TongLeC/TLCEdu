@@ -25,7 +25,7 @@
       </swiper>
       <nav class="home-transition">
         <router-link
-          :to="localePath({ name: 'Method' })"
+          :to="localePath({ name: 'TongLe-Language-Learning-Method' })"
           style="margin-right: 10px"
         >
           {{ $t("msg.languageLearning") }}
@@ -50,7 +50,9 @@
             />
           </svg>
         </router-link>
-        <router-link :to="localePath({ name: 'Theory' })">
+        <router-link
+          :to="localePath({ name: 'Tongle-Holistic-Education-Theory' })"
+        >
           {{ $t("msg.holisticEducationTheory") }}
           <svg
             class="home-transition-svg"
@@ -84,7 +86,7 @@
         <h2 class="big-title">
           {{ $t("msg.educationalPractice") }}
           <p class="see-more">
-            <router-link :to="localePath({ name: 'Speech' })"
+            <router-link :to="localePath({ name: 'Practice-and-Sharing' })"
               >{{ $t("msg.seeMore") }} ></router-link
             >
           </p>

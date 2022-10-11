@@ -1,18 +1,26 @@
 <template>
   <main class="language-learning home-container">
     <section class="other-page">
-      <h1 class="other-page-title">{{ $t("msg.languageLearning") }}</h1>
-      <p class="other-page-slogan">{{ $t("msg.slogan[0]") }}</p>
+      <h1 class="other-page-title">{{ $t("msg.originalArticle") }}</h1>
+      <p class="other-page-slogan">{{ $t("msg.slogan[5]") }}</p>
     </section>
     <div class="language-learning-box">
       <ul class="language-right row">
         <li
           class="language-list col-sm-4 col-xs-12"
-          v-for="(item, index) in languageLearningJson.languageLearning"
+          v-for="(item, index) in createdArticleJson.someArticles"
           :key="index"
         >
+          <!-- <a
+            class="language-list-detail"
+            :href="item.articleLink"
+            target="blank"
+          >
+            {{ $t(`CreatedArticle[${index}].articleTitle`) }}
+            <span class="bookmark"></span>
+          </a> -->
           <p class="language-list-detail" @click="getItem(item)">
-            {{ $t(`languageLearning[${index}].title`) }}
+            {{ $t(`someArticles[${index}].title`) }}
             <span class="bookmark"></span>
           </p>
         </li>
@@ -20,35 +28,36 @@
     </div>
   </main>
 </template>
+
 <script setup>
-import aaa from "/assets/json/LanguageLearning.json";
-const languageLearningJson = ref(aaa);
-// const { data: languageLearningJson } = await useFetch(
-//   "/api/json/LanguageLearning"
-// );
-const { locale, t } = useI18n();
+import aaa from "/assets/json/CreatedArticle.json";
+const createdArticleJson = ref(aaa);
+const { $baseUtils } = useNuxtApp();
+const { t } = useI18n();
 const localePath = useLocalePath();
 
 useHead({
-  title: t("msg.SeoContent.method.title"),
+  title: t("msg.SeoContent.article.title"),
   meta: [
     {
       name: "description",
-      content: t("msg.SeoContent.method.description"),
+      content: t("msg.SeoContent.article.description"),
     },
     {
       name: "keywords",
-      content: t("msg.SeoContent.method.keywords"),
+      content: t("msg.SeoContent.article.keywords"),
     },
   ],
 });
 </script>
 <script>
 export default {
-  name: "LanguageLearning",
+  name: "CreatedArticle",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/Method-${item.id}`));
+      navigateTo(
+        this.localePath(`/detail/${this.$baseUtils.getTitleFormat(item.title)}`)
+      );
     },
   },
 };

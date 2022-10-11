@@ -43,13 +43,16 @@ useHead({
     },
   ],
 });
+const { $baseUtils } = useNuxtApp();
 </script>
 <script>
 export default {
   name: "EducationalTheory",
   methods: {
     getItem(item) {
-      navigateTo(this.localePath(`/detail/Theory-${item.id}`));
+      navigateTo(
+        this.localePath(`/detail/${this.$baseUtils.getTitleFormat(item.title)}`)
+      );
     },
   },
 };

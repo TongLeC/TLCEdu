@@ -8,8 +8,7 @@ import LanguageLearning from './assets/json/LanguageLearning.json'
 import NavHeader from './assets/json/NavHeader.json'
 import PublicResources from './assets/json/PublicResources.json'
 import TongleBook from './assets/json/TongleBook.json'
-import { I18n } from 'vue-i18n';
-// const { t } = I18n;
+import base from './service/base';
 const restore = OpenCC.Converter({ from: "cn", to: "hk" });
 function deepClone(target) {
   if (typeof target === "object" && target) {
@@ -124,17 +123,21 @@ const locales = [{
 }
 ];
 const url = ['/404'];
-locales.forEach(locale => {
-  LanguageLearning.languageLearning.forEach(element => {
-    url.push(`/${locale.code}/detail/Method-${element.id}`)
-  });
-  EducationalTheory.educationalTheory.forEach(element => {
-    url.push(`/${locale.code}/detail/Theory-${element.id}`)
+const url2 = [];
+[...LanguageLearning.languageLearning, ...EducationalTheory.educationalTheory, ...CreatedArticle.someArticles].forEach(element => {
+  const url3 = [];
+  locales.forEach(locale => {
+    url.push(`/${locale.code}/detail/${base.getTitleFormat(element.title)}/`)
+    url3.push({ lang: locale.iso, url: `/${locale.code}/detail/${base.getTitleFormat(element.title)}/` })
   })
-  CreatedArticle.someArticles.forEach(element => {
-    url.push(`/${locale.code}/detail/Article-${element.id}`)
+  url3.forEach(e => {
+    url2.push({
+      url: e.url,
+      links: url3
+    }
+    )
   })
-})
+});
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   nitro: {
@@ -192,7 +195,9 @@ export default defineNuxtConfig({
     sitemaps: [
       {
         path: '/sitemap-detail.xml',
-        routes: url,
+        routes: async () => {
+          return url2;
+        },
         exclude: ['/**'],
         i18n: true,
         defaults: {
@@ -204,7 +209,7 @@ export default defineNuxtConfig({
       {
         path: '/sitemap-main.xml',
         exclude: [
-          '/Article', '/Method', '/Resources', '/Speech', '/Theory', '/TongleBook', '/',
+          '/TongLe-Articles', '/TongLe-Language-Learning-Method', '/Free-Resources', '/Practice-and-Sharing', '/Tongle-Holistic-Education-Theory', '/TongLe-Books', '/',
         ],
         i18n: true,
         defaults: {

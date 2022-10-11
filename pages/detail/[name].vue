@@ -9,13 +9,20 @@
       <el-tab-pane
         v-for="(item, index) in pageData"
         :key="'a' + index"
-        :name="item.id"
+        :name="$baseUtils.getTitleFormat(item.title)"
         ><template #label>
           <span>
             {{ $t(`${langKey}[${index}].title`) }}
           </span>
         </template>
-        <section class="language-learning-detail" v-if="item.id == activeTab">
+        <section
+          class="language-learning-detail"
+          v-if="
+            item.id == activeTab ||
+            $baseUtils.getTitleFormat(item.title) ==
+              $baseUtils.getTitleFormat(activeTab)
+          "
+        >
           <h3 class="detail-title">
             {{ $t(`${langKey}[${index}].title`) }}
           </h3>
@@ -35,37 +42,55 @@
 
 <script setup>
 import LanguageLearning from "/assets/json/LanguageLearning.json";
-const pageData1 = ref(LanguageLearning);
 import EducationalTheory from "/assets/json/EducationalTheory.json";
-const pageData2 = ref(EducationalTheory);
 import CreatedArticle from "/assets/json/CreatedArticle.json";
-const pageData3 = ref(CreatedArticle);
+const pageDataArray = [
+  {
+    data: LanguageLearning.languageLearning,
+    langKey: "languageLearning",
+  },
+  {
+    data: EducationalTheory.educationalTheory,
+    langKey: "educationalTheory",
+  },
+  {
+    data: CreatedArticle.someArticles,
+    langKey: "someArticles",
+  },
+];
 const route = useRoute();
+const { $baseUtils } = useNuxtApp();
 const { locale, locales } = useI18n();
 const localePath = useLocalePath();
-const category = route.params.category;
-let activeTab = route.params.name;
+let activeTab = $baseUtils.getTitleFormat(route.params.name);
 let pageTitle = "";
 let pageData = [];
 let langKey = "";
-if (category == "Method") {
-  pageData = pageData1.value.languageLearning;
-  langKey = "languageLearning";
-} else if (category == "Theory") {
-  pageData = pageData2.value.educationalTheory;
-  langKey = "educationalTheory";
-} else if (category == "Article") {
-  pageData = pageData3.value.someArticles;
-  langKey = "someArticles";
+
+const temp = pageDataArray.filter((e) =>
+  e.data.some(
+    (e2) =>
+      e2.id == activeTab ||
+      $baseUtils.getTitleFormat(e2.title) ==
+        $baseUtils.getTitleFormat(activeTab)
+  )
+);
+if (temp.length == 1) {
+  pageData = temp[0].data;
+  langKey = temp[0].langKey;
 }
 const tabChange = function (TabsPaneContext) {
-  navigateTo(localePath(`/detail/${category}-${TabsPaneContext.props.name}`));
+  navigateTo(localePath(`/detail/${TabsPaneContext.props.name}`));
   window.scrollTo({ top: 0 });
 };
 let articleData = [];
-articleData = pageData.filter((e) => e.id == activeTab);
+articleData = pageData.filter(
+  (e) =>
+    e.id == activeTab ||
+    $baseUtils.getTitleFormat(e.title) == $baseUtils.getTitleFormat(activeTab)
+);
 if (articleData.length > 0) {
-  pageTitle = articleData[0].title;
+  pageTitle = $baseUtils.getTitleFormat(articleData[0].title);
 } else {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
