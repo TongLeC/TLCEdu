@@ -123,7 +123,7 @@ const locales = [{
   iso: 'zh-Hant'
 }
 ];
-const url = [];
+const url = ['/404'];
 locales.forEach(locale => {
   LanguageLearning.languageLearning.forEach(element => {
     url.push(`/${locale.code}/detail/Method-${element.id}`)
