@@ -4,7 +4,7 @@
     <h2 class="big-title">
       {{ $t(home.title) }}
       <p class="see-more">
-        <router-link :to="localePath({ name: 'Article' })"
+        <router-link :to="localePath({ name: 'TongLe-Articles' })"
           >{{ $t("msg.seeMore") }} ></router-link
         >
       </p>
@@ -15,10 +15,10 @@
     <ul class="free-top-right row">
       <li
         class="free-list col-sm-3 col-xs-12"
-        v-for="(item, index) in home.json.detail"
+        v-for="(item, index) in home.json.articleList"
         :key="index"
       >
-        <a class="free-list-detail" :href="item.homeUrl" target="blank">
+        <!-- <a class="free-list-detail" :href="item.homeUrl" target="blank">
           <img
             :src="item.homeImg"
             :alt="$t(`homeArticle.detail[${index}].homeDetail`)"
@@ -26,17 +26,40 @@
           <p class="free-list-title">
             {{ $t(`homeArticle.detail[${index}].homeDetail`) }}
           </p>
-        </a>
+        </a> -->
+        <NuxtLink
+          class="free-list-detail"
+          :to="localePath(`/detail/${$baseUtils.getTitleFormat(item.title)}`)"
+        >
+          <img
+            :src="item.homeImg"
+            :alt="$t(`homeArticle.articleList[${index}].title`)"
+          />
+          <p class="free-list-title">
+            {{ $t(`homeArticle.articleList[${index}].title`) }}
+          </p>
+        </NuxtLink>
       </li>
     </ul>
   </main>
 </template>
 
+<script setup>
+const localePath = useLocalePath();
+const { $baseUtils } = useNuxtApp();
+</script>
 <script>
 export default {
   name: "homeFreeAssembly",
   props: {
     home: { type: Object },
+  },
+  methods: {
+    getItem(list, item) {
+      navigateTo(
+        this.localePath(`/detail/${$baseUtils.getTitleFormat(list.title)}`)
+      );
+    },
   },
 };
 </script>

@@ -20,7 +20,7 @@
             :index="item.href"
           >
             <template #title>
-              <NuxtLink :to="localePath({ name: item.id })">{{
+              <NuxtLink :to="localePath({ name: item.href })">{{
                 $t(item.msg)
               }}</NuxtLink>
             </template>
@@ -42,11 +42,17 @@
               <el-menu-item
                 style="border-bottom: 1px solid #ccc"
                 v-else
-                :index="localePath(`/detail/${item.id}-${list.id}`)"
+                :index="
+                  localePath(`/detail/${$baseUtils.getTitleFormat(list.title)}`)
+                "
                 :key="'bb' + i"
               >
                 <NuxtLink
-                  :to="localePath(`/detail/${item.id}-${list.id}`)"
+                  :to="
+                    localePath(
+                      `/detail/${$baseUtils.getTitleFormat(list.title)}`
+                    )
+                  "
                   class="hearder-nav-a"
                 >
                   {{ $t(`NavHeader[${index1}].child[${i}].title`) }}
@@ -61,8 +67,8 @@
             </el-menu-item>
           </el-sub-menu>
           <el-menu-item
-            :route="localePath({ name: 'TongleBook' })"
-            :index="localePath({ name: 'TongleBook' })"
+            :route="localePath({ name: 'TongLe-Books' })"
+            :index="localePath({ name: 'TongLe-Books' })"
           >
             {{ $t("msg.tongleBooks") }}
           </el-menu-item>
@@ -112,6 +118,7 @@
 import NavHeader from "/assets/json/NavHeader.json";
 const NavHeaderJSON = ref(NavHeader);
 const localePath = useLocalePath();
+const { $baseUtils } = useNuxtApp();
 const { locale, locales } = useI18n();
 const availableLocales = computed(() => {
   return locales.value.filter((i) => i.code !== locale.value);
@@ -126,9 +133,6 @@ export default {
     };
   },
   methods: {
-    getItem(list, item) {
-      navigateTo(this.localePath(`/detail/detail-${item.id}-${list.id}`));
-    },
     mouseToogleNavItem(e) {
       this.toggleClassName(e.currentTarget, "active");
     },
