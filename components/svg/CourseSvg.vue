@@ -15,7 +15,7 @@
     width: 100%;
   }
   .g-button-text {
-    color: #fff;
+    color: #f3d02b;
     font-size: 20px;
     position: absolute;
     bottom: -5px;
